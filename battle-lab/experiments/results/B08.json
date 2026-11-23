@@ -1,0 +1,26 @@
+{
+ "experiment": "B08",
+ "group": "B",
+ "question": "间接伤害是否触发收伤方御魂",
+ "inGameObservation": "官方[5] 说不触发御魂 —— 用实验室确认实现与官方一致",
+ "hypotheses": [
+  {
+   "id": "OFFICIAL_5",
+   "note": "不触发",
+   "observable": {
+    "normal_triggersSoul": true,
+    "indirect_triggersSoul": false,
+    "shared_normal": true,
+    "shared_indirect": false
+   }
+  }
+ ],
+ "discriminating": false,
+ "distinctObservables": 1,
+ "kind": "CONFORMANCE",
+ "confidence": "NOT_RUN",
+ "status": "AWAITING_IN_GAME_OBSERVATION",
+ "chosenHypothesis": null,
+ "gameVersion": "2026.10 (Data 快照)",
+ "recordedAt": "2026-10-01T16:12:41.268Z"
+}

@@ -1,0 +1,62 @@
+{
+ "experiment": "D05",
+ "group": "D",
+ "question": "首轮是否特殊规则",
+ "inGameObservation": "录屏逐帧采样：固定攻方/守方与面板，记录 t=0/60/120/180s 的伤害数字，反推 M(t)=Damage(t)/Damage(0)",
+ "hypotheses": [
+  {
+   "id": "UNKNOWN_NO_ASSUMPTION",
+   "note": "不假设（当前策略）",
+   "observable": {
+    "ruleset": "COMMUNITY_2020_UNVERIFIED",
+    "status": "UNKNOWN",
+    "teamSize": 5,
+    "hasOnmyoji": false,
+    "initialOrb": 4,
+    "gaugeSize": 5,
+    "maxOrb": 8,
+    "orbIndependence": "两队各自持有 OrbPool（本实验室为独立）",
+    "stalemate": {
+     "damageRamp": null,
+     "healingReductionRamp": null,
+     "startTurn": null
+    },
+    "timeout": {
+     "maxTurns": null,
+     "resolveBy": "UNKNOWN"
+    }
+   }
+  },
+  {
+   "id": "COMMUNITY_2020",
+   "note": "按 2020 攻略假设存在阶梯增伤（未验证）",
+   "observable": {
+    "ruleset": "COMMUNITY_2020",
+    "status": "UNKNOWN",
+    "teamSize": 5,
+    "hasOnmyoji": false,
+    "initialOrb": 4,
+    "gaugeSize": 5,
+    "maxOrb": 8,
+    "orbIndependence": "两队各自持有 OrbPool（本实验室为独立）",
+    "stalemate": {
+     "damageRamp": null,
+     "healingReductionRamp": null,
+     "startTurn": 10
+    },
+    "timeout": {
+     "maxTurns": null,
+     "resolveBy": "UNKNOWN"
+    }
+   }
+  }
+ ],
+ "discriminating": true,
+ "distinctObservables": 2,
+ "kind": "HYPOTHESIS_TEST",
+ "confidence": "NOT_RUN",
+ "status": "AWAITING_IN_GAME_OBSERVATION",
+ "chosenHypothesis": null,
+ "gameVersion": "2026.10 (Data 快照)",
+ "recordedAt": "2026-10-01T16:12:41.284Z"
+}

@@ -1,0 +1,154 @@
+{
+  "_meta": {
+    "title": "Duel betting 2026-11-23 #3 (Global screenshot) — real result: BLUE won",
+    "result": "blue",
+    "notes": [
+      "Stats = final values on the Lineup screen.",
+      "soul = 4-piece soul from the Soul effects icon (matched + verified visually)."
+    ]
+  },
+  "red": [
+    {
+      "name": "Mushishi",
+      "soul": "Pearl",
+      "stats": {
+        "atk": 3014,
+        "hp": 30780,
+        "def": 934,
+        "spd": 199,
+        "cri": 88,
+        "crid": 164,
+        "efh": 0,
+        "efr": 56
+      }
+    },
+    {
+      "name": "Returner Ebisu",
+      "soul": "Echoer",
+      "stats": {
+        "atk": 3447,
+        "hp": 19587,
+        "def": 861,
+        "spd": 145,
+        "cri": 35,
+        "crid": 150,
+        "efh": 18,
+        "efr": 0
+      }
+    },
+    {
+      "name": "Ungaikyo",
+      "soul": "Shadow",
+      "stats": {
+        "atk": 3696,
+        "hp": 16192,
+        "def": 1126,
+        "spd": 121,
+        "cri": 70,
+        "crid": 192,
+        "efh": 0,
+        "efr": 64
+      }
+    },
+    {
+      "name": "Yoto Hime, Scarlet Nightedge",
+      "soul": "Scarlet",
+      "stats": {
+        "atk": 6208,
+        "hp": 15297,
+        "def": 741,
+        "spd": 116,
+        "cri": 52,
+        "crid": 185,
+        "efh": 0,
+        "efr": 40
+      }
+    },
+    {
+      "name": "Senhime Resurgent",
+      "soul": "Sea Sprite",
+      "stats": {
+        "atk": 4527,
+        "hp": 20060,
+        "def": 492,
+        "spd": 114,
+        "cri": 10,
+        "crid": 157,
+        "efh": 15,
+        "efr": 0
+      }
+    }
+  ],
+  "blue": [
+    {
+      "name": "Kingyo",
+      "soul": "Scarlet",
+      "stats": {
+        "atk": 5685,
+        "hp": 25978,
+        "def": 801,
+        "spd": 206,
+        "cri": 65,
+        "crid": 150,
+        "efh": 0,
+        "efr": 80
+      }
+    },
+    {
+      "name": "Blazing Tamamonomae",
+      "soul": "Nightwing",
+      "stats": {
+        "atk": 6209,
+        "hp": 15212,
+        "def": 519,
+        "spd": 169,
+        "cri": 37,
+        "crid": 349,
+        "efh": 0,
+        "efr": 32
+      }
+    },
+    {
+      "name": "Shiranui",
+      "soul": "Sea Sprite",
+      "stats": {
+        "atk": 4565,
+        "hp": 12666,
+        "def": 556,
+        "spd": 141,
+        "cri": 20,
+        "crid": 185,
+        "efh": 15,
+        "efr": 48
+      }
+    },
+    {
+      "name": "Mishige",
+      "soul": "Snow Spirit",
+      "stats": {
+        "atk": 5356,
+        "hp": 17206,
+        "def": 648,
+        "spd": 124,
+        "cri": 75,
+        "crid": 255,
+        "efh": 12,
+        "efr": 0
+      }
+    },
+    {
+      "name": "Luminary Oitsuki",
+      "soul": "Mirror Lady",
+      "stats": {
+        "atk": 2710,
+        "hp": 16858,
+        "def": 563,
+        "spd": 111,
+        "cri": 30,
+        "crid": 220,
+        "efh": 0,
+        "efr": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+ "schemaVersion": 1,
+ "id": "2026-11-23c-lineup",
+ "red": {
+  "units": [
+   {
+    "unitId": "r1",
+    "shikigamiId": 306,
+    "name": "Mushishi",
+    "stats": {
+     "attack": 3014,
+     "hp": 30780,
+     "defense": 934,
+     "speed": 199,
+     "critRate": 88,
+     "critDamage": 164,
+     "effectHit": 0,
+     "effectResist": 56
+    },
+    "soulId": 23
+   },
+   {
+    "unitId": "r2",
+    "shikigamiId": 566,
+    "name": "Returner Ebisu",
+    "stats": {
+     "attack": 3447,
+     "hp": 19587,
+     "defense": 861,
+     "speed": 145,
+     "critRate": 35,
+     "critDamage": 150,
+     "effectHit": 18,
+     "effectResist": 0
+    },
+    "soulId": 52
+   },
+   {
+    "unitId": "r3",
+    "shikigamiId": 344,
+    "name": "Ungaikyo",
+    "stats": {
+     "attack": 3696,
+     "hp": 16192,
+     "defense": 1126,
+     "speed": 121,
+     "critRate": 70,
+     "critDamage": 192,
+     "effectHit": 0,
+     "effectResist": 64
+    },
+    "soulId": 21
+   },
+   {
+    "unitId": "r4",
+    "shikigamiId": 593,
+    "name": "Yoto Hime, Scarlet Nightedge",
+    "stats": {
+     "attack": 6208,
+     "hp": 15297,
+     "defense": 741,
+     "speed": 116,
+     "critRate": 52,
+     "critDamage": 185,
+     "effectHit": 0,
+     "effectResist": 40
+    },
+    "soulId": 13
+   },
+   {
+    "unitId": "r5",
+    "shikigamiId": 562,
+    "name": "Senhime Resurgent",
+    "stats": {
+     "attack": 4527,
+     "hp": 20060,
+     "defense": 492,
+     "speed": 114,
+     "critRate": 10,
+     "critDamage": 157,
+     "effectHit": 15,
+     "effectResist": 0
+    },
+    "soulId": 25
+   }
+  ]
+ },
+ "blue": {
+  "units": [
+   {
+    "unitId": "b1",
+    "shikigamiId": 282,
+    "name": "Kingyo",
+    "stats": {
+     "attack": 5685,
+     "hp": 25978,
+     "defense": 801,
+     "speed": 206,
+     "critRate": 65,
+     "critDamage": 150,
+     "effectHit": 0,
+     "effectResist": 80
+    },
+    "soulId": 13
+   },
+   {
+    "unitId": "b2",
+    "shikigamiId": 339,
+    "name": "Blazing Tamamonomae",
+    "stats": {
+     "attack": 6209,
+     "hp": 15212,
+     "defense": 519,
+     "speed": 169,
+     "critRate": 37,
+     "critDamage": 349,
+     "effectHit": 0,
+     "effectResist": 32
+    },
+    "soulId": 2
+   },
+   {
+    "unitId": "b3",
+    "shikigamiId": 330,
+    "name": "Shiranui",
+    "stats": {
+     "attack": 4565,
+     "hp": 12666,
+     "defense": 556,
+     "speed": 141,
+     "critRate": 20,
+     "critDamage": 185,
+     "effectHit": 15,
+     "effectResist": 48
+    },
+    "soulId": 25
+   },
+   {
+    "unitId": "b4",
+    "shikigamiId": 370,
+    "name": "Mishige",
+    "stats": {
+     "attack": 5356,
+     "hp": 17206,
+     "defense": 648,
+     "speed": 124,
+     "critRate": 75,
+     "critDamage": 255,
+     "effectHit": 12,
+     "effectResist": 0
+    },
+    "soulId": 0
+   },
+   {
+    "unitId": "b5",
+    "shikigamiId": 395,
+    "name": "Luminary Oitsuki",
+    "stats": {
+     "attack": 2710,
+     "hp": 16858,
+     "defense": 563,
+     "speed": 111,
+     "critRate": 30,
+     "critDamage": 220,
+     "effectHit": 0,
+     "effectResist": 0
+    },
+    "soulId": 11
+   }
+  ]
+ },
+ "ruleset": "GUESSING",
+ "source": {
+  "type": "JSON",
+  "note": "Duel betting 2026-11-23 #3 (Global screenshot) — real result: BLUE won"
+ },
+ "createdAt": "2026-11-23T09:48:10.599Z",
+ "updatedAt": "2026-11-23T09:48:10.599Z"
+}

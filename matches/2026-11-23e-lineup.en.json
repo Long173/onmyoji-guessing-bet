@@ -1,0 +1,24 @@
+{
+  "_meta": {
+    "title": "Duel betting 2026-11-23 #5 (Global screenshot) — result: BLUE won",
+    "result": "blue",
+    "notes": [
+      "Stats = final values on the Lineup screen.",
+      "soul = 4-piece soul from the Soul effects icon (matched visually against the fandom icon sheet)."
+    ]
+  },
+  "red": [
+    { "name": "Hitotsume", "soul": "Tree Nymph", "stats": { "atk": 5726, "hp": 20242, "def": 1012, "spd": 184, "cri": 63, "crid": 206, "efh": 0, "efr": 88 } },
+    { "name": "Oitsuki", "soul": "Boroboroton", "stats": { "atk": 2791, "hp": 26935, "def": 648, "spd": 169, "cri": 5, "crid": 150, "efh": 0, "efr": 104 } },
+    { "name": "Nyunai-suzume", "soul": "Scarlet", "stats": { "atk": 4527, "hp": 16181, "def": 1073, "spd": 156, "cri": 39, "crid": 164, "efh": 0, "efr": 48 } },
+    { "name": "Yoto Hime, Scarlet Nightedge", "soul": "Scarlet", "stats": { "atk": 6208, "hp": 17946, "def": 479, "spd": 146, "cri": 52, "crid": 150, "efh": 0, "efr": 40 } },
+    { "name": "Ungaikyo", "soul": "Fortune Cat", "stats": { "atk": 3878, "hp": 10370, "def": 891, "spd": 145, "cri": 85, "crid": 290, "efh": 0, "efr": 64 } }
+  ],
+  "blue": [
+    { "name": "Garuda", "soul": "Fenikkusu", "stats": { "atk": 3908, "hp": 20065, "def": 658, "spd": 202, "cri": 24, "crid": 150, "efh": 108, "efr": 8 } },
+    { "name": "Vampira", "soul": "Fenikkusu", "stats": { "atk": 5289, "hp": 15725, "def": 737, "spd": 157, "cri": 90, "crid": 304, "efh": 0, "efr": 56 } },
+    { "name": "Doujo", "soul": "Pearl", "stats": { "atk": 2898, "hp": 25431, "def": 803, "spd": 151, "cri": 70, "crid": 234, "efh": 0, "efr": 48 } },
+    { "name": "Vengeful Hannya", "soul": "Kyoukotsu", "stats": { "atk": 4183, "hp": 15548, "def": 515, "spd": 139, "cri": 10, "crid": 269, "efh": 0, "efr": 104 } },
+    { "name": "Heartseeker Momiji", "soul": "Seductress", "stats": { "atk": 4374, "hp": 13896, "def": 630, "spd": 114, "cri": 45, "crid": 150, "efh": 0, "efr": 32 } }
+  ]
+}

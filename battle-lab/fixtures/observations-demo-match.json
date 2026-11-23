@@ -1,0 +1,2596 @@
+{
+ "note": "**合成夹具**（由模拟器自己的投影生成，seed 123456）：只用来证明 diff 的**一致路径**可用 —— 它不是真实性证据；真实观测必须来自游戏内（报告 §52）。生成器 tools/build-observation-fixture.ts。",
+ "seed": 123456,
+ "synthetic": true,
+ "frames": [
+  {
+   "kind": "SKILL",
+   "actor": 201,
+   "target": 101,
+   "skill": "祸福相生"
+  },
+  {
+   "kind": "ORB",
+   "actor": 201,
+   "orbs": 6
+  },
+  {
+   "kind": "SKILL",
+   "actor": 101,
+   "target": 202,
+   "skill": "红颜怒发"
+  },
+  {
+   "kind": "ORB",
+   "actor": 101,
+   "orbs": 1
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 101,
+   "target": 202,
+   "amount": 5849.620108291112,
+   "hpAfter": 10815
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 101,
+   "target": 202,
+   "amount": 5758.341431282522,
+   "hpAfter": 5057
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 101,
+   "target": 202,
+   "amount": 5057.038460426366,
+   "hpAfter": 0
+  },
+  {
+   "kind": "DEATH",
+   "target": 202
+  },
+  {
+   "kind": "SKILL",
+   "actor": 102,
+   "target": 201,
+   "skill": "阳炎"
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 102,
+   "target": 201,
+   "amount": 824.6694734654739,
+   "hpAfter": 26065
+  },
+  {
+   "kind": "SKILL",
+   "actor": 203,
+   "target": 101,
+   "skill": "樱吹雪"
+  },
+  {
+   "kind": "ORB",
+   "actor": 203,
+   "orbs": 3
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 203,
+   "target": 101,
+   "amount": 149.77160543351056,
+   "hpAfter": 17455
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 203,
+   "target": 102,
+   "amount": 198.71812510545715,
+   "hpAfter": 16568
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 203,
+   "target": 103,
+   "amount": 100.20248920798258,
+   "hpAfter": 20324
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 203,
+   "target": 104,
+   "amount": 109.9696177053338,
+   "hpAfter": 29252
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 203,
+   "target": 105,
+   "amount": 120.86080618908636,
+   "hpAfter": 16299
+  },
+  {
+   "kind": "STATUS",
+   "actor": 203,
+   "target": 101,
+   "status": "落樱"
+  },
+  {
+   "kind": "STATUS",
+   "actor": 203,
+   "target": 102,
+   "status": "落樱"
+  },
+  {
+   "kind": "STATUS",
+   "actor": 203,
+   "target": 103,
+   "status": "落樱"
+  },
+  {
+   "kind": "STATUS",
+   "actor": 203,
+   "target": 104,
+   "status": "落樱"
+  },
+  {
+   "kind": "STATUS",
+   "actor": 203,
+   "target": 105,
+   "status": "落樱"
+  },
+  {
+   "kind": "STATUS_END",
+   "target": 101,
+   "status": "2674_1"
+  },
+  {
+   "kind": "STATUS_END",
+   "target": 102,
+   "status": "2674_1"
+  },
+  {
+   "kind": "STATUS_END",
+   "target": 103,
+   "status": "2674_1"
+  },
+  {
+   "kind": "STATUS_END",
+   "target": 104,
+   "status": "2674_1"
+  },
+  {
+   "kind": "STATUS_END",
+   "target": 105,
+   "status": "2674_1"
+  },
+  {
+   "kind": "SKILL",
+   "actor": 204,
+   "target": 101,
+   "skill": "降蛊之瞳"
+  },
+  {
+   "kind": "ORB",
+   "actor": 204,
+   "orbs": 0
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 204,
+   "target": 101,
+   "amount": 1310.3811779872758,
+   "hpAfter": 16145
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 204,
+   "target": 101,
+   "amount": 1306.048364931874,
+   "hpAfter": 14839
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 204,
+   "target": 101,
+   "amount": 682.465833985867,
+   "hpAfter": 14156
+  },
+  {
+   "kind": "STATUS",
+   "actor": 204,
+   "target": 101,
+   "status": "瞳蛊"
+  },
+  {
+   "kind": "STATUS_END",
+   "target": 101,
+   "status": "3523_1"
+  },
+  {
+   "kind": "SKILL",
+   "actor": 103,
+   "target": 101,
+   "skill": "智火长明"
+  },
+  {
+   "kind": "STATUS",
+   "actor": 103,
+   "target": 101,
+   "status": "智识之火"
+  },
+  {
+   "kind": "STATUS_END",
+   "target": 101,
+   "status": "6011_1"
+  },
+  {
+   "kind": "SKILL",
+   "actor": 104,
+   "target": 201,
+   "skill": "直拳"
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 104,
+   "target": 201,
+   "amount": 2904.347041918598,
+   "hpAfter": 23161
+  },
+  {
+   "kind": "SKILL",
+   "actor": 205,
+   "target": 101,
+   "skill": "陨星"
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 101,
+   "amount": 1289.414418464823,
+   "hpAfter": 12867
+  },
+  {
+   "kind": "SKILL",
+   "actor": 105,
+   "target": 201,
+   "skill": "川流"
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 105,
+   "target": 201,
+   "amount": 639.3416926611135,
+   "hpAfter": 22522
+  },
+  {
+   "kind": "STATUS",
+   "actor": 105,
+   "target": 201,
+   "status": "结怨"
+  },
+  {
+   "kind": "SKILL",
+   "actor": 201,
+   "target": 101,
+   "skill": "祸福相生"
+  },
+  {
+   "kind": "ORB",
+   "actor": 201,
+   "orbs": 2
+  },
+  {
+   "kind": "SKILL",
+   "actor": 101,
+   "target": 203,
+   "skill": "红颜怒发"
+  },
+  {
+   "kind": "ORB",
+   "actor": 101,
+   "orbs": 1
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 101,
+   "target": 203,
+   "amount": 4855.025265055403,
+   "hpAfter": 19944
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 101,
+   "target": 203,
+   "amount": 4784.413776585039,
+   "hpAfter": 15160
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 101,
+   "target": 203,
+   "amount": 4825.172669865407,
+   "hpAfter": 10334
+  },
+  {
+   "kind": "SKILL",
+   "actor": 102,
+   "target": 201,
+   "skill": "阳炎"
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 102,
+   "target": 201,
+   "amount": 2782.515954940409,
+   "hpAfter": 19739
+  },
+  {
+   "kind": "SKILL",
+   "actor": 203,
+   "target": 203,
+   "skill": "复苏"
+  },
+  {
+   "kind": "ORB",
+   "actor": 203,
+   "orbs": 2
+  },
+  {
+   "kind": "HEAL",
+   "actor": 203,
+   "target": 203,
+   "amount": 1488
+  },
+  {
+   "kind": "HEAL",
+   "actor": 203,
+   "target": 203,
+   "amount": 2232
+  },
+  {
+   "kind": "HEAL",
+   "actor": 203,
+   "target": 203,
+   "amount": 992
+  },
+  {
+   "kind": "STATUS",
+   "actor": 203,
+   "target": 203,
+   "status": "复苏之舞"
+  },
+  {
+   "kind": "STATUS_END",
+   "target": 203,
+   "status": "2672_1"
+  },
+  {
+   "kind": "SKILL",
+   "actor": 204,
+   "target": 101,
+   "skill": "缠心"
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 204,
+   "target": 101,
+   "amount": 669.4345656877413,
+   "hpAfter": 12197
+  },
+  {
+   "kind": "STATUS",
+   "actor": 204,
+   "target": 101,
+   "status": "中毒"
+  },
+  {
+   "kind": "SKILL",
+   "actor": 103,
+   "target": 101,
+   "skill": "智火长明"
+  },
+  {
+   "kind": "STATUS",
+   "actor": 103,
+   "target": 101,
+   "status": "智识之火"
+  },
+  {
+   "kind": "STATUS_END",
+   "target": 101,
+   "status": "6011_1"
+  },
+  {
+   "kind": "SKILL",
+   "actor": 201,
+   "target": 101,
+   "skill": "祸福相生"
+  },
+  {
+   "kind": "ORB",
+   "actor": 201,
+   "orbs": 4
+  },
+  {
+   "kind": "SKILL",
+   "actor": 104,
+   "target": 203,
+   "skill": "直拳"
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 104,
+   "target": 203,
+   "amount": 4312.793066310212,
+   "hpAfter": 10733
+  },
+  {
+   "kind": "SKILL",
+   "actor": 205,
+   "target": 101,
+   "skill": "星罗云布"
+  },
+  {
+   "kind": "ORB",
+   "actor": 205,
+   "orbs": 2
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 101,
+   "amount": 936.2651998578585,
+   "hpAfter": 11261
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 102,
+   "amount": 1232.3503740362667,
+   "hpAfter": 15336
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 103,
+   "amount": 970.409479333226,
+   "hpAfter": 19353
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 104,
+   "amount": 1062.035468875125,
+   "hpAfter": 28190
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 105,
+   "amount": 1174.9299268742307,
+   "hpAfter": 15124
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 101,
+   "amount": 931.1753285383547,
+   "hpAfter": 10330
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 102,
+   "amount": 1226.7306272569567,
+   "hpAfter": 14109
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 103,
+   "amount": 961.2356806668286,
+   "hpAfter": 18392
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 104,
+   "amount": 1058.0214846086637,
+   "hpAfter": 27132
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 105,
+   "amount": 1175.9236298339129,
+   "hpAfter": 13948
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 101,
+   "amount": 937.4870434388922,
+   "hpAfter": 9393
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 102,
+   "amount": 1229.0696857210642,
+   "hpAfter": 12880
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 103,
+   "amount": 973.6203671705589,
+   "hpAfter": 17419
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 104,
+   "amount": 1058.215157387709,
+   "hpAfter": 26074
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 105,
+   "amount": 1189.8362343078115,
+   "hpAfter": 12758
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 101,
+   "amount": 938.669002772016,
+   "hpAfter": 8454
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 102,
+   "amount": 1227.7505766366721,
+   "hpAfter": 11652
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 103,
+   "amount": 965.5963430904885,
+   "hpAfter": 16453
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 104,
+   "amount": 1070.76094327405,
+   "hpAfter": 25003
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 105,
+   "amount": 1189.6480919870264,
+   "hpAfter": 11569
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 101,
+   "amount": 939.0347636728593,
+   "hpAfter": 7515
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 102,
+   "amount": 1235.7849835822253,
+   "hpAfter": 10417
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 103,
+   "amount": 964.6101714533652,
+   "hpAfter": 15488
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 104,
+   "amount": 1057.915351534597,
+   "hpAfter": 23945
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 105,
+   "amount": 1192.867753177814,
+   "hpAfter": 10376
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 101,
+   "amount": 934.3162151510423,
+   "hpAfter": 6581
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 102,
+   "amount": 1233.4657238951258,
+   "hpAfter": 9183
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 103,
+   "amount": 966.1065047884895,
+   "hpAfter": 14522
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 104,
+   "amount": 1067.0104830117198,
+   "hpAfter": 22878
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 105,
+   "amount": 1192.3506487545183,
+   "hpAfter": 9184
+  },
+  {
+   "kind": "HEAL",
+   "actor": 205,
+   "target": 205,
+   "amount": 0
+  },
+  {
+   "kind": "TIMELINE",
+   "actor": 205,
+   "amount": 30
+  },
+  {
+   "kind": "STATUS",
+   "actor": 205,
+   "target": 205,
+   "status": "星辰之力"
+  },
+  {
+   "kind": "STATUS_END",
+   "target": 205,
+   "status": "3903_1"
+  },
+  {
+   "kind": "SKILL",
+   "actor": 101,
+   "target": 203,
+   "skill": "尾袭"
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 101,
+   "target": 203,
+   "amount": 1768.5463847591673,
+   "hpAfter": 8965
+  },
+  {
+   "kind": "SKILL",
+   "actor": 105,
+   "target": 101,
+   "skill": "灵鱼抱蕊"
+  },
+  {
+   "kind": "ORB",
+   "actor": 105,
+   "orbs": 2
+  },
+  {
+   "kind": "HEAL",
+   "actor": 105,
+   "target": 101,
+   "amount": 8210
+  },
+  {
+   "kind": "HEAL",
+   "actor": 105,
+   "target": 102,
+   "amount": 7584
+  },
+  {
+   "kind": "HEAL",
+   "actor": 105,
+   "target": 103,
+   "amount": 5902
+  },
+  {
+   "kind": "HEAL",
+   "actor": 105,
+   "target": 104,
+   "amount": 6484
+  },
+  {
+   "kind": "HEAL",
+   "actor": 105,
+   "target": 105,
+   "amount": 7236
+  },
+  {
+   "kind": "TIMELINE",
+   "actor": 105,
+   "amount": 10
+  },
+  {
+   "kind": "STATUS_END",
+   "target": 201,
+   "status": "3461_1"
+  },
+  {
+   "kind": "SKILL",
+   "actor": 102,
+   "target": 101,
+   "skill": "滋养"
+  },
+  {
+   "kind": "ORB",
+   "actor": 102,
+   "orbs": 0
+  },
+  {
+   "kind": "HEAL",
+   "actor": 102,
+   "target": 101,
+   "amount": 2814
+  },
+  {
+   "kind": "HEAL",
+   "actor": 102,
+   "target": 102,
+   "amount": 0
+  },
+  {
+   "kind": "HEAL",
+   "actor": 102,
+   "target": 103,
+   "amount": 0
+  },
+  {
+   "kind": "HEAL",
+   "actor": 102,
+   "target": 104,
+   "amount": 0
+  },
+  {
+   "kind": "HEAL",
+   "actor": 102,
+   "target": 105,
+   "amount": 0
+  },
+  {
+   "kind": "SKILL",
+   "actor": 203,
+   "target": 101,
+   "skill": "樱落"
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 203,
+   "target": 101,
+   "amount": 1685.619455822858,
+   "hpAfter": 15919
+  },
+  {
+   "kind": "SKILL",
+   "actor": 204,
+   "target": 101,
+   "skill": "降蛊之瞳"
+  },
+  {
+   "kind": "ORB",
+   "actor": 204,
+   "orbs": 3
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 204,
+   "target": 101,
+   "amount": 1317.529123934095,
+   "hpAfter": 14602
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 204,
+   "target": 101,
+   "amount": 686.7188024770512,
+   "hpAfter": 13915
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 204,
+   "target": 101,
+   "amount": 682.9366621385616,
+   "hpAfter": 13232
+  },
+  {
+   "kind": "STATUS",
+   "actor": 204,
+   "target": 101,
+   "status": "瞳蛊"
+  },
+  {
+   "kind": "STATUS_END",
+   "target": 101,
+   "status": "3523_1"
+  },
+  {
+   "kind": "SKILL",
+   "actor": 201,
+   "target": 101,
+   "skill": "祸福相生"
+  },
+  {
+   "kind": "ORB",
+   "actor": 201,
+   "orbs": 5
+  },
+  {
+   "kind": "SKILL",
+   "actor": 205,
+   "target": 101,
+   "skill": "星罗云布"
+  },
+  {
+   "kind": "ORB",
+   "actor": 205,
+   "orbs": 3
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 101,
+   "amount": 930.8687969981838,
+   "hpAfter": 12301
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 102,
+   "amount": 1223.6518682243077,
+   "hpAfter": 15543
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 103,
+   "amount": 975.6675531452056,
+   "hpAfter": 19448
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 104,
+   "amount": 1062.1276756528168,
+   "hpAfter": 28300
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 105,
+   "amount": 1187.079600883313,
+   "hpAfter": 15233
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 101,
+   "amount": 946.6660954234139,
+   "hpAfter": 11355
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 102,
+   "amount": 1225.5538448048756,
+   "hpAfter": 14318
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 103,
+   "amount": 969.6853466788962,
+   "hpAfter": 18479
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 104,
+   "amount": 1055.6853555910893,
+   "hpAfter": 27244
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 105,
+   "amount": 1186.8018472516414,
+   "hpAfter": 14046
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 101,
+   "amount": 941.1282678423813,
+   "hpAfter": 10414
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 102,
+   "amount": 1238.0462317614129,
+   "hpAfter": 13080
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 103,
+   "amount": 972.4833379443589,
+   "hpAfter": 17506
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 104,
+   "amount": 1071.788844432991,
+   "hpAfter": 26172
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 105,
+   "amount": 1186.6377367224432,
+   "hpAfter": 12859
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 101,
+   "amount": 937.3228802506001,
+   "hpAfter": 9476
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 102,
+   "amount": 1245.56496212206,
+   "hpAfter": 11834
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 103,
+   "amount": 962.585787443204,
+   "hpAfter": 16544
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 104,
+   "amount": 1051.412020824937,
+   "hpAfter": 25121
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 105,
+   "amount": 1184.7898691175342,
+   "hpAfter": 11675
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 101,
+   "amount": 931.1958418036429,
+   "hpAfter": 8545
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 102,
+   "amount": 1228.9029530619282,
+   "hpAfter": 10605
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 103,
+   "amount": 973.6981637076533,
+   "hpAfter": 15570
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 104,
+   "amount": 1051.6820742692726,
+   "hpAfter": 24069
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 105,
+   "amount": 1174.6224742952581,
+   "hpAfter": 10500
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 101,
+   "amount": 934.3989006954171,
+   "hpAfter": 7611
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 102,
+   "amount": 1238.6684511664025,
+   "hpAfter": 9367
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 103,
+   "amount": 972.1173778813463,
+   "hpAfter": 14598
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 104,
+   "amount": 1052.1177501137172,
+   "hpAfter": 23017
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 105,
+   "amount": 1174.665952625015,
+   "hpAfter": 9325
+  },
+  {
+   "kind": "HEAL",
+   "actor": 205,
+   "target": 205,
+   "amount": 0
+  },
+  {
+   "kind": "TIMELINE",
+   "actor": 205,
+   "amount": 30
+  },
+  {
+   "kind": "STATUS",
+   "actor": 205,
+   "target": 205,
+   "status": "星辰之力"
+  },
+  {
+   "kind": "STATUS_END",
+   "target": 205,
+   "status": "3903_1"
+  },
+  {
+   "kind": "SKILL",
+   "actor": 103,
+   "target": 101,
+   "skill": "智火长明"
+  },
+  {
+   "kind": "STATUS",
+   "actor": 103,
+   "target": 101,
+   "status": "智识之火"
+  },
+  {
+   "kind": "STATUS_END",
+   "target": 101,
+   "status": "6011_1"
+  },
+  {
+   "kind": "SKILL",
+   "actor": 101,
+   "target": 203,
+   "skill": "尾袭"
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 101,
+   "target": 203,
+   "amount": 5505.606416365262,
+   "hpAfter": 3459
+  },
+  {
+   "kind": "SKILL",
+   "actor": 102,
+   "target": 201,
+   "skill": "阳炎"
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 102,
+   "target": 201,
+   "amount": 2822.716975439187,
+   "hpAfter": 16916
+  },
+  {
+   "kind": "SKILL",
+   "actor": 104,
+   "target": 201,
+   "skill": "毒气喷泉"
+  },
+  {
+   "kind": "ORB",
+   "actor": 104,
+   "orbs": 3
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 104,
+   "target": 201,
+   "amount": 2193.348865046559,
+   "hpAfter": 14723
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 104,
+   "target": 203,
+   "amount": 3273.709645705186,
+   "hpAfter": 186
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 104,
+   "target": 204,
+   "amount": 3569.204017096763,
+   "hpAfter": 10526
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 104,
+   "target": 205,
+   "amount": 3789.8357049514343,
+   "hpAfter": 11365
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 104,
+   "target": 201,
+   "amount": 634.9213326680219,
+   "hpAfter": 14088
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 104,
+   "target": 203,
+   "amount": 185.5427753543222,
+   "hpAfter": 0
+  },
+  {
+   "kind": "DEATH",
+   "target": 203
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 104,
+   "target": 204,
+   "amount": 1035.9048596543307,
+   "hpAfter": 9490
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 104,
+   "target": 205,
+   "amount": 1094.3504842050788,
+   "hpAfter": 10271
+  },
+  {
+   "kind": "STATUS",
+   "actor": 104,
+   "target": 201,
+   "status": "跳跳尸毒"
+  },
+  {
+   "kind": "STATUS",
+   "actor": 104,
+   "target": 204,
+   "status": "跳跳尸毒"
+  },
+  {
+   "kind": "STATUS",
+   "actor": 104,
+   "target": 205,
+   "status": "跳跳尸毒"
+  },
+  {
+   "kind": "STATUS",
+   "actor": 104,
+   "target": 201,
+   "status": "跳跳尸毒"
+  },
+  {
+   "kind": "STATUS",
+   "actor": 104,
+   "target": 204,
+   "status": "跳跳尸毒"
+  },
+  {
+   "kind": "STATUS",
+   "actor": 104,
+   "target": 205,
+   "status": "跳跳尸毒"
+  },
+  {
+   "kind": "STATUS",
+   "actor": 104,
+   "target": 201,
+   "status": "腐蚀毒素"
+  },
+  {
+   "kind": "STATUS",
+   "actor": 104,
+   "target": 204,
+   "status": "腐蚀毒素"
+  },
+  {
+   "kind": "STATUS",
+   "actor": 104,
+   "target": 205,
+   "status": "腐蚀毒素"
+  },
+  {
+   "kind": "SKILL",
+   "actor": 105,
+   "target": 101,
+   "skill": "灵鱼抱蕊"
+  },
+  {
+   "kind": "ORB",
+   "actor": 105,
+   "orbs": 0
+  },
+  {
+   "kind": "HEAL",
+   "actor": 105,
+   "target": 101,
+   "amount": 8210
+  },
+  {
+   "kind": "HEAL",
+   "actor": 105,
+   "target": 102,
+   "amount": 7400
+  },
+  {
+   "kind": "HEAL",
+   "actor": 105,
+   "target": 103,
+   "amount": 5826
+  },
+  {
+   "kind": "HEAL",
+   "actor": 105,
+   "target": 104,
+   "amount": 6345
+  },
+  {
+   "kind": "HEAL",
+   "actor": 105,
+   "target": 105,
+   "amount": 7095
+  },
+  {
+   "kind": "TIMELINE",
+   "actor": 105,
+   "amount": 10
+  },
+  {
+   "kind": "SKILL",
+   "actor": 201,
+   "target": 101,
+   "skill": "祸福相生"
+  },
+  {
+   "kind": "ORB",
+   "actor": 201,
+   "orbs": 5
+  },
+  {
+   "kind": "SKILL",
+   "actor": 204,
+   "target": 101,
+   "skill": "降蛊之瞳"
+  },
+  {
+   "kind": "ORB",
+   "actor": 204,
+   "orbs": 2
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 204,
+   "target": 101,
+   "amount": 685.525431862683,
+   "hpAfter": 15135
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 204,
+   "target": 101,
+   "amount": 686.147523959211,
+   "hpAfter": 14449
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 204,
+   "target": 101,
+   "amount": 675.5886590899772,
+   "hpAfter": 13773
+  },
+  {
+   "kind": "STATUS",
+   "actor": 204,
+   "target": 101,
+   "status": "瞳蛊"
+  },
+  {
+   "kind": "STATUS_END",
+   "target": 101,
+   "status": "3523_1"
+  },
+  {
+   "kind": "SKILL",
+   "actor": 205,
+   "target": 101,
+   "skill": "星罗云布"
+  },
+  {
+   "kind": "ORB",
+   "actor": 205,
+   "orbs": 5
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 101,
+   "amount": 948.7191468208784,
+   "hpAfter": 12825
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 102,
+   "amount": 1233.2626702329144,
+   "hpAfter": 15534
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 103,
+   "amount": 959.3071201074017,
+   "hpAfter": 19465
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 104,
+   "amount": 1051.059975614331,
+   "hpAfter": 28311
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 105,
+   "amount": 2833.4083430642095,
+   "hpAfter": 13587
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 101,
+   "amount": 949.0864289708861,
+   "hpAfter": 11876
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 102,
+   "amount": 1225.6929658891095,
+   "hpAfter": 14308
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 103,
+   "amount": 973.4661144378588,
+   "hpAfter": 18491
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 104,
+   "amount": 1067.9286295180718,
+   "hpAfter": 27243
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 105,
+   "amount": 1189.0938520946274,
+   "hpAfter": 12397
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 101,
+   "amount": 930.6960463957839,
+   "hpAfter": 10945
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 102,
+   "amount": 1232.0429543047194,
+   "hpAfter": 13076
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 103,
+   "amount": 965.4087523053568,
+   "hpAfter": 17526
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 104,
+   "amount": 1059.5968821917886,
+   "hpAfter": 26183
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 105,
+   "amount": 1173.1269529291494,
+   "hpAfter": 11224
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 101,
+   "amount": 943.6080902675203,
+   "hpAfter": 10001
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 102,
+   "amount": 1243.8343263124789,
+   "hpAfter": 11832
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 103,
+   "amount": 967.3811304955816,
+   "hpAfter": 16558
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 104,
+   "amount": 1055.0183108186538,
+   "hpAfter": 25128
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 105,
+   "amount": 2837.6195169885887,
+   "hpAfter": 8387
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 101,
+   "amount": 945.486523710526,
+   "hpAfter": 9056
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 102,
+   "amount": 1239.8297407989176,
+   "hpAfter": 10592
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 103,
+   "amount": 972.087437259077,
+   "hpAfter": 15586
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 104,
+   "amount": 1061.4508173186005,
+   "hpAfter": 24067
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 105,
+   "amount": 1170.683966919154,
+   "hpAfter": 7216
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 101,
+   "amount": 935.9504397422688,
+   "hpAfter": 8120
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 102,
+   "amount": 1238.2734722754358,
+   "hpAfter": 9354
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 103,
+   "amount": 961.7848780851582,
+   "hpAfter": 14625
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 104,
+   "amount": 1070.9279670875949,
+   "hpAfter": 22996
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 105,
+   "amount": 1191.294037069205,
+   "hpAfter": 6025
+  },
+  {
+   "kind": "HEAL",
+   "actor": 205,
+   "target": 205,
+   "amount": 1212
+  },
+  {
+   "kind": "TIMELINE",
+   "actor": 205,
+   "amount": 30
+  },
+  {
+   "kind": "STATUS",
+   "actor": 205,
+   "target": 205,
+   "status": "星辰之力"
+  },
+  {
+   "kind": "STATUS_END",
+   "target": 205,
+   "status": "3903_1"
+  },
+  {
+   "kind": "SKILL",
+   "actor": 101,
+   "target": 201,
+   "skill": "尾袭"
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 101,
+   "target": 201,
+   "amount": 3710.6076379273854,
+   "hpAfter": 10378
+  },
+  {
+   "kind": "SKILL",
+   "actor": 102,
+   "target": 201,
+   "skill": "阳炎"
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 102,
+   "target": 201,
+   "amount": 820.6355888110156,
+   "hpAfter": 9557
+  },
+  {
+   "kind": "SKILL",
+   "actor": 103,
+   "target": 101,
+   "skill": "智火长明"
+  },
+  {
+   "kind": "STATUS",
+   "actor": 103,
+   "target": 101,
+   "status": "智识之火"
+  },
+  {
+   "kind": "STATUS_END",
+   "target": 101,
+   "status": "6011_1"
+  },
+  {
+   "kind": "SKILL",
+   "actor": 201,
+   "target": 101,
+   "skill": "祸福相生"
+  },
+  {
+   "kind": "ORB",
+   "actor": 201,
+   "orbs": 7
+  },
+  {
+   "kind": "SKILL",
+   "actor": 105,
+   "target": 101,
+   "skill": "灵鱼抱蕊"
+  },
+  {
+   "kind": "ORB",
+   "actor": 105,
+   "orbs": 2
+  },
+  {
+   "kind": "HEAL",
+   "actor": 105,
+   "target": 101,
+   "amount": 8210
+  },
+  {
+   "kind": "HEAL",
+   "actor": 105,
+   "target": 102,
+   "amount": 7413
+  },
+  {
+   "kind": "HEAL",
+   "actor": 105,
+   "target": 103,
+   "amount": 5799
+  },
+  {
+   "kind": "HEAL",
+   "actor": 105,
+   "target": 104,
+   "amount": 6366
+  },
+  {
+   "kind": "HEAL",
+   "actor": 105,
+   "target": 105,
+   "amount": 8210
+  },
+  {
+   "kind": "TIMELINE",
+   "actor": 105,
+   "amount": 10
+  },
+  {
+   "kind": "SKILL",
+   "actor": 104,
+   "target": 201,
+   "skill": "毒气喷泉"
+  },
+  {
+   "kind": "ORB",
+   "actor": 104,
+   "orbs": 0
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 104,
+   "target": 201,
+   "amount": 2212.0077775014233,
+   "hpAfter": 7345
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 104,
+   "target": 204,
+   "amount": 3620.321501220091,
+   "hpAfter": 5870
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 104,
+   "target": 205,
+   "amount": 3829.7176129391046,
+   "hpAfter": 7653
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 104,
+   "target": 201,
+   "amount": 641.0479723109411,
+   "hpAfter": 6704
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 104,
+   "target": 204,
+   "amount": 1039.899461531635,
+   "hpAfter": 4830
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 104,
+   "target": 205,
+   "amount": 1093.6284988074613,
+   "hpAfter": 6560
+  },
+  {
+   "kind": "STATUS",
+   "actor": 104,
+   "target": 201,
+   "status": "跳跳尸毒"
+  },
+  {
+   "kind": "STATUS",
+   "actor": 104,
+   "target": 204,
+   "status": "跳跳尸毒"
+  },
+  {
+   "kind": "STATUS",
+   "actor": 104,
+   "target": 205,
+   "status": "跳跳尸毒"
+  },
+  {
+   "kind": "STATUS",
+   "actor": 104,
+   "target": 201,
+   "status": "跳跳尸毒"
+  },
+  {
+   "kind": "STATUS",
+   "actor": 104,
+   "target": 204,
+   "status": "跳跳尸毒"
+  },
+  {
+   "kind": "STATUS",
+   "actor": 104,
+   "target": 205,
+   "status": "跳跳尸毒"
+  },
+  {
+   "kind": "STATUS",
+   "actor": 104,
+   "target": 201,
+   "status": "腐蚀毒素"
+  },
+  {
+   "kind": "STATUS",
+   "actor": 104,
+   "target": 204,
+   "status": "腐蚀毒素"
+  },
+  {
+   "kind": "STATUS",
+   "actor": 104,
+   "target": 205,
+   "status": "腐蚀毒素"
+  },
+  {
+   "kind": "SKILL",
+   "actor": 204,
+   "target": 101,
+   "skill": "降蛊之瞳"
+  },
+  {
+   "kind": "ORB",
+   "actor": 204,
+   "orbs": 4
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 204,
+   "target": 101,
+   "amount": 1306.0482046550878,
+   "hpAfter": 15024
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 204,
+   "target": 101,
+   "amount": 684.9662560982524,
+   "hpAfter": 14339
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 204,
+   "target": 101,
+   "amount": 686.9326880970257,
+   "hpAfter": 13652
+  },
+  {
+   "kind": "STATUS",
+   "actor": 204,
+   "target": 101,
+   "status": "瞳蛊"
+  },
+  {
+   "kind": "STATUS_END",
+   "target": 101,
+   "status": "3523_1"
+  },
+  {
+   "kind": "SKILL",
+   "actor": 205,
+   "target": 101,
+   "skill": "星罗云布"
+  },
+  {
+   "kind": "ORB",
+   "actor": 205,
+   "orbs": 2
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 101,
+   "amount": 2281.3329354369125,
+   "hpAfter": 11371
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 102,
+   "amount": 1238.4486370004379,
+   "hpAfter": 15529
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 103,
+   "amount": 970.2430392466085,
+   "hpAfter": 19454
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 104,
+   "amount": 1068.4368953130215,
+   "hpAfter": 28294
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 105,
+   "amount": 1182.3516649889643,
+   "hpAfter": 13052
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 101,
+   "amount": 932.9140992769662,
+   "hpAfter": 10438
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 102,
+   "amount": 1234.0809979785136,
+   "hpAfter": 14294
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 103,
+   "amount": 960.8314558897873,
+   "hpAfter": 18493
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 104,
+   "amount": 1067.0651457726526,
+   "hpAfter": 27226
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 105,
+   "amount": 1169.4068804946128,
+   "hpAfter": 11883
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 101,
+   "amount": 940.496089366261,
+   "hpAfter": 9497
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 102,
+   "amount": 1231.6024903917569,
+   "hpAfter": 13063
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 103,
+   "amount": 964.3978317569017,
+   "hpAfter": 17529
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 104,
+   "amount": 1061.862080600542,
+   "hpAfter": 26165
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 105,
+   "amount": 2847.481011281212,
+   "hpAfter": 9036
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 101,
+   "amount": 937.7901544814558,
+   "hpAfter": 8559
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 102,
+   "amount": 1239.1707617707234,
+   "hpAfter": 11824
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 103,
+   "amount": 2312.953663468237,
+   "hpAfter": 15216
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 104,
+   "amount": 1067.1915802712356,
+   "hpAfter": 25097
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 105,
+   "amount": 1184.515958479682,
+   "hpAfter": 7851
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 101,
+   "amount": 942.8071119158358,
+   "hpAfter": 7617
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 102,
+   "amount": 1236.269003882806,
+   "hpAfter": 10587
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 103,
+   "amount": 973.9621874847326,
+   "hpAfter": 14242
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 104,
+   "amount": 1054.8063084414425,
+   "hpAfter": 24043
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 105,
+   "amount": 1176.7191611903527,
+   "hpAfter": 6674
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 101,
+   "amount": 943.3070675189902,
+   "hpAfter": 6673
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 102,
+   "amount": 1237.1075710369587,
+   "hpAfter": 9350
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 103,
+   "amount": 969.9806864168931,
+   "hpAfter": 13272
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 104,
+   "amount": 1051.5646145664214,
+   "hpAfter": 22991
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 105,
+   "amount": 1178.2312173710134,
+   "hpAfter": 5496
+  },
+  {
+   "kind": "HEAL",
+   "actor": 205,
+   "target": 205,
+   "amount": 1212
+  },
+  {
+   "kind": "TIMELINE",
+   "actor": 205,
+   "amount": 30
+  },
+  {
+   "kind": "STATUS",
+   "actor": 205,
+   "target": 205,
+   "status": "星辰之力"
+  },
+  {
+   "kind": "STATUS_END",
+   "target": 205,
+   "status": "3903_1"
+  },
+  {
+   "kind": "SKILL",
+   "actor": 102,
+   "target": 201,
+   "skill": "阳炎"
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 102,
+   "target": 201,
+   "amount": 822.1358252820755,
+   "hpAfter": 5882
+  },
+  {
+   "kind": "SKILL",
+   "actor": 101,
+   "target": 201,
+   "skill": "尾袭"
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 101,
+   "target": 201,
+   "amount": 3693.5236398229713,
+   "hpAfter": 2188
+  },
+  {
+   "kind": "SKILL",
+   "actor": 201,
+   "target": 101,
+   "skill": "祸福相生"
+  },
+  {
+   "kind": "ORB",
+   "actor": 201,
+   "orbs": 4
+  },
+  {
+   "kind": "SKILL",
+   "actor": 103,
+   "target": 101,
+   "skill": "智火长明"
+  },
+  {
+   "kind": "STATUS",
+   "actor": 103,
+   "target": 101,
+   "status": "智识之火"
+  },
+  {
+   "kind": "STATUS_END",
+   "target": 101,
+   "status": "6011_1"
+  },
+  {
+   "kind": "SKILL",
+   "actor": 205,
+   "target": 101,
+   "skill": "星罗云布"
+  },
+  {
+   "kind": "ORB",
+   "actor": 205,
+   "orbs": 6
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 101,
+   "amount": 933.1251756029342,
+   "hpAfter": 5740
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 102,
+   "amount": 1235.852396806311,
+   "hpAfter": 8114
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 103,
+   "amount": 977.9419322680678,
+   "hpAfter": 12294
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 104,
+   "amount": 1060.6900492561617,
+   "hpAfter": 21930
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 105,
+   "amount": 1171.2393200359502,
+   "hpAfter": 4325
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 101,
+   "amount": 947.4695500776088,
+   "hpAfter": 4793
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 102,
+   "amount": 1222.9628371915096,
+   "hpAfter": 6892
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 103,
+   "amount": 971.1971473095819,
+   "hpAfter": 11322
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 104,
+   "amount": 1057.0520004803584,
+   "hpAfter": 20873
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 105,
+   "amount": 1172.357024402897,
+   "hpAfter": 3152
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 101,
+   "amount": 935.4859512324742,
+   "hpAfter": 3857
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 102,
+   "amount": 1234.5514289627436,
+   "hpAfter": 5657
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 103,
+   "amount": 976.6529433986452,
+   "hpAfter": 10346
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 104,
+   "amount": 1058.4811551896528,
+   "hpAfter": 19815
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 105,
+   "amount": 1191.365267799919,
+   "hpAfter": 1961
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 101,
+   "amount": 940.8706834951913,
+   "hpAfter": 2916
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 102,
+   "amount": 1233.3111301514282,
+   "hpAfter": 4424
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 103,
+   "amount": 967.1870912588311,
+   "hpAfter": 9379
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 104,
+   "amount": 1051.5357407201736,
+   "hpAfter": 18763
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 105,
+   "amount": 1172.9555060428813,
+   "hpAfter": 788
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 101,
+   "amount": 944.0878726642502,
+   "hpAfter": 1972
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 102,
+   "amount": 1242.387263357342,
+   "hpAfter": 3181
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 103,
+   "amount": 976.4878380025602,
+   "hpAfter": 8402
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 104,
+   "amount": 1063.845847745968,
+   "hpAfter": 17699
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 105,
+   "amount": 788.1503188475815,
+   "hpAfter": 0
+  },
+  {
+   "kind": "DEATH",
+   "target": 105
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 101,
+   "amount": 931.797376516535,
+   "hpAfter": 1040
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 102,
+   "amount": 1235.919546713496,
+   "hpAfter": 1945
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 103,
+   "amount": 971.4460402734248,
+   "hpAfter": 7431
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 205,
+   "target": 104,
+   "amount": 1050.9926079841898,
+   "hpAfter": 16648
+  },
+  {
+   "kind": "HEAL",
+   "actor": 205,
+   "target": 205,
+   "amount": 1212
+  },
+  {
+   "kind": "TIMELINE",
+   "actor": 205,
+   "amount": 30
+  },
+  {
+   "kind": "STATUS",
+   "actor": 205,
+   "target": 205,
+   "status": "星辰之力"
+  },
+  {
+   "kind": "STATUS_END",
+   "target": 205,
+   "status": "3903_1"
+  },
+  {
+   "kind": "SKILL",
+   "actor": 102,
+   "target": 101,
+   "skill": "滋养"
+  },
+  {
+   "kind": "ORB",
+   "actor": 102,
+   "orbs": 3
+  },
+  {
+   "kind": "HEAL",
+   "actor": 102,
+   "target": 101,
+   "amount": 16565
+  },
+  {
+   "kind": "HEAL",
+   "actor": 102,
+   "target": 102,
+   "amount": 14822
+  },
+  {
+   "kind": "HEAL",
+   "actor": 102,
+   "target": 103,
+   "amount": 12993
+  },
+  {
+   "kind": "HEAL",
+   "actor": 102,
+   "target": 104,
+   "amount": 12714
+  },
+  {
+   "kind": "SKILL",
+   "actor": 204,
+   "target": 101,
+   "skill": "降蛊之瞳"
+  },
+  {
+   "kind": "ORB",
+   "actor": 204,
+   "orbs": 3
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 204,
+   "target": 101,
+   "amount": 1297.6012719606624,
+   "hpAfter": 16307
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 204,
+   "target": 101,
+   "amount": 687.8233982583806,
+   "hpAfter": 15620
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 204,
+   "target": 101,
+   "amount": 678.4935606496292,
+   "hpAfter": 14941
+  },
+  {
+   "kind": "STATUS",
+   "actor": 204,
+   "target": 101,
+   "status": "瞳蛊"
+  },
+  {
+   "kind": "STATUS_END",
+   "target": 101,
+   "status": "99_1"
+  },
+  {
+   "kind": "STATUS_END",
+   "target": 101,
+   "status": "3523_1"
+  },
+  {
+   "kind": "SKILL",
+   "actor": 101,
+   "target": 205,
+   "skill": "红颜怒发"
+  },
+  {
+   "kind": "ORB",
+   "actor": 101,
+   "orbs": 0
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 101,
+   "target": 205,
+   "amount": 5618.634218784024,
+   "hpAfter": 3366
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 101,
+   "target": 205,
+   "amount": 3366.033480312897,
+   "hpAfter": 0
+  },
+  {
+   "kind": "DEATH",
+   "target": 205
+  },
+  {
+   "kind": "SKILL",
+   "actor": 104,
+   "target": 201,
+   "skill": "直拳"
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 104,
+   "target": 201,
+   "amount": 2188.180222204826,
+   "hpAfter": 0
+  },
+  {
+   "kind": "DEATH",
+   "target": 201
+  },
+  {
+   "kind": "STATUS_END",
+   "target": 201,
+   "status": "2253_1"
+  },
+  {
+   "kind": "STATUS_END",
+   "target": 201,
+   "status": "2255_1"
+  },
+  {
+   "kind": "STATUS_END",
+   "target": 204,
+   "status": "2253_1"
+  },
+  {
+   "kind": "STATUS_END",
+   "target": 204,
+   "status": "2255_1"
+  },
+  {
+   "kind": "STATUS_END",
+   "target": 205,
+   "status": "2253_1"
+  },
+  {
+   "kind": "STATUS_END",
+   "target": 205,
+   "status": "2255_1"
+  },
+  {
+   "kind": "SKILL",
+   "actor": 103,
+   "target": 101,
+   "skill": "智火长明"
+  },
+  {
+   "kind": "STATUS",
+   "actor": 103,
+   "target": 101,
+   "status": "智识之火"
+  },
+  {
+   "kind": "STATUS_END",
+   "target": 101,
+   "status": "6011_1"
+  },
+  {
+   "kind": "SKILL",
+   "actor": 102,
+   "target": 204,
+   "skill": "阳炎"
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 102,
+   "target": 204,
+   "amount": 4530.480345980701,
+   "hpAfter": 299
+  },
+  {
+   "kind": "SKILL",
+   "actor": 101,
+   "target": 204,
+   "skill": "红颜怒发"
+  },
+  {
+   "kind": "ORB",
+   "actor": 101,
+   "orbs": 2
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": 101,
+   "target": 204,
+   "amount": 299.1898145164796,
+   "hpAfter": 0
+  },
+  {
+   "kind": "DEATH",
+   "target": 204
+  }
+ ]
+}

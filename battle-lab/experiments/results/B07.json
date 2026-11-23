@@ -1,0 +1,36 @@
+{
+ "experiment": "B07",
+ "group": "B",
+ "question": "伤害被护盾完全吸收时，是否仍触发『造成伤害时』类御魂？",
+ "inGameObservation": "给目标叠满盾再打，看针女/破势类是否触发",
+ "hypotheses": [
+  {
+   "id": "NO_TRIGGER_WHEN_ABSORBED",
+   "note": "不触发（规格书原文）",
+   "observable": {
+    "absorbed": 49.904124717460945,
+    "applied": 0,
+    "soulTriggered": true,
+    "rule": false
+   }
+  },
+  {
+   "id": "STILL_TRIGGER",
+   "note": "仍触发",
+   "observable": {
+    "absorbed": 49.904124717460945,
+    "applied": 0,
+    "soulTriggered": true,
+    "rule": true
+   }
+  }
+ ],
+ "discriminating": true,
+ "distinctObservables": 2,
+ "kind": "HYPOTHESIS_TEST",
+ "confidence": "NOT_RUN",
+ "status": "AWAITING_IN_GAME_OBSERVATION",
+ "chosenHypothesis": null,
+ "gameVersion": "2026.10 (Data 快照)",
+ "recordedAt": "2026-10-01T16:12:41.267Z"
+}

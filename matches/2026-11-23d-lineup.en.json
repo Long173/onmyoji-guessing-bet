@@ -1,0 +1,156 @@
+{
+  "_meta": {
+    "title": "Duel betting 2026-11-23 #4 (Global screenshot) — result: BLUE won",
+    "result": "blue",
+    "notes": [
+      "Stats = final values on the Lineup screen.",
+      "soul = 4-piece soul from the Soul effects icon (matched + verified visually).",
+      "Maki&Karashi = 蜜桃&芥子 (310)."
+    ]
+  },
+  "red": [
+    {
+      "name": "Maestro",
+      "soul": "Tree Nymph",
+      "stats": {
+        "atk": 3831,
+        "hp": 21022,
+        "def": 752,
+        "spd": 180,
+        "cri": 70,
+        "crid": 199,
+        "efh": 84,
+        "efr": 56
+      }
+    },
+    {
+      "name": "Shishio",
+      "soul": "Fortune Cat",
+      "stats": {
+        "atk": 6339,
+        "hp": 24383,
+        "def": 960,
+        "spd": 174,
+        "cri": 65,
+        "crid": 150,
+        "efh": 0,
+        "efr": 96
+      }
+    },
+    {
+      "name": "Kannazuki",
+      "soul": "Azure Basan",
+      "stats": {
+        "atk": 2496,
+        "hp": 22902,
+        "def": 558,
+        "spd": 170,
+        "cri": 58,
+        "crid": 185,
+        "efh": 15,
+        "efr": 0
+      }
+    },
+    {
+      "name": "蜜桃&芥子",
+      "shikigamiId": 310,
+      "soul": "Tree Spirit",
+      "stats": {
+        "atk": 2797,
+        "hp": 26269,
+        "def": 1031,
+        "spd": 134,
+        "cri": 55,
+        "crid": 171,
+        "efh": 0,
+        "efr": 56
+      }
+    },
+    {
+      "name": "Yoto Hime, Scarlet Nightedge",
+      "soul": "Soultaker",
+      "stats": {
+        "atk": 6208,
+        "hp": 15297,
+        "def": 741,
+        "spd": 116,
+        "cri": 52,
+        "crid": 185,
+        "efh": 0,
+        "efr": 40
+      }
+    }
+  ],
+  "blue": [
+    {
+      "name": "Mushishi",
+      "soul": "Jizo Statue",
+      "stats": {
+        "atk": 3014,
+        "hp": 32882,
+        "def": 818,
+        "spd": 199,
+        "cri": 88,
+        "crid": 164,
+        "efh": 0,
+        "efr": 56
+      }
+    },
+    {
+      "name": "Inugami",
+      "soul": "Seductress",
+      "stats": {
+        "atk": 4748,
+        "hp": 14870,
+        "def": 657,
+        "spd": 199,
+        "cri": 90,
+        "crid": 227,
+        "efh": 0,
+        "efr": 0
+      }
+    },
+    {
+      "name": "Vengeful Hannya",
+      "soul": "Yamabiko",
+      "stats": {
+        "atk": 3725,
+        "hp": 14961,
+        "def": 515,
+        "spd": 133,
+        "cri": 10,
+        "crid": 262,
+        "efh": 0,
+        "efr": 127
+      }
+    },
+    {
+      "name": "Yato no Kami",
+      "soul": "Harpy",
+      "stats": {
+        "atk": 6149,
+        "hp": 19182,
+        "def": 529,
+        "spd": 119,
+        "cri": 9,
+        "crid": 150,
+        "efh": 0,
+        "efr": 0
+      }
+    },
+    {
+      "name": "Luminary Oitsuki",
+      "soul": "Holy Flame",
+      "stats": {
+        "atk": 2710,
+        "hp": 16858,
+        "def": 563,
+        "spd": 111,
+        "cri": 30,
+        "crid": 220,
+        "efh": 0,
+        "efr": 0
+      }
+    }
+  ]
+}

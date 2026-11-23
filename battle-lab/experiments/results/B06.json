@@ -1,0 +1,32 @@
+{
+ "experiment": "B06",
+ "group": "B",
+ "question": "协战 是否触发对方的反击？",
+ "inGameObservation": "A 普攻触发队友协战，观察被协战打的敌人是否反击协战者",
+ "hypotheses": [
+  {
+   "id": "CO_ATTACK_TRIGGERS_COUNTER",
+   "note": "会触发",
+   "observable": {
+    "specNote": "规格书原文：A 在自己的伪回合对 B 造成伤害，B 无法反击，但 A 的队友 C 协战，B 可以对 C 反击",
+    "hypothesis": "会触发"
+   }
+  },
+  {
+   "id": "CO_ATTACK_NO_COUNTER",
+   "note": "不会",
+   "observable": {
+    "specNote": "规格书原文：A 在自己的伪回合对 B 造成伤害，B 无法反击，但 A 的队友 C 协战，B 可以对 C 反击",
+    "hypothesis": "不会"
+   }
+  }
+ ],
+ "discriminating": true,
+ "distinctObservables": 2,
+ "kind": "HYPOTHESIS_TEST",
+ "confidence": "NOT_RUN",
+ "status": "AWAITING_IN_GAME_OBSERVATION",
+ "chosenHypothesis": null,
+ "gameVersion": "2026.10 (Data 快照)",
+ "recordedAt": "2026-10-01T16:12:41.265Z"
+}

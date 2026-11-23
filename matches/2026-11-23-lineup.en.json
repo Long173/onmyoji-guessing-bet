@@ -1,0 +1,21 @@
+{
+  "_meta": {
+    "title": "Duel betting 2026-11-23 (Global screenshot) — real result: RED won",
+    "result": "red",
+    "notes": ["Stats = final values on the Lineup screen (souls included).", "soul = 4-piece soul from the Soul effects icon."]
+  },
+  "blue": [
+    { "name": "Shiro Mujou",  "soul": "Temptress",  "stats": { "atk": 4458, "hp": 17434, "def": 773, "spd": 176, "cri": 73, "crid": 150, "efh": 84, "efr": 56 } },
+    { "name": "Vampira",      "soul": "Fenikkusu",  "stats": { "atk": 5108, "hp": 15725, "def": 737, "spd": 169, "cri": 85, "crid": 311, "efh": 0, "efr": 48 } },
+    { "name": "Suzuka Gozen", "soul": "Seductress", "stats": { "atk": 4736, "hp": 15930, "def": 515, "spd": 152, "cri": 65, "crid": 262, "efh": 0, "efr": 64 } },
+    { "name": "Sakura",       "soul": "Senecio",    "stats": { "atk": 4016, "hp": 24799, "def": 640, "spd": 147, "cri": 78, "crid": 150, "efh": 0, "efr": 63 } },
+    { "name": "Senhime",      "soul": "Harpy",      "stats": { "atk": 3876, "hp": 14585, "def": 514, "spd": 121, "cri": 8,  "crid": 255, "efh": 0, "efr": 8 } }
+  ],
+  "red": [
+    { "name": "Virtuoso Hana",        "soul": "Mirror Lady", "stats": { "atk": 3311, "hp": 25927, "def": 628, "spd": 172, "cri": 90, "crid": 185, "efh": 0, "efr": 0 } },
+    { "name": "Kaguya",               "soul": "Tree Nymph",  "stats": { "atk": 3937, "hp": 21352, "def": 915, "spd": 144, "cri": 30, "crid": 220, "efh": 0, "efr": 48 } },
+    { "name": "Inferno Ibaraki Doji", "soul": "Shadow",      "stats": { "atk": 5604, "hp": 14870, "def": 696, "spd": 142, "cri": 80, "crid": 311, "efh": 0, "efr": 48 } },
+    { "name": "Loongjue",             "soul": "Harpy",       "stats": { "atk": 4840, "hp": 17861, "def": 545, "spd": 142, "cri": 55, "crid": 209, "efh": 0, "efr": 40 } },
+    { "name": "Shokurei",             "soul": "Merrow",      "stats": { "atk": 6240, "hp": 16294, "def": 612, "spd": 131, "cri": 18, "crid": 178, "efh": 0, "efr": 31 } }
+  ]
+}

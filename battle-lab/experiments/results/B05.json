@@ -1,0 +1,38 @@
+{
+ "experiment": "B05",
+ "group": "B",
+ "question": "新回合 与 伪回合 的优先顺序",
+ "inGameObservation": "同一时点既获得额外回合又触发伪回合，看谁先动（规格书称：伪回合 > 额外回合）",
+ "hypotheses": [
+  {
+   "id": "PSEUDO_BEFORE_NEW",
+   "note": "伪回合先（规格书）",
+   "observable": {
+    "queued": [
+     "PSEUDO",
+     "NEW"
+    ],
+    "source": "规格书 附1/正文"
+   }
+  },
+  {
+   "id": "NEW_BEFORE_PSEUDO",
+   "note": "额外回合先",
+   "observable": {
+    "queued": [
+     "NEW",
+     "PSEUDO"
+    ],
+    "source": "规格书 附1/正文"
+   }
+  }
+ ],
+ "discriminating": true,
+ "distinctObservables": 2,
+ "kind": "HYPOTHESIS_TEST",
+ "confidence": "NOT_RUN",
+ "status": "AWAITING_IN_GAME_OBSERVATION",
+ "chosenHypothesis": null,
+ "gameVersion": "2026.10 (Data 快照)",
+ "recordedAt": "2026-10-01T16:12:41.265Z"
+}

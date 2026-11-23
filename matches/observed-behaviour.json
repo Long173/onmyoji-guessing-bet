@@ -1,0 +1,23 @@
+{
+  "_meta": {
+    "purpose": "In-game behaviour confirmed by the user (Global version, duel betting / 对弈竞猜). Takes precedence over the wiki AI table (data/kb/ai.json, ~2019) when they disagree.",
+    "updated": "2026-11-23"
+  },
+  "battle": {
+    "replayDeterministic": "Watching a round's replay twice shows the identical battle: each round has one fixed outcome.",
+    "aiTargeting": "Single-target choice usually looks random (community sources: lowest HP% below a per-shikigami threshold, otherwise random).",
+    "speedTies": "unknown",
+    "antiStall": "not observed yet"
+  },
+  "shikigami": {
+    "282 Kingyo 金鱼姬": "Casts skill 3 (金鱼·助阵) when onibi is enough AND the summon slot is free (no Goldfish).",
+    "370 Mishige 饭笥": "Usually skill 2. Skill 3 unlocks at 6 储备粮 stacks: highest-HP enemy 100%, then 8 random hits of 33%, consumes 4 stacks. At 10 stacks a free strong form auto-casts (180% highest-HP, 40% of it as TRUE damage split among others, 9 random hits of 33%, cleanses control first using 5 stacks, consumes all stacks).",
+    "339 Blazing Tamamonomae 烬天玉藻前": "Skill 3 random hits can hit the same enemy several times.",
+    "562 Senhime Resurgent 鲸汐千姬": "Illusion opens at battle start (L5 先机), so skill 3 costs 1 onibi on her turns; casts skill 3 whenever possible; never casts skill 2. 海凝: max 9 stacks, each stores up to 5000% of her initial ATK; 极昼鲸 (max 2) applies 158% ATK 海凝 to the 3 lowest-HP enemies and detonates 海凝 as indirect damage.",
+    "344 Ungaikyo 云外镜": "Never casts skill 2 (斗转). Only skill 3 or normal attack, in both Yin and Yang forms.",
+    "593 Yoto Hime, Scarlet Nightedge 妖刀姬·绯夜猎刃": "Casts skill 3 whenever onibi is enough. (Global name = UR 593 per fandom name_gl; earlier keyed as 328 赤影妖刀姬 = Global \"Crimson Yoto\".) User observation across many betting rounds: her side wins rarely (~1 in 10) and her damage does not look high. Bid records 11.19–11.23: her side won 3 of 10. Match #4 replay video: per-hit damage matches the sim (~1.0x); she counters (Scarlet Prelude) after ordinary damage about once per turn (~12 counters, ~60k, also under Hannya's barrier); 4 Midnight Hunts (1 free after a kill); she survived until Yato no Kami's wedge true damage. Her side's losses came from opposing mechanics the sim lacked (Yato wedges, Oitsuki 照君 stacks), not from her damage being overrated.",
+    "306 Mushishi 虫师": "Casts skill 3 only when an ally has low HP (wiki: ally below 70%); otherwise normal attack.",
+    "372 Inaba Kaguya Hime 因幡辉夜姬": "AI loop: skill 3 → skill 2 → skill 3 → skill 2 … (skill 2 also opens at battle start via Upper Hand). If she was controlled, her next action is always skill 2. This matches the KB rule (illusion left ≤ 1 → 愿满夜, otherwise 寂光映月), because a controlled turn still ticks the illusion down.",
+    "220 Inugami 犬神": "Casts skill 3 whenever onibi is enough (NOT the wiki's 50/50). At battle start marks 2 (sometimes 3) allies; damage to a marked ally triggers Inugami's counter on the attacker."
+  }
+}

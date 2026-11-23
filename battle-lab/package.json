@@ -1,0 +1,13 @@
+{
+  "name": "battle-lab",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "version": "0.1.0-experimental",
+  "scripts": {
+    "m0": "node tests/m0.ts",
+    "exp": "node experiments/run-all.ts"
+  }
+}

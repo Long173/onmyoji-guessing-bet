@@ -1,0 +1,34 @@
+{
+ "experiment": "A10",
+ "group": "A",
+ "question": "开局被动的封印判定发生在何时？",
+ "inGameObservation": "若一方开局被封印/压制，其开局被动是否仍生效",
+ "hypotheses": [
+  {
+   "id": "SUPPRESS_BEFORE_PASSIVE",
+   "note": "封印先，被动不生效",
+   "observable": {
+    "passiveFired": [],
+    "suppressed": true
+   }
+  },
+  {
+   "id": "PASSIVE_BEFORE_SUPPRESS",
+   "note": "被动先，仍生效",
+   "observable": {
+    "passiveFired": [
+     "R1_PASSIVE"
+    ],
+    "suppressed": false
+   }
+  }
+ ],
+ "discriminating": true,
+ "distinctObservables": 2,
+ "kind": "HYPOTHESIS_TEST",
+ "confidence": "NOT_RUN",
+ "status": "AWAITING_IN_GAME_OBSERVATION",
+ "chosenHypothesis": null,
+ "gameVersion": "2026.10 (Data 快照)",
+ "recordedAt": "2026-10-01T16:12:41.258Z"
+}

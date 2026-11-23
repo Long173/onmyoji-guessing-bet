@@ -1,0 +1,56 @@
+{
+ "experiment": "C04",
+ "group": "C",
+ "question": "致死 + 外部复活",
+ "inGameObservation": "在游戏里构造对应场景并录屏；本实验室给出各候选假设下应看到的不同现象",
+ "hypotheses": [
+  {
+   "id": "HP_ZERO_IS_KILLED",
+   "note": "HP<=0 即 KILLED",
+   "observable": {
+    "marks": [
+     "KILLED"
+    ],
+    "hp": 0,
+    "hpZero": true,
+    "dead": true,
+    "killed": true,
+    "alive": false,
+    "trace": [
+     "ORB_INIT",
+     "DAMAGE",
+     "LETHAL",
+     "DEATH"
+    ],
+    "resurrectable": true
+   }
+  },
+  {
+   "id": "DEATH_AFTER_PREVENTION",
+   "note": "先拦截再 KILLED",
+   "observable": {
+    "marks": [],
+    "hp": 0,
+    "hpZero": true,
+    "dead": true,
+    "killed": true,
+    "alive": false,
+    "trace": [
+     "ORB_INIT",
+     "DAMAGE",
+     "LETHAL",
+     "DEATH"
+    ],
+    "resurrectable": true
+   }
+  }
+ ],
+ "discriminating": true,
+ "distinctObservables": 2,
+ "kind": "HYPOTHESIS_TEST",
+ "confidence": "NOT_RUN",
+ "status": "AWAITING_IN_GAME_OBSERVATION",
+ "chosenHypothesis": null,
+ "gameVersion": "2026.10 (Data 快照)",
+ "recordedAt": "2026-10-01T16:12:41.273Z"
+}

@@ -1,0 +1,42 @@
+{
+ "experiment": "A05",
+ "group": "A",
+ "question": "同速单位的开局顺序如何决定？",
+ "inGameObservation": "双方各放一个完全同速的单位，反复开 20 局看第一次行动方是否固定",
+ "hypotheses": [
+  {
+   "id": "SPEED_THEN_RANDOM",
+   "note": "同速随机",
+   "observable": {
+    "firstActors": [
+     0,
+     100
+    ],
+    "distribution": {
+     "0": 8,
+     "100": 12
+    }
+   }
+  },
+  {
+   "id": "UNRESOLVED",
+   "note": "未定（可能按站位）",
+   "observable": {
+    "firstActors": [
+     0
+    ],
+    "distribution": {
+     "0": 20
+    }
+   }
+  }
+ ],
+ "discriminating": true,
+ "distinctObservables": 2,
+ "kind": "HYPOTHESIS_TEST",
+ "confidence": "NOT_RUN",
+ "status": "AWAITING_IN_GAME_OBSERVATION",
+ "chosenHypothesis": null,
+ "gameVersion": "2026.10 (Data 快照)",
+ "recordedAt": "2026-10-01T16:12:41.252Z"
+}

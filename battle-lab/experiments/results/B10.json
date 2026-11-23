@@ -1,0 +1,44 @@
+{
+ "experiment": "B10",
+ "group": "B",
+ "question": "封印 vs 压制：御魂失效 与 被动失效 是否独立",
+ "inGameObservation": "官方[105][106][107] 明确区分，用实验室确认实现未合并",
+ "hypotheses": [
+  {
+   "id": "SEPARATE",
+   "note": "独立（官方）",
+   "observable": {
+    "statuses": [
+     {
+      "id": "disarm",
+      "suppressSoul": true,
+      "suppressPassive": false
+     },
+     {
+      "id": "morph",
+      "suppressSoul": false,
+      "suppressPassive": true
+     },
+     {
+      "id": "silence",
+      "suppressSoul": false,
+      "suppressPassive": false
+     }
+    ],
+    "official": {
+     "封印": "御魂失效",
+     "压制": "被动失效",
+     "变形": "两者皆失效"
+    }
+   }
+  }
+ ],
+ "discriminating": false,
+ "distinctObservables": 1,
+ "kind": "CONFORMANCE",
+ "confidence": "NOT_RUN",
+ "status": "AWAITING_IN_GAME_OBSERVATION",
+ "chosenHypothesis": null,
+ "gameVersion": "2026.10 (Data 快照)",
+ "recordedAt": "2026-10-01T16:12:41.269Z"
+}

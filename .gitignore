@@ -1,0 +1,64 @@
+# Dependencies & build
+node_modules/
+dist/
+.vite/
+coverage/
+*.tsbuildinfo
+
+# Secrets & env
+.env
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+.idea/
+.vscode/
+*.log
+
+# Archives & local dumps
+*.zip
+submit.zip
+
+# Third-party clones / scrape mirrors (not for public git)
+_oas/
+_nga/
+reference/
+omj_engine_probe/
+
+# Raw wiki / crawl artifacts
+data/raw/
+data/raw_*/
+data/*.raw.*
+data/raw_*.html
+data/raw_*.json
+data/_*.json
+data/huiji_*.json
+data/duiyi_baike_snapshot.raw.json
+data/huijiwiki_SkillAI.raw.json
+
+# Sweep / probe / scratch (local only)
+.sweep*.txt
+_checkers.txt
+_onmyoji_xlsx.txt
+_tally.json
+_xlsx_onmyoji.py
+a1.md
+a1-*.md
+关键.md
+tools/_*
+
+# Engine / web probe leftovers
+battle-lab/tools/_*
+battle-lab/tests/_parsegate-*/
+battle-lab/tmp-*/
+battle-lab/fixtures/*-tmp-*.json
+apps/web/tools/_*
+apps/web/node_modules/
+
+# Python cache if any
+__pycache__/
+*.pyc

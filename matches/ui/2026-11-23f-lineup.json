@@ -1,0 +1,179 @@
+{
+ "schemaVersion": 1,
+ "id": "2026-11-23f-lineup",
+ "red": {
+  "units": [
+   {
+    "unitId": "r1",
+    "shikigamiId": 596,
+    "name": "Kannazuki",
+    "stats": {
+     "attack": 2496,
+     "hp": 22902,
+     "defense": 558,
+     "speed": 170,
+     "critRate": 33,
+     "critDamage": 220,
+     "effectHit": 15,
+     "effectResist": 0
+    },
+    "soulId": 14
+   },
+   {
+    "unitId": "r2",
+    "shikigamiId": 277,
+    "name": "Kuro",
+    "stats": {
+     "attack": 5484,
+     "hp": 14443,
+     "defense": 703,
+     "speed": 145,
+     "critRate": 84,
+     "critDamage": 269,
+     "effectHit": 0,
+     "effectResist": 56
+    },
+    "soulId": 27
+   },
+   {
+    "unitId": "r3",
+    "shikigamiId": 344,
+    "name": "Ungaikyo",
+    "stats": {
+     "attack": 4241,
+     "hp": 11618,
+     "defense": 707,
+     "speed": 133,
+     "critRate": 100,
+     "critDamage": 290,
+     "effectHit": 0,
+     "effectResist": 48
+    },
+    "soulId": 22
+   },
+   {
+    "unitId": "r4",
+    "shikigamiId": 321,
+    "name": "Okuribito",
+    "stats": {
+     "attack": 5241,
+     "hp": 12797,
+     "defense": 729,
+     "speed": 128,
+     "critRate": 80,
+     "critDamage": 206,
+     "effectHit": 0,
+     "effectResist": 112
+    },
+    "soulId": 16
+   },
+   {
+    "unitId": "r5",
+    "shikigamiId": 310,
+    "name": "Peach Maki & Karashi",
+    "stats": {
+     "attack": 2797,
+     "hp": 25648,
+     "defense": 1098,
+     "speed": 128,
+     "critRate": 45,
+     "critDamage": 192,
+     "effectHit": 0,
+     "effectResist": 48
+    },
+    "soulId": 17
+   }
+  ]
+ },
+ "blue": {
+  "units": [
+   {
+    "unitId": "b1",
+    "shikigamiId": 575,
+    "name": "Fengyang",
+    "stats": {
+     "attack": 4527,
+     "hp": 14500,
+     "defense": 551,
+     "speed": 188,
+     "critRate": 65,
+     "critDamage": 164,
+     "effectHit": 60,
+     "effectResist": 40
+    },
+    "soulId": 11
+   },
+   {
+    "unitId": "b2",
+    "shikigamiId": 376,
+    "name": "Suzuhikohime",
+    "stats": {
+     "attack": 4831,
+     "hp": 12229,
+     "defense": 677,
+     "speed": 144,
+     "critRate": 75,
+     "critDamage": 164,
+     "effectHit": 0,
+     "effectResist": 40
+    },
+    "soulId": 10
+   },
+   {
+    "unitId": "b3",
+    "shikigamiId": 355,
+    "name": "Monumental Otakemaru",
+    "stats": {
+     "attack": 4740,
+     "hp": 13446,
+     "defense": 545,
+     "speed": 133,
+     "critRate": 45,
+     "critDamage": 171,
+     "effectHit": 0,
+     "effectResist": 0
+    },
+    "soulId": 31
+   },
+   {
+    "unitId": "b4",
+    "shikigamiId": 241,
+    "name": "Chocho",
+    "stats": {
+     "attack": 3217,
+     "hp": 23187,
+     "defense": 1035,
+     "speed": 133,
+     "critRate": 60,
+     "critDamage": 192,
+     "effectHit": 0,
+     "effectResist": 48
+    },
+    "soulId": 4
+   },
+   {
+    "unitId": "b5",
+    "shikigamiId": 372,
+    "name": "Inaba Kaguya Hime",
+    "stats": {
+     "attack": 3612,
+     "hp": 13446,
+     "defense": 556,
+     "speed": 113,
+     "critRate": 38,
+     "critDamage": 207,
+     "effectHit": 0,
+     "effectResist": 15
+    },
+    "soulId": 24
+   }
+  ]
+ },
+ "ruleset": "GUESSING",
+ "source": {
+  "type": "JSON",
+  "note": "Duel betting 2026-11-23 #6 (Global screenshot) — result: unknown"
+ },
+ "createdAt": "2026-11-23T12:15:16.668Z",
+ "updatedAt": "2026-11-23T12:15:16.668Z"
+}

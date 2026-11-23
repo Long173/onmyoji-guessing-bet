@@ -1,0 +1,36 @@
+{
+ "note": "字段级接线普查：allowed = 按设计就不需要被生产代码读取；knownGaps = 未完成待办（机制该读它但还没接线）。两者绝不混用。",
+ "allowed": {
+  "tipRefs": "SkillIR 里的 [tips_N] 编号只对 UI 展示有意义（指向灰机 wiki 的 tooltip），引擎不需要读。",
+  "probabilities": "未经归因的扁平概率列表，保留作审计/对照用；引擎读的是 effectProbs（经 probOf）。",
+  "sentences": "技能文本的分句结果，供 UI 展示与报告，不参与结算。",
+  "recognized": "解析报告字段，供 capability/报告使用。",
+  "unparsed": "解析报告字段，供 fidelity 报告统计未解析句子。",
+  "name": "通用字段，各契约里都有；Entity/SkillIR 的 name 只用于展示与 note 文本。",
+  "desc": "文本描述，供 UI 与报告。",
+  "seedLabel": "对局 seed 的标签字符串，只写进 Replay 头用于人工对照。",
+  "charId": "编译期归属信息，运行时通过 Entity.shikigamiId 取得，SkillIR.charId 仅供报告。",
+  "charName": "同上，仅供报告。",
+  "durations": "未经归因的扁平「持续N回合」列表，保留作审计/对照用；引擎读的是 statusDurations（经 durationOf）。",
+  "BATTLE_CREATE": "事件码保留自 a1-4 的规格清单，但开局用的是更细的 STARTUP / BATTLE_START（见 kernel/battle.ts）。不派发是命名收敛，不是缺口。",
+  "PRE_BATTLE": "同上：赛前阶段没有独立事件，开局收敛为 STARTUP 树。",
+  "TIMELINE_ADVANCE": "行动条推进会改变位置，但不逐次派发事件（Theater 用 TIMELINE_SHIFT 展示可见的拉条/推条）。",
+  "ACTION_START": "动作边界由 TURN / SKILL_CAST / ACTION_PREVENTED 表达，没有再单独派发 ACTION_START。",
+  "SKILL_START": "同上，技能起点由 SKILL_CAST 表达。",
+  "_removed_SHIELD_CREATE": "★★★ 第 122 轮：护盾创建已按规格名派发 —— Entity.addShield → eventSink → Battle.queueEvent（compile/character.ts 与 soul/effect-system.ts 两处生产点都覆盖）。旧记录写的是「走 SHIELD_APPLY，名字漂移」，那个名字在生产代码里并不存在。g76 直接驱动实测 1 次。",
+  "_removed_SHIELD_DAMAGE": "★★★ 第 122 轮：吸收量已按规格名派发 —— kernel/damage.ts 在 mutateHp 之后读返回值（唯一知道真相的地方）。g76 实测：10 点小盾被 100 点伤害打穿 ⇒ SHIELD_DAMAGE 1 次。",
+  "_removed_SHIELD_BREAK": "★★★ 第 122 轮：破碎已按规格名派发 —— mutateHp 现在返回 shieldBroken 计数。旧记录写的是「写在 notes 里」，机制在跑但没有事件。",
+  "_removed_TRANSFORM": "★★★ 第 122 轮：形态切换已派发 —— kernel/summon.ts 的 enterForm（to=FORM）与 returnForm（to=BASE）两处。★ 口径边界：全库带 forms 的技能 8 条，但默认 AI 不一定会选中它们（神堕八岐大蛇会选「审判仪式」）—— g76 用**直接驱动该技能**证明派发点通，另记自然路径未观测到。",
+  "_removed_ORB_COST": "★★★ 第 120 轮：已按规格名派发 —— compile/character.ts 的技能付费处（走 Battle.queueEvent 事件队列）。旧记录写的是「走 ORB_PAY，没有用这个名字」，那是名字漂移；现在两个名字都留着，事件码是 ORB_COST。g76 实测 47 次/2 局。",
+  "_removed_ORB_OVERFLOW": "★★★ 第 120 轮：已按规格名派发 —— character.ts 的 og.overflow > 0 分支。g76 用座敷童子（50% 获得鬼火）定向场景实测 5 次/3 局。"
+ },
+ "knownGaps": {
+  "levelScale": "技能等级成长表（sk.upgrades）。竞猜口径假定满级，所以未读取；若日后支持非满级对局必须接线。未完成（口径依赖）。",
+  "occupiesSummonSlot": "召唤物占位标记。Team.summons 容器、状态序列化、恢复、行动条位置、存活判定都已就绪（tests/g12 各有断言），但没有任何生产代码会**生成**召唤物。★ 第 86 轮查清：原因**不是「召唤类技能未接线」，而是 KB 里没有召唤物数据** —— 282 条全是式神，文案点名的单位（番茄/诅咒草人/棺材/白色小鬼/鬼面/雷云/飓风）一条都不在 KB 里，连它们的技能名都不存在。要实现召唤就得**编**属性与技能，那是本项目拒绝做的事。⇒ **数据边界，不是待办**（与 G6/G7 的「需要游戏内观测」同类）。边界已机械化：tests/g12 第 [4] 节断言「全库 116 处『召唤X』里能在 KB 找到同名单位的 0 个」+「典型对局召唤物容器为空」；这两条一旦变红，说明数据进来了，那时该去建运行时。",
+  "persistsAcrossRound": "跨回目存续标记。回目（多波战斗）在竞猜口径下不出现，无读取方。未完成（口径依赖）。",
+  "HIT": "命中判定事件不存在：引擎没有「先判定命中、再结算」这一级 —— 效果命中/抵抗（efh/efr）两个属性同样无人消费。未完成。 ★ 判据说明：该成员因与 a1-4 §31 的 ResolutionScope 名 \"HIT\" 字符串同名，普查会把它算成「有读取方」，所以它必须留在这份待办名单里 —— 这是唯一一例已知的字符串同名污染（见 tools/field-census.ts 头部）。",
+  "BEFORE_HIT": "同上：没有命中前置阶段。未完成。",
+  "_removed_RESIST": "★★★ 第 97 轮：RESIST 已**接线**（compile/character.ts 的红区 H 判定 + EV.RESIST 派发），于是它离开了「从未被读」名单，也必须离开 knownGaps —— 待办清单不许留着已完成项（与 VICTORY_CHECK / IMMUNE 同一条规矩）。★ 但**公式仍未定**：官方词条表里没有这条公式，三种口径（NONE / 单掷比值 / 社区两掷）都实现且都声明在 kernel/policies.ts 的 ResistPolicies 里，**默认 NONE**（保持现状）。换句话说：这一条的「待办」从「要不要接线」变成了「公式待观测」—— 后者记在能力表与报告里，不再是一张字段待办。",
+  "_removed_IMMUNE": "★ 第 94 轮：IMMUNE 已**真接线**（compile/character.ts 的状态闸门 + kernel/damage.ts 的伤害免疫），于是它离开了「从未被读」名单，也必须离开 knownGaps —— 待办清单不许留着已完成项（与 VICTORY_CHECK 同一条规矩）。这条注释保留是为了让下一个人知道它曾经在这里、以及为什么被移走。"
+ }
+}

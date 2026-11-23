@@ -1,0 +1,181 @@
+{
+ "_source": "NGA tid=16541728《阴阳师式神AI全解》2019-03-02（https://bbs.nga.cn/read.php?tid=16541728）",
+ "_caveat": "该资料为 2019 年社区实测，2026 年是否仍成立未经验证；且官方从未公开 AI 规格。",
+ "_retrievedAt": "2026-10-01T13:56:23.590Z",
+ "profiles": [
+  {
+   "id": 10,
+   "name": "晴明",
+   "grade": "阴阳师",
+   "system": "CLASSIC_GUARDIAN",
+   "confidence": "MEDIUM",
+   "castPriority": [
+    {
+     "cond": "所有队友均无星buff时",
+     "skill": "言灵·星"
+    },
+    {
+     "cond": "",
+     "skill": "言灵·一式"
+    },
+    {
+     "cond": "存在敌方目标低于10%生命",
+     "skill": "基础术式"
+    },
+    {
+     "cond": "",
+     "skill": "言灵·守"
+    },
+    {
+     "cond": "所有队友均无生buff时",
+     "skill": "符咒·生"
+    },
+    {
+     "cond": "所有敌方均无灭debuff时",
+     "skill": "符咒·灭"
+    },
+    {
+     "cond": "",
+     "skill": "言灵·缚"
+    },
+    {
+     "cond": "否则",
+     "skill": "基础术式"
+    }
+   ],
+   "target": [
+    {
+     "skill": "基础术式",
+     "rule": "敌方有生命比例<20%的单位时，优先选择其中生命比例最低者"
+    }
+   ],
+   "note": "极端情况下晴明可能优先使用[基础术式]而不是[言灵·一式]"
+  },
+  {
+   "id": 11,
+   "name": "神乐",
+   "grade": "阴阳师",
+   "system": "CLASSIC_GUARDIAN",
+   "confidence": "MEDIUM",
+   "castPriority": [
+    {
+     "cond": "存在队友生命低于50%时",
+     "skill": "召唤·伞"
+    },
+    {
+     "cond": "存在队友生命低于30%时",
+     "skill": "召唤·续命"
+    },
+    {
+     "cond": "",
+     "skill": "通灵·冥蝶"
+    },
+    {
+     "cond": "",
+     "skill": "召唤·炼狱"
+    },
+    {
+     "cond": "",
+     "skill": "通灵·疾风"
+    },
+    {
+     "cond": "50%概率 / 50%概率",
+     "skill": "召唤·鱼 | 伞击"
+    }
+   ],
+   "target": [
+    {
+     "skill": "伞击",
+     "rule": "敌方有生命比例<20%的单位时，优先选择其中生命比例最低者"
+    }
+   ]
+  },
+  {
+   "id": 12,
+   "name": "八百比丘尼",
+   "grade": "阴阳师",
+   "system": "CLASSIC_GUARDIAN",
+   "confidence": "MEDIUM",
+   "castPriority": [
+    {
+     "cond": "随机",
+     "skill": "随机使用除[星之光]外的任意技能"
+    }
+   ],
+   "target": [
+    {
+     "skill": "占卜之印·治疗",
+     "rule": "友方有生命比例<30%的单位时，优先选择其中生命比例最低者"
+    },
+    {
+     "skill": "占卜之印·反伤",
+     "rule": "友方有生命比例<50%的单位时，优先选择其中生命比例最低者"
+    },
+    {
+     "skill": "占卜之印·复活",
+     "rule": "友方有生命比例<50%的单位时，优先选择其中生命比例最低者"
+    }
+   ],
+   "note": "全部阴阳师中唯一纯随机型"
+  },
+  {
+   "id": 13,
+   "name": "源博雅",
+   "grade": "阴阳师",
+   "system": "CLASSIC_GUARDIAN",
+   "confidence": "MEDIUM",
+   "castPriority": [
+    {
+     "cond": "",
+     "skill": "秘术·豹眼"
+    },
+    {
+     "cond": "",
+     "skill": "秘术·影分身"
+    },
+    {
+     "cond": "",
+     "skill": "诛邪箭"
+    },
+    {
+     "cond": "敌方目标≥2时",
+     "skill": "多重箭"
+    },
+    {
+     "cond": "否则",
+     "skill": "破魔矢"
+    }
+   ],
+   "target": [
+    {
+     "skill": "破魔矢",
+     "rule": "敌方有生命比例<20%的单位时，优先选择其中生命比例最低者"
+    },
+    {
+     "skill": "诛邪箭",
+     "rule": "敌方有生命比例<30%的单位时，优先选择其中生命比例最低者"
+    }
+   ]
+  },
+  {
+   "id": 15,
+   "name": "源赖光",
+   "grade": "英杰",
+   "system": "CLAN_HERO",
+   "confidence": "LOW",
+   "castPriority": [],
+   "target": [],
+   "note": "灰机 SkillAI 未收录；NGA 全解（2019）早于其上线的 2024-09-04，无任何 AI 资料"
+  },
+  {
+   "id": 16,
+   "name": "藤原道长",
+   "grade": "英杰",
+   "system": "CLAN_HERO",
+   "confidence": "LOW",
+   "castPriority": [],
+   "target": [],
+   "note": "灰机 SkillAI 未收录；无任何 AI 资料"
+  }
+ ]
+}

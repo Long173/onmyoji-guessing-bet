@@ -1,0 +1,30 @@
+{
+ "experiment": "A06",
+ "group": "A",
+ "question": "开局拉条/推条是否在第一次行动前生效？",
+ "inGameObservation": "带『开局提升行动条』的效果，看第一回合是否由该单位抢到",
+ "hypotheses": [
+  {
+   "id": "APPLIED_BEFORE_FIRST_TURN",
+   "note": "先生效",
+   "observable": {
+    "firstActor": 0
+   }
+  },
+  {
+   "id": "IGNORED_AT_START",
+   "note": "开局忽略",
+   "observable": {
+    "firstActor": 100
+   }
+  }
+ ],
+ "discriminating": true,
+ "distinctObservables": 2,
+ "kind": "HYPOTHESIS_TEST",
+ "confidence": "NOT_RUN",
+ "status": "AWAITING_IN_GAME_OBSERVATION",
+ "chosenHypothesis": null,
+ "gameVersion": "2026.10 (Data 快照)",
+ "recordedAt": "2026-10-01T16:12:41.254Z"
+}

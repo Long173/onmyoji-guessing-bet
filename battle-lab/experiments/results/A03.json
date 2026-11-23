@@ -1,0 +1,36 @@
+{
+ "experiment": "A03",
+ "group": "A",
+ "question": "御魂开局效果 与 被动开局效果 谁先？",
+ "inGameObservation": "同一式神同时带开局御魂与开局被动，看属性快照以谁为准",
+ "hypotheses": [
+  {
+   "id": "SOUL_BEFORE_PASSIVE",
+   "note": "御魂先",
+   "observable": {
+    "order": [
+     "SOUL",
+     "PASSIVE"
+    ]
+   }
+  },
+  {
+   "id": "PASSIVE_FIRST",
+   "note": "被动先",
+   "observable": {
+    "order": [
+     "PASSIVE",
+     "SOUL"
+    ]
+   }
+  }
+ ],
+ "discriminating": true,
+ "distinctObservables": 2,
+ "kind": "HYPOTHESIS_TEST",
+ "confidence": "NOT_RUN",
+ "status": "AWAITING_IN_GAME_OBSERVATION",
+ "chosenHypothesis": null,
+ "gameVersion": "2026.10 (Data 快照)",
+ "recordedAt": "2026-10-01T16:12:41.249Z"
+}

@@ -1,0 +1,439 @@
+{
+ "cov": {
+  "total": 48,
+  "full": 21,
+  "partial": 16,
+  "none": 11,
+  "kernelCoverage": 60.4,
+  "hardCoverage": 43.8,
+  "unsupported": [
+   "GUARD",
+   "SWITCH",
+   "ORB_SAVE",
+   "SHIELD_PIERCE",
+   "REFLECT",
+   "DODGE",
+   "ISOLATE",
+   "STEALTH",
+   "PROTECTION",
+   "LINK",
+   "RESTORE"
+  ]
+ },
+ "rows": [
+  {
+   "tag": "伤害",
+   "key": "DAMAGE",
+   "support": "FULL",
+   "evidence": "OFFICIAL",
+   "note": "5 种伤害类型 + 300/(300+def)，官方[5][12][18][28]",
+   "producer": "dealDamage",
+   "freq": 521
+  },
+  {
+   "tag": "增伤",
+   "key": "DMG_UP",
+   "support": "PARTIAL",
+   "evidence": "DATA",
+   "note": "effects 折叠已支持，叠层规则未实测",
+   "producer": "dealtBuff",
+   "freq": 123
+  },
+  {
+   "tag": "控制",
+   "key": "CONTROL",
+   "support": "FULL",
+   "evidence": "OFFICIAL",
+   "note": "官方[3] 16 种 + 能力矩阵",
+   "producer": "preventsAction",
+   "freq": 68
+  },
+  {
+   "tag": "减伤",
+   "key": "DMG_DOWN",
+   "support": "PARTIAL",
+   "evidence": "DATA",
+   "note": "第 44 轮起由 dmgTakenD 的**负值**表达（减伤 = 挨得更少）；叠层与上限未实测",
+   "producer": "dmgTakenD",
+   "freq": 63
+  },
+  {
+   "tag": "增益",
+   "key": "BUFF",
+   "support": "FULL",
+   "evidence": "OFFICIAL",
+   "note": "官方[25] 5 分类",
+   "producer": "addStatus",
+   "freq": 58
+  },
+  {
+   "tag": "拉条",
+   "key": "PULL",
+   "support": "FULL",
+   "evidence": "SPEC",
+   "note": "timeline.shift 正向",
+   "producer": "\"pull\"",
+   "freq": 54
+  },
+  {
+   "tag": "减益",
+   "key": "DEBUFF",
+   "support": "FULL",
+   "evidence": "OFFICIAL",
+   "note": "官方[25]",
+   "producer": "startsWith\\(\"DEBUFF\"",
+   "freq": 42
+  },
+  {
+   "tag": "治疗",
+   "key": "HEAL",
+   "support": "FULL",
+   "evidence": "OFFICIAL",
+   "note": "可暴击、受减疗影响",
+   "producer": "healTarget",
+   "freq": 39
+  },
+  {
+   "tag": "护盾",
+   "key": "SHIELD",
+   "support": "FULL",
+   "evidence": "OFFICIAL",
+   "note": "官方[6]，含不可驱散与破盾。第 57 轮起施加只有 Entity.addShield 一个入口（此前两处各自 push 数组）",
+   "producer": "addShield\\(",
+   "freq": 39
+  },
+  {
+   "tag": "鬼火",
+   "key": "ORB",
+   "support": "PARTIAL",
+   "evidence": "OFFICIAL",
+   "note": "泛鬼火三形态已建模，数值来自未验证 Policy",
+   "producer": "orbs\\.pay",
+   "freq": 24
+  },
+  {
+   "tag": "加速",
+   "key": "SPEED_UP",
+   "support": "FULL",
+   "evidence": "SPEC",
+   "note": "与拉条严格分离：改的是 spd 属性（影响行动条斜率），不是位置",
+   "producer": "get speed\\(\\)",
+   "freq": 23
+  },
+  {
+   "tag": "削弱",
+   "key": "WEAKEN",
+   "support": "PARTIAL",
+   "evidence": "DATA",
+   "note": "靠印记的 effects 折叠表达（降低攻击/伤害），但没有独立的「削弱」语义与叠层规则；第 28 轮审计补上原本为空的说明",
+   "freq": 22
+  },
+  {
+   "tag": "恢复",
+   "key": "RECOVER",
+   "support": "FULL",
+   "evidence": "OFFICIAL",
+   "note": "官方[20] 独立管线",
+   "producer": "HpMutation\\.RECOVER",
+   "freq": 21
+  },
+  {
+   "tag": "破防",
+   "key": "DEF_BREAK",
+   "support": "PARTIAL",
+   "evidence": "DATA",
+   "note": "需拆固定/百分比无视防御",
+   "producer": "defIgnore",
+   "freq": 21
+  },
+  {
+   "tag": "驱散",
+   "key": "DISPEL",
+   "support": "FULL",
+   "evidence": "OFFICIAL",
+   "note": "官方[8]；与解除已分离（第 27 轮才真正接线，此前 dispel() 零调用）",
+   "producer": "\\.dispel\\(",
+   "freq": 21
+  },
+  {
+   "tag": "召唤",
+   "key": "SUMMON",
+   "support": "PARTIAL",
+   "evidence": "OFFICIAL",
+   "note": "官方[3253]：容器/序列化/恢复/寻敌/行动条都已就绪，但没有任何生产代码会**生成**召唤物 —— 继承比例与持续时间多写在 tips 里，属红区，拒绝猜测",
+   "producer": "summons",
+   "freq": 19
+  },
+  {
+   "tag": "免控",
+   "key": "CONTROL_IMMUNE",
+   "support": "FULL",
+   "evidence": "DATA",
+   "note": "第 94 轮接线：状态自带的免疫控制（15 条 buff）在唯一的状态施加点挡下控制并派发 EV.IMMUNE。★ 未建模：只免某一种控制的写法（「免疫沉睡效果」）、无状态承载的窗口式免疫、以及**效果抵抗**掷骰（RESIST 事件仍无派发点）",
+   "producer": "findImmuneStatus",
+   "freq": 16
+  },
+  {
+   "tag": "推条",
+   "key": "PUSH",
+   "support": "FULL",
+   "evidence": "SPEC",
+   "note": "timeline.shift 负向",
+   "producer": "\"push\"",
+   "freq": 15
+  },
+  {
+   "tag": "解控",
+   "key": "CLEANSE",
+   "support": "FULL",
+   "evidence": "OFFICIAL",
+   "note": "官方[1] 解除（与驱散是两套标记：dispellable / removable）",
+   "producer": "removable",
+   "freq": 14
+  },
+  {
+   "tag": "反击",
+   "key": "COUNTER",
+   "support": "PARTIAL",
+   "evidence": "SPEC",
+   "note": "第 95 轮：入口有生产者了（Battle.counterAttack：伪回合 + 强制普攻 + 反击不连锁 + 被控不反击），被动侧按**逐句**路由装处理器；★ 仍不可达的原因：全库没有一条技能同时满足「触发句映射到目标侧族」与「IR 有 counter」，主动技能里的反击与「限N次」也未做",
+   "producer": "counterAttack",
+   "freq": 14
+  },
+  {
+   "tag": "减速",
+   "key": "SPEED_DOWN",
+   "support": "FULL",
+   "evidence": "SPEC",
+   "note": "同加速；印记文案「速度」由 buff-compiler 映射到 spd",
+   "producer": "get speed\\(\\)",
+   "freq": 11
+  },
+  {
+   "tag": "守护",
+   "key": "GUARD",
+   "support": "NONE",
+   "evidence": "SPEC",
+   "note": "挡刀/代替承受未实现",
+   "freq": 10
+  },
+  {
+   "tag": "复活",
+   "key": "REVIVE",
+   "support": "PARTIAL",
+   "evidence": "OFFICIAL",
+   "note": "官方[3252][3342]：Battle.revive() 与复活封锁已实现，但**没有任何生产者调用它**（技能文本里的「复活」不会触发）—— 第 28 轮审计发现，原标 FULL 属过度声称",
+   "freq": 10
+  },
+  {
+   "tag": "吸血",
+   "key": "LIFESTEAL",
+   "support": "FULL",
+   "evidence": "DATA",
+   "note": "第 93 轮接线：SkillIR.lifesteal 只认「百分号紧贴吸血」，伤害落账后由 applyLifesteal 回流（基数/通道见 policies.lifesteal 红区 F）；形态/结界分支里的吸血仍不收",
+   "producer": "applyLifesteal",
+   "freq": 9
+  },
+  {
+   "tag": "减疗",
+   "key": "HEAL_DOWN",
+   "support": "FULL",
+   "evidence": "OFFICIAL",
+   "note": "官方[20] 恢复不受其影响",
+   "producer": "healDown",
+   "freq": 9
+  },
+  {
+   "tag": "封印",
+   "key": "SEAL",
+   "support": "FULL",
+   "evidence": "OFFICIAL",
+   "note": "官方[105]。第 96 轮接线：状态上的 suppressPassive / suppressSoul（3 条被动失效 + 5 条御魂失效）由 Battle 注入的 suppressProvider 求值，被动与御魂处理器在 collect 阶段被挡下；内置控制状态「变形」也带 survivePassive ⇒ 它现在真的压住被动。★ 仍未建模：封印结界、放逐、以及「封印」作为独立机制的其它形态",
+   "producer": "suppressProvider",
+   "freq": 9
+  },
+  {
+   "tag": "切换",
+   "key": "SWITCH",
+   "support": "NONE",
+   "evidence": "DATA",
+   "note": "形态切换未实现",
+   "freq": 9
+  },
+  {
+   "tag": "回合",
+   "key": "TURN_MECH",
+   "support": "FULL",
+   "evidence": "SPEC",
+   "note": "NORMAL/NEW_TURN/PSEUDO_TURN/ACTION_ONLY（第 23 轮已对齐规格命名）",
+   "producer": "runPseudoTurn",
+   "freq": 8
+  },
+  {
+   "tag": "协战",
+   "key": "CO_ATTACK",
+   "support": "PARTIAL",
+   "evidence": "OFFICIAL",
+   "note": "官方[9]：同反击 —— 入口在、无生产者、时序未实测",
+   "freq": 8
+  },
+  {
+   "tag": "易伤",
+   "key": "VULNERABLE",
+   "support": "PARTIAL",
+   "evidence": "DATA",
+   "note": "与 dmgTakenD 同一处折叠",
+   "producer": "dmgTakenD",
+   "freq": 8
+  },
+  {
+   "tag": "免疫",
+   "key": "IMMUNITY",
+   "support": "PARTIAL",
+   "evidence": "OFFICIAL",
+   "note": "官方[16]。第 94 轮：状态自带的**伤害免疫 / 减益免疫 / 放逐免疫**已接线（伤害免疫在伤害管线里把这一击归零，且不触发「造成伤害时」）；★ 仍未建模：无敌（INVINCIBLE 的 setTargetable 没有生产者）、技能文案里的窗口式免疫",
+   "freq": 7
+  },
+  {
+   "tag": "不屈",
+   "key": "UNDYING",
+   "support": "PARTIAL",
+   "evidence": "OFFICIAL",
+   "note": "官方[3342]：字段已在状态里，触发规则未实测",
+   "producer": "undeathUsed",
+   "freq": 7
+  },
+  {
+   "tag": "扣火",
+   "key": "ORB_REMOVE",
+   "support": "FULL",
+   "evidence": "DATA",
+   "note": "OrbPool.pay（守恒等式见 tests/g20）",
+   "producer": "orbs\\.pay",
+   "freq": 6
+  },
+  {
+   "tag": "邀战",
+   "key": "INVITE_ATTACK",
+   "support": "PARTIAL",
+   "evidence": "OFFICIAL",
+   "note": "官方[10]：内核里没有任何代码，等同 NONE（原标 PARTIAL 偏乐观）",
+   "freq": 5
+  },
+  {
+   "tag": "省火",
+   "key": "ORB_SAVE",
+   "support": "NONE",
+   "evidence": "DATA",
+   "note": "减耗/替代资源未实现",
+   "freq": 5
+  },
+  {
+   "tag": "无敌",
+   "key": "INVINCIBLE",
+   "support": "PARTIAL",
+   "evidence": "OFFICIAL",
+   "note": "官方[16]：canBeTargeted 已被寻敌读取，但**没有任何状态会自动调用 setTargetable**（只有 tests/g14 直接调）",
+   "freq": 5
+  },
+  {
+   "tag": "穿盾",
+   "key": "SHIELD_PIERCE",
+   "support": "NONE",
+   "evidence": "DATA",
+   "note": "未实现",
+   "freq": 4
+  },
+  {
+   "tag": "锁条",
+   "key": "TIMELINE_LOCK",
+   "support": "FULL",
+   "evidence": "OFFICIAL",
+   "note": "官方[117][109][2277]（第 25 轮才真正接线：此前 setLock 无生产者）",
+   "producer": "locksTimeline",
+   "freq": 4
+  },
+  {
+   "tag": "反伤",
+   "key": "REFLECT",
+   "support": "NONE",
+   "evidence": "SPEC",
+   "note": "内核里没有反伤：受到伤害后不会向伤害来源回写伤害（第 28 轮补）",
+   "freq": 3
+  },
+  {
+   "tag": "闪避",
+   "key": "DODGE",
+   "support": "NONE",
+   "evidence": "OFFICIAL",
+   "note": "官方[24] 已定义，未实现",
+   "freq": 3
+  },
+  {
+   "tag": "孤立",
+   "key": "ISOLATE",
+   "support": "NONE",
+   "evidence": "OFFICIAL",
+   "note": "官方[19] 已定义，未实现",
+   "freq": 1
+  },
+  {
+   "tag": "连击",
+   "key": "MULTI_HIT",
+   "support": "PARTIAL",
+   "evidence": "SPEC",
+   "note": "多段结算已支持，连击判定未实现",
+   "producer": "hits",
+   "freq": 1
+  },
+  {
+   "tag": "隐匿",
+   "key": "STEALTH",
+   "support": "NONE",
+   "evidence": "DATA",
+   "note": "没有隐匿状态；虽然 canBeTargeted 已被寻敌读取，但没有任何状态会自动设置它（与无敌同因，第 28 轮补）",
+   "freq": 1
+  },
+  {
+   "tag": "庇护",
+   "key": "PROTECTION",
+   "support": "NONE",
+   "evidence": "OFFICIAL",
+   "note": "官方[14] 已定义，未实现",
+   "freq": 1
+  },
+  {
+   "tag": "免推",
+   "key": "PUSH_IMMUNE",
+   "support": "FULL",
+   "evidence": "OFFICIAL",
+   "note": "官方[117]：与锁条共用同一判定",
+   "producer": "locksTimeline",
+   "freq": 1
+  },
+  {
+   "tag": "联结",
+   "key": "LINK",
+   "support": "NONE",
+   "evidence": "DATA",
+   "note": "伤害分摊/传递未实现",
+   "freq": 1
+  },
+  {
+   "tag": "弱化",
+   "key": "ENFEEBLE",
+   "support": "PARTIAL",
+   "evidence": "DATA",
+   "note": "同削弱：只有印记属性折叠，没有独立语义；原说明为空，第 28 轮补",
+   "freq": 1
+  },
+  {
+   "tag": "还原",
+   "key": "RESTORE",
+   "support": "NONE",
+   "evidence": "DATA",
+   "note": "属性还原未实现",
+   "freq": 1
+  }
+ ]
+}

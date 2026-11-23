@@ -1,0 +1,50 @@
+{
+ "experiment": "B09",
+ "group": "B",
+ "question": "多个 pending action 同时排队时的执行顺序",
+ "inGameObservation": "同一回合末同时触发多个『立即再行动』，看执行次序",
+ "hypotheses": [
+  {
+   "id": "FIFO",
+   "note": "先入先出",
+   "observable": {
+    "queue": [
+     "E1",
+     "E2",
+     "E3"
+    ],
+    "executed": [
+     "E1",
+     "E2",
+     "E3"
+    ],
+    "source": "规格书：均为额外/伪回合时，后触发的先行动"
+   }
+  },
+  {
+   "id": "LIFO",
+   "note": "后入先出（规格书：后触发的先行动）",
+   "observable": {
+    "queue": [
+     "E1",
+     "E2",
+     "E3"
+    ],
+    "executed": [
+     "E3",
+     "E2",
+     "E1"
+    ],
+    "source": "规格书：均为额外/伪回合时，后触发的先行动"
+   }
+  }
+ ],
+ "discriminating": true,
+ "distinctObservables": 2,
+ "kind": "HYPOTHESIS_TEST",
+ "confidence": "NOT_RUN",
+ "status": "AWAITING_IN_GAME_OBSERVATION",
+ "chosenHypothesis": null,
+ "gameVersion": "2026.10 (Data 快照)",
+ "recordedAt": "2026-10-01T16:12:41.268Z"
+}

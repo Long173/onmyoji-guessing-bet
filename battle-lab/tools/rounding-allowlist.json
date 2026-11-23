@@ -1,0 +1,5 @@
+{
+ "kernel/state.ts :: timeline: state.timeline.entries.map(e => ({ id: e.id, pos: Math.round(e.pos * 1e6) / 1e6, locked: e.locked })),": "**指纹量化，不是游戏数值**：coreState 把行动条位置量化到 1e-6 再入指纹，为的是让浮点尾差不会让同一个状态算出两个指纹。它**必须不跟随游戏口径**（否则把展示档从 ROUND 改成 FLOOR 会让所有历史指纹一起漂），所以刻意不走 GameMath。改动这一行会让全部指纹常量失效 —— 那正是它该被单独看着的理由。",
+ "kernel/steal.ts :: const i = Math.min(opts.length - 1, Math.floor((battle.rng?.next?.() ?? 0) * opts.length));": "**整数抽样，不是数值取整**：从 rng 流里取 [0, opts.length) 的一个下标（与 kernel/rng.ts 那条白名单同一类 —— 只是这段代码住在 steal.ts）。换成 GameMath 会把它误标成「游戏取整点」，而它其实是**随机数域**的操作；真正的取整点清单里不该有它。",
+ "compile/passive-runtime.ts :: const amount = Math.floor(e.maxHp * Number(dr.healRatio) / 100);": "**治疗量算式的取整节点，方向原文没写**：原文「直至下回合醒来并治疗生命上限6%的生命」——6% 是比例，而 HP 必须是整数 ⇒ 这一步必然有一次取整，但**取整方向（round/floor）原文一个字都没写**。这里用 floor 并如实记账，而不是假装它是「游戏明确存在的取整节点」（kernel/gamemath.ts 的 RoundingPoint 默认 ROUND、候选 FLOOR，两个都还没实测）。要改成 GameMath 口径，先回答「游戏在这个节点怎么取整」——那需要游戏内观测（目标 ⑧）。"
+}

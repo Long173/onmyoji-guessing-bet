@@ -1,0 +1,153 @@
+{
+  "_meta": {
+    "title": "Duel betting 2026-11-23 #6 (Global screenshot) — result: BLUE won",
+    "result": "blue",
+    "notes": [
+      "Parsed from Lineup screenshots by apps/web/tools/parse-lineup.ts."
+    ]
+  },
+  "red": [
+    {
+      "name": "Kannazuki",
+      "soul": "Azure Basan",
+      "stats": {
+        "atk": 2496,
+        "hp": 22902,
+        "def": 558,
+        "spd": 170,
+        "cri": 33,
+        "crid": 220,
+        "efh": 15,
+        "efr": 0
+      }
+    },
+    {
+      "name": "Kuro",
+      "soul": "Seductress",
+      "stats": {
+        "atk": 5484,
+        "hp": 14443,
+        "def": 703,
+        "spd": 145,
+        "cri": 84,
+        "crid": 269,
+        "efh": 0,
+        "efr": 56
+      }
+    },
+    {
+      "name": "Ungaikyo",
+      "soul": "Tomb Guard",
+      "stats": {
+        "atk": 4241,
+        "hp": 11618,
+        "def": 707,
+        "spd": 133,
+        "cri": 100,
+        "crid": 290,
+        "efh": 0,
+        "efr": 48
+      }
+    },
+    {
+      "name": "Okuribito",
+      "soul": "Watcher",
+      "stats": {
+        "atk": 5241,
+        "hp": 12797,
+        "def": 729,
+        "spd": 128,
+        "cri": 80,
+        "crid": 206,
+        "efh": 0,
+        "efr": 112
+      }
+    },
+    {
+      "name": "Peach Maki & Karashi",
+      "soul": "Tree Spirit",
+      "stats": {
+        "atk": 2797,
+        "hp": 25648,
+        "def": 1098,
+        "spd": 128,
+        "cri": 45,
+        "crid": 192,
+        "efh": 0,
+        "efr": 48
+      }
+    }
+  ],
+  "blue": [
+    {
+      "name": "Fengyang",
+      "soul": "Mirror Lady",
+      "stats": {
+        "atk": 4527,
+        "hp": 14500,
+        "def": 551,
+        "spd": 188,
+        "cri": 65,
+        "crid": 164,
+        "efh": 60,
+        "efr": 40
+      }
+    },
+    {
+      "name": "Suzuhikohime",
+      "soul": "Dawn Fairy",
+      "stats": {
+        "atk": 4831,
+        "hp": 12229,
+        "def": 677,
+        "spd": 144,
+        "cri": 75,
+        "crid": 164,
+        "efh": 0,
+        "efr": 40
+      }
+    },
+    {
+      "name": "Monumental Otakemaru",
+      "soul": "Kyoukotsu",
+      "stats": {
+        "atk": 4740,
+        "hp": 13446,
+        "def": 545,
+        "spd": 133,
+        "cri": 45,
+        "crid": 171,
+        "efh": 0,
+        "efr": 0
+      }
+    },
+    {
+      "name": "Chocho",
+      "soul": "Samisen",
+      "stats": {
+        "atk": 3217,
+        "hp": 23187,
+        "def": 1035,
+        "spd": 133,
+        "cri": 60,
+        "crid": 192,
+        "efh": 0,
+        "efr": 48
+      }
+    },
+    {
+      "name": "Inaba Kaguya Hime",
+      "soul": "Dice Sprite",
+      "stats": {
+        "atk": 3612,
+        "hp": 13446,
+        "def": 556,
+        "spd": 113,
+        "cri": 38,
+        "crid": 207,
+        "efh": 0,
+        "efr": 15
+      }
+    }
+  ]
+}

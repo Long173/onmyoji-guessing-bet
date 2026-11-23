@@ -1,0 +1,50 @@
+{
+ "experiment": "A07",
+ "group": "A",
+ "question": "召唤物在开局的生成时点（相对先机）",
+ "inGameObservation": "带『开局召唤』的式神，看召唤物头像何时出现",
+ "hypotheses": [
+  {
+   "id": "SUMMON_BEFORE_SENKI",
+   "note": "召唤先",
+   "observable": {
+    "stageOrder": [
+     "SPAWN",
+     "INIT_STATS",
+     "SOUL_START",
+     "PASSIVE_START",
+     "SUMMON",
+     "SENKI",
+     "FIELD",
+     "ORB_INIT",
+     "TIMELINE_INIT"
+    ]
+   }
+  },
+  {
+   "id": "SUMMON_AFTER_SENKI",
+   "note": "先机先",
+   "observable": {
+    "stageOrder": [
+     "SPAWN",
+     "INIT_STATS",
+     "SOUL_START",
+     "PASSIVE_START",
+     "SENKI",
+     "SUMMON",
+     "FIELD",
+     "ORB_INIT",
+     "TIMELINE_INIT"
+    ]
+   }
+  }
+ ],
+ "discriminating": true,
+ "distinctObservables": 2,
+ "kind": "HYPOTHESIS_TEST",
+ "confidence": "NOT_RUN",
+ "status": "AWAITING_IN_GAME_OBSERVATION",
+ "chosenHypothesis": null,
+ "gameVersion": "2026.10 (Data 快照)",
+ "recordedAt": "2026-10-01T16:12:41.255Z"
+}

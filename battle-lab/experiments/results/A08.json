@@ -1,0 +1,30 @@
+{
+ "experiment": "A08",
+ "group": "A",
+ "question": "开局鬼火变化的叠加顺序（多个『开局给火』）",
+ "inGameObservation": "同队两个单位都带开局给火，看最终鬼火是 4+2+2 还是只取一个",
+ "hypotheses": [
+  {
+   "id": "STACK_ALL",
+   "note": "全部叠加",
+   "observable": {
+    "orbAfterStartup": 6
+   }
+  },
+  {
+   "id": "ONLY_ONE",
+   "note": "只生效一个",
+   "observable": {
+    "orbAfterStartup": 4
+   }
+  }
+ ],
+ "discriminating": true,
+ "distinctObservables": 2,
+ "kind": "HYPOTHESIS_TEST",
+ "confidence": "NOT_RUN",
+ "status": "AWAITING_IN_GAME_OBSERVATION",
+ "chosenHypothesis": null,
+ "gameVersion": "2026.10 (Data 快照)",
+ "recordedAt": "2026-10-01T16:12:41.256Z"
+}

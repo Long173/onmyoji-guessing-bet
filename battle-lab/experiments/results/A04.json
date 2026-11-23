@@ -1,0 +1,50 @@
+{
+ "experiment": "A04",
+ "group": "A",
+ "question": "开局鬼火初始化 在 行动条初始化 之前还是之后？",
+ "inGameObservation": "带一个『开局给火』的效果；如果它在第一次行动前已生效，则鬼火初值更高",
+ "hypotheses": [
+  {
+   "id": "ORB_BEFORE_TIMELINE",
+   "note": "鬼火先",
+   "observable": {
+    "stageOrder": [
+     "SPAWN",
+     "INIT_STATS",
+     "SOUL_START",
+     "PASSIVE_START",
+     "SENKI",
+     "SUMMON",
+     "FIELD",
+     "ORB_INIT",
+     "TIMELINE_INIT"
+    ]
+   }
+  },
+  {
+   "id": "TIMELINE_BEFORE_ORB",
+   "note": "行动条先",
+   "observable": {
+    "stageOrder": [
+     "SPAWN",
+     "INIT_STATS",
+     "SOUL_START",
+     "PASSIVE_START",
+     "SENKI",
+     "SUMMON",
+     "FIELD",
+     "TIMELINE_INIT",
+     "ORB_INIT"
+    ]
+   }
+  }
+ ],
+ "discriminating": true,
+ "distinctObservables": 2,
+ "kind": "HYPOTHESIS_TEST",
+ "confidence": "NOT_RUN",
+ "status": "AWAITING_IN_GAME_OBSERVATION",
+ "chosenHypothesis": null,
+ "gameVersion": "2026.10 (Data 快照)",
+ "recordedAt": "2026-10-01T16:12:41.250Z"
+}

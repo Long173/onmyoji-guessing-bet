@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    // 本项目所有 import 都显式带 .ts 后缀（Node 24 直接跑 .ts 的需要），
+    // 不打开这个开关 vue-tsc 会为每个 import 报一条 TS5097（原先 76 条里占 54 条）。
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable",
+      "WebWorker"
+    ],
+    "types": [
+      "vite/client"
+    ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@engine/*": [
+        "../../battle-lab/*"
+      ]
+    }
+  },
+  // 构建配置 vite.config.ts 不进类型检查：它用到 node:path / __dirname，
+  // 需要 @types/node，而本项目的运行时依赖刻意保持为零（引擎不依赖任何第三方包）。
+  // 想连构建配置一起检查，就装 @types/node 再把它加回来。
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.vue"
+  ]
+}

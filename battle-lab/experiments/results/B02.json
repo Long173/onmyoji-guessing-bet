@@ -1,0 +1,52 @@
+{
+ "experiment": "B02",
+ "group": "B",
+ "question": "多个被动同时触发时的排序",
+ "inGameObservation": "同队 3 个被动都在同一事件触发，看状态栏/日志顺序",
+ "hypotheses": [
+  {
+   "id": "REGISTRATION_ORDER",
+   "note": "注册顺序",
+   "observable": {
+    "order": [
+     "P1",
+     "P2",
+     "P3"
+    ],
+    "policy": "REGISTRATION_ORDER"
+   }
+  },
+  {
+   "id": "TEAM_THEN_SPEED",
+   "note": "队伍→速度",
+   "observable": {
+    "order": [
+     "P1",
+     "P2",
+     "P3"
+    ],
+    "policy": "TEAM_THEN_SPEED"
+   }
+  },
+  {
+   "id": "UNDETERMINED",
+   "note": "未知",
+   "observable": {
+    "order": [
+     "P1",
+     "P2",
+     "P3"
+    ],
+    "policy": "UNDETERMINED"
+   }
+  }
+ ],
+ "discriminating": true,
+ "distinctObservables": 3,
+ "kind": "HYPOTHESIS_TEST",
+ "confidence": "NOT_RUN",
+ "status": "AWAITING_IN_GAME_OBSERVATION",
+ "chosenHypothesis": null,
+ "gameVersion": "2026.10 (Data 快照)",
+ "recordedAt": "2026-10-01T16:12:41.261Z"
+}

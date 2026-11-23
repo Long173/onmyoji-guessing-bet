@@ -1,0 +1,18 @@
+{
+  "name": "onmyoji-guessing-sim",
+  "private": true,
+  "version": "0.1.0-experimental",
+  "type": "module",
+  "description": "Onmyoji guessing-mode battle simulator: discrete-event engine + Monte Carlo + Vue workbench",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "submit": "node tools/build_submit.mjs",
+    "web": "npm --prefix apps/web run dev",
+    "web:build": "npm --prefix apps/web run build",
+    "web:preview": "npm --prefix apps/web run preview",
+    "ui": "node tools/serve-ui.mjs",
+    "test:engine": "node battle-lab/tests/m0.ts"
+  }
+}

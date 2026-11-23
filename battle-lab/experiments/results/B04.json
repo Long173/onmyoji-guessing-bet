@@ -1,0 +1,32 @@
+{
+ "experiment": "B04",
+ "group": "B",
+ "question": "反击 与 追击 的先后",
+ "inGameObservation": "同时满足反击与追击条件时，看哪个动作先播",
+ "hypotheses": [
+  {
+   "id": "COUNTER_FIRST",
+   "note": "反击先",
+   "observable": {
+    "order": [],
+    "note": "假设反击先"
+   }
+  },
+  {
+   "id": "CHASE_FIRST",
+   "note": "追击先",
+   "observable": {
+    "order": [],
+    "note": "假设追击先"
+   }
+  }
+ ],
+ "discriminating": true,
+ "distinctObservables": 2,
+ "kind": "HYPOTHESIS_TEST",
+ "confidence": "NOT_RUN",
+ "status": "AWAITING_IN_GAME_OBSERVATION",
+ "chosenHypothesis": null,
+ "gameVersion": "2026.10 (Data 快照)",
+ "recordedAt": "2026-10-01T16:12:41.264Z"
+}

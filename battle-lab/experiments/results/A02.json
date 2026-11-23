@@ -1,0 +1,36 @@
+{
+ "experiment": "A02",
+ "group": "A",
+ "question": "先机 与 御魂开局效果 谁先？",
+ "inGameObservation": "带一个开局触发的御魂 + 一个先机式神，看哪个效果先写入状态栏",
+ "hypotheses": [
+  {
+   "id": "SOUL_FIRST",
+   "note": "御魂先",
+   "observable": {
+    "order": [
+     "SOUL",
+     "SENKI"
+    ]
+   }
+  },
+  {
+   "id": "SENKI_FIRST",
+   "note": "先机先",
+   "observable": {
+    "order": [
+     "SENKI",
+     "SOUL"
+    ]
+   }
+  }
+ ],
+ "discriminating": true,
+ "distinctObservables": 2,
+ "kind": "HYPOTHESIS_TEST",
+ "confidence": "NOT_RUN",
+ "status": "AWAITING_IN_GAME_OBSERVATION",
+ "chosenHypothesis": null,
+ "gameVersion": "2026.10 (Data 快照)",
+ "recordedAt": "2026-10-01T16:12:41.248Z"
+}

@@ -1,0 +1,1637 @@
+{
+ "_meta": {
+  "source": "onmyoji.fandom.com Shikigami/List/All and Soul/List/Released (CC BY-SA)",
+  "rule": "Global name if known, else wiki name; manual: {\"吸血姬\": \"Vampira\", \"辉夜姬\": \"Kaguya\"} + 328 赤影妖刀姬 from the Global lineup screen"
+ },
+ "shikigami": {
+  "200": {
+   "en": "Momo",
+   "wiki": "Momo no Sei",
+   "cn": "桃花妖"
+  },
+  "201": {
+   "en": "Yuki Onna",
+   "wiki": "Yuki Onna",
+   "cn": "雪女"
+  },
+  "202": {
+   "en": "Mio",
+   "wiki": "Sanbi no Kitsune",
+   "cn": "三尾狐"
+  },
+  "203": {
+   "en": "Lantern Soul",
+   "wiki": "Lantern Soul",
+   "cn": "灯笼鬼"
+  },
+  "205": {
+   "en": "Zashiki",
+   "wiki": "Zashiki Warashi",
+   "cn": "座敷童子"
+  },
+  "206": {
+   "en": "Koi",
+   "wiki": "Koi no Sei",
+   "cn": "鲤鱼精"
+  },
+  "207": {
+   "en": "Kyuumei Neko",
+   "wiki": "Kyuumei Neko",
+   "cn": "九命猫"
+  },
+  "208": {
+   "en": "Tanuki",
+   "wiki": "Baketanuki",
+   "cn": "狸猫"
+  },
+  "209": {
+   "en": "Kappa",
+   "wiki": "Kappa",
+   "cn": "河童"
+  },
+  "210": {
+   "en": "Shiro Mujou",
+   "wiki": "Shiro Mujou",
+   "cn": "鬼使白"
+  },
+  "211": {
+   "en": "Kuro Mujou",
+   "wiki": "Kuro Mujou",
+   "cn": "鬼使黑"
+  },
+  "212": {
+   "en": "Oguna",
+   "wiki": "Oguna",
+   "cn": "童男"
+  },
+  "213": {
+   "en": "Dojo",
+   "wiki": "Doujo",
+   "cn": "童女"
+  },
+  "214": {
+   "en": "Gaki",
+   "wiki": "Gaki",
+   "cn": "饿鬼"
+  },
+  "215": {
+   "en": "Mouba",
+   "wiki": "Mouba",
+   "cn": "孟婆"
+  },
+  "216": {
+   "en": "Kodokushi",
+   "wiki": "Kodokushi",
+   "cn": "巫蛊师"
+  },
+  "217": {
+   "en": "Ootengu",
+   "wiki": "Ootengu",
+   "cn": "大天狗"
+  },
+  "218": {
+   "en": "Karasu Tengu",
+   "wiki": "Karasu Tengu",
+   "cn": "鸦天狗"
+  },
+  "219": {
+   "en": "Shuten Doji",
+   "wiki": "Shuten Douji",
+   "cn": "酒吞童子"
+  },
+  "220": {
+   "en": "Inugami",
+   "wiki": "Inugami",
+   "cn": "犬神"
+  },
+  "221": {
+   "en": "Kamikui",
+   "wiki": "Kamikui",
+   "cn": "食发鬼"
+  },
+  "222": {
+   "en": "Warrior Soul",
+   "wiki": "Samurai no Rei",
+   "cn": "武士之灵"
+  },
+  "223": {
+   "en": "Hone Onna",
+   "wiki": "Hone Onna",
+   "cn": "骨女"
+  },
+  "224": {
+   "en": "Ame Onna",
+   "wiki": "Ame Onna",
+   "cn": "雨女"
+  },
+  "225": {
+   "en": "Kyonshi Ototo",
+   "wiki": "Kyonshii Otouto",
+   "cn": "跳跳弟弟"
+  },
+  "226": {
+   "en": "Kyonshi Imoto",
+   "wiki": "Kyonshii Imouto",
+   "cn": "跳跳妹妹"
+  },
+  "227": {
+   "en": "Samurai X",
+   "wiki": "Heiyou",
+   "cn": "兵俑"
+  },
+  "228": {
+   "en": "Ushi no Toki",
+   "wiki": "Ushi no Toki",
+   "cn": "丑时之女"
+  },
+  "230": {
+   "en": "Hitotsume",
+   "wiki": "Hitotsume Kozou",
+   "cn": "独眼小僧"
+  },
+  "231": {
+   "en": "Momiji",
+   "wiki": "Kijo Momiji",
+   "cn": "鬼女红叶"
+  },
+  "232": {
+   "en": "Tesso",
+   "wiki": "Tesso",
+   "cn": "铁鼠"
+  },
+  "233": {
+   "en": "Kyonshi Ani",
+   "wiki": "Kyonshii Ani",
+   "cn": "跳跳哥哥"
+  },
+  "234": {
+   "en": "Shouzu",
+   "wiki": "Shouzu",
+   "cn": "椒图"
+  },
+  "236": {
+   "en": "Kanko",
+   "wiki": "Kudagitsune",
+   "cn": "管狐"
+  },
+  "237": {
+   "en": "Yamausagi",
+   "wiki": "Yama Usagi",
+   "cn": "山兔"
+  },
+  "238": {
+   "en": "Kusa",
+   "wiki": "Hotarugusa",
+   "cn": "萤草"
+  },
+  "241": {
+   "en": "Chocho",
+   "wiki": "Kochou no Sei",
+   "cn": "蝴蝶精"
+  },
+  "242": {
+   "en": "Puppeteer",
+   "wiki": "Kairaishi",
+   "cn": "傀儡师"
+  },
+  "243": {
+   "en": "Yamawaro",
+   "wiki": "Yamawaro",
+   "cn": "山童"
+  },
+  "244": {
+   "en": "Kubinashi",
+   "wiki": "Kubinashi",
+   "cn": "首无"
+  },
+  "245": {
+   "en": "Lantern Boy",
+   "wiki": "Lantern Boy",
+   "cn": "提灯小僧"
+  },
+  "246": {
+   "en": "Akashita",
+   "wiki": "Akashita",
+   "cn": "赤舌"
+  },
+  "247": {
+   "en": "Umibozu",
+   "wiki": "Umibouzu",
+   "cn": "海坊主"
+  },
+  "248": {
+   "en": "Lord Arakawa",
+   "wiki": "Arakawa no Aruji",
+   "cn": "荒川之主"
+  },
+  "249": {
+   "en": "Satori",
+   "wiki": "Satori",
+   "cn": "觉"
+  },
+  "250": {
+   "en": "Jikikaeru",
+   "wiki": "Jikikaeru",
+   "cn": "青蛙瓷器"
+  },
+  "251": {
+   "en": "Hangan",
+   "wiki": "Hangan",
+   "cn": "判官"
+  },
+  "252": {
+   "en": "Hououka",
+   "wiki": "Hououka",
+   "cn": "凤凰火"
+  },
+  "253": {
+   "en": "Vampira",
+   "wiki": "Kyuuketsu Hime",
+   "cn": "吸血姬"
+  },
+  "254": {
+   "en": "Youko",
+   "wiki": "Youko",
+   "cn": "妖狐"
+  },
+  "255": {
+   "en": "Enma",
+   "wiki": "Enma",
+   "cn": "阎魔"
+  },
+  "256": {
+   "en": "Maestro",
+   "wiki": "Youkinshi",
+   "cn": "妖琴师"
+  },
+  "257": {
+   "en": "Yumekui",
+   "wiki": "Yumekui",
+   "cn": "食梦貘"
+  },
+  "258": {
+   "en": "Ryomen",
+   "wiki": "Ryoumenbotoke",
+   "cn": "两面佛"
+  },
+  "259": {
+   "en": "Shishio",
+   "wiki": "Shishio",
+   "cn": "小鹿男"
+  },
+  "260": {
+   "en": "Kiyohime",
+   "wiki": "Kiyohime",
+   "cn": "清姬"
+  },
+  "261": {
+   "en": "Kamaitachi",
+   "wiki": "Kamaitachi",
+   "cn": "镰鼬"
+  },
+  "262": {
+   "en": "Ubume",
+   "wiki": "Ubume",
+   "cn": "姑获鸟"
+  },
+  "263": {
+   "en": "Futakuchi",
+   "wiki": "Futakuchi Onna",
+   "cn": "二口女"
+  },
+  "264": {
+   "en": "Hakuro",
+   "wiki": "Hakurou",
+   "cn": "白狼"
+  },
+  "265": {
+   "en": "Ibaraki Doji",
+   "wiki": "Ibaraki Douji",
+   "cn": "茨木童子"
+  },
+  "266": {
+   "en": "Aoandon",
+   "wiki": "Aoandon",
+   "cn": "青行灯"
+  },
+  "267": {
+   "en": "Sakura",
+   "wiki": "Sakura no Sei",
+   "cn": "樱花妖"
+  },
+  "268": {
+   "en": "Ebisu",
+   "wiki": "Ebisu",
+   "cn": "惠比寿"
+  },
+  "269": {
+   "en": "Yoto Hime",
+   "wiki": "Youtou Hime",
+   "cn": "妖刀姬"
+  },
+  "270": {
+   "en": "Jorougumo",
+   "wiki": "Jorougumo",
+   "cn": "络新妇"
+  },
+  "271": {
+   "en": "Hannya",
+   "wiki": "Hannya",
+   "cn": "般若"
+  },
+  "272": {
+   "en": "Ichimokuren",
+   "wiki": "Ichimokuren",
+   "cn": "一目连"
+  },
+  "273": {
+   "en": "Aobouzu",
+   "wiki": "Aobouzu",
+   "cn": "青坊主"
+  },
+  "274": {
+   "en": "Koroka",
+   "wiki": "Korouka",
+   "cn": "古笼火"
+  },
+  "275": {
+   "en": "Mannendake",
+   "wiki": "Mannendake",
+   "cn": "万年竹"
+  },
+  "276": {
+   "en": "Yasha",
+   "wiki": "Yasha",
+   "cn": "夜叉"
+  },
+  "277": {
+   "en": "Kuro",
+   "wiki": "Kuro Douji",
+   "cn": "黑童子"
+  },
+  "278": {
+   "en": "Shiro",
+   "wiki": "Shiro Douji",
+   "cn": "白童子"
+  },
+  "279": {
+   "en": "Hana",
+   "wiki": "Kachou Fuugetsu",
+   "cn": "花鸟卷"
+  },
+  "280": {
+   "en": "Kaguya",
+   "wiki": "Kaguya Hime",
+   "cn": "辉夜姬"
+  },
+  "281": {
+   "en": "Enenra",
+   "wiki": "Enenra",
+   "cn": "烟烟罗"
+  },
+  "282": {
+   "en": "Kingyo",
+   "wiki": "Kingyo Hime",
+   "cn": "金鱼姬"
+  },
+  "283": {
+   "en": "Susabi",
+   "wiki": "Susabi",
+   "cn": "荒"
+  },
+  "285": {
+   "en": "Chin",
+   "wiki": "Chin",
+   "cn": "鸩"
+  },
+  "286": {
+   "en": "Itsumade",
+   "wiki": "Itsumade",
+   "cn": "以津真天"
+  },
+  "287": {
+   "en": "Hako Shoujo",
+   "wiki": "Hako no Shoujo",
+   "cn": "匣中少女"
+  },
+  "288": {
+   "en": "Higanbana",
+   "wiki": "Higanbana",
+   "cn": "彼岸花"
+  },
+  "289": {
+   "en": "Usagi",
+   "wiki": "Usagimaru",
+   "cn": "兔丸"
+  },
+  "290": {
+   "en": "Komatsu",
+   "wiki": "Komatsumaru",
+   "cn": "小松丸"
+  },
+  "291": {
+   "en": "Bukkuman",
+   "wiki": "Shoyou",
+   "cn": "书翁"
+  },
+  "292": {
+   "en": "Yuki",
+   "wiki": "Yuki Douji",
+   "cn": "雪童子"
+  },
+  "293": {
+   "en": "Dodomeki",
+   "wiki": "Doumeki",
+   "cn": "百目鬼"
+  },
+  "294": {
+   "en": "Nura Rikuo",
+   "wiki": "Nura Rikuo",
+   "cn": "奴良陆生"
+  },
+  "295": {
+   "en": "Oitsuki",
+   "wiki": "Oitsukigami",
+   "cn": "追月神"
+  },
+  "296": {
+   "en": "Yamakaze",
+   "wiki": "Yamakaze",
+   "cn": "山风"
+  },
+  "297": {
+   "en": "Hiyoribo",
+   "wiki": "Hiyoribou",
+   "cn": "日和坊"
+  },
+  "298": {
+   "en": "Kaoru",
+   "wiki": "Kaoru",
+   "cn": "薰"
+  },
+  "300": {
+   "en": "Tamamonomae",
+   "wiki": "Tamamo no Mae",
+   "cn": "玉藻前"
+  },
+  "301": {
+   "en": "Juzu",
+   "wiki": "Juzu",
+   "cn": "数珠"
+  },
+  "302": {
+   "en": "Kosodenote",
+   "wiki": "Kosode no Te",
+   "cn": "小袖之手"
+  },
+  "303": {
+   "en": "Kisei",
+   "wiki": "Kisei",
+   "cn": "弈"
+  },
+  "304": {
+   "en": "Miketsu",
+   "wiki": "Miketsu",
+   "cn": "御馔津"
+  },
+  "305": {
+   "en": "Medicine Seller",
+   "wiki": "Kusuriuri",
+   "cn": "卖药郎"
+  },
+  "306": {
+   "en": "Mushishi",
+   "wiki": "Mushishi",
+   "cn": "虫师"
+  },
+  "307": {
+   "en": "Nekomata",
+   "wiki": "Nekomata",
+   "cn": "猫掌柜"
+  },
+  "308": {
+   "en": "Hozuki",
+   "wiki": "Hozuki",
+   "cn": "鬼灯"
+  },
+  "309": {
+   "en": "Oko",
+   "wiki": "Okou",
+   "cn": "阿香"
+  },
+  "310": {
+   "en": "Peach Maki & Karashi",
+   "wiki": "Peach Maki & Karashi",
+   "cn": "蜜桃&芥子"
+  },
+  "311": {
+   "en": "Menreiki",
+   "wiki": "Menreiki",
+   "cn": "面灵气"
+  },
+  "312": {
+   "en": "Onikiri",
+   "wiki": "Onikiri",
+   "cn": "鬼切"
+  },
+  "313": {
+   "en": "Inuyasha",
+   "wiki": "Inuyasha",
+   "cn": "犬夜叉"
+  },
+  "314": {
+   "en": "Sesshomaru",
+   "wiki": "Sesshoumaru",
+   "cn": "杀生丸"
+  },
+  "315": {
+   "en": "Jr Ootengu",
+   "wiki": "Shouu Ootengu",
+   "cn": "少羽大天狗"
+  },
+  "316": {
+   "en": "Hakuzosu",
+   "wiki": "Hakuzousu",
+   "cn": "白藏主"
+  },
+  "317": {
+   "en": "Jinmenju",
+   "wiki": "Ninmenju",
+   "cn": "人面树"
+  },
+  "318": {
+   "en": "Okikumushi",
+   "wiki": "Okikumushi",
+   "cn": "於菊虫"
+  },
+  "319": {
+   "en": "Kikyo",
+   "wiki": "Kikyou",
+   "cn": "桔梗"
+  },
+  "320": {
+   "en": "Ittan-momen",
+   "wiki": "Ittan Momen",
+   "cn": "一反木绵"
+  },
+  "321": {
+   "en": "Okuribito",
+   "wiki": "Noukanshi",
+   "cn": "入殓师"
+  },
+  "322": {
+   "en": "Inferno Ibaraki Doji",
+   "wiki": "Rengoku Ibaraki Douji",
+   "cn": "炼狱茨木童子"
+  },
+  "323": {
+   "en": "Tenjo Kudari",
+   "wiki": "Tenjo Kudari",
+   "cn": "天井下"
+  },
+  "325": {
+   "en": "Orochi",
+   "wiki": "Orochi",
+   "cn": "八岐大蛇"
+  },
+  "326": {
+   "en": "Divine Miketsu",
+   "wiki": "Inari Miketsu",
+   "cn": "稻荷神御馔津"
+  },
+  "327": {
+   "en": "Azurestorm Ichimokuren",
+   "wiki": "Soufuu Ichimokuren",
+   "cn": "苍风一目连"
+  },
+  "328": {
+   "en": "Crimson Yoto",
+   "wiki": "Akakage Youtou Hime",
+   "cn": "赤影妖刀姬"
+  },
+  "329": {
+   "en": "Kainin",
+   "wiki": "Kainin",
+   "cn": "海忍"
+  },
+  "330": {
+   "en": "Shiranui",
+   "wiki": "Shiranui",
+   "cn": "不知火"
+  },
+  "331": {
+   "en": "Vengeful Hannya",
+   "wiki": "Oura Hannya",
+   "cn": "御怨般若"
+  },
+  "332": {
+   "en": "Kujira",
+   "wiki": "Kujira",
+   "cn": "久次良"
+  },
+  "333": {
+   "en": "Otakemaru",
+   "wiki": "Ootakemaru",
+   "cn": "大岳丸"
+  },
+  "334": {
+   "en": "Waverider Lord Arakawa",
+   "wiki": "Gyourou Arakawa no Aruji",
+   "cn": "骁浪荒川之主"
+  },
+  "335": {
+   "en": "Kanihime",
+   "wiki": "Kani Hime",
+   "cn": "蟹姬"
+  },
+  "336": {
+   "en": "Rukia Kuchiki",
+   "wiki": "Rukia Kuchiki",
+   "cn": "朽木露琪亚"
+  },
+  "337": {
+   "en": "Ichigo Kurosaki",
+   "wiki": "Ichigo Kurosaki",
+   "cn": "黑崎一护"
+  },
+  "338": {
+   "en": "Takiyashahime",
+   "wiki": "Takiyasha Hime",
+   "cn": "泷夜叉姬"
+  },
+  "339": {
+   "en": "Blazing Tamamonomae",
+   "wiki": "Jinten Tamamo no Mae",
+   "cn": "烬天玉藻前"
+  },
+  "340": {
+   "en": "Kamimai",
+   "wiki": "Kamimai",
+   "cn": "纸舞"
+  },
+  "341": {
+   "en": "Demoniac Shuten Doji",
+   "wiki": "Oniou Shuten Douji",
+   "cn": "鬼王酒吞童子"
+  },
+  "342": {
+   "en": "Hoshiguma Doji",
+   "wiki": "Hoshiguma Douji",
+   "cn": "星熊童子"
+  },
+  "343": {
+   "en": "Onikiri Reforged",
+   "wiki": "Tenken Jinshin Onikiri",
+   "cn": "天剑韧心鬼切"
+  },
+  "344": {
+   "en": "Ungaikyo",
+   "wiki": "Ungaikyou",
+   "cn": "云外镜"
+  },
+  "345": {
+   "en": "Kidomaru",
+   "wiki": "Kidoumaru",
+   "cn": "鬼童丸"
+  },
+  "346": {
+   "en": "Seawatch Kingyo",
+   "wiki": "Reikai Kingyo Hime",
+   "cn": "聆海金鱼姬"
+  },
+  "347": {
+   "en": "Enmusubi",
+   "wiki": "Enmusubi no Kami",
+   "cn": "缘结神"
+  },
+  "348": {
+   "en": "Wordly Aoandon",
+   "wiki": "Ukiyo Aoandon",
+   "cn": "浮世青行灯"
+  },
+  "349": {
+   "en": "Furi",
+   "wiki": "Fuuri",
+   "cn": "风狸"
+  },
+  "350": {
+   "en": "Sasori",
+   "wiki": "Sasori Onna",
+   "cn": "蝎女"
+  },
+  "351": {
+   "en": "Suzuka Gozen",
+   "wiki": "Suzuka Gozen",
+   "cn": "铃鹿御前"
+  },
+  "352": {
+   "en": "Lovebound Kiyohime",
+   "wiki": "Bakkotsu Kiyohime",
+   "cn": "缚骨清姬"
+  },
+  "353": {
+   "en": "Kinnara",
+   "wiki": "Kinnara",
+   "cn": "紧那罗"
+  },
+  "354": {
+   "en": "Guardian Ubume",
+   "wiki": "Matsuyoi Ubume",
+   "cn": "待宵姑获鸟"
+  },
+  "355": {
+   "en": "Monumental Otakemaru",
+   "wiki": "Rokumei Ootakemaru",
+   "cn": "麓铭大岳丸"
+  },
+  "356": {
+   "en": "Senhime",
+   "wiki": "Senhime",
+   "cn": "千姬"
+  },
+  "357": {
+   "en": "Valiant Yamakaze",
+   "wiki": "Hatsurei Yamakaze",
+   "cn": "初翎山风"
+  },
+  "358": {
+   "en": "Nightveil Higanbana",
+   "wiki": "Yomei Higanbana",
+   "cn": "夜溟彼岸花"
+  },
+  "359": {
+   "en": "Tanjiro Kamado",
+   "wiki": "Tanjiro Kamado",
+   "cn": "灶门炭治郎"
+  },
+  "360": {
+   "en": "Nezuko Kamado",
+   "wiki": "Nezuko Kamado",
+   "cn": "灶门祢豆子"
+  },
+  "361": {
+   "en": "Akaname",
+   "wiki": "Akaname",
+   "cn": "垢尝"
+  },
+  "362": {
+   "en": "Frosty Yuki Onna",
+   "wiki": "Semigoori Yuki Onna",
+   "cn": "蝉冰雪女"
+  },
+  "363": {
+   "en": "Taishakuten",
+   "wiki": "Taishakuten",
+   "cn": "帝释天"
+  },
+  "364": {
+   "en": "Asura",
+   "wiki": "Asura",
+   "cn": "阿修罗"
+  },
+  "365": {
+   "en": "Nyunai-suzume",
+   "wiki": "Nyuunai-suzume",
+   "cn": "入内雀"
+  },
+  "366": {
+   "en": "Void Menreiki",
+   "wiki": "Kuusou Menreiki",
+   "cn": "空相面灵气"
+  },
+  "367": {
+   "en": "Virtuoso Hana",
+   "wiki": "Kaisei Kachou Fuugetsu",
+   "cn": "绘世花鸟卷"
+  },
+  "368": {
+   "en": "Amezaiku",
+   "wiki": "Amezaiku",
+   "cn": "饴细工"
+  },
+  "369": {
+   "en": "Shokurei",
+   "wiki": "Shokurei",
+   "cn": "食灵"
+  },
+  "370": {
+   "en": "Mishige",
+   "wiki": "Mishige",
+   "cn": "饭笥"
+  },
+  "371": {
+   "en": "Kawazaru",
+   "wiki": "Kawazaru",
+   "cn": "川猿"
+  },
+  "372": {
+   "en": "Inaba Kaguya Hime",
+   "wiki": "Inaba Kaguya Hime",
+   "cn": "因幡辉夜姬"
+  },
+  "373": {
+   "en": "Yato no Kami",
+   "wiki": "Yato no Kami",
+   "cn": "夜刀神"
+  },
+  "375": {
+   "en": "Kagewani",
+   "wiki": "Kagewani",
+   "cn": "影鳄"
+  },
+  "376": {
+   "en": "Suzuhikohime",
+   "wiki": "Suzuhiko Hime",
+   "cn": "铃彦姬"
+  },
+  "377": {
+   "en": "Ninja Yamausagi",
+   "wiki": "Mujin Yama Usagi",
+   "cn": "梦寻山兔"
+  },
+  "378": {
+   "en": "Garuda",
+   "wiki": "Garuda",
+   "cn": "迦楼罗"
+  },
+  "379": {
+   "en": "Fukengaku",
+   "wiki": "Fukengaku",
+   "cn": "不见岳"
+  },
+  "382": {
+   "en": "Uminochou",
+   "wiki": "Umi no Chou",
+   "cn": "灵海蝶"
+  },
+  "383": {
+   "en": "Fallen God Orochi",
+   "wiki": "Kamiochi Orochi",
+   "cn": "神堕八岐大蛇"
+  },
+  "384": {
+   "en": "Oshiroibaba",
+   "wiki": "Oshiroi Baba",
+   "cn": "粉婆婆"
+  },
+  "385": {
+   "en": "Yamalord Enma",
+   "wiki": "Daiyamaten Enma",
+   "cn": "大夜摩天阎魔"
+  },
+  "386": {
+   "en": "Zenitsu Agatsuma",
+   "wiki": "Zenitsu Agatsuma",
+   "cn": "我妻善逸"
+  },
+  "387": {
+   "en": "Inosuke Hashibira",
+   "wiki": "Inosuke Hashibira",
+   "cn": "嘴平伊之助"
+  },
+  "388": {
+   "en": "Heartseeker Momiji",
+   "wiki": "Kokorogari Kijo Momiji",
+   "cn": "心狩鬼女红叶"
+  },
+  "389": {
+   "en": "Susanoo",
+   "wiki": "Susanoo",
+   "cn": "须佐之男"
+  },
+  "390": {
+   "en": "Divine Prophet Susabi",
+   "wiki": "Shinkei Susabi",
+   "cn": "神启荒"
+  },
+  "391": {
+   "en": "Jinkougyou",
+   "wiki": "Jinkougyou",
+   "cn": "寻香行"
+  },
+  "392": {
+   "en": "Shiki",
+   "wiki": "Shiki",
+   "cn": "季"
+  },
+  "393": {
+   "en": "Zen Ungaikyo",
+   "wiki": "Zenshin Ungaikyou",
+   "cn": "禅心云外镜"
+  },
+  "394": {
+   "en": "Tsukuyomi",
+   "wiki": "Tsukuyomi",
+   "cn": "月读"
+  },
+  "395": {
+   "en": "Luminary Oitsuki",
+   "wiki": "Ryuukou Oitsukigami",
+   "cn": "流光追月神"
+  },
+  "396": {
+   "en": "Shura Kidoumaru",
+   "wiki": "Shura Kidoumaru",
+   "cn": "修罗鬼童丸"
+  },
+  "397": {
+   "en": "Gintoki Sakata",
+   "wiki": "Gintoki Sakata",
+   "cn": "坂田银时"
+  },
+  "398": {
+   "en": "Amanozako",
+   "wiki": "Amanozako",
+   "cn": "天逆每"
+  },
+  "399": {
+   "en": "Kotodama",
+   "wiki": "Kotodama",
+   "cn": "言灵"
+  },
+  "400": {
+   "en": "Grave Digger",
+   "wiki": "Grave Digger",
+   "cn": "盗墓小鬼"
+  },
+  "401": {
+   "en": "Parasite",
+   "wiki": "Parasite",
+   "cn": "寄生魂"
+  },
+  "403": {
+   "en": "Umbrella",
+   "wiki": "Umbrella",
+   "cn": "唐纸伞妖"
+  },
+  "404": {
+   "en": "Green Imp",
+   "wiki": "Green Imp",
+   "cn": "天邪鬼绿"
+  },
+  "405": {
+   "en": "Red Imp",
+   "wiki": "Red Imp",
+   "cn": "天邪鬼赤"
+  },
+  "406": {
+   "en": "Yellow Imp",
+   "wiki": "Yellow Imp",
+   "cn": "天邪鬼黄"
+  },
+  "407": {
+   "en": "Blue Imp",
+   "wiki": "Blue Imp",
+   "cn": "天邪鬼青"
+  },
+  "408": {
+   "en": "Hahakigami",
+   "wiki": "Hahakigami",
+   "cn": "帚神"
+  },
+  "409": {
+   "en": "Nurikabe",
+   "wiki": "Nurikabe",
+   "cn": "涂壁"
+  },
+  "414": {
+   "en": "Ootengu Frog",
+   "wiki": "Ootengu Frog",
+   "cn": "大天狗呱"
+  },
+  "415": {
+   "en": "Shuten Frog",
+   "wiki": "Shuten Frog",
+   "cn": "酒吞呱"
+  },
+  "416": {
+   "en": "Arakawa Frog",
+   "wiki": "Arakawa Frog",
+   "cn": "荒川呱"
+  },
+  "417": {
+   "en": "Enma Frog",
+   "wiki": "Enma Frog",
+   "cn": "阎魔呱"
+  },
+  "418": {
+   "en": "Ryomen Frog",
+   "wiki": "Ryoumenbotoke Frog",
+   "cn": "两面佛呱"
+  },
+  "419": {
+   "en": "Shishio Frog",
+   "wiki": "Shishio Frog",
+   "cn": "小鹿男呱"
+  },
+  "420": {
+   "en": "Ibaraki Frog",
+   "wiki": "Ibaraki Frog",
+   "cn": "茨木呱"
+  },
+  "421": {
+   "en": "Aoandon Frog",
+   "wiki": "Aoandon Frog",
+   "cn": "青行灯呱"
+  },
+  "422": {
+   "en": "Yoto Hime Frog",
+   "wiki": "Youtou Hime Frog",
+   "cn": "妖刀姬呱"
+  },
+  "423": {
+   "en": "Ichimokuren Frog",
+   "wiki": "Ichimokuren Frog",
+   "cn": "一目连呱"
+  },
+  "424": {
+   "en": "Hana Frog",
+   "wiki": "Kachou Fuugetsu Frog",
+   "cn": "花鸟卷呱"
+  },
+  "425": {
+   "en": "Kaguya Frog",
+   "wiki": "Kaguya Hime Frog",
+   "cn": "辉夜姬呱"
+  },
+  "427": {
+   "en": "Higanbana Frog",
+   "wiki": "Higanbana Frog",
+   "cn": "彼岸花呱"
+  },
+  "428": {
+   "en": "Yuki Frog",
+   "wiki": "Yuki Douji Frog",
+   "cn": "雪童子呱"
+  },
+  "429": {
+   "en": "Tamamonomae Frog",
+   "wiki": "Tamamo no Mae Frog",
+   "cn": "玉藻前呱"
+  },
+  "430": {
+   "en": "Miketsu Frog",
+   "wiki": "Miketsu Frog",
+   "cn": "御馔津呱"
+  },
+  "433": {
+   "en": "Namahage Oni",
+   "wiki": "Namahage Oni",
+   "cn": "生剥鬼"
+  },
+  "500": {
+   "en": "Kagura & Sadaharu",
+   "wiki": "Kagura & Sadaharu",
+   "cn": "神乐&定春"
+  },
+  "550": {
+   "en": "Kujaku-Myoo",
+   "wiki": "Kujaku-Myouou",
+   "cn": "孔雀明王"
+  },
+  "551": {
+   "en": "Greenwarden Shishio",
+   "wiki": "Jinshin Shishio",
+   "cn": "寻森小鹿男"
+  },
+  "552": {
+   "en": "Miakashi",
+   "wiki": "Miakashi",
+   "cn": "慧明灯"
+  },
+  "553": {
+   "en": "Wenren Yixuan",
+   "wiki": "Wenren Yixuan",
+   "cn": "闻人翊悬"
+  },
+  "554": {
+   "en": "Bondweaver Enmusubi",
+   "wiki": "Negai Tsumugi Enmusubi no Kami",
+   "cn": "纺愿缘结神"
+  },
+  "555": {
+   "en": "Kusa Regrown",
+   "wiki": "Byounen Hotarugusa",
+   "cn": "渺念萤草"
+  },
+  "556": {
+   "en": "Amaterasu",
+   "wiki": "Amaterasu",
+   "cn": "天照"
+  },
+  "557": {
+   "en": "Izanami",
+   "wiki": "Izanami",
+   "cn": "伊邪那美"
+  },
+  "558": {
+   "en": "Nusubitogami",
+   "wiki": "Nusubitogami",
+   "cn": "盗人神"
+  },
+  "559": {
+   "en": "Trueself Mio",
+   "wiki": "Honshin Sanbi no Kitsune",
+   "cn": "本真三尾狐"
+  },
+  "561": {
+   "en": "Taki",
+   "wiki": "Taki",
+   "cn": "泷"
+  },
+  "562": {
+   "en": "Senhime Resurgent",
+   "wiki": "Eikyo Senhime",
+   "cn": "鲸汐千姬"
+  },
+  "563": {
+   "en": "Hatsune Miku",
+   "wiki": "Hatsune Miku",
+   "cn": "初音未来"
+  },
+  "564": {
+   "en": "Kagamine Rin/Len",
+   "wiki": "Kagamine Rin & Len",
+   "cn": "镜音铃·连"
+  },
+  "565": {
+   "en": "Fortunegiver Zashiki",
+   "wiki": "Shoufuku Zashiki Warashi",
+   "cn": "福悦座敷童子"
+  },
+  "566": {
+   "en": "Returner Ebisu",
+   "wiki": "Gyoujitsu Ebisu",
+   "cn": "晨晖惠比寿"
+  },
+  "567": {
+   "en": "Shentu Ziye",
+   "wiki": "Shentu Ziye",
+   "cn": "申屠子夜"
+  },
+  "568": {
+   "en": "Draconic Suzuka Gozen",
+   "wiki": "Ryougin Suzuka Gozen",
+   "cn": "龙吟铃鹿御前"
+  },
+  "569": {
+   "en": "Nekogawa",
+   "wiki": "Nekogawa",
+   "cn": "猫川"
+  },
+  "570": {
+   "en": "Magatsuhi",
+   "wiki": "Magatsugami",
+   "cn": "祸津神"
+  },
+  "572": {
+   "en": "Nostalgic Enenra",
+   "wiki": "Younen Enenra",
+   "cn": "遥念烟烟罗"
+  },
+  "573": {
+   "en": "Loongjue",
+   "wiki": "Ryukaku",
+   "cn": "龙珏"
+  },
+  "574": {
+   "en": "Bosomboddy Inugami",
+   "wiki": "Shinyuu Inugami",
+   "cn": "心友犬神"
+  },
+  "575": {
+   "en": "Fengyang",
+   "wiki": "Fuuyoukun",
+   "cn": "封阳君"
+  },
+  "576": {
+   "en": "Natsume & Nyanko-sensei",
+   "wiki": "Natsume & Nyanko-sensei",
+   "cn": "夏目&猫老师"
+  },
+  "577": {
+   "en": "Guijinyang",
+   "wiki": "Kikinyou",
+   "cn": "鬼金羊"
+  },
+  "578": {
+   "en": "Ambrosial Hoshiguma Doji",
+   "wiki": "Shinjou Hoshiguma Douji",
+   "cn": "神酿星熊童子"
+  },
+  "579": {
+   "en": "Panharmonic Kinnara",
+   "wiki": "Youon Kinnara",
+   "cn": "瑶音紧那罗"
+  },
+  "580": {
+   "en": "Sungraced Hiyoribou",
+   "wiki": "Seishi Hiyoribou",
+   "cn": "晴思日和坊"
+  },
+  "581": {
+   "en": "Karuta",
+   "wiki": "Karuta",
+   "cn": "歌留多"
+  },
+  "582": {
+   "en": "Megurine Luka",
+   "wiki": "Megurine Luka",
+   "cn": "巡音流歌"
+  },
+  "583": {
+   "en": "Himiko",
+   "wiki": "Himiko",
+   "cn": "卑弥呼"
+  },
+  "584": {
+   "en": "Glorious Takiyashahime",
+   "wiki": "Jiyou Takiyasha Hime",
+   "cn": "时曜泷夜叉姬"
+  },
+  "585": {
+   "en": "Odokuro",
+   "wiki": "Gashadokuro",
+   "cn": "荒骷髅"
+  },
+  "586": {
+   "en": "Lavaforged Fukengaku",
+   "wiki": "Unjou Fukengaku",
+   "cn": "云间不见岳"
+  },
+  "587": {
+   "en": "Sakura Kinomoto",
+   "wiki": "Sakura Kinomoto",
+   "cn": "木之本樱"
+  },
+  "588": {
+   "en": "Syaoran Li",
+   "wiki": "Syaoran Li",
+   "cn": "李小狼"
+  },
+  "590": {
+   "en": "Meowlord Kyuumei Neko",
+   "wiki": "Myoushu Kyuumei Neko",
+   "cn": "妙主九命猫"
+  },
+  "591": {
+   "en": "Yuki Gozen",
+   "wiki": "Yuki Gozen",
+   "cn": "雪御前"
+  },
+  "592": {
+   "en": "Taira no Masakado",
+   "wiki": "Taira no Masakado",
+   "cn": "平将门"
+  },
+  "593": {
+   "en": "Yoto Hime, Scarlet Nightedge",
+   "wiki": "Youtou Hime · Hiyaryoujin",
+   "cn": "妖刀姬·绯夜猎刃"
+  },
+  "594": {
+   "en": "Dreambound Chocho",
+   "wiki": "Yumebiki Kochou no Sei",
+   "cn": "梦引蝴蝶精"
+  },
+  "595": {
+   "en": "Hakuzosu Unbound",
+   "wiki": "Yumeyama Hakuzousu",
+   "cn": "梦山白藏主"
+  },
+  "596": {
+   "en": "Kannazuki",
+   "wiki": "Kannazuki",
+   "cn": "神无月"
+  },
+  "597": {
+   "en": "Kuzunoha",
+   "wiki": "Kuzunoha",
+   "cn": "葛叶"
+  },
+  "598": {
+   "en": "Shakubana Momo no Sei",
+   "wiki": "Shakubana Momo no Sei",
+   "cn": "灼华桃花妖"
+  },
+  "599": {
+   "en": "Moonclipse Vampira",
+   "wiki": "Shokugetsu Kyuuketsu Hime",
+   "cn": "蚀月吸血姬"
+  },
+  "600": {
+   "en": "Shinigami",
+   "wiki": "Shinigami",
+   "cn": "市加美"
+  },
+  "602": {
+   "en": "Ignis Suzuhikohime",
+   "wiki": "Tenkamei Suzuhiko Hime",
+   "cn": "天火命铃彦姬"
+  },
+  "603": {
+   "en": "Bishamonten",
+   "wiki": "Bishamonten",
+   "cn": "毗沙门天"
+  },
+  "604": {
+   "en": "Fuzenkitsune",
+   "wiki": "Fuzoukozen",
+   "cn": "不相狐禅"
+  },
+  "605": {
+   "en": "Luo Tianyi",
+   "wiki": "Luo Tianyi",
+   "cn": "洛天依"
+  },
+  "606": {
+   "en": "Yan He",
+   "wiki": "Yan He",
+   "cn": "言和"
+  },
+  "607": {
+   "en": "Hyakuwa Hououka",
+   "wiki": "Hyakuwa Hououka",
+   "cn": "百羽凤凰火"
+  },
+  "609": {
+   "en": "Sakuya",
+   "wiki": "Sakuya",
+   "cn": "咲耶"
+  }
+ },
+ "souls": {
+  "0": {
+   "en": "Snow Spirit",
+   "cn": "雪幽魂"
+  },
+  "1": {
+   "en": "Jizo Statue",
+   "cn": "地藏像"
+  },
+  "2": {
+   "en": "Nightwing",
+   "cn": "蝠翼"
+  },
+  "3": {
+   "en": "Holy Flame",
+   "cn": "涅槃之火"
+  },
+  "4": {
+   "en": "Samisen",
+   "cn": "三味"
+  },
+  "5": {
+   "en": "Mimic",
+   "cn": "魍魉之匣"
+  },
+  "6": {
+   "en": "Boroboroton",
+   "cn": "被服"
+  },
+  "7": {
+   "en": "Fortune Cat",
+   "cn": "招财猫"
+  },
+  "8": {
+   "en": "Shy Soul",
+   "cn": "反枕"
+  },
+  "9": {
+   "en": "Soultaker",
+   "cn": "轮入道"
+  },
+  "10": {
+   "en": "Dawn Fairy",
+   "cn": "日女巳时"
+  },
+  "11": {
+   "en": "Mirror Lady",
+   "cn": "镜姬"
+  },
+  "12": {
+   "en": "Priestess",
+   "cn": "钟灵"
+  },
+  "13": {
+   "en": "Scarlet",
+   "cn": "狰"
+  },
+  "14": {
+   "en": "Azure Basan",
+   "cn": "火灵"
+  },
+  "15": {
+   "en": "House Imp",
+   "cn": "鸣屋"
+  },
+  "16": {
+   "en": "Watcher",
+   "cn": "心眼"
+  },
+  "17": {
+   "en": "Tree Spirit",
+   "cn": "树妖"
+  },
+  "18": {
+   "en": "Claws",
+   "cn": "网切"
+  },
+  "19": {
+   "en": "Harpy",
+   "cn": "阴摩罗"
+  },
+  "20": {
+   "en": "Fenikkusu",
+   "cn": "伤魂鸟"
+  },
+  "21": {
+   "en": "Shadow",
+   "cn": "破势"
+  },
+  "22": {
+   "en": "Tomb Guard",
+   "cn": "镇墓兽"
+  },
+  "23": {
+   "en": "Pearl",
+   "cn": "珍珠"
+  },
+  "24": {
+   "en": "Dice Sprite",
+   "cn": "骰子鬼"
+  },
+  "25": {
+   "en": "Sea Sprite",
+   "cn": "蚌精"
+  },
+  "26": {
+   "en": "Temptress",
+   "cn": "魅妖"
+  },
+  "27": {
+   "en": "Seductress",
+   "cn": "针女"
+  },
+  "28": {
+   "en": "Tree Nymph",
+   "cn": "木魅"
+  },
+  "29": {
+   "en": "Soul Edge",
+   "cn": "薙魂"
+  },
+  "30": {
+   "en": "Senecio",
+   "cn": "返魂香"
+  },
+  "31": {
+   "en": "Kyoukotsu",
+   "cn": "狂骨"
+  },
+  "32": {
+   "en": "Yamabiko",
+   "cn": "幽谷响"
+  },
+  "33": {
+   "en": "Tsuchigumo",
+   "cn": "土蜘蛛"
+  },
+  "34": {
+   "en": "Oboroguruma",
+   "cn": "胧车"
+  },
+  "35": {
+   "en": "Odokuro",
+   "cn": "荒骷髅"
+  },
+  "36": {
+   "en": "Namazu",
+   "cn": "地震鲶"
+  },
+  "37": {
+   "en": "Shinkiro",
+   "cn": "蜃气楼"
+  },
+  "38": {
+   "en": "Hinoenma",
+   "cn": "飞缘魔"
+  },
+  "39": {
+   "en": "Hyosube",
+   "cn": "兵主部"
+  },
+  "40": {
+   "en": "Aonyobo",
+   "cn": "青女房"
+  },
+  "41": {
+   "en": "Nuribotoke",
+   "cn": "涂佛"
+  },
+  "42": {
+   "en": "Ghostly Songstress",
+   "cn": "鬼灵歌伎"
+  },
+  "43": {
+   "en": "Wisp",
+   "cn": "遗念火"
+  },
+  "44": {
+   "en": "Merrow",
+   "cn": "共潜"
+  },
+  "45": {
+   "en": "Leviathan",
+   "cn": "恶楼"
+  },
+  "46": {
+   "en": "Conch Blower",
+   "cn": "贝吹坊"
+  },
+  "47": {
+   "en": "Wispzoa",
+   "cn": "海月火玉"
+  },
+  "48": {
+   "en": "Oracle",
+   "cn": "出世螺"
+  },
+  "49": {
+   "en": "Tomb Robber",
+   "cn": "火之车"
+  },
+  "50": {
+   "en": "Possessor",
+   "cn": "隐念"
+  },
+  "51": {
+   "en": "Tapper",
+   "cn": "叠叩"
+  },
+  "52": {
+   "en": "Echoer",
+   "cn": "应声虫"
+  },
+  "53": {
+   "en": "Bell-Haunt",
+   "cn": "元兴寺"
+  },
+  "54": {
+   "en": "Dangler",
+   "cn": "钓瓶火"
+  },
+  "55": {
+   "en": "Nightly Aramitama",
+   "cn": "夜荒魂"
+  },
+  "56": {
+   "en": "Mutodori",
+   "cn": "无刀取"
+  },
+  "58": {
+   "en": "The Mirror of Yata",
+   "cn": "八咫镜"
+  },
+  "59": {
+   "en": "Feather Slash",
+   "cn": "天羽羽斩"
+  },
+  "60": {
+   "en": "Prophecy Astrolabe",
+   "cn": "预言星盘"
+  },
+  "61": {
+   "en": "Moonstone",
+   "cn": "月之石"
+  },
+  "62": {
+   "en": "Bond Weaver",
+   "cn": "纺缘锤"
+  },
+  "64": {
+   "en": "Kataha no Ashi",
+   "cn": "片叶之苇"
+  },
+  "65": {
+   "en": "Chirizuka",
+   "cn": "尘冢"
+  },
+  "66": {
+   "en": "Abura Akago",
+   "cn": "油赤子"
+  },
+  "67": {
+   "en": "Nakiishi",
+   "cn": "夜啼石"
+  },
+  "68": {
+   "en": "Okuri-inu",
+   "cn": "夜送犬"
+  },
+  "69": {
+   "en": "Amefurikozo",
+   "cn": "雨降"
+  }
+ }
+}

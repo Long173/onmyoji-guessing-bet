@@ -1,0 +1,23 @@
+{
+ "note": "「同一份字符串词汇被声明了两次」的已知项。**每一组都必须有一句说明**，工具只负责把重复找全，不负责判断哪一组危险。\n★ 写理由时的判据（按这个顺序问）：\n  ① 界面侧这张表**驱动渲染/过滤**吗？驱动过滤 ⇒ 数据源多一个值就会静默丢条目（第 62 轮那次）。\n  ② 未登记的值出现时，兜底是「中性」还是「ok/绿」？（第 62 轮的兜底是绿色 ⇒ 反向误导。）\n  ③ 跨边界的那次赋值有没有类型标注？有 ⇒ 漂移会在 vue-tsc 阶段报错，由 tests/ui12-typecheck.ts 在套件里跑。\n  ④ 只是同一份类型联合被重新写了一遍、不驱动任何渲染 ⇒ 安全。\n不许写「待复核」这种占位 —— 那等于把判断留在原地。",
+ "allowed": {
+  "HIGH,LOW,MEDIUM": "编译/来源置信度。引擎侧（各编译器、fidelity）是**类型联合**，不驱动渲染；界面侧 assemble.ts:110 是同一联合的再次声明，observations.ts 那份是观测登记自用的清单+标签（其配对已由 Record<ObservationSource,…> 收紧，缺键会编译报错）。判据③：跨边界赋值有类型标注，tests/ui12-typecheck.ts 在套件里跑 vue-tsc。",
+  "HYPOTHESIS,UNKNOWN,VERIFIED": "红区状态 —— **第 62 轮修掉的那一处**。界面侧 redZoneGroups.ts 现在是纯函数，行为由 tests/ui5-knowledge.ts 直接断言：喂一个清单外的假状态 DISPUTED，必须照样成组（不丢条目）、必须是中性色（不许涂成 ok）、文案必须写明界面未适配。判据①②都查了。",
+  "FULL,NONE,PARTIAL": "能力支持度。引擎侧 registry / effects / fidelity 是类型联合；界面侧 MechanicsView.vue:66 的 COV_ORDER **只驱动筛选按钮**，默认 ALL 时 covList 直接遍历数据 —— 判据①：不驱动过滤，条目不会丢。未登记的值只是少一个按钮、少一份配色（COV_COLOR[…] 为 undefined ⇒ 无颜色，恰好是中性）。",
+  "FULL,PARTIAL,UNSUPPORTED": "御魂支持度。真源在 kernel/fidelity.ts:34；界面侧 useKb.ts:19 是接口字段、engine-adapter.ts:31 是同名联合。消费方 SoulSelector 用 SUPPORT_COLOR[…] / SOUL_SUPPORT_LABEL[…] —— 未登记值 = 无配色 + 无 tooltip，条目照常渲染（判据①不丢条目；判据②兜底是「没有颜色」而不是「绿色」）。类型层由 tests/ui12-typecheck.ts 把守。",
+  "BLOCK,INFO,WARN": "缺口严重度。真源 kernel/fidelity.ts:18；界面侧 FidelityPanel.vue:7 是接口字段、simulation-result.ts:78 是契约。消费方式是 CSS 类名（severity.toLowerCase()）—— 未登记值 = 没有样式，不丢条目、不会误导成「好」（判据①②）。类型层由 tests/ui12-typecheck.ts 把守。",
+  "FULL,NONE,SUMMARY": "TraceLevel（目标 ⑪ 的三档）。真源 kernel/battle.ts:22；界面侧 engine/assemble.ts:296 是同一联合的再次声明；tests/g2、g28 用数组列举同一集合。判据④：不驱动渲染。类型层由 tests/ui12-typecheck.ts 把守。",
+  "HIGH,LOW,MEDIUM,NONE": "面板来源置信度。真源 kernel/entity.ts:47；界面侧 engine/assemble.ts:131 是同一联合的再次声明。判据④。类型层由 tests/ui12-typecheck.ts 把守。",
+  "ADD_RATE,FIXED,SET": "印记/修饰符的模式。三处全在引擎侧（kernel/entity.ts ×2、kernel/status.ts），**不跨边界**（判据④）。",
+  "COMPLETE_UNVERIFIED,INSUFFICIENT,PARTIAL,VERIFIED": "Fidelity 分类 —— **第 61 轮修掉的那一处**。真源 kernel/fidelity.ts:14 的联合 + :297 的文案表；界面侧 FidelityPanel.vue 的 KLASS_LABEL/KLASS_TONE 与内核逐键比对，由 tests/ui10-fidelity.ts 第 [3] 节断言（键一一对应两个方向 + 用词必须是内核文案的子集 + 配色表覆盖全部四档）。",
+  "COMPLETE,GAPS,PARTIAL,UNKNOWN": "每层结论。真源 kernel/fidelity.ts:15；tests/ui10-fidelity.ts:104 的数组是**断言里的列举**（断言每个层的 klass 落在这个集合里），不是界面表。",
+  "FIELD,INIT_STATS,ORB_INIT,PASSIVE_START,SENKI,SOUL_START,SPAWN,SUMMON,TIMELINE_INIT": "开局策略键。engine 侧 kernel/policies.ts 的四张策略表 + tests/g24 的列举（断言每个策略都被扫描到）。判据④：不驱动渲染。",
+  "EFFECT,HIT,SKILL,TRIGGER": "队列名。kernel/resolution.ts 内的两处联合 + tests/g28 的列举。判据④。",
+  "BY_OTHER_MEANS,DEFERRED_BY_SPEC,ENFORCED,PARTIAL": "架构登记册的四态。真源是 kernel/architecture.ts:24 的联合类型；tests/g39-architecture-registry.ts:43 的数组是**断言里的列举**（断言每条状态取值合法）。判据④：不驱动渲染；判据②：没有兜底色可言（它是类型层）。第 65 轮建立这张表时它当场被这个普查抓出来 —— 这是工具第一次抓到「我自己刚写的新词表」，所以补说明而不是放宽门。",
+  "ALIVE,DEAD,HP_ZERO,KILLED,TRANSFORMED": "死亡/转化状态。两侧都在界面内（theater/presenter.ts:20 的 state 联合、components/theater/EntityCard.vue:8 的 STATE_LABEL），不跨引擎边界；产生处 presenter.ts:116 是嵌套三元 + else 兜底 ALIVE，不可能产出联合之外的值。★ 第 63 轮把 STATE_LABEL 从 Record<string,string> 收紧成闭合 Record —— 联合多一个状态而标签表没跟上，现在是**编译错误**，由 tests/ui12-typecheck.ts 在套件里跑 vue-tsc 把守。",
+  "COMMUNITY,DATAMINE,IN_GAME,THEORY": "观测来源。类型、数组、标签表三件套都在 apps/web/src/lab/observations.ts 一个文件里；tests/ui6-hud-lab.ts:110 逐字断言数组内容。**第 63 轮把标签表从 Record<string,string> 收紧成 Record<ObservationSource,string>** —— 现在「加了来源忘了加标签」会在 vue-tsc 阶段报错，由 tests/ui12-typecheck.ts 在套件里跑。",
+  "AI,INPUT,MECHANIC,RULESET,SKILL": "MAPPED: Fidelity 五层 id。真源 battle-lab/kernel/fidelity.ts 的 FIDELITY_LAYERS 与 FidelityLayer.layer 联合；apps/web/src/contracts/fidelity-view.ts 的 FIDELITY_LAYER_TITLE 是按层 id 查英文标题的映射表（页面层不许 import @engine，所以自己声明键）。查不到的层 id 由 FidelityPanel 回退到内核的 title，不会静默消失；ui10 断言五层齐备且顺序为 INPUT,SKILL,AI,MECHANIC,RULESET。",
+  "FULL,NEVER_CAST,NONE,PARTIAL,PASSIVE": "COMPARED: 下一条（四档）+ NEVER_CAST：betting mode 里 AI 门禁从不施放的技能（compile/betting-coverage.ts bettingNeverCastOf）。真源 battle-lab/kernel/fidelity.ts 的 SkillFidelityClass；apps/web/src/contracts/fidelity-view.ts 是结构镜像，ui10 第 [8] 节逐键比对。",
+  "FULL,NONE,PARTIAL,PASSIVE": "COMPARED:apps/web/tests/ui10-fidelity.ts + battle-lab/tests/g92-skill-fidelity.ts —— 逐技能编译档位（第 138 轮，§33）。真源是 battle-lab/kernel/fidelity.ts:111 的类型联合与 SKILL_CLASS_MARK/SKILL_CLASS_LABEL 两张表（第 114 行起）；apps/web/src/contracts/fidelity-view.ts 那份是**结构镜像** —— vite.config 的 alias 注释与 ui12 都在守「页面层不许 import @engine」，所以界面必须自己声明形状；ui10 第 [8] 节把两张表与内核**逐字节比对**（键与值都查，并配了正向对照）。g92 第 [2] 节与 ui10 第 [8] 节里的数组是**断言里的列举**（逐个档位核对判据），不驱动渲染（判据④）。兜底：面板与抽屉遇到没登记的档位就显示原始键（不是绿色 ok），没有「静默当成正常」的路径（判据②）。"
+ }
+}

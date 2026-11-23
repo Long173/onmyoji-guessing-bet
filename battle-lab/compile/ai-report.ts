@@ -1,0 +1,24 @@
+import fs from "node:fs/promises";
+import path from "node:path";
+import { compileAI } from "./ai-compiler.ts";
+const KB = path.resolve(import.meta.dirname, "..", "..", "data", "kb", "ai.json");
+const entries = JSON.parse(await fs.readFile(KB, "utf8"));
+const irs = entries.map((e: any) => compileAI(e.id, e.name, e));
+const byConf = { HIGH: 0, MEDIUM: 0, LOW: 0 } as any;
+for (const r of irs) byConf[r.confidence]++;
+console.log("=== AI 编译器覆盖率 ===");
+console.log("式神数:", irs.length);
+for (const k of ["HIGH", "MEDIUM", "LOW"]) console.log("  " + k + ": " + byConf[k] + " (" + ((byConf[k] / irs.length) * 100).toFixed(1) + "%)");
+const conds: Record<string, number> = {}, rules: Record<string, number> = {};
+for (const r of irs) { for (const c of r.unresolvedConds) conds[c] = (conds[c] ?? 0) + 1; for (const t of r.unresolvedRules) rules[t] = (rules[t] ?? 0) + 1; }
+const totC = irs.reduce((a, r) => a + r.skillRules.length, 0);
+const totT = irs.reduce((a, r) => a + r.targetRules.length, 0);
+const unC = Object.values(conds).reduce((a, b) => a + b, 0);
+const unT = Object.values(rules).reduce((a, b) => a + b, 0);
+console.log("\ncast 条件: " + (totC - unC) + "/" + totC + " 可编译 (" + (((totC - unC) / totC) * 100).toFixed(1) + "%)");
+console.log("target 规则: " + (totT - unT) + "/" + totT + " 可编译 (" + (((totT - unT) / totT) * 100).toFixed(1) + "%)");
+console.log("\n未编译 cond TOP10:");
+for (const [k, v] of Object.entries(conds).sort((a, b) => b[1] - a[1]).slice(0, 10)) console.log("  " + v + "x  " + k.slice(0, 60));
+console.log("\n未编译 target rule TOP10:");
+for (const [k, v] of Object.entries(rules).sort((a, b) => b[1] - a[1]).slice(0, 10)) console.log("  " + v + "x  " + k.slice(0, 60));
+await fs.writeFile(path.resolve(import.meta.dirname, "..", "fixtures", "ai-ir.json"), JSON.stringify(irs.map(r => ({ ...r, skillRules: r.skillRules.map(s => ({ ...s, cond: undefined, condRaw: s.condRaw })), targetRules: r.targetRules.map(t => ({ ...t, selector: undefined })) })), null, 1), "utf8");

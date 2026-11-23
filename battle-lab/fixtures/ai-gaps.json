@@ -1,0 +1,1652 @@
+{
+ "summary": {
+  "totalRules": 744,
+  "compiled": 580,
+  "quantified": 346,
+  "fuzzy": 18,
+  "fuzzyUncompiled": 4,
+  "concreteUncompiled": 160
+ },
+ "fuzzyRules": [
+  {
+   "kind": "target",
+   "char": "不相狐禅",
+   "id": 604,
+   "raw": "在血量高于一定比例的单位中随机选择",
+   "compiled": true,
+   "quantified": false,
+   "fuzzy": true
+  },
+  {
+   "kind": "cast",
+   "char": "葛叶",
+   "id": 597,
+   "raw": "鬼火充足时",
+   "compiled": true,
+   "quantified": false,
+   "fuzzy": true
+  },
+  {
+   "kind": "cast",
+   "char": "葛叶",
+   "id": 597,
+   "raw": "鬼火不足时",
+   "compiled": true,
+   "quantified": false,
+   "fuzzy": true
+  },
+  {
+   "kind": "cast",
+   "char": "平将门",
+   "id": 592,
+   "raw": "鬼火不足且被缴械",
+   "compiled": true,
+   "quantified": false,
+   "fuzzy": true
+  },
+  {
+   "kind": "cast",
+   "char": "遥念烟烟罗",
+   "id": 572,
+   "raw": "鬼火充足",
+   "compiled": true,
+   "quantified": false,
+   "fuzzy": true
+  },
+  {
+   "kind": "cast",
+   "char": "遥念烟烟罗",
+   "id": 572,
+   "raw": "不充足",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": true
+  },
+  {
+   "kind": "cast",
+   "char": "初音未来",
+   "id": 563,
+   "raw": "第2回合之后满足一定条件",
+   "compiled": true,
+   "quantified": true,
+   "fuzzy": true
+  },
+  {
+   "kind": "cast",
+   "char": "泷",
+   "id": 561,
+   "raw": "戒备小于一定层数时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": true
+  },
+  {
+   "kind": "cast",
+   "char": "神堕八岐大蛇",
+   "id": 383,
+   "raw": "鬼火充足时",
+   "compiled": true,
+   "quantified": false,
+   "fuzzy": true
+  },
+  {
+   "kind": "target",
+   "char": "神堕八岐大蛇",
+   "id": 383,
+   "raw": "在一定血量之上，随机选择友方单位，",
+   "compiled": true,
+   "quantified": false,
+   "fuzzy": true
+  },
+  {
+   "kind": "cast",
+   "char": "蝉冰雪女",
+   "id": 362,
+   "raw": "鬼火不足且被缴械",
+   "compiled": true,
+   "quantified": false,
+   "fuzzy": true
+  },
+  {
+   "kind": "cast",
+   "char": "灶门祢豆子",
+   "id": 360,
+   "raw": "鬼火充足时",
+   "compiled": true,
+   "quantified": false,
+   "fuzzy": true
+  },
+  {
+   "kind": "cast",
+   "char": "灶门祢豆子",
+   "id": 360,
+   "raw": "鬼火不足时或3技能不可用时",
+   "compiled": true,
+   "quantified": true,
+   "fuzzy": true
+  },
+  {
+   "kind": "cast",
+   "char": "云外镜",
+   "id": 344,
+   "raw": "鬼火不足且被缴械",
+   "compiled": true,
+   "quantified": false,
+   "fuzzy": true
+  },
+  {
+   "kind": "cast",
+   "char": "御馔津",
+   "id": 304,
+   "raw": "友方存在多个御馔津存在灵符时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": true
+  },
+  {
+   "kind": "cast",
+   "char": "彼岸花",
+   "id": 288,
+   "raw": "友方拥有多个彼岸花时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": true
+  },
+  {
+   "kind": "cast",
+   "char": "金鱼姬",
+   "id": 282,
+   "raw": "鬼火充足时",
+   "compiled": true,
+   "quantified": false,
+   "fuzzy": true
+  },
+  {
+   "kind": "cast",
+   "char": "犬神",
+   "id": 220,
+   "raw": "鬼火充足时，50%概率",
+   "compiled": true,
+   "quantified": true,
+   "fuzzy": true
+  }
+ ],
+ "uncompiled": [
+  {
+   "kind": "target",
+   "char": "蚀月吸血姬",
+   "id": 599,
+   "raw": "优先选择蝙蝠层数最多的敌方单位",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "妖刀姬·绯夜猎刃",
+   "id": 593,
+   "raw": "敌方目标未存在悬赏时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "妖刀姬·绯夜猎刃",
+   "id": 593,
+   "raw": "敌方目标存在悬赏时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "雪御前",
+   "id": 591,
+   "raw": "由于未觉醒雪御前的剑不带无敌buff因此将一直",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "荒骷髅",
+   "id": 585,
+   "raw": "友方攻击最高单位已有血色之花时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "卑弥呼",
+   "id": 583,
+   "raw": "存在己方单位的溯回时隙未转为时之隙，自动",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "神酿星熊童子",
+   "id": 578,
+   "raw": "没buff",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "遥念烟烟罗",
+   "id": 572,
+   "raw": "不充足",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": true
+  },
+  {
+   "kind": "cast",
+   "char": "猫川",
+   "id": 569,
+   "raw": "存在猫砂盆",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "泷",
+   "id": 561,
+   "raw": "戒备小于一定层数时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": true
+  },
+  {
+   "kind": "cast",
+   "char": "纺愿缘结神",
+   "id": 554,
+   "raw": "随后对2技能的目标",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "寻森小鹿男",
+   "id": 551,
+   "raw": "敌方存活人数≤1时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "天逆每",
+   "id": 398,
+   "raw": "敌方目标未携带8层恐惧时，对随机敌方目标",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "天逆每",
+   "id": 398,
+   "raw": "敌方目标携带8层恐惧时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "修罗鬼童丸",
+   "id": 396,
+   "raw": "自身无魂网buff时，对随机敌方（含召唤物）",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "修罗鬼童丸",
+   "id": 396,
+   "raw": "自身有魂网buff或2技能处于cd时，对随机敌方",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "禅心云外镜",
+   "id": 393,
+   "raw": "3技能可用时优先",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "寻香行",
+   "id": 391,
+   "raw": "未开启明香境",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "寻香行",
+   "id": 391,
+   "raw": "优先选择血量低于20%或带有失神的单位",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "神启荒",
+   "id": 390,
+   "raw": "自身星辰之力大于等于3时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "神启荒",
+   "id": 390,
+   "raw": "自身星辰之力小于等于3时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "心狩鬼女红叶",
+   "id": 388,
+   "raw": "未进入林隐状态",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "心狩鬼女红叶",
+   "id": 388,
+   "raw": "进入后",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "神堕八岐大蛇",
+   "id": 383,
+   "raw": "未处于蛇神状态（且非蛇神被击败）时，优先",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "梦寻山兔",
+   "id": 377,
+   "raw": "梦忍法小于9篇时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "梦寻山兔",
+   "id": 377,
+   "raw": "梦忍法计数为9时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "铃彦姬",
+   "id": 376,
+   "raw": "自身生命大于50%",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "铃彦姬",
+   "id": 376,
+   "raw": "小于50%",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "因幡辉夜姬",
+   "id": 372,
+   "raw": "无幻境或幻境剩余时间1回合时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "因幡辉夜姬",
+   "id": 372,
+   "raw": "优先选择当前生命上限最低的敌方单位（生命上限相同时优先站位靠前的）",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "川猿",
+   "id": 371,
+   "raw": "按照顺序",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "川猿",
+   "id": 371,
+   "raw": "攻击最高的敌方",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "食灵",
+   "id": 369,
+   "raw": "我方存活数量大于等于2时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "食灵",
+   "id": 369,
+   "raw": "优先选择暴伤最高的友方单位（暴伤相同时优先占位靠前的）",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "饴细工",
+   "id": 368,
+   "raw": "优先选择没有糖渍的友方",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "绘世花鸟卷",
+   "id": 367,
+   "raw": "敌方存在逐墨时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "绘世花鸟卷",
+   "id": 367,
+   "raw": "选择血量最高的敌方单位",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "绘世花鸟卷",
+   "id": 367,
+   "raw": "对我方生命比例最低的单位使用",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "空相面灵气",
+   "id": 366,
+   "raw": "我方存活数量=1时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "空相面灵气",
+   "id": 366,
+   "raw": "当前生命上限最低敌方（含召唤物）",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "入内雀",
+   "id": 365,
+   "raw": "随机友方",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "阿修罗",
+   "id": 364,
+   "raw": "优先选择最大生命值高的敌方单位，并进行追残",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "帝释天",
+   "id": 363,
+   "raw": "优先选择生命比例低于20%的单位",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "蝉冰雪女",
+   "id": 362,
+   "raw": "优先选择生命比例低于20%的敌方",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "蝉冰雪女",
+   "id": 362,
+   "raw": "优先选择攻击高的敌方（除阴阳师）",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "灶门炭治郎",
+   "id": 359,
+   "raw": "解锁火之神神乐时优先使用",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "夜溟彼岸花",
+   "id": 358,
+   "raw": "自身血量低于40%时，优先",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "夜溟彼岸花",
+   "id": 358,
+   "raw": "高于40%时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "初翎山风",
+   "id": 357,
+   "raw": "自身",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "初翎山风",
+   "id": 357,
+   "raw": "迅风行动值大于等于80",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "初翎山风",
+   "id": 357,
+   "raw": "迅风行动值小于80且友方生命大于20%",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "初翎山风",
+   "id": 357,
+   "raw": "迅风行动值小于80且友方生命小于20%",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "初翎山风",
+   "id": 357,
+   "raw": "优先选择生命值比例最低的友方单位",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "千姬",
+   "id": 356,
+   "raw": "召唤物位未被占用时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "千姬",
+   "id": 356,
+   "raw": "召唤物位未被占用，且潮生buff满5层时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "千姬",
+   "id": 356,
+   "raw": "召唤物位被占用时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "千姬",
+   "id": 356,
+   "raw": "对战方为怪物且己方召唤物位为海原贝戟时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "麓铭大岳丸",
+   "id": 355,
+   "raw": "未进入驭魂状态",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "待宵姑获鸟",
+   "id": 354,
+   "raw": "优先选择血量低于20%的敌方",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "紧那罗",
+   "id": 353,
+   "raw": "2技能出现本回目未施放的技能时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "紧那罗",
+   "id": 353,
+   "raw": "2技能均出现本回目已施放的技能时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "缚骨清姬",
+   "id": 352,
+   "raw": "未使用2技能时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "缚骨清姬",
+   "id": 352,
+   "raw": "优先选择敌方攻击最高的单位",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "风狸",
+   "id": 349,
+   "raw": "优先选择没有雷火弹buff的敌方单位",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "浮世青行灯",
+   "id": 348,
+   "raw": "未解锁4技能",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "浮世青行灯",
+   "id": 348,
+   "raw": "解锁后",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "缘结神",
+   "id": 347,
+   "raw": "优先选择暴击伤害最高的友方单位",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "聆海金鱼姬",
+   "id": 346,
+   "raw": "友方剩余单位≥2",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "聆海金鱼姬",
+   "id": 346,
+   "raw": "优先选择没有结怨buff的敌方单位",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "鬼童丸",
+   "id": 345,
+   "raw": "有选择生命比例最低的敌方单位",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "天剑韧心鬼切",
+   "id": 343,
+   "raw": "后",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "骁浪荒川之主",
+   "id": 334,
+   "raw": "自身海怒buff＜3时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "骁浪荒川之主",
+   "id": 334,
+   "raw": "自身海怒buff=3时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "大岳丸",
+   "id": 333,
+   "raw": "优先选择当前血量最高的敌方单位",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "御怨般若",
+   "id": 331,
+   "raw": "优先选择血量百分比最低的敌方单位",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "海忍",
+   "id": 329,
+   "raw": "友方海忍有用潜影buff时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "赤影妖刀姬",
+   "id": 328,
+   "raw": "优先选择敌方生命比例低的单位为目标",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "苍风一目连",
+   "id": 327,
+   "raw": "优先选择没有风盾buff的单位",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "稻荷神御馔津",
+   "id": 326,
+   "raw": "均不可用则",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "八岐大蛇",
+   "id": 325,
+   "raw": "均不可用时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "八岐大蛇",
+   "id": 325,
+   "raw": "无其他式神存活且阴阳师在场时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "八岐大蛇",
+   "id": 325,
+   "raw": "优先选择攻击最高的友方式神",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "化鲸",
+   "id": 324,
+   "raw": "友方血量低于40%时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "化鲸",
+   "id": 324,
+   "raw": "友方存在齿甲buff，则",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "化鲸",
+   "id": 324,
+   "raw": "全体均无齿甲buff，则",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "化鲸",
+   "id": 324,
+   "raw": "优先选择攻击最高的友方单位",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "化鲸",
+   "id": 324,
+   "raw": "选择生命比例最低的友方单位",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "天井下",
+   "id": 323,
+   "raw": "友方单位存活数量≥2时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "一反木绵",
+   "id": 320,
+   "raw": "存在敌方单位拥有缠绕buff，则",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "一反木绵",
+   "id": 320,
+   "raw": "敌方单位血量低于30%时：",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "一反木绵",
+   "id": 320,
+   "raw": "优先选择血量低于20%或没有纠缠阻隔的单位",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "一反木绵",
+   "id": 320,
+   "raw": "优先选择没有缠绕的单位",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "人面树",
+   "id": 317,
+   "raw": "敌方不带有灾厄花时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "白藏主",
+   "id": 316,
+   "raw": "所有友方均无狐影结界时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "少羽大天狗",
+   "id": 315,
+   "raw": "优先选择当前生命最高的单位",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "鬼切",
+   "id": 312,
+   "raw": "比例追低",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "猫掌柜",
+   "id": 307,
+   "raw": "敌方单位剩余数量等于1或存在敌方单位剩余血量低于70%时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "虫师",
+   "id": 306,
+   "raw": "友方单位血量大于70%时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "卖药郎",
+   "id": 305,
+   "raw": "比例追低，带有天平的目标将血量-20%进行计算",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "卖药郎",
+   "id": 305,
+   "raw": "比例追低，带有看破的目标将血量-20%进行计算",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "御馔津",
+   "id": 304,
+   "raw": "友方御馔津均无灵符时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "御馔津",
+   "id": 304,
+   "raw": "友方存在多个御馔津存在灵符时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": true
+  },
+  {
+   "kind": "cast",
+   "char": "数珠",
+   "id": 301,
+   "raw": "友方所有的数珠均未打坐时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "数珠",
+   "id": 301,
+   "raw": "友方存在数珠打坐时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "玉藻前",
+   "id": 300,
+   "raw": "敌方单位存活数量≥2时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "玉藻前",
+   "id": 300,
+   "raw": "敌方单位存活数量为1时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "百目鬼",
+   "id": 293,
+   "raw": "敌方有单位不处于凝视状态时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "百目鬼",
+   "id": 293,
+   "raw": "敌方单位均处于凝视状态时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "书翁",
+   "id": 291,
+   "raw": "友方单位血量高于30%时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "兔丸",
+   "id": 289,
+   "raw": "友方单位处于被控制状态时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "兔丸",
+   "id": 289,
+   "raw": "胡萝卜数量≥4",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "兔丸",
+   "id": 289,
+   "raw": "胡萝卜数量＜4",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "彼岸花",
+   "id": 288,
+   "raw": "友方仅有1个彼岸花时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "彼岸花",
+   "id": 288,
+   "raw": "友方拥有多个彼岸花时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": true
+  },
+  {
+   "kind": "cast",
+   "char": "匣中少女",
+   "id": 287,
+   "raw": "友方单位均无回梦时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "匣中少女",
+   "id": 287,
+   "raw": "存在友方单位拥有回梦时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "匣中少女",
+   "id": 287,
+   "raw": "优先选择生命比例低的单位为目标",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "鸩",
+   "id": 285,
+   "raw": "敌方拥有毒羽的数量大于2时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "鸩",
+   "id": 285,
+   "raw": "敌方拥有毒羽的数量小于等于2时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "鸩",
+   "id": 285,
+   "raw": "敌方生命比例低于30%时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "荒",
+   "id": 283,
+   "raw": "自身未处于幻境时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "荒",
+   "id": 283,
+   "raw": "自身处于幻境时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "辉夜姬",
+   "id": 280,
+   "raw": "自身未处于幻境或幻境剩余回合数=1时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "花鸟卷",
+   "id": 279,
+   "raw": "存在友方单位生命比例70%以下时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "古笼火",
+   "id": 274,
+   "raw": "优先选择敌方单位，随后优先没有沉默的单位",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "一目连",
+   "id": 272,
+   "raw": "存在友方单位生命比例40%以下时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "樱花妖",
+   "id": 267,
+   "raw": "友方单位血量均高于70%时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "樱花妖",
+   "id": 267,
+   "raw": "友方单位剩余数量等于1或自身已有复苏之舞buff时，不会",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "镰鼬",
+   "id": 261,
+   "raw": "友方单位均无二哥呼啸buff时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "小鹿男",
+   "id": 259,
+   "raw": "友方所有小鹿男均无生生不息buff时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "食梦貘",
+   "id": 257,
+   "raw": "敌方单位拥有的减疗buff＜2时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "食梦貘",
+   "id": 257,
+   "raw": "敌方单位拥有的减疗buff≥2时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "吸血姬",
+   "id": 253,
+   "raw": "自身血量低于60%时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "吸血姬",
+   "id": 253,
+   "raw": "自身血量高于60%时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "判官",
+   "id": 251,
+   "raw": "敌方单位均无死亡裁决buff时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "判官",
+   "id": 251,
+   "raw": "敌方单位带有死亡裁决buff时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "山兔",
+   "id": 237,
+   "raw": "友方单位均无兔子舞buff时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "椒图",
+   "id": 234,
+   "raw": "友方单位均无生命链接时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "椒图",
+   "id": 234,
+   "raw": "友方单位存在生命链接时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "跳跳哥哥",
+   "id": 233,
+   "raw": "友方有可复活目标时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "铁鼠",
+   "id": 232,
+   "raw": "敌方破绽数量大于等于6",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "铁鼠",
+   "id": 232,
+   "raw": "敌方破绽数量小于6",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "铁鼠",
+   "id": 232,
+   "raw": "敌方剩余单位数量＜2时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "铁鼠",
+   "id": 232,
+   "raw": "敌方存在破绽",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "铁鼠",
+   "id": 232,
+   "raw": "敌方均无破绽时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "丑时之女",
+   "id": 228,
+   "raw": "优先选择生命值最高的单位",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "鸦天狗",
+   "id": 218,
+   "raw": "优先选择生命比例最高的单位",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "孟婆",
+   "id": 215,
+   "raw": "敌方剩余单位≥2，且鬼火<3时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "孟婆",
+   "id": 215,
+   "raw": "敌方剩余单位=1，且鬼火<3时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "鬼使黑",
+   "id": 211,
+   "raw": "敌方存在生命比例小于20%的单位或剩余单位小于2时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "鬼使黑",
+   "id": 211,
+   "raw": "敌方有单位血量高于40%",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "狸猫",
+   "id": 208,
+   "raw": "按权重随机（见备注）",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "鲤鱼精",
+   "id": 206,
+   "raw": "所有友方单位拥有鲤鱼精的护盾时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "鲤鱼精",
+   "id": 206,
+   "raw": "优先选择暴击属性高的单位",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "座敷童子",
+   "id": 205,
+   "raw": "鬼火数小于6时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "灯笼鬼",
+   "id": 203,
+   "raw": "所有友方单位均无大鬼笼的暴击buff时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "target",
+   "char": "三尾狐",
+   "id": 202,
+   "raw": "当存在敌方单位生命比例处于30%以下时，选择敌方生命比例最低的单位",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "雪女",
+   "id": 201,
+   "raw": "敌方单位数≥2时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "雪女",
+   "id": 201,
+   "raw": "敌方单位数<2，且鬼火数>5时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "雪女",
+   "id": 201,
+   "raw": "敌方单位数<2，且3≤鬼火数≤5时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "桃花妖",
+   "id": 200,
+   "raw": "有可复活目标时",
+   "compiled": false,
+   "quantified": false,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "桃花妖",
+   "id": 200,
+   "raw": "无可复活目标，且友方血量<65%时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "桃花妖",
+   "id": 200,
+   "raw": "无可复活目标，且65%≤友方血量<80%时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  },
+  {
+   "kind": "cast",
+   "char": "桃花妖",
+   "id": 200,
+   "raw": "无可复活目标，且友方血量均≥80%时",
+   "compiled": false,
+   "quantified": true,
+   "fuzzy": false
+  }
+ ]
+}

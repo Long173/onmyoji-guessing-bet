@@ -1,0 +1,179 @@
+{
+ "schemaVersion": 1,
+ "id": "2026-11-23g-lineup",
+ "red": {
+  "units": [
+   {
+    "unitId": "r1",
+    "shikigamiId": 298,
+    "name": "Kaoru",
+    "stats": {
+     "attack": 2737,
+     "hp": 33326,
+     "defense": 779,
+     "speed": 213,
+     "critRate": 3,
+     "critDamage": 150,
+     "effectHit": 15,
+     "effectResist": 56
+    },
+    "soulId": 14
+   },
+   {
+    "unitId": "r2",
+    "shikigamiId": 572,
+    "name": "Nostalgic Enenra",
+    "stats": {
+     "attack": 3043,
+     "hp": 17291,
+     "defense": 558,
+     "speed": 174,
+     "critRate": 40,
+     "critDamage": 199,
+     "effectHit": 60,
+     "effectResist": 16
+    },
+    "soulId": 12
+   },
+   {
+    "unitId": "r3",
+    "shikigamiId": 554,
+    "name": "Bondweaver Enmusubi",
+    "stats": {
+     "attack": 2844,
+     "hp": 23745,
+     "defense": 627,
+     "speed": 156,
+     "critRate": 55,
+     "critDamage": 157,
+     "effectHit": 6,
+     "effectResist": 0
+    },
+    "soulId": 17
+   },
+   {
+    "unitId": "r4",
+    "shikigamiId": 591,
+    "name": "Yuki Gozen",
+    "stats": {
+     "attack": 4986,
+     "hp": 18202,
+     "defense": 692,
+     "speed": 141,
+     "critRate": 53,
+     "critDamage": 209,
+     "effectHit": 0,
+     "effectResist": 40
+    },
+    "soulId": 50
+   },
+   {
+    "unitId": "r5",
+    "shikigamiId": 277,
+    "name": "Kuro",
+    "stats": {
+     "attack": 6091,
+     "hp": 14443,
+     "defense": 703,
+     "speed": 121,
+     "critRate": 84,
+     "critDamage": 276,
+     "effectHit": 0,
+     "effectResist": 56
+    },
+    "soulId": 27
+   }
+  ]
+ },
+ "blue": {
+  "units": [
+   {
+    "unitId": "b1",
+    "shikigamiId": 275,
+    "name": "Mannendake",
+    "stats": {
+     "attack": 5456,
+     "hp": 14728,
+     "defense": 724,
+     "speed": 205,
+     "critRate": 70,
+     "critDamage": 227,
+     "effectHit": 0,
+     "effectResist": 0
+    },
+    "soulId": 7
+   },
+   {
+    "unitId": "b2",
+    "shikigamiId": 220,
+    "name": "Inugami",
+    "stats": {
+     "attack": 5199,
+     "hp": 14870,
+     "defense": 657,
+     "speed": 199,
+     "critRate": 75,
+     "critDamage": 227,
+     "effectHit": 0,
+     "effectResist": 0
+    },
+    "soulId": 9
+   },
+   {
+    "unitId": "b3",
+    "shikigamiId": 279,
+    "name": "Hana",
+    "stats": {
+     "attack": 4312,
+     "hp": 22537,
+     "defense": 620,
+     "speed": 184,
+     "critRate": 80,
+     "critDamage": 262,
+     "effectHit": 0,
+     "effectResist": 0
+    },
+    "soulId": 26
+   },
+   {
+    "unitId": "b4",
+    "shikigamiId": 562,
+    "name": "Senhime Resurgent",
+    "stats": {
+     "attack": 4527,
+     "hp": 20060,
+     "defense": 492,
+     "speed": 114,
+     "critRate": 10,
+     "critDamage": 157,
+     "effectHit": 15,
+     "effectResist": 0
+    },
+    "soulId": 25
+   },
+   {
+    "unitId": "b5",
+    "shikigamiId": 341,
+    "name": "Demoniac Shuten Doji",
+    "stats": {
+     "attack": 3675,
+     "hp": 15810,
+     "defense": 581,
+     "speed": 109,
+     "critRate": 25,
+     "critDamage": 262,
+     "effectHit": 0,
+     "effectResist": 104
+    },
+    "soulId": 22
+   }
+  ]
+ },
+ "ruleset": "GUESSING",
+ "source": {
+  "type": "JSON",
+  "note": "Duel betting 2026-11-23 #7 (Global screenshot) — result: unknown"
+ },
+ "createdAt": "2026-11-23T14:32:48.830Z",
+ "updatedAt": "2026-11-23T14:32:48.830Z"
+}

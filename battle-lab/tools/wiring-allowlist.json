@@ -1,0 +1,20 @@
+{
+ "note": "「导出但生产代码无调用方」的已知合理项。每一项都必须写明为什么合理——否则就把它当成真缺口去查。\n★ 两类要分清（第 32 轮明确）：\n  (a) 按设计不需要生产调用方 —— CLI 入口、测试脚手架、实验开关、研究工具；\n  (b) 能力已实现且**有验收测试**，但产品路径暂时没有入口 —— 这不是接线错，是产品范围问题。\n第 (b) 类的验收测试必须真实存在，否则它就退化成 (c)「写了但没接线」，也就是本审计要抓的东西。",
+ "allowed": {
+  "prodFilesOf": "(a) 工具库原语：字段普查原本的「生产文件集合「（排除 tests/tools）。第 68 轮把**读取方**的扫描集合换成 producerScanFiles（还要排除声明表）之后，它不再被生产路径调用 —— 但它是那个集合的原始定义，仍由 tests/g27 用来断言「生产文件集合确实包含网页侧」。保留它是为了让两种集合的差别（是否排除声明表与 experiments）有地方对照。",
+  "classifyPassive": "(a) 判定闸门：给「这个被动今天能不能安全执行」分四档（NO_TRIGGER / HAS_CONDITION / HAS_PLACEHOLDER / CANDIDATE）。目前唯一的调用方是 tests/g42-trigger-registry.ts —— 它用这个函数把 98 个被动分档，并断言「含 [tips_N] 占位符的一律不得判成候选」（第 69 轮：40% 的概率藏在 [tips_2] 里）。等被动运行时真的建起来时，它会成为生产路径的入口；在那之前它刻意只被测试调用 —— 免得闸门自己先跑起来。",
+  "producerScanFiles": "(a) 测试脚手架：给「生产代码里到底有没有 X」这类判定提供**统一的文件集合**（排除 tests/tools/experiments + 声明文件）。目前唯一的调用方是 tests/g35-effect-registry.ts —— 它正是审计工具本身。第 56 轮加它就是因为 g35 的第一版把 kernel/effects.ts 自己算进了生产代码，于是表里的 producer 字段匹配到了表自己。",
+  "setDisplayMode": "显示口径切换开关（GameMath 的 ROUND/其他口径）。目前全程使用默认 ROUND，保留供实验用。",
+  "exactFromObserved": "PLAYER_BUILD（养成分层）路径的辅助函数；竞猜路径用 AUTHORITATIVE_OVERRIDE，不需要它。",
+  "deriveExactStats": "同上：从御魂/基础推导精确面板，属养成分层；竞猜路径面板即权威，不做推导。",
+  "assembleGuessingMatch": "Node 侧参考装配，**只用于回归对照**；网页生产路径走 apps/web/src/engine/assemble.ts。两者的同构性由 tests/ui2-engine.ts 的 10-seed 逐局比对保证。",
+  "loadMatchFixture": "Node 侧夹具读取，配合 assembleGuessingMatch 使用（同上）。",
+  "registerEnvironmentRule": "(a) 显式注册**带出处**的残局规则。生产路径走知识库桥（stalemateRuleFromRuleset 读 GuessingRuleset.stalemate），所以今天唯一的调用方是 tests/g65-environment.ts —— 它用一条合成规则把「档位 → 伤害/治疗乘区 → 序列化 → 续跑」整条管线验穿。留这个口子是因为：数据一旦实测出来，先落成 ruleset 数据，而不是让引擎里多一份写死的数。",
+  "restoreBattle": "(b) G0 的「暂停 → 保存 state → 杀引擎 → 重载 → 完全一致地续跑」能力：实现完整、由 tests/g0-state.ts 与 tests/g12-summons.ts 直接验证（含逐字节一致与召唤物恢复）。生产路径暂无入口 —— 网页端是预测工作台，没有「续跑一局」的界面。要开这个口子需要扩冻结的 Worker 协议。",
+  "solveCompatibleSoulBuilds": "(a) 研究工具：**从面板反解**出兼容的御魂配置（M1.5A 的课题），由 tests/m15a-guessing.ts 验证。竞猜路径以面板为权威（AUTHORITATIVE_OVERRIDE），运行时不需要反解，所以生产代码不调用它。",
+  "entityInField": "(a) 场地查询入口：「某个单位是否处于某类场地」（条件求值用）。第 115 轮唯一的调用方是 tests/g71-field.ts —— 下一轮把它接进 AI 谓词（AICtx 需要加一个 inField 回调）时才会出现在生产路径上。",
+  "activeField": "(a) 场地查询入口：「场上有没有这一类（可选按名字）场地」（「无幻境时」「不存在山行结界时」这类条件用）。同上：第 115 轮只有测试调用方，等 AI 谓词接上就有生产调用点。",
+  "flushBarReactions": "(a) Test scaffold: runs the pending action-bar reactions of compile/betting-bar.ts immediately (production flushes them at SKILL_END / ACTION_END / TURN_START / TURN_END handlers). Used by tests/betting-mechanics-5.ts [2] [3].",
+  "setBettingEndgame": "(a) CLI entry: matches/run-lineup.ts (outside the scanned prod tree) selects the betting endgame preset with endgame=…; the web path uses the default / env BETTING_ENDGAME. Acceptance: tests/g133-betting-rules.ts [6]."
+ }
+}

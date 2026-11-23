@@ -1,0 +1,179 @@
+{
+ "schemaVersion": 1,
+ "id": "2026-11-23e-lineup",
+ "red": {
+  "units": [
+   {
+    "unitId": "r1",
+    "shikigamiId": 230,
+    "name": "Hitotsume",
+    "stats": {
+     "attack": 5726,
+     "hp": 20242,
+     "defense": 1012,
+     "speed": 184,
+     "critRate": 63,
+     "critDamage": 206,
+     "effectHit": 0,
+     "effectResist": 88
+    },
+    "soulId": 28
+   },
+   {
+    "unitId": "r2",
+    "shikigamiId": 295,
+    "name": "Oitsuki",
+    "stats": {
+     "attack": 2791,
+     "hp": 26935,
+     "defense": 648,
+     "speed": 169,
+     "critRate": 5,
+     "critDamage": 150,
+     "effectHit": 0,
+     "effectResist": 104
+    },
+    "soulId": 6
+   },
+   {
+    "unitId": "r3",
+    "shikigamiId": 365,
+    "name": "Nyunai-suzume",
+    "stats": {
+     "attack": 4527,
+     "hp": 16181,
+     "defense": 1073,
+     "speed": 156,
+     "critRate": 39,
+     "critDamage": 164,
+     "effectHit": 0,
+     "effectResist": 48
+    },
+    "soulId": 13
+   },
+   {
+    "unitId": "r4",
+    "shikigamiId": 593,
+    "name": "Yoto Hime, Scarlet Nightedge",
+    "stats": {
+     "attack": 6208,
+     "hp": 17946,
+     "defense": 479,
+     "speed": 146,
+     "critRate": 52,
+     "critDamage": 150,
+     "effectHit": 0,
+     "effectResist": 40
+    },
+    "soulId": 13
+   },
+   {
+    "unitId": "r5",
+    "shikigamiId": 344,
+    "name": "Ungaikyo",
+    "stats": {
+     "attack": 3878,
+     "hp": 10370,
+     "defense": 891,
+     "speed": 145,
+     "critRate": 85,
+     "critDamage": 290,
+     "effectHit": 0,
+     "effectResist": 64
+    },
+    "soulId": 7
+   }
+  ]
+ },
+ "blue": {
+  "units": [
+   {
+    "unitId": "b1",
+    "shikigamiId": 378,
+    "name": "Garuda",
+    "stats": {
+     "attack": 3908,
+     "hp": 20065,
+     "defense": 658,
+     "speed": 202,
+     "critRate": 24,
+     "critDamage": 150,
+     "effectHit": 108,
+     "effectResist": 8
+    },
+    "soulId": 20
+   },
+   {
+    "unitId": "b2",
+    "shikigamiId": 253,
+    "name": "Vampira",
+    "stats": {
+     "attack": 5289,
+     "hp": 15725,
+     "defense": 737,
+     "speed": 157,
+     "critRate": 90,
+     "critDamage": 304,
+     "effectHit": 0,
+     "effectResist": 56
+    },
+    "soulId": 20
+   },
+   {
+    "unitId": "b3",
+    "shikigamiId": 213,
+    "name": "Dojo",
+    "stats": {
+     "attack": 2898,
+     "hp": 25431,
+     "defense": 803,
+     "speed": 151,
+     "critRate": 70,
+     "critDamage": 234,
+     "effectHit": 0,
+     "effectResist": 48
+    },
+    "soulId": 23
+   },
+   {
+    "unitId": "b4",
+    "shikigamiId": 331,
+    "name": "Vengeful Hannya",
+    "stats": {
+     "attack": 4183,
+     "hp": 15548,
+     "defense": 515,
+     "speed": 139,
+     "critRate": 10,
+     "critDamage": 269,
+     "effectHit": 0,
+     "effectResist": 104
+    },
+    "soulId": 31
+   },
+   {
+    "unitId": "b5",
+    "shikigamiId": 388,
+    "name": "Heartseeker Momiji",
+    "stats": {
+     "attack": 4374,
+     "hp": 13896,
+     "defense": 630,
+     "speed": 114,
+     "critRate": 45,
+     "critDamage": 150,
+     "effectHit": 0,
+     "effectResist": 32
+    },
+    "soulId": 27
+   }
+  ]
+ },
+ "ruleset": "GUESSING",
+ "source": {
+  "type": "JSON",
+  "note": "Duel betting 2026-11-23 #5 (Global screenshot) — result: unknown"
+ },
+ "createdAt": "2026-11-23T10:15:38.000Z",
+ "updatedAt": "2026-11-23T10:15:38.000Z"
+}

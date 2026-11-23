@@ -1,0 +1,785 @@
+{
+ "meta": {
+  "title": "G0 BattleState 体检",
+  "source": "a1-4.md §55",
+  "generatedAt": "2026-10-02T21:11:43.374Z",
+  "seed": 20261001,
+  "turns": 59,
+  "winner": 0
+ },
+ "stringify": {
+  "ok": true,
+  "error": "",
+  "bytes": 381601
+ },
+ "summary": {
+  "findings": 150,
+  "leaves": 3626,
+  "sharedRefs": 23,
+  "trueCycles": 0,
+  "byKind": {
+   "class:Team": 2,
+   "class:Entity": 10,
+   "function": 111,
+   "Set": 11,
+   "class:OrbPool": 2,
+   "class:EventBus": 1,
+   "Map": 10,
+   "class:Timeline": 1,
+   "class:RNG": 2
+  },
+  "skillRuntimeIssues": 90
+ },
+ "findings": [
+  {
+   "path": "battle.teams[0]",
+   "kind": "class:Team",
+   "detail": "类实例：JSON 只保留自有可枚举字段，原型方法丢失"
+  },
+  {
+   "path": "battle.teams[0].members[0]",
+   "kind": "class:Entity",
+   "detail": "类实例：JSON 只保留自有可枚举字段，原型方法丢失"
+  },
+  {
+   "path": "battle.teams[0].members[0].skills[0].pickTarget",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[0].skills[0].execute",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[0].skills[0].aiProfile.skillRules[0].cond",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[0].skills[0].aiProfile.targetRules[0].selector",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[0].skills[0].aiProfile.targetRules[1].selector",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[0].skills[1].pickTarget",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[0].skills[1].execute",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[0].skills[2].pickTarget",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[0].skills[2].execute",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[0].usedSkills",
+   "kind": "Set",
+   "detail": "Set 不会被 JSON.stringify 保留（会变成 {}）"
+  },
+  {
+   "path": "battle.teams[0].members[0].eventSink",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[1]",
+   "kind": "class:Entity",
+   "detail": "类实例：JSON 只保留自有可枚举字段，原型方法丢失"
+  },
+  {
+   "path": "battle.teams[0].members[1].skills[0].pickTarget",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[1].skills[0].execute",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[1].skills[0].aiProfile.skillRules[0].cond",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[1].skills[1].pickTarget",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[1].skills[1].execute",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[1].skills[2].pickTarget",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[1].skills[2].execute",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[1].usedSkills",
+   "kind": "Set",
+   "detail": "Set 不会被 JSON.stringify 保留（会变成 {}）"
+  },
+  {
+   "path": "battle.teams[0].members[1].eventSink",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[2]",
+   "kind": "class:Entity",
+   "detail": "类实例：JSON 只保留自有可枚举字段，原型方法丢失"
+  },
+  {
+   "path": "battle.teams[0].members[2].skills[0].pickTarget",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[2].skills[0].execute",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[2].skills[0].aiProfile.skillRules[0].cond",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[2].skills[0].aiProfile.targetRules[0].selector",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[2].skills[1].pickTarget",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[2].skills[1].execute",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[2].skills[2].pickTarget",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[2].skills[2].execute",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[2].usedSkills",
+   "kind": "Set",
+   "detail": "Set 不会被 JSON.stringify 保留（会变成 {}）"
+  },
+  {
+   "path": "battle.teams[0].members[2].eventSink",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[3]",
+   "kind": "class:Entity",
+   "detail": "类实例：JSON 只保留自有可枚举字段，原型方法丢失"
+  },
+  {
+   "path": "battle.teams[0].members[3].skills[0].pickTarget",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[3].skills[0].execute",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[3].skills[0].aiProfile.skillRules[0].cond",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[3].skills[0].aiProfile.skillRules[1].cond",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[3].skills[0].aiProfile.targetRules[0].selector",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[3].skills[1].pickTarget",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[3].skills[1].execute",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[3].skills[2].pickTarget",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[3].skills[2].execute",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[3].usedSkills",
+   "kind": "Set",
+   "detail": "Set 不会被 JSON.stringify 保留（会变成 {}）"
+  },
+  {
+   "path": "battle.teams[0].members[3].eventSink",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[4]",
+   "kind": "class:Entity",
+   "detail": "类实例：JSON 只保留自有可枚举字段，原型方法丢失"
+  },
+  {
+   "path": "battle.teams[0].members[4].skills[0].pickTarget",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[4].skills[0].execute",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[4].skills[0].aiProfile.skillRules[0].cond",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[4].skills[0].aiProfile.skillRules[1].cond",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[4].skills[0].aiProfile.targetRules[0].selector",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[4].skills[0].aiProfile.targetRules[1].selector",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[4].skills[1].pickTarget",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[4].skills[1].execute",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[4].skills[2].pickTarget",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[4].skills[2].execute",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].members[4].usedSkills",
+   "kind": "Set",
+   "detail": "Set 不会被 JSON.stringify 保留（会变成 {}）"
+  },
+  {
+   "path": "battle.teams[0].members[4].eventSink",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[0].orbs",
+   "kind": "class:OrbPool",
+   "detail": "类实例：JSON 只保留自有可枚举字段，原型方法丢失"
+  },
+  {
+   "path": "battle.teams[0].orbs.policy.rewardAtCycle",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1]",
+   "kind": "class:Team",
+   "detail": "类实例：JSON 只保留自有可枚举字段，原型方法丢失"
+  },
+  {
+   "path": "battle.teams[1].members[0]",
+   "kind": "class:Entity",
+   "detail": "类实例：JSON 只保留自有可枚举字段，原型方法丢失"
+  },
+  {
+   "path": "battle.teams[1].members[0].skills[0].pickTarget",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[0].skills[0].execute",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[0].skills[0].aiProfile.skillRules[0].cond",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[0].skills[0].aiProfile.skillRules[1].cond",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[0].skills[0].aiProfile.targetRules[0].selector",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[0].skills[1].pickTarget",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[0].skills[1].execute",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[0].skills[2].pickTarget",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[0].skills[2].execute",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[0].usedSkills",
+   "kind": "Set",
+   "detail": "Set 不会被 JSON.stringify 保留（会变成 {}）"
+  },
+  {
+   "path": "battle.teams[1].members[0].eventSink",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[1]",
+   "kind": "class:Entity",
+   "detail": "类实例：JSON 只保留自有可枚举字段，原型方法丢失"
+  },
+  {
+   "path": "battle.teams[1].members[1].skills[0].pickTarget",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[1].skills[0].execute",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[1].skills[0].aiProfile.skillRules[0].cond",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[1].skills[0].aiProfile.skillRules[1].cond",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[1].skills[0].aiProfile.targetRules[0].selector",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[1].skills[1].pickTarget",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[1].skills[1].execute",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[1].skills[2].pickTarget",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[1].skills[2].execute",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[1].usedSkills",
+   "kind": "Set",
+   "detail": "Set 不会被 JSON.stringify 保留（会变成 {}）"
+  },
+  {
+   "path": "battle.teams[1].members[1].eventSink",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[2]",
+   "kind": "class:Entity",
+   "detail": "类实例：JSON 只保留自有可枚举字段，原型方法丢失"
+  },
+  {
+   "path": "battle.teams[1].members[2].skills[0].pickTarget",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[2].skills[0].execute",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[2].skills[0].aiProfile.skillRules[0].cond",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[2].skills[0].aiProfile.skillRules[1].cond",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[2].skills[0].aiProfile.skillRules[2].cond",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[2].skills[0].aiProfile.targetRules[0].selector",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[2].skills[1].pickTarget",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[2].skills[1].execute",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[2].skills[2].pickTarget",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[2].skills[2].execute",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[2].usedSkills",
+   "kind": "Set",
+   "detail": "Set 不会被 JSON.stringify 保留（会变成 {}）"
+  },
+  {
+   "path": "battle.teams[1].members[2].eventSink",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[3]",
+   "kind": "class:Entity",
+   "detail": "类实例：JSON 只保留自有可枚举字段，原型方法丢失"
+  },
+  {
+   "path": "battle.teams[1].members[3].skills[0].pickTarget",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[3].skills[0].execute",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[3].skills[0].aiProfile.skillRules[0].cond",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[3].skills[0].aiProfile.skillRules[1].cond",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[3].skills[0].aiProfile.targetRules[0].selector",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[3].skills[0].aiProfile.targetRules[1].selector",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[3].skills[1].pickTarget",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[3].skills[1].execute",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[3].skills[2].pickTarget",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[3].skills[2].execute",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[3].usedSkills",
+   "kind": "Set",
+   "detail": "Set 不会被 JSON.stringify 保留（会变成 {}）"
+  },
+  {
+   "path": "battle.teams[1].members[3].eventSink",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[4]",
+   "kind": "class:Entity",
+   "detail": "类实例：JSON 只保留自有可枚举字段，原型方法丢失"
+  },
+  {
+   "path": "battle.teams[1].members[4].skills[0].pickTarget",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[4].skills[0].execute",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[4].skills[0].aiProfile.skillRules[0].cond",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[4].skills[0].aiProfile.skillRules[1].cond",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[4].skills[0].aiProfile.targetRules[0].selector",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[4].skills[1].pickTarget",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[4].skills[1].execute",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[4].skills[2].pickTarget",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[4].skills[2].execute",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].members[4].usedSkills",
+   "kind": "Set",
+   "detail": "Set 不会被 JSON.stringify 保留（会变成 {}）"
+  },
+  {
+   "path": "battle.teams[1].members[4].eventSink",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.teams[1].orbs",
+   "kind": "class:OrbPool",
+   "detail": "类实例：JSON 只保留自有可枚举字段，原型方法丢失"
+  },
+  {
+   "path": "battle.bus",
+   "kind": "class:EventBus",
+   "detail": "类实例：JSON 只保留自有可枚举字段，原型方法丢失"
+  },
+  {
+   "path": "battle.bus.insertion",
+   "kind": "Map",
+   "detail": "Map 不会被 JSON.stringify 保留（会变成 {}）"
+  },
+  {
+   "path": "battle.bus.policy.keyOf",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.bus.resolver.teamOf",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.bus.resolver.speedOf",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.bus.suppressedPassive",
+   "kind": "Set",
+   "detail": "Set 不会被 JSON.stringify 保留（会变成 {}）"
+  },
+  {
+   "path": "battle.bus.suppressProvider",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.bus.ownerActive",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.bus.scopeProvider",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.bus.nodes",
+   "kind": "Map",
+   "detail": "Map 不会被 JSON.stringify 保留（会变成 {}）"
+  },
+  {
+   "path": "battle.bus.onOverflow",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.timeline",
+   "kind": "class:Timeline",
+   "detail": "类实例：JSON 只保留自有可枚举字段，原型方法丢失"
+  },
+  {
+   "path": "battle.timeline.entries",
+   "kind": "Map",
+   "detail": "Map 不会被 JSON.stringify 保留（会变成 {}）"
+  },
+  {
+   "path": "battle.timeline.tieBreak",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.timeline.rng",
+   "kind": "class:RNG",
+   "detail": "类实例：JSON 只保留自有可枚举字段，原型方法丢失"
+  },
+  {
+   "path": "battle.timeline.lockPredicate",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.rng",
+   "kind": "class:RNG",
+   "detail": "类实例：JSON 只保留自有可枚举字段，原型方法丢失"
+  },
+  {
+   "path": "battle.skillSelector",
+   "kind": "function",
+   "detail": "函数引用无法序列化（closure / 运行时对象）"
+  },
+  {
+   "path": "battle.stats.damageDealt",
+   "kind": "Map",
+   "detail": "Map 不会被 JSON.stringify 保留（会变成 {}）"
+  },
+  {
+   "path": "battle.stats.damageTaken",
+   "kind": "Map",
+   "detail": "Map 不会被 JSON.stringify 保留（会变成 {}）"
+  },
+  {
+   "path": "battle.stats.healing",
+   "kind": "Map",
+   "detail": "Map 不会被 JSON.stringify 保留（会变成 {}）"
+  },
+  {
+   "path": "battle.stats.kills",
+   "kind": "Map",
+   "detail": "Map 不会被 JSON.stringify 保留（会变成 {}）"
+  },
+  {
+   "path": "battle.stats.deaths",
+   "kind": "Map",
+   "detail": "Map 不会被 JSON.stringify 保留（会变成 {}）"
+  },
+  {
+   "path": "battle.stats.actions",
+   "kind": "Map",
+   "detail": "Map 不会被 JSON.stringify 保留（会变成 {}）"
+  },
+  {
+   "path": "battle.stats.skillUsage",
+   "kind": "Map",
+   "detail": "Map 不会被 JSON.stringify 保留（会变成 {}）"
+  }
+ ]
+}

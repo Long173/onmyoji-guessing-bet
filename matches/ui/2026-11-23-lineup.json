@@ -1,0 +1,179 @@
+{
+ "schemaVersion": 1,
+ "id": "2026-11-23-lineup",
+ "red": {
+  "units": [
+   {
+    "unitId": "r1",
+    "shikigamiId": 367,
+    "name": "Virtuoso Hana",
+    "stats": {
+     "attack": 3311,
+     "hp": 25927,
+     "defense": 628,
+     "speed": 172,
+     "critRate": 90,
+     "critDamage": 185,
+     "effectHit": 0,
+     "effectResist": 0
+    },
+    "soulId": 11
+   },
+   {
+    "unitId": "r2",
+    "shikigamiId": 280,
+    "name": "Kaguya",
+    "stats": {
+     "attack": 3937,
+     "hp": 21352,
+     "defense": 915,
+     "speed": 144,
+     "critRate": 30,
+     "critDamage": 220,
+     "effectHit": 0,
+     "effectResist": 48
+    },
+    "soulId": 28
+   },
+   {
+    "unitId": "r3",
+    "shikigamiId": 322,
+    "name": "Inferno Ibaraki Doji",
+    "stats": {
+     "attack": 5604,
+     "hp": 14870,
+     "defense": 696,
+     "speed": 142,
+     "critRate": 80,
+     "critDamage": 311,
+     "effectHit": 0,
+     "effectResist": 48
+    },
+    "soulId": 21
+   },
+   {
+    "unitId": "r4",
+    "shikigamiId": 573,
+    "name": "Loongjue",
+    "stats": {
+     "attack": 4840,
+     "hp": 17861,
+     "defense": 545,
+     "speed": 142,
+     "critRate": 55,
+     "critDamage": 209,
+     "effectHit": 0,
+     "effectResist": 40
+    },
+    "soulId": 19
+   },
+   {
+    "unitId": "r5",
+    "shikigamiId": 369,
+    "name": "Shokurei",
+    "stats": {
+     "attack": 6240,
+     "hp": 16294,
+     "defense": 612,
+     "speed": 131,
+     "critRate": 18,
+     "critDamage": 178,
+     "effectHit": 0,
+     "effectResist": 31
+    },
+    "soulId": 44
+   }
+  ]
+ },
+ "blue": {
+  "units": [
+   {
+    "unitId": "b1",
+    "shikigamiId": 210,
+    "name": "Shiro Mujou",
+    "stats": {
+     "attack": 4458,
+     "hp": 17434,
+     "defense": 773,
+     "speed": 176,
+     "critRate": 73,
+     "critDamage": 150,
+     "effectHit": 84,
+     "effectResist": 56
+    },
+    "soulId": 26
+   },
+   {
+    "unitId": "b2",
+    "shikigamiId": 253,
+    "name": "Vampira",
+    "stats": {
+     "attack": 5108,
+     "hp": 15725,
+     "defense": 737,
+     "speed": 169,
+     "critRate": 85,
+     "critDamage": 311,
+     "effectHit": 0,
+     "effectResist": 48
+    },
+    "soulId": 20
+   },
+   {
+    "unitId": "b3",
+    "shikigamiId": 351,
+    "name": "Suzuka Gozen",
+    "stats": {
+     "attack": 4736,
+     "hp": 15930,
+     "defense": 515,
+     "speed": 152,
+     "critRate": 65,
+     "critDamage": 262,
+     "effectHit": 0,
+     "effectResist": 64
+    },
+    "soulId": 27
+   },
+   {
+    "unitId": "b4",
+    "shikigamiId": 267,
+    "name": "Sakura",
+    "stats": {
+     "attack": 4016,
+     "hp": 24799,
+     "defense": 640,
+     "speed": 147,
+     "critRate": 78,
+     "critDamage": 150,
+     "effectHit": 0,
+     "effectResist": 63
+    },
+    "soulId": 30
+   },
+   {
+    "unitId": "b5",
+    "shikigamiId": 356,
+    "name": "Senhime",
+    "stats": {
+     "attack": 3876,
+     "hp": 14585,
+     "defense": 514,
+     "speed": 121,
+     "critRate": 8,
+     "critDamage": 255,
+     "effectHit": 0,
+     "effectResist": 8
+    },
+    "soulId": 19
+   }
+  ]
+ },
+ "ruleset": "GUESSING",
+ "source": {
+  "type": "JSON",
+  "note": "Duel betting 2026-11-23 (Global screenshot) — real result: RED won"
+ },
+ "createdAt": "2026-11-23T09:48:10.353Z",
+ "updatedAt": "2026-11-23T09:48:10.353Z"
+}

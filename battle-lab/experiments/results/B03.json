@@ -1,0 +1,44 @@
+{
+ "experiment": "B03",
+ "group": "B",
+ "question": "HP阈值触发 与 死亡结算 谁先？",
+ "inGameObservation": "把目标一次打到 0 血，观察『低于X%血触发』的被动是否还生效",
+ "hypotheses": [
+  {
+   "id": "THRESHOLD_BEFORE_DEATH",
+   "note": "阈值先",
+   "observable": {
+    "marks": [],
+    "traceOrder": [
+     "ORB_INIT",
+     "DAMAGE",
+     "LETHAL",
+     "DEATH"
+    ]
+   }
+  },
+  {
+   "id": "DEATH_SHORT_CIRCUITS",
+   "note": "死亡短路",
+   "observable": {
+    "marks": [
+     "KILLED_EVENT"
+    ],
+    "traceOrder": [
+     "ORB_INIT",
+     "DAMAGE",
+     "LETHAL",
+     "DEATH"
+    ]
+   }
+  }
+ ],
+ "discriminating": true,
+ "distinctObservables": 2,
+ "kind": "HYPOTHESIS_TEST",
+ "confidence": "NOT_RUN",
+ "status": "AWAITING_IN_GAME_OBSERVATION",
+ "chosenHypothesis": null,
+ "gameVersion": "2026.10 (Data 快照)",
+ "recordedAt": "2026-10-01T16:12:41.263Z"
+}

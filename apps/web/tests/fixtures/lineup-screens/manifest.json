@@ -1,0 +1,12 @@
+{
+  "_note": "Global-client Lineup screenshots with ground truth. tables = expected tables top → bottom (team colour + lineup file under matches/).",
+  "images": [
+    { "file": "2026-11-23a-blue-red.png", "lineup": "2026-11-23-lineup.en.json", "tables": ["blue", "red"] },
+    { "file": "2026-11-23b-red.png", "lineup": "2026-11-23b-lineup.en.json", "tables": ["red"] },
+    { "file": "2026-11-23b-blue.png", "lineup": "2026-11-23b-lineup.en.json", "tables": ["blue"] },
+    { "file": "2026-11-23c-red.png", "lineup": "2026-11-23c-lineup.en.json", "tables": ["red"] },
+    { "file": "2026-11-23c-blue.png", "lineup": "2026-11-23c-lineup.en.json", "tables": ["blue"] },
+    { "file": "2026-11-23d-red-blue.png", "lineup": "2026-11-23d-lineup.en.json", "tables": ["red", "blue"] },
+    { "file": "2026-11-23d-red.png", "lineup": "2026-11-23d-lineup.en.json", "tables": ["red"] }
+  ]
+}

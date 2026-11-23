@@ -1,0 +1,259 @@
+{
+  "_meta": {
+    "id": "user-2026-11-23",
+    "title": "对弈竞猜 2026-11-23 (ảnh chụp bản Global)",
+    "capturedFrom": "Event Overview → Lineup, 2 ảnh chụp Blue/Red (bản Global, tên tiếng Anh)",
+    "statsKeyOrder": [
+      "atk",
+      "hp",
+      "def",
+      "spd",
+      "cri",
+      "crid",
+      "efh",
+      "efr"
+    ],
+    "nameMapping": {
+      "Shiro Mujou": "鬼使白 (210) — tên JP 白無常",
+      "Vampira": "吸血姬 (253)",
+      "Suzuka Gozen": "铃鹿御前 (351) — cần xác nhận không phải 龙吟铃鹿御前 (568, SP)",
+      "Sakura": "樱花妖 (267)",
+      "Senhime": "千姬 (356)",
+      "Virtuoso Hana": "绘世花鸟卷 (367, SP)",
+      "Kaguya": "辉夜姬 (280) — cần xác nhận không phải 因幡辉夜姬 (372, SP)",
+      "Inferno Ibaraki Doji": "炼狱茨木童子 (322, SP)",
+      "Loongjue": "龙珏 (573)",
+      "Shokurei": "食灵 (369)"
+    },
+    "notes": [
+      "Chỉ số là giá trị cuối hiển thị trên màn Lineup (đã gồm ngự hồn) — đúng đường 'AUTHORITATIVE_OVERRIDE' của repo",
+      "soulIds: nhận diện từ biểu tượng Soul effects bằng so khớp ảnh với 70 icon trên onmyoji.fandom.com (Soul/List/Released), đã kiểm tra bằng mắt cả 10"
+    ],
+    "soulMapping": {
+      "鬼使白": "魅妖 Temptress",
+      "吸血姬": "伤魂鸟 Fenikkusu",
+      "铃鹿御前": "针女 Seductress",
+      "樱花妖": "返魂香 Senecio",
+      "千姬": "阴摩罗 Harpy",
+      "绘世花鸟卷": "镜姬 Mirror Lady",
+      "辉夜姬": "木魅 Tree Nymph",
+      "炼狱茨木童子": "破势 Shadow",
+      "龙珏": "阴摩罗 Harpy",
+      "食灵": "共潜 Merrow"
+    }
+  },
+  "blue": [
+    {
+      "name": "鬼使白",
+      "shikigamiId": 210,
+      "rarity": "SR",
+      "stats": {
+        "atk": 4458,
+        "hp": 17434,
+        "def": 773,
+        "spd": 176,
+        "cri": 73,
+        "crid": 150,
+        "efh": 84,
+        "efr": 56
+      },
+      "soulIds": [
+        26,
+        26,
+        26,
+        26
+      ]
+    },
+    {
+      "name": "吸血姬",
+      "shikigamiId": 253,
+      "rarity": "SR",
+      "stats": {
+        "atk": 5108,
+        "hp": 15725,
+        "def": 737,
+        "spd": 169,
+        "cri": 85,
+        "crid": 311,
+        "efh": 0,
+        "efr": 48
+      },
+      "soulIds": [
+        20,
+        20,
+        20,
+        20
+      ]
+    },
+    {
+      "name": "铃鹿御前",
+      "shikigamiId": 351,
+      "rarity": "SSR",
+      "stats": {
+        "atk": 4736,
+        "hp": 15930,
+        "def": 515,
+        "spd": 152,
+        "cri": 65,
+        "crid": 262,
+        "efh": 0,
+        "efr": 64
+      },
+      "soulIds": [
+        27,
+        27,
+        27,
+        27
+      ]
+    },
+    {
+      "name": "樱花妖",
+      "shikigamiId": 267,
+      "rarity": "SR",
+      "stats": {
+        "atk": 4016,
+        "hp": 24799,
+        "def": 640,
+        "spd": 147,
+        "cri": 78,
+        "crid": 150,
+        "efh": 0,
+        "efr": 63
+      },
+      "soulIds": [
+        30,
+        30,
+        30,
+        30
+      ]
+    },
+    {
+      "name": "千姬",
+      "shikigamiId": 356,
+      "rarity": "SSR",
+      "stats": {
+        "atk": 3876,
+        "hp": 14585,
+        "def": 514,
+        "spd": 121,
+        "cri": 8,
+        "crid": 255,
+        "efh": 0,
+        "efr": 8
+      },
+      "soulIds": [
+        19,
+        19,
+        19,
+        19
+      ]
+    }
+  ],
+  "red": [
+    {
+      "name": "绘世花鸟卷",
+      "shikigamiId": 367,
+      "rarity": "SP",
+      "stats": {
+        "atk": 3311,
+        "hp": 25927,
+        "def": 628,
+        "spd": 172,
+        "cri": 90,
+        "crid": 185,
+        "efh": 0,
+        "efr": 0
+      },
+      "soulIds": [
+        11,
+        11,
+        11,
+        11
+      ]
+    },
+    {
+      "name": "辉夜姬",
+      "shikigamiId": 280,
+      "rarity": "SSR",
+      "stats": {
+        "atk": 3937,
+        "hp": 21352,
+        "def": 915,
+        "spd": 144,
+        "cri": 30,
+        "crid": 220,
+        "efh": 0,
+        "efr": 48
+      },
+      "soulIds": [
+        28,
+        28,
+        28,
+        28
+      ]
+    },
+    {
+      "name": "炼狱茨木童子",
+      "shikigamiId": 322,
+      "rarity": "SP",
+      "stats": {
+        "atk": 5604,
+        "hp": 14870,
+        "def": 696,
+        "spd": 142,
+        "cri": 80,
+        "crid": 311,
+        "efh": 0,
+        "efr": 48
+      },
+      "soulIds": [
+        21,
+        21,
+        21,
+        21
+      ]
+    },
+    {
+      "name": "龙珏",
+      "shikigamiId": 573,
+      "rarity": "SSR",
+      "stats": {
+        "atk": 4840,
+        "hp": 17861,
+        "def": 545,
+        "spd": 142,
+        "cri": 55,
+        "crid": 209,
+        "efh": 0,
+        "efr": 40
+      },
+      "soulIds": [
+        19,
+        19,
+        19,
+        19
+      ]
+    },
+    {
+      "name": "食灵",
+      "shikigamiId": 369,
+      "rarity": "SSR",
+      "stats": {
+        "atk": 6240,
+        "hp": 16294,
+        "def": 612,
+        "spd": 131,
+        "cri": 18,
+        "crid": 178,
+        "efh": 0,
+        "efr": 31
+      },
+      "soulIds": [
+        44,
+        44,
+        44,
+        44
+      ]
+    }
+  ]
+}

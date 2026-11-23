@@ -1,0 +1,192 @@
+{
+ "note": "合成演示：观测与模拟一致（只看了前 30 条）",
+ "frames": [
+  {
+   "kind": "SKILL",
+   "actor": "座敷童子",
+   "target": "三尾狐",
+   "skill": "祸福相生"
+  },
+  {
+   "kind": "ORB",
+   "actor": "座敷童子",
+   "orbs": 6,
+   "target": ""
+  },
+  {
+   "kind": "SKILL",
+   "actor": "三尾狐",
+   "target": "夜溟彼岸花",
+   "skill": "红颜怒发"
+  },
+  {
+   "kind": "ORB",
+   "actor": "三尾狐",
+   "orbs": 1,
+   "target": ""
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": "三尾狐",
+   "target": "夜溟彼岸花",
+   "amount": 5741.620751797047,
+   "hpAfter": 10923
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": "三尾狐",
+   "target": "夜溟彼岸花",
+   "amount": 1858.753994088409,
+   "hpAfter": 9065
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": "三尾狐",
+   "target": "夜溟彼岸花",
+   "amount": 5847.252657065284,
+   "hpAfter": 3217
+  },
+  {
+   "kind": "SKILL",
+   "actor": "日和坊",
+   "target": "座敷童子",
+   "skill": "阳炎"
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": "日和坊",
+   "target": "座敷童子",
+   "amount": 2824.3750497242872,
+   "hpAfter": 24066
+  },
+  {
+   "kind": "SKILL",
+   "actor": "夜溟彼岸花",
+   "target": "夜溟彼岸花",
+   "skill": "赤色凋零"
+  },
+  {
+   "kind": "STATUS",
+   "actor": "夜溟彼岸花",
+   "target": "夜溟彼岸花",
+   "status": "溟种"
+  },
+  {
+   "kind": "STATUS",
+   "actor": "夜溟彼岸花",
+   "target": "夜溟彼岸花",
+   "status": "溟种"
+  },
+  {
+   "kind": "STATUS",
+   "actor": "夜溟彼岸花",
+   "target": "夜溟彼岸花",
+   "status": "溟种"
+  },
+  {
+   "kind": "STATUS",
+   "actor": "夜溟彼岸花",
+   "target": "夜溟彼岸花",
+   "status": "溟花"
+  },
+  {
+   "kind": "STATUS",
+   "actor": "夜溟彼岸花",
+   "target": "夜溟彼岸花",
+   "status": "溟花"
+  },
+  {
+   "kind": "STATUS_END",
+   "target": "夜溟彼岸花",
+   "status": "3582_1",
+   "actor": ""
+  },
+  {
+   "kind": "STATUS_END",
+   "target": "夜溟彼岸花",
+   "status": "3581_1",
+   "actor": ""
+  },
+  {
+   "kind": "SKILL",
+   "actor": "樱花妖",
+   "target": "樱花妖",
+   "skill": "复苏"
+  },
+  {
+   "kind": "ORB",
+   "actor": "樱花妖",
+   "orbs": 3,
+   "target": ""
+  },
+  {
+   "kind": "HEAL",
+   "actor": "樱花妖",
+   "target": "樱花妖",
+   "amount": 0
+  },
+  {
+   "kind": "HEAL",
+   "actor": "樱花妖",
+   "target": "樱花妖",
+   "amount": 0
+  },
+  {
+   "kind": "HEAL",
+   "actor": "樱花妖",
+   "target": "樱花妖",
+   "amount": 0
+  },
+  {
+   "kind": "STATUS",
+   "actor": "樱花妖",
+   "target": "樱花妖",
+   "status": "复苏之舞"
+  },
+  {
+   "kind": "STATUS_END",
+   "target": "樱花妖",
+   "status": "2672_1",
+   "actor": ""
+  },
+  {
+   "kind": "SKILL",
+   "actor": "缚骨清姬",
+   "target": "三尾狐",
+   "skill": "降蛊之瞳"
+  },
+  {
+   "kind": "ORB",
+   "actor": "缚骨清姬",
+   "orbs": 0,
+   "target": ""
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": "缚骨清姬",
+   "target": "三尾狐",
+   "amount": 671.502431761437,
+   "hpAfter": 16933
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": "缚骨清姬",
+   "target": "三尾狐",
+   "amount": 1285.0385584898504,
+   "hpAfter": 15648
+  },
+  {
+   "kind": "DAMAGE",
+   "actor": "缚骨清姬",
+   "target": "三尾狐",
+   "amount": 1298.035594557754,
+   "hpAfter": 14350
+  },
+  {
+   "kind": "STATUS",
+   "actor": "缚骨清姬",
+   "target": "三尾狐",
+   "status": "瞳蛊"
+  }
+ ]
+}

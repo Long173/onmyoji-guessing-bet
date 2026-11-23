@@ -1,0 +1,46 @@
+{
+ "experiment": "A01",
+ "group": "A",
+ "question": "两个「先机」之间谁先结算？",
+ "inGameObservation": "双方各带一个开局生效的 buff，观察第一回合开始前谁的效果先出现（战斗日志/状态栏出现顺序）",
+ "hypotheses": [
+  {
+   "id": "SPEED_DESC",
+   "note": "速度快的先（不分队伍）",
+   "observable": {
+    "senkiOrder": [
+     "R1"
+    ],
+    "policy": "SPEED_DESC"
+   }
+  },
+  {
+   "id": "TEAM_THEN_SPEED",
+   "note": "先按队伍，再按速度",
+   "observable": {
+    "senkiOrder": [
+     "R1"
+    ],
+    "policy": "TEAM_THEN_SPEED"
+   }
+  },
+  {
+   "id": "REGISTRATION_ORDER",
+   "note": "按注册顺序",
+   "observable": {
+    "senkiOrder": [
+     "R1"
+    ],
+    "policy": "REGISTRATION_ORDER"
+   }
+  }
+ ],
+ "discriminating": true,
+ "distinctObservables": 3,
+ "kind": "HYPOTHESIS_TEST",
+ "confidence": "NOT_RUN",
+ "status": "AWAITING_IN_GAME_OBSERVATION",
+ "chosenHypothesis": null,
+ "gameVersion": "2026.10 (Data 快照)",
+ "recordedAt": "2026-10-01T16:12:41.246Z"
+}

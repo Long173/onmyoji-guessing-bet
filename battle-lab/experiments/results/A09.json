@@ -1,0 +1,36 @@
+{
+ "experiment": "A09",
+ "group": "A",
+ "question": "双方同类型先机的相对顺序（红蓝）",
+ "inGameObservation": "红蓝双方各带同一个开局技能，看谁先写入",
+ "hypotheses": [
+  {
+   "id": "RED_FIRST",
+   "note": "红方先",
+   "observable": {
+    "order": [
+     "R"
+    ],
+    "note": "本实验室按注册顺序"
+   }
+  },
+  {
+   "id": "SPEED_FIRST",
+   "note": "速度快的先",
+   "observable": {
+    "order": [
+     "R"
+    ],
+    "note": "本实验室按速度"
+   }
+  }
+ ],
+ "discriminating": true,
+ "distinctObservables": 2,
+ "kind": "HYPOTHESIS_TEST",
+ "confidence": "NOT_RUN",
+ "status": "AWAITING_IN_GAME_OBSERVATION",
+ "chosenHypothesis": null,
+ "gameVersion": "2026.10 (Data 快照)",
+ "recordedAt": "2026-10-01T16:12:41.257Z"
+}

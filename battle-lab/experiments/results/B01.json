@@ -1,0 +1,38 @@
+{
+ "experiment": "B01",
+ "group": "B",
+ "question": "同一次伤害：攻击方御魂 与 防守方被动 谁先？",
+ "inGameObservation": "攻方带触发型御魂、守方带受伤触发被动，看战斗日志里哪条先出现",
+ "hypotheses": [
+  {
+   "id": "ATTACKER_FIRST",
+   "note": "行动方（攻击方）的效果先结算",
+   "observable": {
+    "order": [
+     "ATK",
+     "DEF"
+    ],
+    "orderPolicy": "SELF_SIDE_FIRST"
+   }
+  },
+  {
+   "id": "DEFENDER_FIRST",
+   "note": "受击方的效果先结算",
+   "observable": {
+    "order": [
+     "ATK",
+     "DEF"
+    ],
+    "orderPolicy": "OTHER_SIDE_FIRST"
+   }
+  }
+ ],
+ "discriminating": true,
+ "distinctObservables": 2,
+ "kind": "HYPOTHESIS_TEST",
+ "confidence": "NOT_RUN",
+ "status": "AWAITING_IN_GAME_OBSERVATION",
+ "chosenHypothesis": null,
+ "gameVersion": "2026.10 (Data 快照)",
+ "recordedAt": "2026-10-01T16:12:41.260Z"
+}

@@ -1,0 +1,2200 @@
+[
+ {
+  "experiment": "A01",
+  "group": "A",
+  "question": "两个「先机」之间谁先结算？",
+  "inGameObservation": "双方各带一个开局生效的 buff，观察第一回合开始前谁的效果先出现（战斗日志/状态栏出现顺序）",
+  "hypotheses": [
+   {
+    "id": "SPEED_DESC",
+    "note": "速度快的先（不分队伍）",
+    "observable": {
+     "senkiOrder": [
+      "R1"
+     ],
+     "policy": "SPEED_DESC"
+    }
+   },
+   {
+    "id": "TEAM_THEN_SPEED",
+    "note": "先按队伍，再按速度",
+    "observable": {
+     "senkiOrder": [
+      "R1"
+     ],
+     "policy": "TEAM_THEN_SPEED"
+    }
+   },
+   {
+    "id": "REGISTRATION_ORDER",
+    "note": "按注册顺序",
+    "observable": {
+     "senkiOrder": [
+      "R1"
+     ],
+     "policy": "REGISTRATION_ORDER"
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 3,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.246Z"
+ },
+ {
+  "experiment": "A02",
+  "group": "A",
+  "question": "先机 与 御魂开局效果 谁先？",
+  "inGameObservation": "带一个开局触发的御魂 + 一个先机式神，看哪个效果先写入状态栏",
+  "hypotheses": [
+   {
+    "id": "SOUL_FIRST",
+    "note": "御魂先",
+    "observable": {
+     "order": [
+      "SOUL",
+      "SENKI"
+     ]
+    }
+   },
+   {
+    "id": "SENKI_FIRST",
+    "note": "先机先",
+    "observable": {
+     "order": [
+      "SENKI",
+      "SOUL"
+     ]
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.248Z"
+ },
+ {
+  "experiment": "A03",
+  "group": "A",
+  "question": "御魂开局效果 与 被动开局效果 谁先？",
+  "inGameObservation": "同一式神同时带开局御魂与开局被动，看属性快照以谁为准",
+  "hypotheses": [
+   {
+    "id": "SOUL_BEFORE_PASSIVE",
+    "note": "御魂先",
+    "observable": {
+     "order": [
+      "SOUL",
+      "PASSIVE"
+     ]
+    }
+   },
+   {
+    "id": "PASSIVE_FIRST",
+    "note": "被动先",
+    "observable": {
+     "order": [
+      "PASSIVE",
+      "SOUL"
+     ]
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.249Z"
+ },
+ {
+  "experiment": "A04",
+  "group": "A",
+  "question": "开局鬼火初始化 在 行动条初始化 之前还是之后？",
+  "inGameObservation": "带一个『开局给火』的效果；如果它在第一次行动前已生效，则鬼火初值更高",
+  "hypotheses": [
+   {
+    "id": "ORB_BEFORE_TIMELINE",
+    "note": "鬼火先",
+    "observable": {
+     "stageOrder": [
+      "SPAWN",
+      "INIT_STATS",
+      "SOUL_START",
+      "PASSIVE_START",
+      "SENKI",
+      "SUMMON",
+      "FIELD",
+      "ORB_INIT",
+      "TIMELINE_INIT"
+     ]
+    }
+   },
+   {
+    "id": "TIMELINE_BEFORE_ORB",
+    "note": "行动条先",
+    "observable": {
+     "stageOrder": [
+      "SPAWN",
+      "INIT_STATS",
+      "SOUL_START",
+      "PASSIVE_START",
+      "SENKI",
+      "SUMMON",
+      "FIELD",
+      "TIMELINE_INIT",
+      "ORB_INIT"
+     ]
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.250Z"
+ },
+ {
+  "experiment": "A05",
+  "group": "A",
+  "question": "同速单位的开局顺序如何决定？",
+  "inGameObservation": "双方各放一个完全同速的单位，反复开 20 局看第一次行动方是否固定",
+  "hypotheses": [
+   {
+    "id": "SPEED_THEN_RANDOM",
+    "note": "同速随机",
+    "observable": {
+     "firstActors": [
+      0,
+      100
+     ],
+     "distribution": {
+      "0": 8,
+      "100": 12
+     }
+    }
+   },
+   {
+    "id": "UNRESOLVED",
+    "note": "未定（可能按站位）",
+    "observable": {
+     "firstActors": [
+      0
+     ],
+     "distribution": {
+      "0": 20
+     }
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.252Z"
+ },
+ {
+  "experiment": "A06",
+  "group": "A",
+  "question": "开局拉条/推条是否在第一次行动前生效？",
+  "inGameObservation": "带『开局提升行动条』的效果，看第一回合是否由该单位抢到",
+  "hypotheses": [
+   {
+    "id": "APPLIED_BEFORE_FIRST_TURN",
+    "note": "先生效",
+    "observable": {
+     "firstActor": 0
+    }
+   },
+   {
+    "id": "IGNORED_AT_START",
+    "note": "开局忽略",
+    "observable": {
+     "firstActor": 100
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.254Z"
+ },
+ {
+  "experiment": "A07",
+  "group": "A",
+  "question": "召唤物在开局的生成时点（相对先机）",
+  "inGameObservation": "带『开局召唤』的式神，看召唤物头像何时出现",
+  "hypotheses": [
+   {
+    "id": "SUMMON_BEFORE_SENKI",
+    "note": "召唤先",
+    "observable": {
+     "stageOrder": [
+      "SPAWN",
+      "INIT_STATS",
+      "SOUL_START",
+      "PASSIVE_START",
+      "SUMMON",
+      "SENKI",
+      "FIELD",
+      "ORB_INIT",
+      "TIMELINE_INIT"
+     ]
+    }
+   },
+   {
+    "id": "SUMMON_AFTER_SENKI",
+    "note": "先机先",
+    "observable": {
+     "stageOrder": [
+      "SPAWN",
+      "INIT_STATS",
+      "SOUL_START",
+      "PASSIVE_START",
+      "SENKI",
+      "SUMMON",
+      "FIELD",
+      "ORB_INIT",
+      "TIMELINE_INIT"
+     ]
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.255Z"
+ },
+ {
+  "experiment": "A08",
+  "group": "A",
+  "question": "开局鬼火变化的叠加顺序（多个『开局给火』）",
+  "inGameObservation": "同队两个单位都带开局给火，看最终鬼火是 4+2+2 还是只取一个",
+  "hypotheses": [
+   {
+    "id": "STACK_ALL",
+    "note": "全部叠加",
+    "observable": {
+     "orbAfterStartup": 6
+    }
+   },
+   {
+    "id": "ONLY_ONE",
+    "note": "只生效一个",
+    "observable": {
+     "orbAfterStartup": 4
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.256Z"
+ },
+ {
+  "experiment": "A09",
+  "group": "A",
+  "question": "双方同类型先机的相对顺序（红蓝）",
+  "inGameObservation": "红蓝双方各带同一个开局技能，看谁先写入",
+  "hypotheses": [
+   {
+    "id": "RED_FIRST",
+    "note": "红方先",
+    "observable": {
+     "order": [
+      "R"
+     ],
+     "note": "本实验室按注册顺序"
+    }
+   },
+   {
+    "id": "SPEED_FIRST",
+    "note": "速度快的先",
+    "observable": {
+     "order": [
+      "R"
+     ],
+     "note": "本实验室按速度"
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.257Z"
+ },
+ {
+  "experiment": "A10",
+  "group": "A",
+  "question": "开局被动的封印判定发生在何时？",
+  "inGameObservation": "若一方开局被封印/压制，其开局被动是否仍生效",
+  "hypotheses": [
+   {
+    "id": "SUPPRESS_BEFORE_PASSIVE",
+    "note": "封印先，被动不生效",
+    "observable": {
+     "passiveFired": [],
+     "suppressed": true
+    }
+   },
+   {
+    "id": "PASSIVE_BEFORE_SUPPRESS",
+    "note": "被动先，仍生效",
+    "observable": {
+     "passiveFired": [
+      "R1_PASSIVE"
+     ],
+     "suppressed": false
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.258Z"
+ },
+ {
+  "experiment": "B01",
+  "group": "B",
+  "question": "同一次伤害：攻击方御魂 与 防守方被动 谁先？",
+  "inGameObservation": "攻方带触发型御魂、守方带受伤触发被动，看战斗日志里哪条先出现",
+  "hypotheses": [
+   {
+    "id": "ATTACKER_FIRST",
+    "note": "行动方（攻击方）的效果先结算",
+    "observable": {
+     "order": [
+      "ATK",
+      "DEF"
+     ],
+     "orderPolicy": "SELF_SIDE_FIRST"
+    }
+   },
+   {
+    "id": "DEFENDER_FIRST",
+    "note": "受击方的效果先结算",
+    "observable": {
+     "order": [
+      "ATK",
+      "DEF"
+     ],
+     "orderPolicy": "OTHER_SIDE_FIRST"
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.260Z"
+ },
+ {
+  "experiment": "B02",
+  "group": "B",
+  "question": "多个被动同时触发时的排序",
+  "inGameObservation": "同队 3 个被动都在同一事件触发，看状态栏/日志顺序",
+  "hypotheses": [
+   {
+    "id": "REGISTRATION_ORDER",
+    "note": "注册顺序",
+    "observable": {
+     "order": [
+      "P1",
+      "P2",
+      "P3"
+     ],
+     "policy": "REGISTRATION_ORDER"
+    }
+   },
+   {
+    "id": "TEAM_THEN_SPEED",
+    "note": "队伍→速度",
+    "observable": {
+     "order": [
+      "P1",
+      "P2",
+      "P3"
+     ],
+     "policy": "TEAM_THEN_SPEED"
+    }
+   },
+   {
+    "id": "UNDETERMINED",
+    "note": "未知",
+    "observable": {
+     "order": [
+      "P1",
+      "P2",
+      "P3"
+     ],
+     "policy": "UNDETERMINED"
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 3,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.261Z"
+ },
+ {
+  "experiment": "B03",
+  "group": "B",
+  "question": "HP阈值触发 与 死亡结算 谁先？",
+  "inGameObservation": "把目标一次打到 0 血，观察『低于X%血触发』的被动是否还生效",
+  "hypotheses": [
+   {
+    "id": "THRESHOLD_BEFORE_DEATH",
+    "note": "阈值先",
+    "observable": {
+     "marks": [],
+     "traceOrder": [
+      "ORB_INIT",
+      "DAMAGE",
+      "LETHAL",
+      "DEATH"
+     ]
+    }
+   },
+   {
+    "id": "DEATH_SHORT_CIRCUITS",
+    "note": "死亡短路",
+    "observable": {
+     "marks": [
+      "KILLED_EVENT"
+     ],
+     "traceOrder": [
+      "ORB_INIT",
+      "DAMAGE",
+      "LETHAL",
+      "DEATH"
+     ]
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.263Z"
+ },
+ {
+  "experiment": "B04",
+  "group": "B",
+  "question": "反击 与 追击 的先后",
+  "inGameObservation": "同时满足反击与追击条件时，看哪个动作先播",
+  "hypotheses": [
+   {
+    "id": "COUNTER_FIRST",
+    "note": "反击先",
+    "observable": {
+     "order": [],
+     "note": "假设反击先"
+    }
+   },
+   {
+    "id": "CHASE_FIRST",
+    "note": "追击先",
+    "observable": {
+     "order": [],
+     "note": "假设追击先"
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.264Z"
+ },
+ {
+  "experiment": "B05",
+  "group": "B",
+  "question": "新回合 与 伪回合 的优先顺序",
+  "inGameObservation": "同一时点既获得额外回合又触发伪回合，看谁先动（规格书称：伪回合 > 额外回合）",
+  "hypotheses": [
+   {
+    "id": "PSEUDO_BEFORE_NEW",
+    "note": "伪回合先（规格书）",
+    "observable": {
+     "queued": [
+      "PSEUDO",
+      "NEW"
+     ],
+     "source": "规格书 附1/正文"
+    }
+   },
+   {
+    "id": "NEW_BEFORE_PSEUDO",
+    "note": "额外回合先",
+    "observable": {
+     "queued": [
+      "NEW",
+      "PSEUDO"
+     ],
+     "source": "规格书 附1/正文"
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.265Z"
+ },
+ {
+  "experiment": "B06",
+  "group": "B",
+  "question": "协战 是否触发对方的反击？",
+  "inGameObservation": "A 普攻触发队友协战，观察被协战打的敌人是否反击协战者",
+  "hypotheses": [
+   {
+    "id": "CO_ATTACK_TRIGGERS_COUNTER",
+    "note": "会触发",
+    "observable": {
+     "specNote": "规格书原文：A 在自己的伪回合对 B 造成伤害，B 无法反击，但 A 的队友 C 协战，B 可以对 C 反击",
+     "hypothesis": "会触发"
+    }
+   },
+   {
+    "id": "CO_ATTACK_NO_COUNTER",
+    "note": "不会",
+    "observable": {
+     "specNote": "规格书原文：A 在自己的伪回合对 B 造成伤害，B 无法反击，但 A 的队友 C 协战，B 可以对 C 反击",
+     "hypothesis": "不会"
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.265Z"
+ },
+ {
+  "experiment": "B07",
+  "group": "B",
+  "question": "伤害被护盾完全吸收时，是否仍触发『造成伤害时』类御魂？",
+  "inGameObservation": "给目标叠满盾再打，看针女/破势类是否触发",
+  "hypotheses": [
+   {
+    "id": "NO_TRIGGER_WHEN_ABSORBED",
+    "note": "不触发（规格书原文）",
+    "observable": {
+     "absorbed": 49.904124717460945,
+     "applied": 0,
+     "soulTriggered": true,
+     "rule": false
+    }
+   },
+   {
+    "id": "STILL_TRIGGER",
+    "note": "仍触发",
+    "observable": {
+     "absorbed": 49.904124717460945,
+     "applied": 0,
+     "soulTriggered": true,
+     "rule": true
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.267Z"
+ },
+ {
+  "experiment": "B08",
+  "group": "B",
+  "question": "间接伤害是否触发收伤方御魂",
+  "inGameObservation": "官方[5] 说不触发御魂 —— 用实验室确认实现与官方一致",
+  "hypotheses": [
+   {
+    "id": "OFFICIAL_5",
+    "note": "不触发",
+    "observable": {
+     "normal_triggersSoul": true,
+     "indirect_triggersSoul": false,
+     "shared_normal": true,
+     "shared_indirect": false
+    }
+   }
+  ],
+  "discriminating": false,
+  "distinctObservables": 1,
+  "kind": "CONFORMANCE",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.268Z"
+ },
+ {
+  "experiment": "B09",
+  "group": "B",
+  "question": "多个 pending action 同时排队时的执行顺序",
+  "inGameObservation": "同一回合末同时触发多个『立即再行动』，看执行次序",
+  "hypotheses": [
+   {
+    "id": "FIFO",
+    "note": "先入先出",
+    "observable": {
+     "queue": [
+      "E1",
+      "E2",
+      "E3"
+     ],
+     "executed": [
+      "E1",
+      "E2",
+      "E3"
+     ],
+     "source": "规格书：均为额外/伪回合时，后触发的先行动"
+    }
+   },
+   {
+    "id": "LIFO",
+    "note": "后入先出（规格书：后触发的先行动）",
+    "observable": {
+     "queue": [
+      "E1",
+      "E2",
+      "E3"
+     ],
+     "executed": [
+      "E3",
+      "E2",
+      "E1"
+     ],
+     "source": "规格书：均为额外/伪回合时，后触发的先行动"
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.268Z"
+ },
+ {
+  "experiment": "B10",
+  "group": "B",
+  "question": "封印 vs 压制：御魂失效 与 被动失效 是否独立",
+  "inGameObservation": "官方[105][106][107] 明确区分，用实验室确认实现未合并",
+  "hypotheses": [
+   {
+    "id": "SEPARATE",
+    "note": "独立（官方）",
+    "observable": {
+     "statuses": [
+      {
+       "id": "disarm",
+       "suppressSoul": true,
+       "suppressPassive": false
+      },
+      {
+       "id": "morph",
+       "suppressSoul": false,
+       "suppressPassive": true
+      },
+      {
+       "id": "silence",
+       "suppressSoul": false,
+       "suppressPassive": false
+      }
+     ],
+     "official": {
+      "封印": "御魂失效",
+      "压制": "被动失效",
+      "变形": "两者皆失效"
+     }
+    }
+   }
+  ],
+  "discriminating": false,
+  "distinctObservables": 1,
+  "kind": "CONFORMANCE",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.269Z"
+ },
+ {
+  "experiment": "C01",
+  "group": "C",
+  "question": "普通致死：HP<=0 后的完整 trace",
+  "inGameObservation": "在游戏里构造对应场景并录屏；本实验室给出各候选假设下应看到的不同现象",
+  "hypotheses": [
+   {
+    "id": "HP_ZERO_IS_KILLED",
+    "note": "HP<=0 即 KILLED",
+    "observable": {
+     "marks": [
+      "KILLED"
+     ],
+     "hp": 0,
+     "hpZero": true,
+     "dead": true,
+     "killed": true,
+     "alive": false,
+     "trace": [
+      "ORB_INIT",
+      "DAMAGE",
+      "LETHAL",
+      "DEATH"
+     ],
+     "resurrectable": true
+    }
+   },
+   {
+    "id": "DEATH_AFTER_PREVENTION",
+    "note": "先拦截再 KILLED",
+    "observable": {
+     "marks": [],
+     "hp": 0,
+     "hpZero": true,
+     "dead": true,
+     "killed": true,
+     "alive": false,
+     "trace": [
+      "ORB_INIT",
+      "DAMAGE",
+      "LETHAL",
+      "DEATH"
+     ],
+     "resurrectable": true
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.270Z"
+ },
+ {
+  "experiment": "C02",
+  "group": "C",
+  "question": "致死 + 免死（DEATH_PREVENTION 拦截）",
+  "inGameObservation": "在游戏里构造对应场景并录屏；本实验室给出各候选假设下应看到的不同现象",
+  "hypotheses": [
+   {
+    "id": "HP_ZERO_IS_KILLED",
+    "note": "HP<=0 即 KILLED",
+    "observable": {
+     "marks": [
+      "KILLED"
+     ],
+     "hp": 0,
+     "hpZero": true,
+     "dead": true,
+     "killed": true,
+     "alive": false,
+     "trace": [
+      "ORB_INIT",
+      "DAMAGE",
+      "LETHAL",
+      "DEATH"
+     ],
+     "resurrectable": true
+    }
+   },
+   {
+    "id": "DEATH_AFTER_PREVENTION",
+    "note": "先拦截再 KILLED",
+    "observable": {
+     "marks": [],
+     "hp": 0,
+     "hpZero": true,
+     "dead": true,
+     "killed": true,
+     "alive": false,
+     "trace": [
+      "ORB_INIT",
+      "DAMAGE",
+      "LETHAL",
+      "DEATH"
+     ],
+     "resurrectable": true
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.271Z"
+ },
+ {
+  "experiment": "C03",
+  "group": "C",
+  "question": "致死 + 被动复活",
+  "inGameObservation": "在游戏里构造对应场景并录屏；本实验室给出各候选假设下应看到的不同现象",
+  "hypotheses": [
+   {
+    "id": "HP_ZERO_IS_KILLED",
+    "note": "HP<=0 即 KILLED",
+    "observable": {
+     "marks": [
+      "KILLED"
+     ],
+     "hp": 0,
+     "hpZero": true,
+     "dead": true,
+     "killed": true,
+     "alive": false,
+     "trace": [
+      "ORB_INIT",
+      "DAMAGE",
+      "LETHAL",
+      "DEATH"
+     ],
+     "resurrectable": true
+    }
+   },
+   {
+    "id": "DEATH_AFTER_PREVENTION",
+    "note": "先拦截再 KILLED",
+    "observable": {
+     "marks": [],
+     "hp": 0,
+     "hpZero": true,
+     "dead": true,
+     "killed": true,
+     "alive": false,
+     "trace": [
+      "ORB_INIT",
+      "DAMAGE",
+      "LETHAL",
+      "DEATH"
+     ],
+     "resurrectable": true
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.272Z"
+ },
+ {
+  "experiment": "C04",
+  "group": "C",
+  "question": "致死 + 外部复活",
+  "inGameObservation": "在游戏里构造对应场景并录屏；本实验室给出各候选假设下应看到的不同现象",
+  "hypotheses": [
+   {
+    "id": "HP_ZERO_IS_KILLED",
+    "note": "HP<=0 即 KILLED",
+    "observable": {
+     "marks": [
+      "KILLED"
+     ],
+     "hp": 0,
+     "hpZero": true,
+     "dead": true,
+     "killed": true,
+     "alive": false,
+     "trace": [
+      "ORB_INIT",
+      "DAMAGE",
+      "LETHAL",
+      "DEATH"
+     ],
+     "resurrectable": true
+    }
+   },
+   {
+    "id": "DEATH_AFTER_PREVENTION",
+    "note": "先拦截再 KILLED",
+    "observable": {
+     "marks": [],
+     "hp": 0,
+     "hpZero": true,
+     "dead": true,
+     "killed": true,
+     "alive": false,
+     "trace": [
+      "ORB_INIT",
+      "DAMAGE",
+      "LETHAL",
+      "DEATH"
+     ],
+     "resurrectable": true
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.273Z"
+ },
+ {
+  "experiment": "C05",
+  "group": "C",
+  "question": "多个复活来源同时存在时谁生效",
+  "inGameObservation": "在游戏里构造对应场景并录屏；本实验室给出各候选假设下应看到的不同现象",
+  "hypotheses": [
+   {
+    "id": "HP_ZERO_IS_KILLED",
+    "note": "HP<=0 即 KILLED",
+    "observable": {
+     "marks": [
+      "KILLED"
+     ],
+     "hp": 0,
+     "hpZero": true,
+     "dead": true,
+     "killed": true,
+     "alive": false,
+     "trace": [
+      "ORB_INIT",
+      "DAMAGE",
+      "LETHAL",
+      "DEATH"
+     ],
+     "resurrectable": true
+    }
+   },
+   {
+    "id": "DEATH_AFTER_PREVENTION",
+    "note": "先拦截再 KILLED",
+    "observable": {
+     "marks": [],
+     "hp": 0,
+     "hpZero": true,
+     "dead": true,
+     "killed": true,
+     "alive": false,
+     "trace": [
+      "ORB_INIT",
+      "DAMAGE",
+      "LETHAL",
+      "DEATH"
+     ],
+     "resurrectable": true
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.274Z"
+ },
+ {
+  "experiment": "C06",
+  "group": "C",
+  "question": "死亡瞬间是否清除自身所有 buff（规格书：解除自身持有的所有效果）",
+  "inGameObservation": "在游戏里构造对应场景并录屏；本实验室给出各候选假设下应看到的不同现象",
+  "hypotheses": [
+   {
+    "id": "HP_ZERO_IS_KILLED",
+    "note": "HP<=0 即 KILLED",
+    "observable": {
+     "marks": [
+      "KILLED"
+     ],
+     "hp": 0,
+     "hpZero": true,
+     "dead": true,
+     "killed": true,
+     "alive": false,
+     "trace": [
+      "ORB_INIT",
+      "DAMAGE",
+      "LETHAL",
+      "DEATH"
+     ],
+     "resurrectable": true
+    }
+   },
+   {
+    "id": "DEATH_AFTER_PREVENTION",
+    "note": "先拦截再 KILLED",
+    "observable": {
+     "marks": [],
+     "hp": 0,
+     "hpZero": true,
+     "dead": true,
+     "killed": true,
+     "alive": false,
+     "trace": [
+      "ORB_INIT",
+      "DAMAGE",
+      "LETHAL",
+      "DEATH"
+     ],
+     "resurrectable": true
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.275Z"
+ },
+ {
+  "experiment": "C07",
+  "group": "C",
+  "question": "击杀方被动 在 KILLED 还是 DEATH 时触发",
+  "inGameObservation": "在游戏里构造对应场景并录屏；本实验室给出各候选假设下应看到的不同现象",
+  "hypotheses": [
+   {
+    "id": "HP_ZERO_IS_KILLED",
+    "note": "HP<=0 即 KILLED",
+    "observable": {
+     "marks": [
+      "KILLED"
+     ],
+     "hp": 0,
+     "hpZero": true,
+     "dead": true,
+     "killed": true,
+     "alive": false,
+     "trace": [
+      "ORB_INIT",
+      "DAMAGE",
+      "LETHAL",
+      "DEATH"
+     ],
+     "resurrectable": true
+    }
+   },
+   {
+    "id": "DEATH_AFTER_PREVENTION",
+    "note": "先拦截再 KILLED",
+    "observable": {
+     "marks": [],
+     "hp": 0,
+     "hpZero": true,
+     "dead": true,
+     "killed": true,
+     "alive": false,
+     "trace": [
+      "ORB_INIT",
+      "DAMAGE",
+      "LETHAL",
+      "DEATH"
+     ],
+     "resurrectable": true
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.276Z"
+ },
+ {
+  "experiment": "C08",
+  "group": "C",
+  "question": "转化（官方[3252] 视同被击败、无法被复活）",
+  "inGameObservation": "在游戏里构造对应场景并录屏；本实验室给出各候选假设下应看到的不同现象",
+  "hypotheses": [
+   {
+    "id": "HP_ZERO_IS_KILLED",
+    "note": "HP<=0 即 KILLED",
+    "observable": {
+     "marks": [
+      "KILLED"
+     ],
+     "hp": 0,
+     "hpZero": true,
+     "dead": true,
+     "killed": true,
+     "alive": false,
+     "trace": [
+      "ORB_INIT",
+      "DAMAGE",
+      "LETHAL",
+      "DEATH"
+     ],
+     "resurrectable": true
+    }
+   },
+   {
+    "id": "DEATH_AFTER_PREVENTION",
+    "note": "先拦截再 KILLED",
+    "observable": {
+     "marks": [],
+     "hp": 0,
+     "hpZero": true,
+     "dead": true,
+     "killed": true,
+     "alive": false,
+     "trace": [
+      "ORB_INIT",
+      "DAMAGE",
+      "LETHAL",
+      "DEATH"
+     ],
+     "resurrectable": true
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.277Z"
+ },
+ {
+  "experiment": "C09",
+  "group": "C",
+  "question": "转化后能否被复活（预期：不能）",
+  "inGameObservation": "在游戏里构造对应场景并录屏；本实验室给出各候选假设下应看到的不同现象",
+  "hypotheses": [
+   {
+    "id": "HP_ZERO_IS_KILLED",
+    "note": "HP<=0 即 KILLED",
+    "observable": {
+     "marks": [
+      "KILLED"
+     ],
+     "hp": 0,
+     "hpZero": true,
+     "dead": true,
+     "killed": true,
+     "alive": false,
+     "trace": [
+      "ORB_INIT",
+      "DAMAGE",
+      "LETHAL",
+      "DEATH"
+     ],
+     "resurrectable": true
+    }
+   },
+   {
+    "id": "DEATH_AFTER_PREVENTION",
+    "note": "先拦截再 KILLED",
+    "observable": {
+     "marks": [],
+     "hp": 0,
+     "hpZero": true,
+     "dead": true,
+     "killed": true,
+     "alive": false,
+     "trace": [
+      "ORB_INIT",
+      "DAMAGE",
+      "LETHAL",
+      "DEATH"
+     ],
+     "resurrectable": true
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.278Z"
+ },
+ {
+  "experiment": "C10",
+  "group": "C",
+  "question": "召唤物死亡是否计入胜负",
+  "inGameObservation": "在游戏里构造对应场景并录屏；本实验室给出各候选假设下应看到的不同现象",
+  "hypotheses": [
+   {
+    "id": "HP_ZERO_IS_KILLED",
+    "note": "HP<=0 即 KILLED",
+    "observable": {
+     "marks": [
+      "KILLED"
+     ],
+     "hp": 0,
+     "hpZero": true,
+     "dead": true,
+     "killed": true,
+     "alive": false,
+     "trace": [
+      "ORB_INIT",
+      "DAMAGE",
+      "LETHAL",
+      "DEATH"
+     ],
+     "resurrectable": true
+    }
+   },
+   {
+    "id": "DEATH_AFTER_PREVENTION",
+    "note": "先拦截再 KILLED",
+    "observable": {
+     "marks": [],
+     "hp": 0,
+     "hpZero": true,
+     "dead": true,
+     "killed": true,
+     "alive": false,
+     "trace": [
+      "ORB_INIT",
+      "DAMAGE",
+      "LETHAL",
+      "DEATH"
+     ],
+     "resurrectable": true
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.278Z"
+ },
+ {
+  "experiment": "C11",
+  "group": "C",
+  "question": "特殊召唤物死亡（官方[3253] 跨回目不移除）",
+  "inGameObservation": "在游戏里构造对应场景并录屏；本实验室给出各候选假设下应看到的不同现象",
+  "hypotheses": [
+   {
+    "id": "HP_ZERO_IS_KILLED",
+    "note": "HP<=0 即 KILLED",
+    "observable": {
+     "marks": [
+      "KILLED"
+     ],
+     "hp": 0,
+     "hpZero": true,
+     "dead": true,
+     "killed": true,
+     "alive": false,
+     "trace": [
+      "ORB_INIT",
+      "DAMAGE",
+      "LETHAL",
+      "DEATH"
+     ],
+     "resurrectable": true
+    }
+   },
+   {
+    "id": "DEATH_AFTER_PREVENTION",
+    "note": "先拦截再 KILLED",
+    "observable": {
+     "marks": [],
+     "hp": 0,
+     "hpZero": true,
+     "dead": true,
+     "killed": true,
+     "alive": false,
+     "trace": [
+      "ORB_INIT",
+      "DAMAGE",
+      "LETHAL",
+      "DEATH"
+     ],
+     "resurrectable": true
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.279Z"
+ },
+ {
+  "experiment": "C12",
+  "group": "C",
+  "question": "同归于尽（双方同时归零）的判定",
+  "inGameObservation": "在游戏里构造对应场景并录屏；本实验室给出各候选假设下应看到的不同现象",
+  "hypotheses": [
+   {
+    "id": "HP_ZERO_IS_KILLED",
+    "note": "HP<=0 即 KILLED",
+    "observable": {
+     "marks": [
+      "KILLED"
+     ],
+     "hp": 0,
+     "hpZero": true,
+     "dead": true,
+     "killed": true,
+     "alive": false,
+     "trace": [
+      "ORB_INIT",
+      "DAMAGE",
+      "LETHAL",
+      "DEATH"
+     ],
+     "resurrectable": true
+    }
+   },
+   {
+    "id": "DEATH_AFTER_PREVENTION",
+    "note": "先拦截再 KILLED",
+    "observable": {
+     "marks": [],
+     "hp": 0,
+     "hpZero": true,
+     "dead": true,
+     "killed": true,
+     "alive": false,
+     "trace": [
+      "ORB_INIT",
+      "DAMAGE",
+      "LETHAL",
+      "DEATH"
+     ],
+     "resurrectable": true
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.280Z"
+ },
+ {
+  "experiment": "D01",
+  "group": "D",
+  "question": "初始鬼火（对弈竞猜）",
+  "inGameObservation": "录屏逐帧采样：固定攻方/守方与面板，记录 t=0/60/120/180s 的伤害数字，反推 M(t)=Damage(t)/Damage(0)",
+  "hypotheses": [
+   {
+    "id": "UNKNOWN_NO_ASSUMPTION",
+    "note": "不假设（当前策略）",
+    "observable": {
+     "ruleset": "COMMUNITY_2020_UNVERIFIED",
+     "status": "UNKNOWN",
+     "teamSize": 5,
+     "hasOnmyoji": false,
+     "initialOrb": 4,
+     "gaugeSize": 5,
+     "maxOrb": 8,
+     "orbIndependence": "两队各自持有 OrbPool（本实验室为独立）",
+     "stalemate": {
+      "damageRamp": null,
+      "healingReductionRamp": null,
+      "startTurn": null
+     },
+     "timeout": {
+      "maxTurns": null,
+      "resolveBy": "UNKNOWN"
+     }
+    }
+   },
+   {
+    "id": "COMMUNITY_2020",
+    "note": "按 2020 攻略假设存在阶梯增伤（未验证）",
+    "observable": {
+     "ruleset": "COMMUNITY_2020",
+     "status": "UNKNOWN",
+     "teamSize": 5,
+     "hasOnmyoji": false,
+     "initialOrb": 4,
+     "gaugeSize": 5,
+     "maxOrb": 8,
+     "orbIndependence": "两队各自持有 OrbPool（本实验室为独立）",
+     "stalemate": {
+      "damageRamp": null,
+      "healingReductionRamp": null,
+      "startTurn": 10
+     },
+     "timeout": {
+      "maxTurns": null,
+      "resolveBy": "UNKNOWN"
+     }
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.281Z"
+ },
+ {
+  "experiment": "D02",
+  "group": "D",
+  "question": "初始鬼火条格数",
+  "inGameObservation": "录屏逐帧采样：固定攻方/守方与面板，记录 t=0/60/120/180s 的伤害数字，反推 M(t)=Damage(t)/Damage(0)",
+  "hypotheses": [
+   {
+    "id": "UNKNOWN_NO_ASSUMPTION",
+    "note": "不假设（当前策略）",
+    "observable": {
+     "ruleset": "COMMUNITY_2020_UNVERIFIED",
+     "status": "UNKNOWN",
+     "teamSize": 5,
+     "hasOnmyoji": false,
+     "initialOrb": 4,
+     "gaugeSize": 5,
+     "maxOrb": 8,
+     "orbIndependence": "两队各自持有 OrbPool（本实验室为独立）",
+     "stalemate": {
+      "damageRamp": null,
+      "healingReductionRamp": null,
+      "startTurn": null
+     },
+     "timeout": {
+      "maxTurns": null,
+      "resolveBy": "UNKNOWN"
+     }
+    }
+   },
+   {
+    "id": "COMMUNITY_2020",
+    "note": "按 2020 攻略假设存在阶梯增伤（未验证）",
+    "observable": {
+     "ruleset": "COMMUNITY_2020",
+     "status": "UNKNOWN",
+     "teamSize": 5,
+     "hasOnmyoji": false,
+     "initialOrb": 4,
+     "gaugeSize": 5,
+     "maxOrb": 8,
+     "orbIndependence": "两队各自持有 OrbPool（本实验室为独立）",
+     "stalemate": {
+      "damageRamp": null,
+      "healingReductionRamp": null,
+      "startTurn": 10
+     },
+     "timeout": {
+      "maxTurns": null,
+      "resolveBy": "UNKNOWN"
+     }
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.282Z"
+ },
+ {
+  "experiment": "D03",
+  "group": "D",
+  "question": "双方鬼火是否独立",
+  "inGameObservation": "录屏逐帧采样：固定攻方/守方与面板，记录 t=0/60/120/180s 的伤害数字，反推 M(t)=Damage(t)/Damage(0)",
+  "hypotheses": [
+   {
+    "id": "UNKNOWN_NO_ASSUMPTION",
+    "note": "不假设（当前策略）",
+    "observable": {
+     "ruleset": "COMMUNITY_2020_UNVERIFIED",
+     "status": "UNKNOWN",
+     "teamSize": 5,
+     "hasOnmyoji": false,
+     "initialOrb": 4,
+     "gaugeSize": 5,
+     "maxOrb": 8,
+     "orbIndependence": "两队各自持有 OrbPool（本实验室为独立）",
+     "stalemate": {
+      "damageRamp": null,
+      "healingReductionRamp": null,
+      "startTurn": null
+     },
+     "timeout": {
+      "maxTurns": null,
+      "resolveBy": "UNKNOWN"
+     }
+    }
+   },
+   {
+    "id": "COMMUNITY_2020",
+    "note": "按 2020 攻略假设存在阶梯增伤（未验证）",
+    "observable": {
+     "ruleset": "COMMUNITY_2020",
+     "status": "UNKNOWN",
+     "teamSize": 5,
+     "hasOnmyoji": false,
+     "initialOrb": 4,
+     "gaugeSize": 5,
+     "maxOrb": 8,
+     "orbIndependence": "两队各自持有 OrbPool（本实验室为独立）",
+     "stalemate": {
+      "damageRamp": null,
+      "healingReductionRamp": null,
+      "startTurn": 10
+     },
+     "timeout": {
+      "maxTurns": null,
+      "resolveBy": "UNKNOWN"
+     }
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.282Z"
+ },
+ {
+  "experiment": "D04",
+  "group": "D",
+  "question": "初始行动条位置",
+  "inGameObservation": "录屏逐帧采样：固定攻方/守方与面板，记录 t=0/60/120/180s 的伤害数字，反推 M(t)=Damage(t)/Damage(0)",
+  "hypotheses": [
+   {
+    "id": "UNKNOWN_NO_ASSUMPTION",
+    "note": "不假设（当前策略）",
+    "observable": {
+     "ruleset": "COMMUNITY_2020_UNVERIFIED",
+     "status": "UNKNOWN",
+     "teamSize": 5,
+     "hasOnmyoji": false,
+     "initialOrb": 4,
+     "gaugeSize": 5,
+     "maxOrb": 8,
+     "orbIndependence": "两队各自持有 OrbPool（本实验室为独立）",
+     "stalemate": {
+      "damageRamp": null,
+      "healingReductionRamp": null,
+      "startTurn": null
+     },
+     "timeout": {
+      "maxTurns": null,
+      "resolveBy": "UNKNOWN"
+     }
+    }
+   },
+   {
+    "id": "COMMUNITY_2020",
+    "note": "按 2020 攻略假设存在阶梯增伤（未验证）",
+    "observable": {
+     "ruleset": "COMMUNITY_2020",
+     "status": "UNKNOWN",
+     "teamSize": 5,
+     "hasOnmyoji": false,
+     "initialOrb": 4,
+     "gaugeSize": 5,
+     "maxOrb": 8,
+     "orbIndependence": "两队各自持有 OrbPool（本实验室为独立）",
+     "stalemate": {
+      "damageRamp": null,
+      "healingReductionRamp": null,
+      "startTurn": 10
+     },
+     "timeout": {
+      "maxTurns": null,
+      "resolveBy": "UNKNOWN"
+     }
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.283Z"
+ },
+ {
+  "experiment": "D05",
+  "group": "D",
+  "question": "首轮是否特殊规则",
+  "inGameObservation": "录屏逐帧采样：固定攻方/守方与面板，记录 t=0/60/120/180s 的伤害数字，反推 M(t)=Damage(t)/Damage(0)",
+  "hypotheses": [
+   {
+    "id": "UNKNOWN_NO_ASSUMPTION",
+    "note": "不假设（当前策略）",
+    "observable": {
+     "ruleset": "COMMUNITY_2020_UNVERIFIED",
+     "status": "UNKNOWN",
+     "teamSize": 5,
+     "hasOnmyoji": false,
+     "initialOrb": 4,
+     "gaugeSize": 5,
+     "maxOrb": 8,
+     "orbIndependence": "两队各自持有 OrbPool（本实验室为独立）",
+     "stalemate": {
+      "damageRamp": null,
+      "healingReductionRamp": null,
+      "startTurn": null
+     },
+     "timeout": {
+      "maxTurns": null,
+      "resolveBy": "UNKNOWN"
+     }
+    }
+   },
+   {
+    "id": "COMMUNITY_2020",
+    "note": "按 2020 攻略假设存在阶梯增伤（未验证）",
+    "observable": {
+     "ruleset": "COMMUNITY_2020",
+     "status": "UNKNOWN",
+     "teamSize": 5,
+     "hasOnmyoji": false,
+     "initialOrb": 4,
+     "gaugeSize": 5,
+     "maxOrb": 8,
+     "orbIndependence": "两队各自持有 OrbPool（本实验室为独立）",
+     "stalemate": {
+      "damageRamp": null,
+      "healingReductionRamp": null,
+      "startTurn": 10
+     },
+     "timeout": {
+      "maxTurns": null,
+      "resolveBy": "UNKNOWN"
+     }
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.284Z"
+ },
+ {
+  "experiment": "D06",
+  "group": "D",
+  "question": "时间推进方式（按回合 or 按秒）",
+  "inGameObservation": "录屏逐帧采样：固定攻方/守方与面板，记录 t=0/60/120/180s 的伤害数字，反推 M(t)=Damage(t)/Damage(0)",
+  "hypotheses": [
+   {
+    "id": "UNKNOWN_NO_ASSUMPTION",
+    "note": "不假设（当前策略）",
+    "observable": {
+     "ruleset": "COMMUNITY_2020_UNVERIFIED",
+     "status": "UNKNOWN",
+     "teamSize": 5,
+     "hasOnmyoji": false,
+     "initialOrb": 4,
+     "gaugeSize": 5,
+     "maxOrb": 8,
+     "orbIndependence": "两队各自持有 OrbPool（本实验室为独立）",
+     "stalemate": {
+      "damageRamp": null,
+      "healingReductionRamp": null,
+      "startTurn": null
+     },
+     "timeout": {
+      "maxTurns": null,
+      "resolveBy": "UNKNOWN"
+     }
+    }
+   },
+   {
+    "id": "COMMUNITY_2020",
+    "note": "按 2020 攻略假设存在阶梯增伤（未验证）",
+    "observable": {
+     "ruleset": "COMMUNITY_2020",
+     "status": "UNKNOWN",
+     "teamSize": 5,
+     "hasOnmyoji": false,
+     "initialOrb": 4,
+     "gaugeSize": 5,
+     "maxOrb": 8,
+     "orbIndependence": "两队各自持有 OrbPool（本实验室为独立）",
+     "stalemate": {
+      "damageRamp": null,
+      "healingReductionRamp": null,
+      "startTurn": 10
+     },
+     "timeout": {
+      "maxTurns": null,
+      "resolveBy": "UNKNOWN"
+     }
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.284Z"
+ },
+ {
+  "experiment": "D07",
+  "group": "D",
+  "question": "残局增伤开始时间",
+  "inGameObservation": "录屏逐帧采样：固定攻方/守方与面板，记录 t=0/60/120/180s 的伤害数字，反推 M(t)=Damage(t)/Damage(0)",
+  "hypotheses": [
+   {
+    "id": "UNKNOWN_NO_ASSUMPTION",
+    "note": "不假设（当前策略）",
+    "observable": {
+     "ruleset": "COMMUNITY_2020_UNVERIFIED",
+     "status": "UNKNOWN",
+     "teamSize": 5,
+     "hasOnmyoji": false,
+     "initialOrb": 4,
+     "gaugeSize": 5,
+     "maxOrb": 8,
+     "orbIndependence": "两队各自持有 OrbPool（本实验室为独立）",
+     "stalemate": {
+      "damageRamp": null,
+      "healingReductionRamp": null,
+      "startTurn": null
+     },
+     "timeout": {
+      "maxTurns": null,
+      "resolveBy": "UNKNOWN"
+     }
+    }
+   },
+   {
+    "id": "COMMUNITY_2020",
+    "note": "按 2020 攻略假设存在阶梯增伤（未验证）",
+    "observable": {
+     "ruleset": "COMMUNITY_2020",
+     "status": "UNKNOWN",
+     "teamSize": 5,
+     "hasOnmyoji": false,
+     "initialOrb": 4,
+     "gaugeSize": 5,
+     "maxOrb": 8,
+     "orbIndependence": "两队各自持有 OrbPool（本实验室为独立）",
+     "stalemate": {
+      "damageRamp": null,
+      "healingReductionRamp": null,
+      "startTurn": 10
+     },
+     "timeout": {
+      "maxTurns": null,
+      "resolveBy": "UNKNOWN"
+     }
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.285Z"
+ },
+ {
+  "experiment": "D08",
+  "group": "D",
+  "question": "增伤增长曲线",
+  "inGameObservation": "录屏逐帧采样：固定攻方/守方与面板，记录 t=0/60/120/180s 的伤害数字，反推 M(t)=Damage(t)/Damage(0)",
+  "hypotheses": [
+   {
+    "id": "UNKNOWN_NO_ASSUMPTION",
+    "note": "不假设（当前策略）",
+    "observable": {
+     "ruleset": "COMMUNITY_2020_UNVERIFIED",
+     "status": "UNKNOWN",
+     "teamSize": 5,
+     "hasOnmyoji": false,
+     "initialOrb": 4,
+     "gaugeSize": 5,
+     "maxOrb": 8,
+     "orbIndependence": "两队各自持有 OrbPool（本实验室为独立）",
+     "stalemate": {
+      "damageRamp": null,
+      "healingReductionRamp": null,
+      "startTurn": null
+     },
+     "timeout": {
+      "maxTurns": null,
+      "resolveBy": "UNKNOWN"
+     }
+    }
+   },
+   {
+    "id": "COMMUNITY_2020",
+    "note": "按 2020 攻略假设存在阶梯增伤（未验证）",
+    "observable": {
+     "ruleset": "COMMUNITY_2020",
+     "status": "UNKNOWN",
+     "teamSize": 5,
+     "hasOnmyoji": false,
+     "initialOrb": 4,
+     "gaugeSize": 5,
+     "maxOrb": 8,
+     "orbIndependence": "两队各自持有 OrbPool（本实验室为独立）",
+     "stalemate": {
+      "damageRamp": null,
+      "healingReductionRamp": null,
+      "startTurn": 10
+     },
+     "timeout": {
+      "maxTurns": null,
+      "resolveBy": "UNKNOWN"
+     }
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.286Z"
+ },
+ {
+  "experiment": "D09",
+  "group": "D",
+  "question": "减疗开始时间",
+  "inGameObservation": "录屏逐帧采样：固定攻方/守方与面板，记录 t=0/60/120/180s 的伤害数字，反推 M(t)=Damage(t)/Damage(0)",
+  "hypotheses": [
+   {
+    "id": "UNKNOWN_NO_ASSUMPTION",
+    "note": "不假设（当前策略）",
+    "observable": {
+     "ruleset": "COMMUNITY_2020_UNVERIFIED",
+     "status": "UNKNOWN",
+     "teamSize": 5,
+     "hasOnmyoji": false,
+     "initialOrb": 4,
+     "gaugeSize": 5,
+     "maxOrb": 8,
+     "orbIndependence": "两队各自持有 OrbPool（本实验室为独立）",
+     "stalemate": {
+      "damageRamp": null,
+      "healingReductionRamp": null,
+      "startTurn": null
+     },
+     "timeout": {
+      "maxTurns": null,
+      "resolveBy": "UNKNOWN"
+     }
+    }
+   },
+   {
+    "id": "COMMUNITY_2020",
+    "note": "按 2020 攻略假设存在阶梯增伤（未验证）",
+    "observable": {
+     "ruleset": "COMMUNITY_2020",
+     "status": "UNKNOWN",
+     "teamSize": 5,
+     "hasOnmyoji": false,
+     "initialOrb": 4,
+     "gaugeSize": 5,
+     "maxOrb": 8,
+     "orbIndependence": "两队各自持有 OrbPool（本实验室为独立）",
+     "stalemate": {
+      "damageRamp": null,
+      "healingReductionRamp": null,
+      "startTurn": 10
+     },
+     "timeout": {
+      "maxTurns": null,
+      "resolveBy": "UNKNOWN"
+     }
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.287Z"
+ },
+ {
+  "experiment": "D10",
+  "group": "D",
+  "question": "减疗增长曲线",
+  "inGameObservation": "录屏逐帧采样：固定攻方/守方与面板，记录 t=0/60/120/180s 的伤害数字，反推 M(t)=Damage(t)/Damage(0)",
+  "hypotheses": [
+   {
+    "id": "UNKNOWN_NO_ASSUMPTION",
+    "note": "不假设（当前策略）",
+    "observable": {
+     "ruleset": "COMMUNITY_2020_UNVERIFIED",
+     "status": "UNKNOWN",
+     "teamSize": 5,
+     "hasOnmyoji": false,
+     "initialOrb": 4,
+     "gaugeSize": 5,
+     "maxOrb": 8,
+     "orbIndependence": "两队各自持有 OrbPool（本实验室为独立）",
+     "stalemate": {
+      "damageRamp": null,
+      "healingReductionRamp": null,
+      "startTurn": null
+     },
+     "timeout": {
+      "maxTurns": null,
+      "resolveBy": "UNKNOWN"
+     }
+    }
+   },
+   {
+    "id": "COMMUNITY_2020",
+    "note": "按 2020 攻略假设存在阶梯增伤（未验证）",
+    "observable": {
+     "ruleset": "COMMUNITY_2020",
+     "status": "UNKNOWN",
+     "teamSize": 5,
+     "hasOnmyoji": false,
+     "initialOrb": 4,
+     "gaugeSize": 5,
+     "maxOrb": 8,
+     "orbIndependence": "两队各自持有 OrbPool（本实验室为独立）",
+     "stalemate": {
+      "damageRamp": null,
+      "healingReductionRamp": null,
+      "startTurn": 10
+     },
+     "timeout": {
+      "maxTurns": null,
+      "resolveBy": "UNKNOWN"
+     }
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.287Z"
+ },
+ {
+  "experiment": "D11",
+  "group": "D",
+  "question": "增伤/减疗上限",
+  "inGameObservation": "录屏逐帧采样：固定攻方/守方与面板，记录 t=0/60/120/180s 的伤害数字，反推 M(t)=Damage(t)/Damage(0)",
+  "hypotheses": [
+   {
+    "id": "UNKNOWN_NO_ASSUMPTION",
+    "note": "不假设（当前策略）",
+    "observable": {
+     "ruleset": "COMMUNITY_2020_UNVERIFIED",
+     "status": "UNKNOWN",
+     "teamSize": 5,
+     "hasOnmyoji": false,
+     "initialOrb": 4,
+     "gaugeSize": 5,
+     "maxOrb": 8,
+     "orbIndependence": "两队各自持有 OrbPool（本实验室为独立）",
+     "stalemate": {
+      "damageRamp": null,
+      "healingReductionRamp": null,
+      "startTurn": null
+     },
+     "timeout": {
+      "maxTurns": null,
+      "resolveBy": "UNKNOWN"
+     }
+    }
+   },
+   {
+    "id": "COMMUNITY_2020",
+    "note": "按 2020 攻略假设存在阶梯增伤（未验证）",
+    "observable": {
+     "ruleset": "COMMUNITY_2020",
+     "status": "UNKNOWN",
+     "teamSize": 5,
+     "hasOnmyoji": false,
+     "initialOrb": 4,
+     "gaugeSize": 5,
+     "maxOrb": 8,
+     "orbIndependence": "两队各自持有 OrbPool（本实验室为独立）",
+     "stalemate": {
+      "damageRamp": null,
+      "healingReductionRamp": null,
+      "startTurn": 10
+     },
+     "timeout": {
+      "maxTurns": null,
+      "resolveBy": "UNKNOWN"
+     }
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.288Z"
+ },
+ {
+  "experiment": "D12",
+  "group": "D",
+  "question": "超时判胜规则",
+  "inGameObservation": "录屏逐帧采样：固定攻方/守方与面板，记录 t=0/60/120/180s 的伤害数字，反推 M(t)=Damage(t)/Damage(0)",
+  "hypotheses": [
+   {
+    "id": "UNKNOWN_NO_ASSUMPTION",
+    "note": "不假设（当前策略）",
+    "observable": {
+     "ruleset": "COMMUNITY_2020_UNVERIFIED",
+     "status": "UNKNOWN",
+     "teamSize": 5,
+     "hasOnmyoji": false,
+     "initialOrb": 4,
+     "gaugeSize": 5,
+     "maxOrb": 8,
+     "orbIndependence": "两队各自持有 OrbPool（本实验室为独立）",
+     "stalemate": {
+      "damageRamp": null,
+      "healingReductionRamp": null,
+      "startTurn": null
+     },
+     "timeout": {
+      "maxTurns": null,
+      "resolveBy": "UNKNOWN"
+     }
+    }
+   },
+   {
+    "id": "COMMUNITY_2020",
+    "note": "按 2020 攻略假设存在阶梯增伤（未验证）",
+    "observable": {
+     "ruleset": "COMMUNITY_2020",
+     "status": "UNKNOWN",
+     "teamSize": 5,
+     "hasOnmyoji": false,
+     "initialOrb": 4,
+     "gaugeSize": 5,
+     "maxOrb": 8,
+     "orbIndependence": "两队各自持有 OrbPool（本实验室为独立）",
+     "stalemate": {
+      "damageRamp": null,
+      "healingReductionRamp": null,
+      "startTurn": 10
+     },
+     "timeout": {
+      "maxTurns": null,
+      "resolveBy": "UNKNOWN"
+     }
+    }
+   }
+  ],
+  "discriminating": true,
+  "distinctObservables": 2,
+  "kind": "HYPOTHESIS_TEST",
+  "confidence": "NOT_RUN",
+  "status": "AWAITING_IN_GAME_OBSERVATION",
+  "chosenHypothesis": null,
+  "gameVersion": "2026.10 (Data 快照)",
+  "recordedAt": "2026-10-01T16:12:41.289Z"
+ }
+]

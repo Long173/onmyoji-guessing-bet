@@ -1,0 +1,179 @@
+{
+ "schemaVersion": 1,
+ "id": "2026-11-23b-lineup",
+ "red": {
+  "units": [
+   {
+    "unitId": "r1",
+    "shikigamiId": 577,
+    "name": "Guijinyang",
+    "stats": {
+     "attack": 2978,
+     "hp": 20390,
+     "defense": 799,
+     "speed": 208,
+     "critRate": 3,
+     "critDamage": 150,
+     "effectHit": 120,
+     "effectResist": 24
+    },
+    "soulId": 7
+   },
+   {
+    "unitId": "r2",
+    "shikigamiId": 247,
+    "name": "Umibozu",
+    "stats": {
+     "attack": 4274,
+     "hp": 17263,
+     "defense": 750,
+     "speed": 151,
+     "critRate": 80,
+     "critDamage": 185,
+     "effectHit": 30,
+     "effectResist": 48
+    },
+    "soulId": 0
+   },
+   {
+    "unitId": "r3",
+    "shikigamiId": 231,
+    "name": "Momiji",
+    "stats": {
+     "attack": 5067,
+     "hp": 14870,
+     "defense": 785,
+     "speed": 144,
+     "critRate": 73,
+     "critDamage": 311,
+     "effectHit": 0,
+     "effectResist": 48
+    },
+    "soulId": 21
+   },
+   {
+    "unitId": "r4",
+    "shikigamiId": 277,
+    "name": "Kuro",
+    "stats": {
+     "attack": 5686,
+     "hp": 14443,
+     "defense": 703,
+     "speed": 133,
+     "critRate": 84,
+     "critDamage": 283,
+     "effectHit": 0,
+     "effectResist": 48
+    },
+    "soulId": 22
+   },
+   {
+    "unitId": "r5",
+    "shikigamiId": 562,
+    "name": "Senhime Resurgent",
+    "stats": {
+     "attack": 4527,
+     "hp": 20060,
+     "defense": 492,
+     "speed": 114,
+     "critRate": 10,
+     "critDamage": 157,
+     "effectHit": 0,
+     "effectResist": 15
+    },
+    "soulId": 54
+   }
+  ]
+ },
+ "blue": {
+  "units": [
+   {
+    "unitId": "b1",
+    "shikigamiId": 298,
+    "name": "Kaoru",
+    "stats": {
+     "attack": 2737,
+     "hp": 33326,
+     "defense": 779,
+     "speed": 213,
+     "critRate": 3,
+     "critDamage": 150,
+     "effectHit": 15,
+     "effectResist": 56
+    },
+    "soulId": 14
+   },
+   {
+    "unitId": "b2",
+    "shikigamiId": 253,
+    "name": "Vampira",
+    "stats": {
+     "attack": 5108,
+     "hp": 15725,
+     "defense": 737,
+     "speed": 169,
+     "critRate": 85,
+     "critDamage": 311,
+     "effectHit": 0,
+     "effectResist": 48
+    },
+    "soulId": 20
+   },
+   {
+    "unitId": "b3",
+    "shikigamiId": 554,
+    "name": "Bondweaver Enmusubi",
+    "stats": {
+     "attack": 2844,
+     "hp": 21711,
+     "defense": 757,
+     "speed": 156,
+     "critRate": 55,
+     "critDamage": 157,
+     "effectHit": 6,
+     "effectResist": 0
+    },
+    "soulId": 7
+   },
+   {
+    "unitId": "b4",
+    "shikigamiId": 377,
+    "name": "Ninja Yamausagi",
+    "stats": {
+     "attack": 3699,
+     "hp": 13059,
+     "defense": 706,
+     "speed": 146,
+     "critRate": 15,
+     "critDamage": 171,
+     "effectHit": 48,
+     "effectResist": 72
+    },
+    "soulId": 7
+   },
+   {
+    "unitId": "b5",
+    "shikigamiId": 568,
+    "name": "Draconic Suzuka Gozen",
+    "stats": {
+     "attack": 4736,
+     "hp": 17644,
+     "defense": 585,
+     "speed": 117,
+     "critRate": 65,
+     "critDamage": 250,
+     "effectHit": 6,
+     "effectResist": 0
+    },
+    "soulId": 27
+   }
+  ]
+ },
+ "ruleset": "GUESSING",
+ "source": {
+  "type": "JSON",
+  "note": "Duel betting 2026-11-23 #2 (Global screenshot) — real result: BLUE won"
+ },
+ "createdAt": "2026-11-23T09:48:10.477Z",
+ "updatedAt": "2026-11-23T09:48:10.477Z"
+}

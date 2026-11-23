@@ -1,0 +1,4 @@
+{
+ "_note": "仅包含 status=RESOLVED 的规则。所有 AWAITING_IN_GAME_OBSERVATION 的实验结果禁止用于产出胜率。",
+ "rules": []
+}

@@ -1,0 +1,154 @@
+{
+  "_meta": {
+    "title": "Duel betting 2026-11-23 #2 (Global screenshot) — real result: BLUE won",
+    "result": "blue",
+    "notes": [
+      "Stats = final values on the Lineup screen (souls included).",
+      "soul = 4-piece soul from the Soul effects icon (matched against fandom icons, verified visually)."
+    ]
+  },
+  "red": [
+    {
+      "name": "Guijinyang",
+      "soul": "Fortune Cat",
+      "stats": {
+        "atk": 2978,
+        "hp": 20390,
+        "def": 799,
+        "spd": 208,
+        "cri": 3,
+        "crid": 150,
+        "efh": 120,
+        "efr": 24
+      }
+    },
+    {
+      "name": "Umibozu",
+      "soul": "Snow Spirit",
+      "stats": {
+        "atk": 4274,
+        "hp": 17263,
+        "def": 750,
+        "spd": 151,
+        "cri": 80,
+        "crid": 185,
+        "efh": 30,
+        "efr": 48
+      }
+    },
+    {
+      "name": "Momiji",
+      "soul": "Shadow",
+      "stats": {
+        "atk": 5067,
+        "hp": 14870,
+        "def": 785,
+        "spd": 144,
+        "cri": 73,
+        "crid": 311,
+        "efh": 0,
+        "efr": 48
+      }
+    },
+    {
+      "name": "Kuro",
+      "soul": "Tomb Guard",
+      "stats": {
+        "atk": 5686,
+        "hp": 14443,
+        "def": 703,
+        "spd": 133,
+        "cri": 84,
+        "crid": 283,
+        "efh": 0,
+        "efr": 48
+      }
+    },
+    {
+      "name": "Senhime Resurgent",
+      "soul": "Dangler",
+      "stats": {
+        "atk": 4527,
+        "hp": 20060,
+        "def": 492,
+        "spd": 114,
+        "cri": 10,
+        "crid": 157,
+        "efh": 0,
+        "efr": 15
+      }
+    }
+  ],
+  "blue": [
+    {
+      "name": "Kaoru",
+      "soul": "Azure Basan",
+      "stats": {
+        "atk": 2737,
+        "hp": 33326,
+        "def": 779,
+        "spd": 213,
+        "cri": 3,
+        "crid": 150,
+        "efh": 15,
+        "efr": 56
+      }
+    },
+    {
+      "name": "Vampira",
+      "soul": "Fenikkusu",
+      "stats": {
+        "atk": 5108,
+        "hp": 15725,
+        "def": 737,
+        "spd": 169,
+        "cri": 85,
+        "crid": 311,
+        "efh": 0,
+        "efr": 48
+      }
+    },
+    {
+      "name": "Bondweaver Enmusubi",
+      "soul": "Fortune Cat",
+      "stats": {
+        "atk": 2844,
+        "hp": 21711,
+        "def": 757,
+        "spd": 156,
+        "cri": 55,
+        "crid": 157,
+        "efh": 6,
+        "efr": 0
+      }
+    },
+    {
+      "name": "Ninja Yamausagi",
+      "soul": "Fortune Cat",
+      "stats": {
+        "atk": 3699,
+        "hp": 13059,
+        "def": 706,
+        "spd": 146,
+        "cri": 15,
+        "crid": 171,
+        "efh": 48,
+        "efr": 72
+      }
+    },
+    {
+      "name": "Draconic Suzuka Gozen",
+      "soul": "Seductress",
+      "stats": {
+        "atk": 4736,
+        "hp": 17644,
+        "def": 585,
+        "spd": 117,
+        "cri": 65,
+        "crid": 250,
+        "efh": 6,
+        "efr": 0
+      }
+    }
+  ]
+}

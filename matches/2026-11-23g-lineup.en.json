@@ -1,0 +1,153 @@
+{
+  "_meta": {
+    "title": "Duel betting 2026-11-23 #7 (Global screenshot) — result: unknown",
+    "result": null,
+    "notes": [
+      "Parsed from Lineup screenshots by apps/web/tools/parse-lineup.ts."
+    ]
+  },
+  "red": [
+    {
+      "name": "Kaoru",
+      "soul": "Azure Basan",
+      "stats": {
+        "atk": 2737,
+        "hp": 33326,
+        "def": 779,
+        "spd": 213,
+        "cri": 3,
+        "crid": 150,
+        "efh": 15,
+        "efr": 56
+      }
+    },
+    {
+      "name": "Nostalgic Enenra",
+      "soul": "Priestess",
+      "stats": {
+        "atk": 3043,
+        "hp": 17291,
+        "def": 558,
+        "spd": 174,
+        "cri": 40,
+        "crid": 199,
+        "efh": 60,
+        "efr": 16
+      }
+    },
+    {
+      "name": "Bondweaver Enmusubi",
+      "soul": "Tree Spirit",
+      "stats": {
+        "atk": 2844,
+        "hp": 23745,
+        "def": 627,
+        "spd": 156,
+        "cri": 55,
+        "crid": 157,
+        "efh": 6,
+        "efr": 0
+      }
+    },
+    {
+      "name": "Yuki Gozen",
+      "soul": "Possessor",
+      "stats": {
+        "atk": 4986,
+        "hp": 18202,
+        "def": 692,
+        "spd": 141,
+        "cri": 53,
+        "crid": 209,
+        "efh": 0,
+        "efr": 40
+      }
+    },
+    {
+      "name": "Kuro",
+      "soul": "Seductress",
+      "stats": {
+        "atk": 6091,
+        "hp": 14443,
+        "def": 703,
+        "spd": 121,
+        "cri": 84,
+        "crid": 276,
+        "efh": 0,
+        "efr": 56
+      }
+    }
+  ],
+  "blue": [
+    {
+      "name": "Mannendake",
+      "soul": "Fortune Cat",
+      "stats": {
+        "atk": 5456,
+        "hp": 14728,
+        "def": 724,
+        "spd": 205,
+        "cri": 70,
+        "crid": 227,
+        "efh": 0,
+        "efr": 0
+      }
+    },
+    {
+      "name": "Inugami",
+      "soul": "Soultaker",
+      "stats": {
+        "atk": 5199,
+        "hp": 14870,
+        "def": 657,
+        "spd": 199,
+        "cri": 75,
+        "crid": 227,
+        "efh": 0,
+        "efr": 0
+      }
+    },
+    {
+      "name": "Hana",
+      "soul": "Temptress",
+      "stats": {
+        "atk": 4312,
+        "hp": 22537,
+        "def": 620,
+        "spd": 184,
+        "cri": 80,
+        "crid": 262,
+        "efh": 0,
+        "efr": 0
+      }
+    },
+    {
+      "name": "Senhime Resurgent",
+      "soul": "Sea Sprite",
+      "stats": {
+        "atk": 4527,
+        "hp": 20060,
+        "def": 492,
+        "spd": 114,
+        "cri": 10,
+        "crid": 157,
+        "efh": 15,
+        "efr": 0
+      }
+    },
+    {
+      "name": "Demoniac Shuten Doji",
+      "soul": "Tomb Guard",
+      "stats": {
+        "atk": 3675,
+        "hp": 15810,
+        "def": 581,
+        "spd": 109,
+        "cri": 25,
+        "crid": 262,
+        "efh": 0,
+        "efr": 104
+      }
+    }
+  ]
+}

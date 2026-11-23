@@ -1,0 +1,198 @@
+{
+ "_meta": {
+  "id": "guessing-match-canonical-001",
+  "title": "对弈竞猜典型对局 #001",
+  "capturedFrom": "游戏内『活动总览 → 阵容详情』截图 × 2（红方/蓝方）",
+  "capturedAt": "2026-10-01",
+  "usage": "作为竞猜路径的**基准回归夹具**：任何改动后必须能原样重建这 10 个 BattleEntity 并跑通对局",
+  "fieldOrder": [
+   "攻击",
+   "生命",
+   "防御",
+   "速度",
+   "暴击",
+   "暴击伤害",
+   "效果命中",
+   "效果抵抗"
+  ],
+  "statsKeyOrder": [
+   "atk",
+   "hp",
+   "def",
+   "spd",
+   "cri",
+   "crid",
+   "efh",
+   "efr"
+  ],
+  "notes": [
+   "面板为界面显示整数；内部按 §M1.5 保留 Exact/Display 两层与可行区间",
+   "御魂效果图标无法从截图可靠识别，soulIds 记为 null —— 竞猜路径不依赖它（面板已是最终值）",
+   "式神身份已解析为 KB id，技能/满技能/觉醒/AI 由 shikigamiId 自动 Join，不需随输入提供"
+  ]
+ },
+ "blue": [
+  {
+   "name": "座敷童子",
+   "shikigamiId": 205,
+   "rarity": "R",
+   "stats": {
+    "atk": 2957,
+    "hp": 26890,
+    "def": 1141,
+    "spd": 180,
+    "cri": 28,
+    "crid": 164,
+    "efh": 15,
+    "efr": 104
+   },
+   "soulIds": null
+  },
+  {
+   "name": "夜溟彼岸花",
+   "shikigamiId": 358,
+   "rarity": "SP",
+   "stats": {
+    "atk": 5946,
+    "hp": 16665,
+    "def": 506,
+    "spd": 150,
+    "cri": 80,
+    "crid": 178,
+    "efh": 0,
+    "efr": 40
+   },
+   "soulIds": null
+  },
+  {
+   "name": "樱花妖",
+   "shikigamiId": 267,
+   "rarity": "SR",
+   "stats": {
+    "atk": 3873,
+    "hp": 24799,
+    "def": 668,
+    "spd": 147,
+    "cri": 73,
+    "crid": 157,
+    "efh": 0,
+    "efr": 63
+   },
+   "soulIds": null
+  },
+  {
+   "name": "缚骨清姬",
+   "shikigamiId": 352,
+   "rarity": "SP",
+   "stats": {
+    "atk": 3514,
+    "hp": 14095,
+    "def": 586,
+    "spd": 142,
+    "cri": 43,
+    "crid": 192,
+    "efh": 0,
+    "efr": 40
+   },
+   "soulIds": null
+  },
+  {
+   "name": "神启荒",
+   "shikigamiId": 390,
+   "rarity": "SP",
+   "stats": {
+    "atk": 4708,
+    "hp": 15155,
+    "def": 536,
+    "spd": 116,
+    "cri": 10,
+    "crid": 241,
+    "efh": 30,
+    "efr": 0
+   },
+   "soulIds": null
+  }
+ ],
+ "red": [
+  {
+   "name": "三尾狐",
+   "shikigamiId": 202,
+   "rarity": "R",
+   "stats": {
+    "atk": 5686,
+    "hp": 17605,
+    "def": 792,
+    "spd": 176,
+    "cri": 85,
+    "crid": 311,
+    "efh": 0,
+    "efr": 48
+   },
+   "soulIds": null
+  },
+  {
+   "name": "日和坊",
+   "shikigamiId": 297,
+   "rarity": "SR",
+   "stats": {
+    "atk": 3976,
+    "hp": 16767,
+    "def": 524,
+    "spd": 166,
+    "cri": 45,
+    "crid": 339,
+    "efh": 0,
+    "efr": 32
+   },
+   "soulIds": null
+  },
+  {
+   "name": "思金神",
+   "shikigamiId": 601,
+   "rarity": "SSR",
+   "stats": {
+    "atk": 2630,
+    "hp": 20424,
+    "def": 750,
+    "spd": 128,
+    "cri": 8,
+    "crid": 150,
+    "efh": 0,
+    "efr": 86
+   },
+   "soulIds": null
+  },
+  {
+   "name": "跳跳弟弟",
+   "shikigamiId": 225,
+   "rarity": "R",
+   "stats": {
+    "atk": 5059,
+    "hp": 29362,
+    "def": 658,
+    "spd": 116,
+    "cri": 93,
+    "crid": 276,
+    "efh": 0,
+    "efr": 80
+   },
+   "soulIds": null
+  },
+  {
+   "name": "聆海金鱼姬",
+   "shikigamiId": 346,
+   "rarity": "SP",
+   "stats": {
+    "atk": 3848,
+    "hp": 16420,
+    "def": 561,
+    "spd": 111,
+    "cri": 35,
+    "crid": 220,
+    "efh": 0,
+    "efr": 0
+   },
+   "soulIds": null
+  }
+ ]
+}
