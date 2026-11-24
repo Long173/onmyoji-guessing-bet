@@ -1,0 +1,179 @@
+{
+ "schemaVersion": 1,
+ "id": "2026-11-24g-lineup",
+ "red": {
+  "units": [
+   {
+    "unitId": "r1",
+    "shikigamiId": 237,
+    "name": "Yamausagi",
+    "stats": {
+     "attack": 4596,
+     "hp": 20795,
+     "defense": 696,
+     "speed": 205,
+     "critRate": 58,
+     "critDamage": 220,
+     "effectHit": 90,
+     "effectResist": 40
+    },
+    "soulId": 28
+   },
+   {
+    "unitId": "r2",
+    "shikigamiId": 275,
+    "name": "Mannendake",
+    "stats": {
+     "attack": 6142,
+     "hp": 15235,
+     "defense": 634,
+     "speed": 151,
+     "critRate": 80,
+     "critDamage": 199,
+     "effectHit": 0,
+     "effectResist": 64
+    },
+    "soulId": 31
+   },
+   {
+    "unitId": "r3",
+    "shikigamiId": 266,
+    "name": "Aoandon",
+    "stats": {
+     "attack": 3510,
+     "hp": 15417,
+     "defense": 675,
+     "speed": 143,
+     "critRate": 98,
+     "critDamage": 290,
+     "effectHit": 0,
+     "effectResist": 48
+    },
+    "soulId": 47
+   },
+   {
+    "unitId": "r4",
+    "shikigamiId": 347,
+    "name": "Enmusubi",
+    "stats": {
+     "attack": 3607,
+     "hp": 19530,
+     "defense": 761,
+     "speed": 128,
+     "critRate": 25,
+     "critDamage": 227,
+     "effectHit": 0,
+     "effectResist": 48
+    },
+    "soulId": 11
+   },
+   {
+    "unitId": "r5",
+    "shikigamiId": 272,
+    "name": "Ichimokuren",
+    "stats": {
+     "attack": 3157,
+     "hp": 25682,
+     "defense": 689,
+     "speed": 123,
+     "critRate": 55,
+     "critDamage": 150,
+     "effectHit": 0,
+     "effectResist": 32
+    },
+    "soulId": 1
+   }
+  ]
+ },
+ "blue": {
+  "units": [
+   {
+    "unitId": "b1",
+    "shikigamiId": 306,
+    "name": "Mushishi",
+    "stats": {
+     "attack": 3014,
+     "hp": 30780,
+     "defense": 934,
+     "speed": 199,
+     "critRate": 88,
+     "critDamage": 164,
+     "effectHit": 0,
+     "effectResist": 56
+    },
+    "soulId": 7
+   },
+   {
+    "unitId": "b2",
+    "shikigamiId": 361,
+    "name": "Akaname",
+    "stats": {
+     "attack": 4175,
+     "hp": 26576,
+     "defense": 869,
+     "speed": 151,
+     "critRate": 20,
+     "critDamage": 150,
+     "effectHit": 0,
+     "effectResist": 219
+    },
+    "soulId": 32
+   },
+   {
+    "unitId": "b3",
+    "shikigamiId": 309,
+    "name": "Oko",
+    "stats": {
+     "attack": 5546,
+     "hp": 25893,
+     "defense": 907,
+     "speed": 144,
+     "critRate": 20,
+     "critDamage": 150,
+     "effectHit": 66,
+     "effectResist": 96
+    },
+    "soulId": 28
+   },
+   {
+    "unitId": "b4",
+    "shikigamiId": 593,
+    "name": "Yoto Hime, Scarlet Nightedge",
+    "stats": {
+     "attack": 6208,
+     "hp": 15297,
+     "defense": 741,
+     "speed": 116,
+     "critRate": 52,
+     "critDamage": 185,
+     "effectHit": 0,
+     "effectResist": 40
+    },
+    "soulId": 13
+   },
+   {
+    "unitId": "b5",
+    "shikigamiId": 395,
+    "name": "Luminary Oitsuki",
+    "stats": {
+     "attack": 2710,
+     "hp": 16858,
+     "defense": 563,
+     "speed": 111,
+     "critRate": 30,
+     "critDamage": 220,
+     "effectHit": 0,
+     "effectResist": 0
+    },
+    "soulId": 11
+   }
+  ]
+ },
+ "ruleset": "GUESSING",
+ "source": {
+  "type": "JSON",
+  "note": "2026-11-24g-lineup.en.json"
+ },
+ "createdAt": "2026-11-24T11:10:39.491Z",
+ "updatedAt": "2026-11-24T11:10:39.491Z"
+}

@@ -1,0 +1,154 @@
+{
+  "_meta": {
+    "title": "2026-11-24f-lineup.en.json",
+    "result": "red",
+    "notes": [
+      "Parsed from Lineup screenshots by apps/web/tools/parse-lineup.ts.",
+      "Chin soul Soul Edge and Kidomaru soul Priestess set by hand (parser low-margin best guesses)."
+    ]
+  },
+  "red": [
+    {
+      "name": "Miakashi",
+      "soul": "Dangler",
+      "stats": {
+        "atk": 3413,
+        "hp": 23984,
+        "def": 899,
+        "spd": 212,
+        "cri": 30,
+        "crid": 150,
+        "efh": 0,
+        "efr": 125
+      }
+    },
+    {
+      "name": "Amezaiku",
+      "soul": "Fortune Cat",
+      "stats": {
+        "atk": 4025,
+        "hp": 33634,
+        "def": 1166,
+        "spd": 191,
+        "cri": 10,
+        "crid": 157,
+        "efh": 0,
+        "efr": 8
+      }
+    },
+    {
+      "name": "Kuro Mujou",
+      "soul": "Claws",
+      "stats": {
+        "atk": 5398,
+        "hp": 15013,
+        "def": 744,
+        "spd": 167,
+        "cri": 95,
+        "crid": 297,
+        "efh": 0,
+        "efr": 40
+      }
+    },
+    {
+      "name": "Ungaikyo",
+      "soul": "Fortune Cat",
+      "stats": {
+        "atk": 3878,
+        "hp": 10370,
+        "def": 891,
+        "spd": 145,
+        "cri": 85,
+        "crid": 290,
+        "efh": 0,
+        "efr": 64
+      }
+    },
+    {
+      "name": "Kaguya",
+      "soul": "Yamabiko",
+      "stats": {
+        "atk": 3937,
+        "hp": 21352,
+        "def": 794,
+        "spd": 144,
+        "cri": 30,
+        "crid": 220,
+        "efh": 0,
+        "efr": 63
+      }
+    }
+  ],
+  "blue": [
+    {
+      "name": "Kyonshi Ani",
+      "soul": "Oracle",
+      "stats": {
+        "atk": 5374,
+        "hp": 23472,
+        "def": 915,
+        "spd": 185,
+        "cri": 25,
+        "crid": 150,
+        "efh": 66,
+        "efr": 80
+      }
+    },
+    {
+      "name": "Chin",
+      "soul": "Soul Edge",
+      "stats": {
+        "atk": 6729,
+        "hp": 26548,
+        "def": 764,
+        "spd": 173,
+        "cri": 60,
+        "crid": 150,
+        "efh": 0,
+        "efr": 96
+      }
+    },
+    {
+      "name": "Kidomaru",
+      "soul": "Priestess",
+      "stats": {
+        "atk": 5308,
+        "hp": 16249,
+        "def": 799,
+        "spd": 154,
+        "cri": 61,
+        "crid": 192,
+        "efh": 36,
+        "efr": 48
+      }
+    },
+    {
+      "name": "Ebisu",
+      "soul": "Boroboroton",
+      "stats": {
+        "atk": 3835,
+        "hp": 32951,
+        "def": 693,
+        "spd": 137,
+        "cri": 25,
+        "crid": 150,
+        "efh": 0,
+        "efr": 96
+      }
+    },
+    {
+      "name": "Senhime",
+      "soul": "Tomb Guard",
+      "stats": {
+        "atk": 3434,
+        "hp": 14585,
+        "def": 514,
+        "spd": 121,
+        "cri": 23,
+        "crid": 248,
+        "efh": 0,
+        "efr": 16
+      }
+    }
+  ]
+}

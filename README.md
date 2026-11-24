@@ -104,8 +104,8 @@ Five views share one engine and one contract. Pages and stores never import the 
 
 **The win rates are experimental. Do not treat them as betting advice.**
 
-Recorded betting rounds and their real results are in `matches/` (11 rounds so far, 10 with results). The model
-called 7 of the 9 clear-cut ones right. The remaining misses are mostly teams that win by sustain. Any shikigami without a
+Recorded betting rounds and their real results are in `matches/` (14 rounds so far, all with results). The model
+called 10 of the 13 clear-cut ones right. The remaining misses are mostly teams that win by sustain. Any shikigami without a
 hand-written kit runs with an incomplete kit, and the unit tiles mark it (○ / ◐).
 
 ---

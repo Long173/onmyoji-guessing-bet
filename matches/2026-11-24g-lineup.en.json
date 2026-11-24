@@ -1,0 +1,153 @@
+{
+  "_meta": {
+    "title": "2026-11-24g-lineup.en.json",
+    "result": null,
+    "notes": [
+      "Parsed from Lineup screenshots by apps/web/tools/parse-lineup.ts."
+    ]
+  },
+  "red": [
+    {
+      "name": "Yamausagi",
+      "soul": "Tree Nymph",
+      "stats": {
+        "atk": 4596,
+        "hp": 20795,
+        "def": 696,
+        "spd": 205,
+        "cri": 58,
+        "crid": 220,
+        "efh": 90,
+        "efr": 40
+      }
+    },
+    {
+      "name": "Mannendake",
+      "soul": "Kyoukotsu",
+      "stats": {
+        "atk": 6142,
+        "hp": 15235,
+        "def": 634,
+        "spd": 151,
+        "cri": 80,
+        "crid": 199,
+        "efh": 0,
+        "efr": 64
+      }
+    },
+    {
+      "name": "Aoandon",
+      "soul": "Wispzoa",
+      "stats": {
+        "atk": 3510,
+        "hp": 15417,
+        "def": 675,
+        "spd": 143,
+        "cri": 98,
+        "crid": 290,
+        "efh": 0,
+        "efr": 48
+      }
+    },
+    {
+      "name": "Enmusubi",
+      "soul": "Mirror Lady",
+      "stats": {
+        "atk": 3607,
+        "hp": 19530,
+        "def": 761,
+        "spd": 128,
+        "cri": 25,
+        "crid": 227,
+        "efh": 0,
+        "efr": 48
+      }
+    },
+    {
+      "name": "Ichimokuren",
+      "soul": "Jizo Statue",
+      "stats": {
+        "atk": 3157,
+        "hp": 25682,
+        "def": 689,
+        "spd": 123,
+        "cri": 55,
+        "crid": 150,
+        "efh": 0,
+        "efr": 32
+      }
+    }
+  ],
+  "blue": [
+    {
+      "name": "Mushishi",
+      "soul": "Fortune Cat",
+      "stats": {
+        "atk": 3014,
+        "hp": 30780,
+        "def": 934,
+        "spd": 199,
+        "cri": 88,
+        "crid": 164,
+        "efh": 0,
+        "efr": 56
+      }
+    },
+    {
+      "name": "Akaname",
+      "soul": "Yamabiko",
+      "stats": {
+        "atk": 4175,
+        "hp": 26576,
+        "def": 869,
+        "spd": 151,
+        "cri": 20,
+        "crid": 150,
+        "efh": 0,
+        "efr": 219
+      }
+    },
+    {
+      "name": "Oko",
+      "soul": "Tree Nymph",
+      "stats": {
+        "atk": 5546,
+        "hp": 25893,
+        "def": 907,
+        "spd": 144,
+        "cri": 20,
+        "crid": 150,
+        "efh": 66,
+        "efr": 96
+      }
+    },
+    {
+      "name": "Yoto Hime, Scarlet Nightedge",
+      "soul": "Scarlet",
+      "stats": {
+        "atk": 6208,
+        "hp": 15297,
+        "def": 741,
+        "spd": 116,
+        "cri": 52,
+        "crid": 185,
+        "efh": 0,
+        "efr": 40
+      }
+    },
+    {
+      "name": "Luminary Oitsuki",
+      "soul": "Mirror Lady",
+      "stats": {
+        "atk": 2710,
+        "hp": 16858,
+        "def": 563,
+        "spd": 111,
+        "cri": 30,
+        "crid": 220,
+        "efh": 0,
+        "efr": 0
+      }
+    }
+  ]
+}

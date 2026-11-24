@@ -1,0 +1,153 @@
+{
+  "_meta": {
+    "title": "2026-11-24e-lineup.en.json",
+    "result": "red",
+    "notes": [
+      "Parsed from Lineup screenshots by apps/web/tools/parse-lineup.ts."
+    ]
+  },
+  "red": [
+    {
+      "name": "Doujo",
+      "soul": "Jizo Statue",
+      "stats": {
+        "atk": 2898,
+        "hp": 29977,
+        "def": 676,
+        "spd": 175,
+        "cri": 75,
+        "crid": 178,
+        "efh": 0,
+        "efr": 40
+      }
+    },
+    {
+      "name": "Yumekui",
+      "soul": "Sea Sprite",
+      "stats": {
+        "atk": 2898,
+        "hp": 24782,
+        "def": 762,
+        "spd": 167,
+        "cri": 15,
+        "crid": 150,
+        "efh": 81,
+        "efr": 40
+      }
+    },
+    {
+      "name": "Oko",
+      "soul": "Fortune Cat",
+      "stats": {
+        "atk": 5546,
+        "hp": 21125,
+        "def": 907,
+        "spd": 156,
+        "cri": 20,
+        "crid": 206,
+        "efh": 66,
+        "efr": 88
+      }
+    },
+    {
+      "name": "Kaguya",
+      "soul": "Tree Nymph",
+      "stats": {
+        "atk": 3937,
+        "hp": 21352,
+        "def": 915,
+        "spd": 144,
+        "cri": 30,
+        "crid": 220,
+        "efh": 0,
+        "efr": 48
+      }
+    },
+    {
+      "name": "Shiranui",
+      "soul": "Sea Sprite",
+      "stats": {
+        "atk": 4773,
+        "hp": 12666,
+        "def": 529,
+        "spd": 135,
+        "cri": 25,
+        "crid": 185,
+        "efh": 15,
+        "efr": 48
+      }
+    }
+  ],
+  "blue": [
+    {
+      "name": "Shiro",
+      "soul": "Fortune Cat",
+      "stats": {
+        "atk": 5397,
+        "hp": 15155,
+        "def": 834,
+        "spd": 143,
+        "cri": 55,
+        "crid": 311,
+        "efh": 0,
+        "efr": 48
+      }
+    },
+    {
+      "name": "Kujira",
+      "soul": "Dice Sprite",
+      "stats": {
+        "atk": 4349,
+        "hp": 18145,
+        "def": 711,
+        "spd": 129,
+        "cri": 20,
+        "crid": 234,
+        "efh": 0,
+        "efr": 63
+      }
+    },
+    {
+      "name": "Hakuzosu Unbound",
+      "soul": "Tree Nymph",
+      "stats": {
+        "atk": 1826,
+        "hp": 24782,
+        "def": 883,
+        "spd": 123,
+        "cri": 30,
+        "crid": 150,
+        "efh": 0,
+        "efr": 64
+      }
+    },
+    {
+      "name": "Ungaikyo",
+      "soul": "Shadow",
+      "stats": {
+        "atk": 5150,
+        "hp": 10370,
+        "def": 707,
+        "spd": 121,
+        "cri": 100,
+        "crid": 283,
+        "efh": 0,
+        "efr": 56
+      }
+    },
+    {
+      "name": "Senhime Resurgent",
+      "soul": "Sea Sprite",
+      "stats": {
+        "atk": 5833,
+        "hp": 14471,
+        "def": 492,
+        "spd": 114,
+        "cri": 10,
+        "crid": 171,
+        "efh": 15,
+        "efr": 0
+      }
+    }
+  ]
+}

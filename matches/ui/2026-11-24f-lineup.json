@@ -1,0 +1,179 @@
+{
+ "schemaVersion": 1,
+ "id": "2026-11-24f-lineup",
+ "red": {
+  "units": [
+   {
+    "unitId": "r1",
+    "shikigamiId": 552,
+    "name": "Miakashi",
+    "stats": {
+     "attack": 3413,
+     "hp": 23984,
+     "defense": 899,
+     "speed": 212,
+     "critRate": 30,
+     "critDamage": 150,
+     "effectHit": 0,
+     "effectResist": 125
+    },
+    "soulId": 54
+   },
+   {
+    "unitId": "r2",
+    "shikigamiId": 368,
+    "name": "Amezaiku",
+    "stats": {
+     "attack": 4025,
+     "hp": 33634,
+     "defense": 1166,
+     "speed": 191,
+     "critRate": 10,
+     "critDamage": 157,
+     "effectHit": 0,
+     "effectResist": 8
+    },
+    "soulId": 7
+   },
+   {
+    "unitId": "r3",
+    "shikigamiId": 211,
+    "name": "Kuro Mujou",
+    "stats": {
+     "attack": 5398,
+     "hp": 15013,
+     "defense": 744,
+     "speed": 167,
+     "critRate": 95,
+     "critDamage": 297,
+     "effectHit": 0,
+     "effectResist": 40
+    },
+    "soulId": 18
+   },
+   {
+    "unitId": "r4",
+    "shikigamiId": 344,
+    "name": "Ungaikyo",
+    "stats": {
+     "attack": 3878,
+     "hp": 10370,
+     "defense": 891,
+     "speed": 145,
+     "critRate": 85,
+     "critDamage": 290,
+     "effectHit": 0,
+     "effectResist": 64
+    },
+    "soulId": 7
+   },
+   {
+    "unitId": "r5",
+    "shikigamiId": 280,
+    "name": "Kaguya",
+    "stats": {
+     "attack": 3937,
+     "hp": 21352,
+     "defense": 794,
+     "speed": 144,
+     "critRate": 30,
+     "critDamage": 220,
+     "effectHit": 0,
+     "effectResist": 63
+    },
+    "soulId": 32
+   }
+  ]
+ },
+ "blue": {
+  "units": [
+   {
+    "unitId": "b1",
+    "shikigamiId": 233,
+    "name": "Kyonshi Ani",
+    "stats": {
+     "attack": 5374,
+     "hp": 23472,
+     "defense": 915,
+     "speed": 185,
+     "critRate": 25,
+     "critDamage": 150,
+     "effectHit": 66,
+     "effectResist": 80
+    },
+    "soulId": 48
+   },
+   {
+    "unitId": "b2",
+    "shikigamiId": 285,
+    "name": "Chin",
+    "stats": {
+     "attack": 6729,
+     "hp": 26548,
+     "defense": 764,
+     "speed": 173,
+     "critRate": 60,
+     "critDamage": 150,
+     "effectHit": 0,
+     "effectResist": 96
+    },
+    "soulId": 29
+   },
+   {
+    "unitId": "b3",
+    "shikigamiId": 345,
+    "name": "Kidomaru",
+    "stats": {
+     "attack": 5308,
+     "hp": 16249,
+     "defense": 799,
+     "speed": 154,
+     "critRate": 61,
+     "critDamage": 192,
+     "effectHit": 36,
+     "effectResist": 48
+    },
+    "soulId": 12
+   },
+   {
+    "unitId": "b4",
+    "shikigamiId": 268,
+    "name": "Ebisu",
+    "stats": {
+     "attack": 3835,
+     "hp": 32951,
+     "defense": 693,
+     "speed": 137,
+     "critRate": 25,
+     "critDamage": 150,
+     "effectHit": 0,
+     "effectResist": 96
+    },
+    "soulId": 6
+   },
+   {
+    "unitId": "b5",
+    "shikigamiId": 356,
+    "name": "Senhime",
+    "stats": {
+     "attack": 3434,
+     "hp": 14585,
+     "defense": 514,
+     "speed": 121,
+     "critRate": 23,
+     "critDamage": 248,
+     "effectHit": 0,
+     "effectResist": 16
+    },
+    "soulId": 22
+   }
+  ]
+ },
+ "ruleset": "GUESSING",
+ "source": {
+  "type": "JSON",
+  "note": "2026-11-24f-lineup.en.json"
+ },
+ "createdAt": "2026-11-24T10:08:26.416Z",
+ "updatedAt": "2026-11-24T10:08:26.416Z"
+}

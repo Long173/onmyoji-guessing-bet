@@ -1,7 +1,7 @@
 {
   "_meta": {
     "title": "2026-11-24d",
-    "result": null,
+    "result": "red",
     "notes": [
       "Parsed from Lineup screenshots by apps/web/tools/parse-lineup.ts."
     ]

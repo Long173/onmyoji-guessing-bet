@@ -1,0 +1,179 @@
+{
+ "schemaVersion": 1,
+ "id": "2026-11-24e-lineup",
+ "red": {
+  "units": [
+   {
+    "unitId": "r1",
+    "shikigamiId": 213,
+    "name": "Dojo",
+    "stats": {
+     "attack": 2898,
+     "hp": 29977,
+     "defense": 676,
+     "speed": 175,
+     "critRate": 75,
+     "critDamage": 178,
+     "effectHit": 0,
+     "effectResist": 40
+    },
+    "soulId": 1
+   },
+   {
+    "unitId": "r2",
+    "shikigamiId": 257,
+    "name": "Yumekui",
+    "stats": {
+     "attack": 2898,
+     "hp": 24782,
+     "defense": 762,
+     "speed": 167,
+     "critRate": 15,
+     "critDamage": 150,
+     "effectHit": 81,
+     "effectResist": 40
+    },
+    "soulId": 25
+   },
+   {
+    "unitId": "r3",
+    "shikigamiId": 309,
+    "name": "Oko",
+    "stats": {
+     "attack": 5546,
+     "hp": 21125,
+     "defense": 907,
+     "speed": 156,
+     "critRate": 20,
+     "critDamage": 206,
+     "effectHit": 66,
+     "effectResist": 88
+    },
+    "soulId": 7
+   },
+   {
+    "unitId": "r4",
+    "shikigamiId": 280,
+    "name": "Kaguya",
+    "stats": {
+     "attack": 3937,
+     "hp": 21352,
+     "defense": 915,
+     "speed": 144,
+     "critRate": 30,
+     "critDamage": 220,
+     "effectHit": 0,
+     "effectResist": 48
+    },
+    "soulId": 28
+   },
+   {
+    "unitId": "r5",
+    "shikigamiId": 330,
+    "name": "Shiranui",
+    "stats": {
+     "attack": 4773,
+     "hp": 12666,
+     "defense": 529,
+     "speed": 135,
+     "critRate": 25,
+     "critDamage": 185,
+     "effectHit": 15,
+     "effectResist": 48
+    },
+    "soulId": 25
+   }
+  ]
+ },
+ "blue": {
+  "units": [
+   {
+    "unitId": "b1",
+    "shikigamiId": 278,
+    "name": "Shiro",
+    "stats": {
+     "attack": 5397,
+     "hp": 15155,
+     "defense": 834,
+     "speed": 143,
+     "critRate": 55,
+     "critDamage": 311,
+     "effectHit": 0,
+     "effectResist": 48
+    },
+    "soulId": 7
+   },
+   {
+    "unitId": "b2",
+    "shikigamiId": 332,
+    "name": "Kujira",
+    "stats": {
+     "attack": 4349,
+     "hp": 18145,
+     "defense": 711,
+     "speed": 129,
+     "critRate": 20,
+     "critDamage": 234,
+     "effectHit": 0,
+     "effectResist": 63
+    },
+    "soulId": 24
+   },
+   {
+    "unitId": "b3",
+    "shikigamiId": 595,
+    "name": "Hakuzosu Unbound",
+    "stats": {
+     "attack": 1826,
+     "hp": 24782,
+     "defense": 883,
+     "speed": 123,
+     "critRate": 30,
+     "critDamage": 150,
+     "effectHit": 0,
+     "effectResist": 64
+    },
+    "soulId": 28
+   },
+   {
+    "unitId": "b4",
+    "shikigamiId": 344,
+    "name": "Ungaikyo",
+    "stats": {
+     "attack": 5150,
+     "hp": 10370,
+     "defense": 707,
+     "speed": 121,
+     "critRate": 100,
+     "critDamage": 283,
+     "effectHit": 0,
+     "effectResist": 56
+    },
+    "soulId": 21
+   },
+   {
+    "unitId": "b5",
+    "shikigamiId": 562,
+    "name": "Senhime Resurgent",
+    "stats": {
+     "attack": 5833,
+     "hp": 14471,
+     "defense": 492,
+     "speed": 114,
+     "critRate": 10,
+     "critDamage": 171,
+     "effectHit": 15,
+     "effectResist": 0
+    },
+    "soulId": 25
+   }
+  ]
+ },
+ "ruleset": "GUESSING",
+ "source": {
+  "type": "JSON",
+  "note": "2026-11-24e-lineup.en.json"
+ },
+ "createdAt": "2026-11-24T10:08:26.269Z",
+ "updatedAt": "2026-11-24T10:08:26.269Z"
+}

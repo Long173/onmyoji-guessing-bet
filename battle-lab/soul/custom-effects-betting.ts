@@ -43,6 +43,11 @@
 //                         official controls (kernel CONTROL_EFFECTS / isControlDef); 寻森小鹿男's 牵缠 is not one of them, so it
 //                         does not count (conservative; see compile/betting-shishio551.ts). A resisted / immune control
 //                         never lands, so it does not count ("命中").
+//   海月火玉 Wispzoa     · (match 15) when the wearer casts a 妖术 (an attack skill whose effective onibi cost is > 0) and its
+//                         side holds at least cost + 1 onibi at the cast start (EV.SKILL_START, before the payment):
+//                         1 extra onibi is removed and every damage of that cast is x1.4 (独立乘区: separate multiplier).
+//                         Counters / forced basic attacks (cost 0) never trigger it; a non-attack skill does not
+//                         dispatch SKILL_START, so it never pays the extra onibi (it has no damage to boost).
 import { EV, StatusCategory } from "../kernel/types.ts";
 import type { EventRange } from "../kernel/types.ts";
 import { StatusBook, incomingKinds } from "../kernel/status.ts";
@@ -53,6 +58,7 @@ import { bearerTurnControl } from "../compile/betting-fengyang.ts";
 import { dealDamage } from "../kernel/damage.ts";
 import { DamageType } from "../kernel/types.ts";
 import { GameMath } from "../kernel/gamemath.ts";
+import { bettingCostOf } from "../compile/betting-mechanics.ts";
 
 /** What soul/custom-effects.ts hands over (its own helpers; nothing is re-implemented here). */
 export interface BettingSoulHelpers {
@@ -76,6 +82,7 @@ export const BETTING_SOUL_NUMBERS = Object.freeze({
   edgeChance: 0.5, edgeCut: 0.2, edgeShare: 0.5,
   nuriBuff: 0.15, nuriTurns: 2,
   bellStep: 0.05, bellCap: 8, bellTurns: 2,
+  wispExtra: 1, wispBoost: 0.4,
 });
 
 export const BELL_HAUNT_ID = "SOUL_BELL_HAUNT";
@@ -351,7 +358,35 @@ export function makeBettingSouls(h: BettingSoulHelpers): Record<string, (c: any)
     });
   };
 
-  return { 日女巳时: dawnFairy, 三味: samisen, 骰子鬼: diceSprite, 隐念: possessor, 魍魉之匣: mimic, 薙魂: soulEdge, 涂佛: nuribotoke, 元兴寺: bellHaunt };
+  const wispzoa = (c: any) => {
+    const { battle, owner } = c;
+    let active: any = null;   // the skill object of the boosted cast
+    h.register(c, EV.SKILL_START, "SELF", ctx => {
+      active = null;
+      if (ctx?.actor?.id !== owner.id || !h.isUp(owner)) return;
+      const sk = ctx?.skill;
+      if (!sk || !((Number(sk.cost) || 0) > 0)) return;           // 妖术 = a skill with an onibi cost
+      let eff = Number(sk.cost) || 0;
+      try { eff = bettingCostOf(battle, owner, sk.ir ?? sk); } catch { /* keep the printed cost */ }
+      const pool = battle.teams[owner.teamId].orbs;
+      if (!(pool.current >= Math.max(0, eff) + BETTING_SOUL_NUMBERS.wispExtra)) return;
+      const before = pool.current;
+      pool.pay(BETTING_SOUL_NUMBERS.wispExtra);
+      battle.trace.push({ t: "ORB_DRAIN", team: owner.teamId, src: owner.id, skill: h.soulSkill(c), before, after: pool.current });
+      active = sk;
+      c.fired("海月火玉:boost");
+      h.proc(c, owner.id, `extra 1 onibi for ${sk.name} (cost ${eff}) → its damage x1.4`);
+    });
+    h.register(c, EV.BEFORE_DAMAGE, "SELF", ctx => {
+      if (!active || ctx?.input?.source?.id !== owner.id || ctx.result?.ignoresModifiers) return;
+      const t = ctx.input.target;
+      if (!t || t.teamId === owner.teamId || !h.countsAsSoulDamage(ctx)) return;
+      ctx.result.final *= 1 + BETTING_SOUL_NUMBERS.wispBoost;
+    });
+    h.register(c, EV.SKILL_END, "SELF", ctx => { if (ctx?.actor?.id === owner.id) active = null; });
+  };
+
+  return { 海月火玉: wispzoa, 日女巳时: dawnFairy, 三味: samisen, 骰子鬼: diceSprite, 隐念: possessor, 魍魉之匣: mimic, 薙魂: soulEdge, 涂佛: nuribotoke, 元兴寺: bellHaunt };
 }
 
 export const BETTING_SOUL_NOTES: Readonly<Record<string, string>> = Object.freeze({
@@ -362,5 +397,6 @@ export const BETTING_SOUL_NOTES: Readonly<Record<string, string>> = Object.freez
   薙魂: "custom (MAX only): ally (not the wearer) takes an enemy single-target hit → 50% guard for the rest of that attack (one per attack): hit x0.8 then half shared, the wearer takes the same amount as FIXED no-soul damage; unique per team",
   涂佛: "custom (MAX only, unique per team): wearer turn end after a normal attack (or unable to act at turn start) → non-summon allies +15% effect RES / +15% damage for 2 of their turns, the wearer +30% / +30%; refreshed, not stacked",
   元兴寺: "custom (MAX only, unique per team): wearer's own turn, each enemy hit by a control effect it applies (once per target per skill) → non-summon allies +5% damage, max +40% (8 stacks), for 2 of their turns, refreshed",
+  海月火玉: "custom (MAX only): wearer casts an attack skill with an onibi cost while its side holds cost + 1 onibi → 1 extra onibi is removed and that cast's damage x1.4 (independent multiplier)",
   骰子鬼: "custom (MAX only): wearer resists (EV.RESIST) → counter-attack the source with +50% damage; control received while not controlled → +25% action bar",
 });

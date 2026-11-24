@@ -50,6 +50,12 @@ export const BETTING_AI_RULES: Readonly<Record<number, string>> = Object.freeze(
   300: "betting-tamamo.ts",
   // Match 12 (wired through betting-m12.ts)
   551: "betting-shishio551.ts", 580: "betting-hiyoribou580.ts",
+  // Match 13 (wired through betting-m13.ts)
+  257: "betting-yumekui.ts",
+  // Match 14 (wired through betting-m14.ts)
+  211: "betting-kuromujou.ts", 233: "betting-kyonshiani.ts",
+  // Match 15 (wired through betting-m15.ts)
+  237: "betting-yamausagi.ts", 272: "betting-ichimokuren.ts",
 });
 
 const F = (module: string, note: string): KitSkill => ({ level: "FULL", module, note });
@@ -227,7 +233,36 @@ export const BETTING_KIT_SKILLS: Readonly<Record<string, KitSkill>> = Object.fre
   "551_03": F("betting-shishio551.ts", "228% +25% per heart; with a heart 40% push, pushed to the end = Entangle 1 turn (cannot deal damage; L5 3 hearts: sure hit); 1 / 2 hearts = 1 / 2 extra random enemies"),
   "580_02": F("betting-hiyoribou580.ts", "30% of the other allies' damage as Rainbow Energy (cap 2400% initial ATK); before her turn up to 3 allies <70% HP healed 120% initial ATK each (energy-paid, conservative own-turn reading); L4/L5 block up to 60% / 90% initial ATK for the top-ATK ally / herself"),
   "580_03": F("betting-hiyoribou580.ts", "Thunder Doll on the top-ATK ally (+15% indirect echo), +720% initial ATK energy, Clear Sky Doll per 600% gained (removes freeze), L4 3-ally 120% heals x4 per window, L5 Upper Hand cast"),
+  // Match 13 (wired through betting-m13.ts): Yumekui 257, Oko 309, Shiro 278, Bake-kujira 332
+  "257_01": F("betting-yumekui.ts", "100% ATK; 20% base chance Sleep 1 turn of the bearer (the compiled 20% buff dispel stays)"),
+  "257_02": F("betting-yumekui.ts", "his damage does not wake sleepers (battle wake-on-damage rule installed with him); every Sleep applied to any unit heals the lowest-HP-ratio non-summon ally 5% of his max HP"),
+  "257_03": F("betting-yumekui.ts", "every enemy: 50% base chance Sleep for 1 or 2 (coin) bearer turns"),
+  "309_02": F("betting-oko.ts", "attack start: 100% base chance +1 Serpent Shadow (-8% DEF per stack, max 3, 3 bearer turns); enemy non-conducted damage on her side: one 25% roll per damaged ally per enemy attack, at most 1 counter"),
+  "309_03": F("betting-oko.ts", "216% +40% per Serpent Shadow stack (own attack-start stack included); Stun 1 bearer turn (100% base chance) on a 3-stack target"),
+  "278_02": F("betting-shiro.ts", "an enemy shikigami dies: normal attack on a random enemy (pseudo turn; not while he cannot act)"),
+  "278_03": P("betting-shiro.ts", "126% AoE (compiled); White Guard on all allies (one hit absorbed, +40% RES, 1 of his turns); dead allies' souls strike a random enemy for 100% of their ATK; not modelled: souls as units (their possible own turn during the 1-turn life)"),
+  "332_01": P("betting-kujira.ts", "Defense stance, own turn: Bone Shield to all allies, 100% ATK, +true damage 10% target max HP (cap 120% ATK) if all already had it; not modelled: Offense-stance Whalebone: Open (no KB text, plain 100% hit)"),
+  "332_02": P("betting-kujira.ts", "Defense stance: an unmarked ally hit by non-conducted enemy damage gets Bone Shield (-40% crit damage taken, gone at turn end after a crit) and he counters, 1 per turn; not modelled: Offense-stance Coordinated Assault (no KB text)"),
+  "332_03": P("betting-kujira.ts", "Defense-stance aura +20% RES/DEF, ally turn end 80%: Bone Shield or (already marked) heal 15% lost HP (cap 120% ATK); cast: Offense stance, allies +30% bar, self +60%; not modelled: Offense-stance Circular Formation (no KB text: modelled as switch back to Defense)"),
   "371_03": P("betting-kawazaru.ts", "3 forms in KB order with a 15% max-HP undispellable paper shield; You're a Bad Guy 180% on the top-ATK enemy, Quick, Hide heals 31% ATK; not modelled: the forms' base effects and Stop Chasing Me's buff (no text)"),
+  // Match 14 (wired through betting-m14.ts): Miakashi 552, Amezaiku 368, Kuro Mujou 211, Kyonshi Ani 233
+  "552_02": F("betting-miakashi.ts", "enemy damage on her: +1 Karma on the attacker (-5% ATK per stack, max 3; uncontested reading); 50% to take 50% of a single-target hit on another non-summon ally (while actionable) + 6% max-HP heals on her and the lowest-HP ally"),
+  "552_03": F("betting-miakashi.ts", "Luminous Lantern (compiled summon / recall / +2 onibi kept); L3 +40% DEF to non-summon allies, Soul Bind on 3-Karma enemies while the lantern is out (ends at the recall or her death), L5 dispel 2 per allied shikigami; the compiled ally 'remove any' / Karma on cast / unconditional bind removed"),
+  "368_02": F("betting-amezaiku.ts", "takes 30% of the damage dealt to the lowest-HP-ratio ally (fixed damage from the attacker; not when he is the lowest)"),
+  "368_03": F("betting-amezaiku.ts", "15% current-HP loss, Candied 3 bearer turns on an ally without Candied; he takes damage: 15% max-HP heal per bearer (3 per turn), overflow +8% bar to the bearer, L5 5% self heal"),
+  "211_02": F("betting-kuromujou.ts", "a kill grants a new turn (one per action, kernel extra turn)"),
+  "211_03": F("betting-kuromujou.ts", "128% to all enemies; >40% HP ratio: +50% crit and +50% damage, else -50% damage"),
+  "211_01": P("betting-kuromujou.ts", "125% (compiled); KB target rule (lowest <30% HP, debuffed -20%); not modelled: Soul Chase replacement during a Life Reaping turn (no KB text)"),
+  "233_02": F("betting-kyonshiani.ts", "+40% RES (L5); cast 125% + 30% Stun (compiled); an ally killed: free 125% cast on the killer with 100% base-chance Stun"),
+  // Match 15 (wired through betting-m15.ts): Yamausagi 237, Ichimokuren 272, Akaname 361
+  "237_02": F("betting-yamausagi.ts", "every non-summon ally +30% bar and Rabbit Dance +20% ATK for 2 bearer turns; L4 the lowest-bar ally +40%"),
+  "237_03": F("betting-yamausagi.ts", "285% single target; 10% base Morph for 2 target turns (contested); L5 a landed Morph casts a free Rabbit Dance"),
+  "272_01": F("betting-ichimokuren.ts", "125% + 100% steal of 20% of the TARGET's ATK for 2 turns (the compiled steal hit every enemy)"),
+  "272_02": F("betting-ichimokuren.ts", "Wind Ward on one ally: shield 20% of his max HP for 2 bearer turns; on break/expiry 12% of his max HP to all enemies + push 20%; L4 free pre-battle cast on the top-ATK ally (unique); L5 debuff/control on the bearer pushes enemies 5% (3 per round)"),
+  "272_03": F("betting-ichimokuren.ts", "all non-summon allies: 18%-of-his-max-HP shield for 2 bearer turns, +10% ATK / +15% RES; L4 re-cast +20% ATK / +30% RES 1 turn; L5 heal 80% of the remaining shield"),
+  "361_01": F("betting-akaname.ts", "120% + -25% effect hit for 1 target turn (no written chance: betting resist policy)"),
+  "361_02": F("betting-akaname.ts", "unique: after each enemy turn (not while unable to act, <4 Mold): dispel up to 3 dispellable debuffs/controls from one random ally carrying any, +1 Mold (-15% RES each; gained even with nothing to dispel), cleared at his turn end"),
+  "233_03": P("betting-kyonshiani.ts", "coffin per dead ally (30% ally HP + share of 30% his HP, ally SPD), revives at 100% max HP on its next action; coffins never take a summon slot; not modelled: +15% bar on a coffin's death (enemies never target summons)"),
 });
 
 /** Module holding the hand-written skill choice of this shikigami, or null (MAX only). */
