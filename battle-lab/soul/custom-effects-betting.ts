@@ -1,5 +1,5 @@
 // soul/custom-effects-betting.ts — 4-piece souls hand-written for betting mode (MAX) only: 日女巳时 / 三味 / 骰子鬼 / 隐念 /
-// 魍魉之匣 / 薙魂.
+// 魍魉之匣 / 薙魂 / 涂佛 / 元兴寺.
 //
 // The generic text interpreter installs none of them (run-lineup listed them as "NOT simulated"). They are
 // registered through soul/custom-effects.ts (CUSTOM_SOULS + BETTING_ONLY_SOULS), which passes its own helpers
@@ -36,12 +36,19 @@
 //                         during that turn or was unable to act at its turn start: every living non-summon ally gets
 //                         +15% effect RES and +15% damage (additive dmgDealtB), the wearer +30% / +30%, for 2 of the
 //                         bearer's turns (TARGET_TURN), refreshed (not stacked) by a new trigger. Unique per team.
+//   元兴寺 Bell-Haunt    · 唯一效果 (match 12): during the wearer's own turn, every enemy hit by a control effect the wearer
+//                         applies (one count per target per skill resolution, "单次控制重复命中同目标时，仅生效1次") gives
+//                         every living non-summon ally +5% damage (additive dmgDealtB), max +40% (8 stacks), for 2 of the
+//                         bearer's turns (TARGET_TURN), the duration refreshed by a new stack. "Control effect" = the 16
+//                         official controls (kernel CONTROL_EFFECTS / isControlDef); 寻森小鹿男's 牵缠 is not one of them, so it
+//                         does not count (conservative; see compile/betting-shishio551.ts). A resisted / immune control
+//                         never lands, so it does not count ("命中").
 import { EV, StatusCategory } from "../kernel/types.ts";
 import type { EventRange } from "../kernel/types.ts";
 import { StatusBook, incomingKinds } from "../kernel/status.ts";
 import type { StatusDef } from "../kernel/status.ts";
 import { shiftBar, isControlDef, noteValue, setNote, untargetableInBetting } from "../compile/betting-shared.ts";
-import { isAoeHit, currentHit } from "../compile/betting-scope.ts";
+import { isAoeHit, currentHit, inOwnTurn } from "../compile/betting-scope.ts";
 import { bearerTurnControl } from "../compile/betting-fengyang.ts";
 import { dealDamage } from "../kernel/damage.ts";
 import { DamageType } from "../kernel/types.ts";
@@ -68,7 +75,26 @@ export const BETTING_SOUL_NUMBERS = Object.freeze({
   mimicChance: 0.25, mimicTurns: 1, mimicHealDown: 0.4,
   edgeChance: 0.5, edgeCut: 0.2, edgeShare: 0.5,
   nuriBuff: 0.15, nuriTurns: 2,
+  bellStep: 0.05, bellCap: 8, bellTurns: 2,
 });
+
+export const BELL_HAUNT_ID = "SOUL_BELL_HAUNT";
+const bellDef = (): StatusDef => {
+  const known = StatusBook.get(BELL_HAUNT_ID);
+  if (known) return known;
+  const def: StatusDef = {
+    id: BELL_HAUNT_ID, name: "元兴寺", category: StatusCategory.BUFF_STATE,
+    dispellable: true, removable: true, preventsAction: false, preventsSkill: false, forcesBasicAttack: false,
+    suppressPassive: false, suppressSoul: false, locksTimeline: false, durationPolicy: "TARGET_TURN",
+    desc: "元兴寺（4件套）：造成的伤害提升5%（每层），最多40%，持续2回合",
+  };
+  StatusBook.set(BELL_HAUNT_ID, def);
+  return def;
+};
+/** Sensitivity switch only (default false = the conservative reading): count 寻森小鹿男's 牵缠 as a control for 元兴寺. */
+export const BELL_COUNTS_ENTANGLE = { value: false };
+/** 元兴寺 唯一效果: the first wearer of each team acts (battle → team → wearer id). */
+const bellHolder = new WeakMap<object, Map<number, number>>();
 
 export const NURIBOTOKE_ID = "SOUL_NURIBOTOKE";
 const nuriDef = (): StatusDef => {
@@ -291,7 +317,41 @@ export function makeBettingSouls(h: BettingSoulHelpers): Record<string, (c: any)
     });
   };
 
-  return { 日女巳时: dawnFairy, 三味: samisen, 骰子鬼: diceSprite, 隐念: possessor, 魍魉之匣: mimic, 薙魂: soulEdge, 涂佛: nuribotoke };
+  const bellHaunt = (c: any) => {
+    const { battle, owner } = c;
+    let holders = bellHolder.get(battle);
+    if (!holders) { holders = new Map(); bellHolder.set(battle, holders); }
+    if (!holders.has(owner.teamId)) holders.set(owner.teamId, owner.id);
+    const counted = new WeakMap<object, Set<number>>();
+    h.register(c, EV.STATUS_ADD, "ALL", ctx => {
+      const v = ctx?.entity;
+      if (!v || v.teamId === owner.teamId || ctx.merged || holders!.get(owner.teamId) !== owner.id || !h.isUp(owner)) return;
+      if (!inOwnTurn(battle, owner)) return;
+      const st = [...(v.statuses ?? [])].reverse().find((s: any) => s.def.id === ctx.status);
+      if (!st || st.sourceId !== owner.id || !(isControlDef(st.def) || (BELL_COUNTS_ENTANGLE.value && st.def.id === "5513_entangle"))) return;
+      const stack: any[] = battle.resolutionStack ?? [];
+      const scope = stack.find((x: any) => x?.type === "SKILL") ?? st;
+      let seen = counted.get(scope);
+      if (!seen) { seen = new Set(); counted.set(scope, seen); }
+      if (seen.has(v.id)) return;
+      seen.add(v.id);
+      const def = bellDef();
+      let after = 0;
+      for (const m of battle.teams[owner.teamId].aliveMembers()) {
+        if (m.type === "SUMMON" || m.type === "SPECIAL_SUMMON") continue;
+        const cur = m.statuses.find((s: any) => s.def.id === BELL_HAUNT_ID);
+        const n = Math.min(BETTING_SOUL_NUMBERS.bellCap, (cur?.stacks ?? 0) + 1);
+        if (cur) m.expireStatus(cur);
+        m.addStatus(def, owner.id, n, BETTING_SOUL_NUMBERS.bellTurns, [{ prop: "dmgDealtB", value: BETTING_SOUL_NUMBERS.bellStep * n, mode: "FIXED" }], BETTING_SOUL_NUMBERS.bellCap);
+        after = Math.max(after, n);
+        battle.trace.push({ t: "STATUS_APPLY", src: owner.id, dst: m.id, status: BELL_HAUNT_ID, name: def.name, category: def.category, duration: BETTING_SOUL_NUMBERS.bellTurns, known: true, stacks: n, skill: h.soulSkill(c) });
+      }
+      c.fired("元兴寺:buff");
+      h.proc(c, v.id, `allies +5% damage per controlled target (${after}/8 stacks, 2 turns) after ${st.def.name}`);
+    });
+  };
+
+  return { 日女巳时: dawnFairy, 三味: samisen, 骰子鬼: diceSprite, 隐念: possessor, 魍魉之匣: mimic, 薙魂: soulEdge, 涂佛: nuribotoke, 元兴寺: bellHaunt };
 }
 
 export const BETTING_SOUL_NOTES: Readonly<Record<string, string>> = Object.freeze({
@@ -301,5 +361,6 @@ export const BETTING_SOUL_NOTES: Readonly<Record<string, string>> = Object.freez
   魍魉之匣: "custom (MAX only): every soul-triggering hit the wearer deals to an enemy (shield-absorbed included) → 25% base chance, contested by effect RES, to apply one of stun / silence / 40% heal reduction / confusion (uniform pick) for 1 of the target's turns",
   薙魂: "custom (MAX only): ally (not the wearer) takes an enemy single-target hit → 50% guard for the rest of that attack (one per attack): hit x0.8 then half shared, the wearer takes the same amount as FIXED no-soul damage; unique per team",
   涂佛: "custom (MAX only, unique per team): wearer turn end after a normal attack (or unable to act at turn start) → non-summon allies +15% effect RES / +15% damage for 2 of their turns, the wearer +30% / +30%; refreshed, not stacked",
+  元兴寺: "custom (MAX only, unique per team): wearer's own turn, each enemy hit by a control effect it applies (once per target per skill) → non-summon allies +5% damage, max +40% (8 stacks), for 2 of their turns, refreshed",
   骰子鬼: "custom (MAX only): wearer resists (EV.RESIST) → counter-attack the source with +50% damage; control received while not controlled → +25% action bar",
 });

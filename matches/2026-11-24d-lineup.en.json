@@ -1,0 +1,153 @@
+{
+  "_meta": {
+    "title": "2026-11-24d",
+    "result": null,
+    "notes": [
+      "Parsed from Lineup screenshots by apps/web/tools/parse-lineup.ts."
+    ]
+  },
+  "red": [
+    {
+      "name": "Oitsuki",
+      "soul": "Mirror Lady",
+      "stats": {
+        "atk": 2791,
+        "hp": 26935,
+        "def": 743,
+        "spd": 181,
+        "cri": 5,
+        "crid": 150,
+        "efh": 0,
+        "efr": 64
+      }
+    },
+    {
+      "name": "Sungraced Hiyoribou",
+      "soul": "Sea Sprite",
+      "stats": {
+        "atk": 3434,
+        "hp": 24839,
+        "def": 584,
+        "spd": 180,
+        "cri": 78,
+        "crid": 164,
+        "efh": 15,
+        "efr": 40
+      }
+    },
+    {
+      "name": "Chin",
+      "soul": "Soul Edge",
+      "stats": {
+        "atk": 6729,
+        "hp": 26548,
+        "def": 764,
+        "spd": 173,
+        "cri": 60,
+        "crid": 150,
+        "efh": 0,
+        "efr": 96
+      }
+    },
+    {
+      "name": "Amaterasu",
+      "soul": "Possessor",
+      "stats": {
+        "atk": 4955,
+        "hp": 17006,
+        "def": 783,
+        "spd": 143,
+        "cri": 47,
+        "crid": 209,
+        "efh": 0,
+        "efr": 40
+      }
+    },
+    {
+      "name": "Enmusubi",
+      "soul": "Sea Sprite",
+      "stats": {
+        "atk": 3738,
+        "hp": 17513,
+        "def": 730,
+        "spd": 128,
+        "cri": 30,
+        "crid": 220,
+        "efh": 15,
+        "efr": 48
+      }
+    }
+  ],
+  "blue": [
+    {
+      "name": "Greenwarden Shishio",
+      "soul": "Bell-Haunt",
+      "stats": {
+        "atk": 3970,
+        "hp": 20829,
+        "def": 592,
+        "spd": 180,
+        "cri": 40,
+        "crid": 150,
+        "efh": 45,
+        "efr": 30
+      }
+    },
+    {
+      "name": "Kidomaru",
+      "soul": "Snow Spirit",
+      "stats": {
+        "atk": 5511,
+        "hp": 14728,
+        "def": 889,
+        "spd": 154,
+        "cri": 71,
+        "crid": 220,
+        "efh": 0,
+        "efr": 48
+      }
+    },
+    {
+      "name": "Yoto Hime, Scarlet Nightedge",
+      "soul": "Scarlet",
+      "stats": {
+        "atk": 6208,
+        "hp": 17946,
+        "def": 479,
+        "spd": 146,
+        "cri": 52,
+        "crid": 150,
+        "efh": 0,
+        "efr": 40
+      }
+    },
+    {
+      "name": "Inaba Kaguya Hime",
+      "soul": "Boroboroton",
+      "stats": {
+        "atk": 3435,
+        "hp": 15155,
+        "def": 584,
+        "spd": 125,
+        "cri": 8,
+        "crid": 200,
+        "efh": 0,
+        "efr": 40
+      }
+    },
+    {
+      "name": "Hako Shoujo",
+      "soul": "Sea Sprite",
+      "stats": {
+        "atk": 2925,
+        "hp": 30763,
+        "def": 771,
+        "spd": 125,
+        "cri": 43,
+        "crid": 150,
+        "efh": 15,
+        "efr": 72
+      }
+    }
+  ]
+}

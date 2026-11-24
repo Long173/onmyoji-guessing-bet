@@ -48,6 +48,8 @@ export const BETTING_AI_RULES: Readonly<Record<number, string>> = Object.freeze(
   390: "betting-susabi390.ts", 346: "betting-seawatch.ts", 371: "betting-kawazaru.ts",
   // Match 11 (wired through betting-m11.ts)
   300: "betting-tamamo.ts",
+  // Match 12 (wired through betting-m12.ts)
+  551: "betting-shishio551.ts", 580: "betting-hiyoribou580.ts",
 });
 
 const F = (module: string, note: string): KitSkill => ({ level: "FULL", module, note });
@@ -220,6 +222,11 @@ export const BETTING_KIT_SKILLS: Readonly<Record<string, KitSkill>> = Object.fre
   "217_02": F("betting-ootengu.ts", "Shelter at battle start / turn end, 50% Heroic Bearing (+1% damage, cap 80, whole battle) per damage instance, L5 free Feather Blade Storm after a block"),
   "217_03": F("betting-ootengu.ts", "4 x 75% on all enemies, +1 Heroic Bearing and +5% bar per enemy hit, max 6 per cast"),
   "300_03": F("betting-tamamo.ts", "L5 chain: a kill by Foxfire / Fallen from Heaven casts the other for free at -20% damage per step (additive reading)"),
+  // Match 12 (wired through betting-m12.ts): Greenwarden Shishio 551, Sungraced Hiyoribou 580
+  "551_02": P("betting-shishio551.ts", "Forest Spirit marks on attacked enemies (steal 20% initial ATK at their attack start, max 3, -2 at their turn end; 15% push; 3 triggers), absorbed into Forest Hearts at his turn start (+20% RES, cap 3, 2 turns); L2 30% debuff/control immunity +1 heart, L3 13% max-HP heal per heart, L4 +60 SPD, L5 +10% bar; not modelled: Entangle's -60% bar-boost reduction"),
+  "551_03": F("betting-shishio551.ts", "228% +25% per heart; with a heart 40% push, pushed to the end = Entangle 1 turn (cannot deal damage; L5 3 hearts: sure hit); 1 / 2 hearts = 1 / 2 extra random enemies"),
+  "580_02": F("betting-hiyoribou580.ts", "30% of the other allies' damage as Rainbow Energy (cap 2400% initial ATK); before her turn up to 3 allies <70% HP healed 120% initial ATK each (energy-paid, conservative own-turn reading); L4/L5 block up to 60% / 90% initial ATK for the top-ATK ally / herself"),
+  "580_03": F("betting-hiyoribou580.ts", "Thunder Doll on the top-ATK ally (+15% indirect echo), +720% initial ATK energy, Clear Sky Doll per 600% gained (removes freeze), L4 3-ally 120% heals x4 per window, L5 Upper Hand cast"),
   "371_03": P("betting-kawazaru.ts", "3 forms in KB order with a 15% max-HP undispellable paper shield; You're a Bad Guy 180% on the top-ATK enemy, Quick, Hide heals 31% ATK; not modelled: the forms' base effects and Stop Chasing Me's buff (no text)"),
 });
 

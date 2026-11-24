@@ -58,7 +58,8 @@ console.log("\n[1] gating: MAX uses the installer, BASE keeps the generic path")
   // + 隐念 Possessor (match 7, soul/custom-effects-betting.ts; covered by tests/betting-mechanics-11.ts).
   // + 魍魉之匣 Mimic / 薙魂 Soul Edge (match 8, soul/custom-effects-betting.ts; covered by tests/betting-mechanics-12.ts).
   // + 涂佛 Nuribotoke (match 11, soul/custom-effects-betting.ts; covered by tests/betting-mechanics-17.ts).
-  ok("BETTING_ONLY_SOULS = the twelve souls", [...BETTING_ONLY_SOULS].sort().join() === ["伤魂鸟", "珍珠", "树妖", "钓瓶火", "蚌精", "日女巳时", "三味", "骰子鬼", "隐念", "薙魂", "魍魉之匣", "涂佛"].sort().join());
+  // + 元兴寺 Bell-Haunt (match 12, soul/custom-effects-betting.ts; covered by tests/betting-mechanics-18.ts).
+  ok("BETTING_ONLY_SOULS = the thirteen souls", [...BETTING_ONLY_SOULS].sort().join() === ["伤魂鸟", "珍珠", "树妖", "钓瓶火", "蚌精", "日女巳时", "三味", "骰子鬼", "隐念", "薙魂", "魍魉之匣", "涂佛", "元兴寺"].sort().join());
   ok("every betting-only soul has an install note", [...BETTING_ONLY_SOULS].every(n => !!CUSTOM_SOUL_NOTES[n]));
   setSkillLevelMode("BASE");
   ok("BASE: customSoulFor returns null for every betting-only soul", [...BETTING_ONLY_SOULS].every(n => customSoulFor(n) === null));

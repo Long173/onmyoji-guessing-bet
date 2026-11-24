@@ -1,0 +1,179 @@
+{
+ "schemaVersion": 1,
+ "id": "2026-11-24d-lineup",
+ "red": {
+  "units": [
+   {
+    "unitId": "r1",
+    "shikigamiId": 295,
+    "name": "Oitsuki",
+    "stats": {
+     "attack": 2791,
+     "hp": 26935,
+     "defense": 743,
+     "speed": 181,
+     "critRate": 5,
+     "critDamage": 150,
+     "effectHit": 0,
+     "effectResist": 64
+    },
+    "soulId": 11
+   },
+   {
+    "unitId": "r2",
+    "shikigamiId": 580,
+    "name": "Sungraced Hiyoribou",
+    "stats": {
+     "attack": 3434,
+     "hp": 24839,
+     "defense": 584,
+     "speed": 180,
+     "critRate": 78,
+     "critDamage": 164,
+     "effectHit": 15,
+     "effectResist": 40
+    },
+    "soulId": 25
+   },
+   {
+    "unitId": "r3",
+    "shikigamiId": 285,
+    "name": "Chin",
+    "stats": {
+     "attack": 6729,
+     "hp": 26548,
+     "defense": 764,
+     "speed": 173,
+     "critRate": 60,
+     "critDamage": 150,
+     "effectHit": 0,
+     "effectResist": 96
+    },
+    "soulId": 29
+   },
+   {
+    "unitId": "r4",
+    "shikigamiId": 556,
+    "name": "Amaterasu",
+    "stats": {
+     "attack": 4955,
+     "hp": 17006,
+     "defense": 783,
+     "speed": 143,
+     "critRate": 47,
+     "critDamage": 209,
+     "effectHit": 0,
+     "effectResist": 40
+    },
+    "soulId": 50
+   },
+   {
+    "unitId": "r5",
+    "shikigamiId": 347,
+    "name": "Enmusubi",
+    "stats": {
+     "attack": 3738,
+     "hp": 17513,
+     "defense": 730,
+     "speed": 128,
+     "critRate": 30,
+     "critDamage": 220,
+     "effectHit": 15,
+     "effectResist": 48
+    },
+    "soulId": 25
+   }
+  ]
+ },
+ "blue": {
+  "units": [
+   {
+    "unitId": "b1",
+    "shikigamiId": 551,
+    "name": "Greenwarden Shishio",
+    "stats": {
+     "attack": 3970,
+     "hp": 20829,
+     "defense": 592,
+     "speed": 180,
+     "critRate": 40,
+     "critDamage": 150,
+     "effectHit": 45,
+     "effectResist": 30
+    },
+    "soulId": 53
+   },
+   {
+    "unitId": "b2",
+    "shikigamiId": 345,
+    "name": "Kidomaru",
+    "stats": {
+     "attack": 5511,
+     "hp": 14728,
+     "defense": 889,
+     "speed": 154,
+     "critRate": 71,
+     "critDamage": 220,
+     "effectHit": 0,
+     "effectResist": 48
+    },
+    "soulId": 0
+   },
+   {
+    "unitId": "b3",
+    "shikigamiId": 593,
+    "name": "Yoto Hime, Scarlet Nightedge",
+    "stats": {
+     "attack": 6208,
+     "hp": 17946,
+     "defense": 479,
+     "speed": 146,
+     "critRate": 52,
+     "critDamage": 150,
+     "effectHit": 0,
+     "effectResist": 40
+    },
+    "soulId": 13
+   },
+   {
+    "unitId": "b4",
+    "shikigamiId": 372,
+    "name": "Inaba Kaguya Hime",
+    "stats": {
+     "attack": 3435,
+     "hp": 15155,
+     "defense": 584,
+     "speed": 125,
+     "critRate": 8,
+     "critDamage": 200,
+     "effectHit": 0,
+     "effectResist": 40
+    },
+    "soulId": 6
+   },
+   {
+    "unitId": "b5",
+    "shikigamiId": 287,
+    "name": "Hako Shoujo",
+    "stats": {
+     "attack": 2925,
+     "hp": 30763,
+     "defense": 771,
+     "speed": 125,
+     "critRate": 43,
+     "critDamage": 150,
+     "effectHit": 15,
+     "effectResist": 72
+    },
+    "soulId": 25
+   }
+  ]
+ },
+ "ruleset": "GUESSING",
+ "source": {
+  "type": "JSON",
+  "note": "2026-11-24d"
+ },
+ "createdAt": "2026-11-24T04:20:51.363Z",
+ "updatedAt": "2026-11-24T04:20:51.363Z"
+}
