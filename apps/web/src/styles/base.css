@@ -1,77 +1,126 @@
-/* styles/base.css — UI 2.0 设计令牌（a1-4 §30「和风战术分析终端」）
-   原则：**底层是现代分析工具，上层才是阴阳师的视觉语言**。
-   不要完全仿游戏：背景深色偏暖（墨黑/深褐），红蓝用低饱和朱红与靛青，
-   卡片是半透明深色 + 细金边，强调色是金色；
-   状态**不靠五颜六色**，主要靠图标 / 形状 / 文字表达。 */
+/* styles/base.css — design tokens, UI 2.1 "ink & gold tactical terminal".
+   Modern analysis tool underneath, Onmyoji visual language on top: warm ink-black ground, translucent panels with a
+   thin gold edge, muted vermilion / indigo for the two sides, gold as the single accent.
+   States are carried by shape / icon / text first, colour second.
+   2.1 (ui-ux-pro-max pass): self-hosted type (Noto Serif JP display, Fira Sans body, Fira Code data), AA text
+   contrast, elevation + spacing scales, visible keyboard focus, reduced-motion support. Variable names from 2.0 are
+   kept so every component picks the new look up without edits. */
 :root {
-  /* 底层：墨黑偏暖 */
-  --bg: #12100e;            /* 墨黑带褐 */
-  --bg2: #171411;           /* 和纸背衬 */
-  --panel: #1b1815e6;       /* 半透明深色卡片 */
-  --panel2: #221e19;
-  --line: #3a3129;          /* 深褐细线 */
-  --gold: #c9a961;          /* 强调：金 */
-  --gold-dim: #8a7442;
-  --fg: #ebe4d8;            /* 暖白 */
-  --fg-dim: #a89e8d;
-  --fg-faint: #756c5e;
+  /* Ground: warm ink */
+  --bg: #100e0c;
+  --bg2: #16130f;
+  --panel: #1c1915e8;       /* translucent card */
+  --panel2: #24201a;        /* raised inner surface */
+  --panel3: #2c271f;        /* hover / pressed */
+  --line: #3a3129;          /* hairline */
+  --line-strong: #4d4135;
+  --gold: #d4b46a;          /* accent */
+  --gold-dim: #8f7743;
+  --gold-glow: #d4b46a33;
+  --fg: #efe8dc;            /* warm white */
+  --fg-dim: #b0a594;
+  --fg-faint: #8d8374;      /* ≥ 4.5:1 on --bg */
 
-  /* 阵营：低饱和朱红 / 靛青 */
-  --red: #b4544a;
-  --red-deep: #6d2f28;
-  --blue: #4a6f96;
-  --blue-deep: #2b445c;
+  /* Sides: muted vermilion / indigo (fills), lighter tints for text on dark (AA) */
+  --red: #b8564b;
+  --red-deep: #5e2722;
+  --red-text: #e08a7e;
+  --blue: #4d73a0;
+  --blue-deep: #243a52;
+  --blue-text: #8fb1da;
 
-  /* 语义色：克制使用，只在必须区分时出现 */
-  --ok: #6a9c78;
-  --warn: #c39a4e;
-  --danger: #b8524a;
-  --rng: #7d6ba8;
+  /* Semantic colours: used only where a distinction is required */
+  --ok: #74a985;
+  --warn: #cfa456;
+  --danger: #d0645b;
+  --rng: #9785c4;
 
-  --radius: 10px;
-  --radius-sm: 6px;
-  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  /* Shape, depth, motion */
+  --radius: 12px;
+  --radius-sm: 8px;
+  --radius-xs: 5px;
+  --elev-1: inset 0 1px 0 #ffffff0a, 0 1px 2px #0000007a;
+  --elev-2: inset 0 1px 0 #ffffff0d, 0 8px 24px -8px #000000b0, 0 2px 6px #00000080;
+  --ring: 0 0 0 2px var(--bg), 0 0 0 4px var(--gold);
+  --ease: cubic-bezier(.2, .7, .2, 1);
+  --dur-fast: 140ms;
+  --dur: 220ms;
+
+  /* Spacing (dense dashboard scale) */
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-5: 24px; --space-6: 32px;
+
+  /* Type */
+  --font-sans: "Fira Sans", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --font-display: "Noto Serif JP", "Songti SC", "SimSun", Georgia, serif;
+  --mono: "Fira Code", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   color-scheme: dark;
 }
 * { box-sizing: border-box; }
 html, body, #app { height: 100%; margin: 0; }
 body {
   background:
-    /* 极轻的和纸纹理：两层极低透明度的斜向细纹，不抢内容 */
-    repeating-linear-gradient(45deg, #ffffff05 0 1px, transparent 1px 4px),
+    /* faint washi grain + warm lantern glows at the top; never competes with content */
+    repeating-linear-gradient(45deg, #ffffff04 0 1px, transparent 1px 4px),
     repeating-linear-gradient(-45deg, #ffffff03 0 1px, transparent 1px 6px),
-    radial-gradient(1200px 600px at 50% -10%, #2a211a 0%, transparent 70%),
+    radial-gradient(900px 420px at 18% -8%, #5e272233 0%, transparent 70%),
+    radial-gradient(900px 420px at 82% -8%, #243a5244 0%, transparent 70%),
+    radial-gradient(1400px 700px at 50% -20%, #2c2219 0%, transparent 70%),
     var(--bg);
+  background-attachment: fixed;
   color: var(--fg);
-  font: 13px/1.55 "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  font: 14px/1.55 var(--font-sans);
+  font-feature-settings: "tnum" 1;
   -webkit-font-smoothing: antialiased;
 }
-h1, h2, h3, h4 { letter-spacing: .02em; }
+h1, h2, h3, h4 { letter-spacing: .01em; font-weight: 600; }
+.display { font-family: var(--font-display); letter-spacing: .01em; }
+
 button {
-  font: inherit; color: var(--fg); background: var(--panel2);
-  border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 5px 11px; cursor: pointer;
-  transition: border-color .15s, background .15s, color .15s;
+  font: inherit; font-size: 13px; color: var(--fg); background: var(--panel2);
+  border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 6px 12px; min-height: 32px; cursor: pointer;
+  transition: border-color var(--dur-fast) var(--ease), background var(--dur-fast) var(--ease),
+              color var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
 }
-button:hover:not(:disabled) { border-color: var(--gold-dim); background: #2a241d; }
-button:disabled { opacity: .4; cursor: not-allowed; }
-button.primary { background: linear-gradient(180deg, #4a6f96, #35526f); border-color: #5b83aa; color: #f3f6fa; }
-button.gold { background: linear-gradient(180deg, #6b5a2e, #4d4021); border-color: var(--gold-dim); color: #f0e4c6; }
+button:hover:not(:disabled) { border-color: var(--gold-dim); background: var(--panel3); }
+button:active:not(:disabled) { transform: translateY(1px); }
+button:disabled { opacity: .45; cursor: not-allowed; }
+button.primary {
+  background: linear-gradient(180deg, #5a82b0, #3b5d84); border-color: #6d93c0; color: #f5f8fc;
+  box-shadow: inset 0 1px 0 #ffffff26, 0 4px 14px -6px #4d73a0aa;
+}
+button.primary:hover:not(:disabled) { background: linear-gradient(180deg, #6690bf, #426791); border-color: #86a8d0; }
+button.gold {
+  background: linear-gradient(180deg, #7a6633, #574823); border-color: var(--gold-dim); color: #f6ead0;
+  box-shadow: inset 0 1px 0 #ffffff1f;
+}
+:focus { outline: none; }
+:focus-visible { outline: none; box-shadow: var(--ring); }
+
 input, select, textarea {
-  font: inherit; color: var(--fg); background: #0e0c0a; border: 1px solid var(--line);
-  border-radius: var(--radius-sm); padding: 5px 8px; width: 100%;
+  font: inherit; font-size: 13px; color: var(--fg); background: #0c0a08; border: 1px solid var(--line);
+  border-radius: var(--radius-sm); padding: 6px 9px; width: 100%;
+  transition: border-color var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease);
 }
-input:focus, select:focus, textarea:focus { outline: none; border-color: var(--gold-dim); box-shadow: 0 0 0 2px #c9a96122; }
+input:hover, select:hover, textarea:hover { border-color: var(--line-strong); }
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--gold-dim); box-shadow: 0 0 0 3px var(--gold-glow); }
 input[type=range] { padding: 0; background: none; border: none; }
 code, .mono { font-family: var(--mono); }
-/* 细金边卡片：全站统一的"卡片"观感 */
+
+/* Thin-gold-edge card: the site-wide "card" look */
 .card, .panel {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  box-shadow: inset 0 1px 0 #ffffff08, 0 1px 2px #00000060;
-  backdrop-filter: blur(2px);
+  box-shadow: var(--elev-1);
+  backdrop-filter: blur(6px);
 }
+
 ::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-thumb { background: #3a3129; border-radius: 5px; }
+::-webkit-scrollbar-thumb { background: #3a3129; border-radius: 5px; border: 2px solid transparent; background-clip: padding-box; }
+::-webkit-scrollbar-thumb:hover { background: #4d4135; background-clip: padding-box; }
 ::-webkit-scrollbar-track { background: transparent; }
-::selection { background: #c9a96144; }
+::selection { background: #d4b46a44; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}

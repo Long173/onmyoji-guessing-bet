@@ -114,6 +114,17 @@ const SEV: Record<string, string> = { BLOCK: "danger", WARN: "warn", INFO: "dim"
         </div>
       </div>
 
+      <!-- Tug of war: Red share of decisive battles, with the Wilson 95% band and the 50% line -->
+      <div v-if="r.redWinRate !== null" class="tug" role="img"
+           :aria-label="'Red ' + pct(r.redWinRate) + ' vs Blue ' + pct(r.blueWinRate) + (ci ? ', 95% interval ' + pct(ci.low) + ' to ' + pct(ci.high) : '')">
+        <div class="tugtrack">
+          <div class="tugred" :style="{ width: (r.redWinRate * 100).toFixed(2) + '%' }" />
+          <div v-if="ciBand" class="tugband" :style="{ left: ciBand.left + '%', width: ciBand.width + '%' }" />
+          <div class="tugmid" />
+        </div>
+        <div class="tugscale mono"><span>Red</span><span>50%</span><span>Blue</span></div>
+      </div>
+
       <div class="verdict" :class="crosses50 ? 'warn' : 'ok'">{{ verdictWord }}</div>
 
       <div class="grid4">
@@ -289,8 +300,9 @@ const SEV: Record<string, string> = { BLOCK: "danger", WARN: "warn", INFO: "dim"
 </template>
 
 <style scoped>
-.dash { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
-.head { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+.dash { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--elev-2); }
+.head { display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-bottom: 1px solid var(--line); background: linear-gradient(180deg, #26211a, #1c1915); }
+.head b { font-family: var(--font-display); font-size: 15px; }
 .spacer { flex: 1; }
 .tiny-btn { font-size: 11px; padding: 3px 8px; }
 .badge { font-size: 11px; padding: 2px 9px; border-radius: 999px; border: 1px solid; }
@@ -298,21 +310,29 @@ const SEV: Record<string, string> = { BLOCK: "danger", WARN: "warn", INFO: "dim"
 .badge.warn { color: var(--warn); border-color: #6b5520; background: #2a2213; }
 .tabs { display: flex; gap: 2px; padding: 6px 10px 0; border-bottom: 1px solid var(--line); }
 .tabs button { background: none; border: none; border-bottom: 2px solid transparent; border-radius: 0; padding: 7px 12px; color: var(--fg-faint); font-size: 12px; }
-.tabs button.on { color: var(--fg); border-bottom-color: var(--blue); }
+.tabs button:hover:not(:disabled) { color: var(--fg); background: none; }
+.tabs button.on { color: var(--fg); border-bottom-color: var(--gold); }
 .tabs .dot { display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--warn); vertical-align: super; margin-left: 3px; }
-.body { padding: 14px; display: flex; flex-direction: column; gap: 14px; }
+.body { padding: 16px; display: flex; flex-direction: column; gap: 14px; }
 .two { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.side { border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; }
-.side.red { border-left: 3px solid var(--red); } .side.blue { border-left: 3px solid var(--blue); }
-.side .lab { font-size: 11px; color: var(--fg-faint); }
-.side .big { font-size: 32px; font-weight: 700; font-family: var(--mono); }
-.side.red .big { color: var(--red); } .side.blue .big { color: var(--blue); }
-.verdict { padding: 9px 12px; border-radius: 8px; font-size: 13px; }
+.side { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-sm); padding: 14px 18px 12px; }
+.side.red { border-top: 2px solid var(--red); background: radial-gradient(120% 140% at 0% 0%, #5e272240, transparent 60%), var(--panel2); }
+.side.blue { border-top: 2px solid var(--blue); background: radial-gradient(120% 140% at 100% 0%, #243a5255, transparent 60%), var(--panel2); text-align: right; }
+.side .lab { font-size: 11.5px; color: var(--fg-faint); text-transform: uppercase; letter-spacing: .08em; }
+.side .big { font-family: var(--font-display); font-size: 44px; font-weight: 700; line-height: 1.1; margin: 2px 0; font-variant-numeric: tabular-nums; }
+.side.red .big { color: var(--red-text); } .side.blue .big { color: var(--blue-text); }
+.tug { display: flex; flex-direction: column; gap: 4px; }
+.tugtrack { position: relative; height: 14px; border-radius: 7px; overflow: hidden; background: linear-gradient(90deg, #243a52, var(--blue)); box-shadow: inset 0 1px 2px #000a; }
+.tugred { position: absolute; inset: 0 auto 0 0; background: linear-gradient(90deg, var(--red), #c96a5e); box-shadow: 2px 0 0 #100e0c; transition: width var(--dur) var(--ease); }
+.tugband { position: absolute; top: 0; bottom: 0; background: #efe8dc33; border-left: 1px solid #efe8dcaa; border-right: 1px solid #efe8dcaa; }
+.tugmid { position: absolute; left: 50%; top: -2px; bottom: -2px; border-left: 1px dashed #efe8dccc; }
+.tugscale { display: flex; justify-content: space-between; font-size: 10.5px; color: var(--fg-faint); }
+.verdict { padding: 10px 14px; border-radius: var(--radius-sm); font-size: 13px; border: 1px solid transparent; }
 .verdict.ok { background: #16241c; color: var(--ok); } .verdict.warn { background: #2a2213; color: var(--warn); }
 .grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
-.cell { display: flex; flex-direction: column; gap: 2px; padding: 8px 10px; background: var(--panel2); border-radius: 8px; }
-.cell .k { font-size: 11px; color: var(--fg-faint); }
-.cell b { font-size: 14px; } .cell b.bad { color: var(--danger); }
+.cell { display: flex; flex-direction: column; gap: 2px; padding: 10px 12px; background: var(--panel2); border: 1px solid #ffffff06; border-radius: var(--radius-sm); }
+.cell .k { font-size: 11px; color: var(--fg-faint); text-transform: uppercase; letter-spacing: .06em; }
+.cell b { font-size: 17px; font-weight: 600; } .cell b.bad { color: var(--danger); }
 .block { border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
 .block h4 { margin: 0 0 10px; font-size: 12.5px; color: var(--fg-dim); font-weight: 600; }
 .cibar .track { position: relative; height: 22px; background: #0f1116; border-radius: 5px; overflow: hidden; margin-bottom: 8px; }
@@ -361,4 +381,6 @@ const SEV: Record<string, string> = { BLOCK: "danger", WARN: "warn", INFO: "dim"
 .sample .go { color: var(--blue); font-size: 12px; }
 .note { margin: 4px 0 0; font-size: 11px; color: var(--fg-faint); line-height: 1.6; }
 .small { font-size: 12px; } .tiny { font-size: 10px; } .dim { color: var(--fg-dim); }
+@media (max-width: 900px) { .grid4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .two { grid-template-columns: 1fr; } .side.blue { text-align: left; } .side .big { font-size: 36px; } }
 </style>

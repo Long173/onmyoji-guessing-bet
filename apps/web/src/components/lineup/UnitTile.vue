@@ -121,8 +121,12 @@ const fmt = (k: StatKey) => (PERCENT_STAT_KEYS.includes(k) ? s.value[k] + "%" : 
       <!-- ★ 第 138 轮（§33）：逐技能机制实现度的**记数串**，鼠标悬停看逐条 -->
       <span v-if="compileTally" class="tally mono" :class="worstTone" :title="compileTitle">{{ compileTally }}</span>
       <span class="spacer" />
-      <button class="mini" title="Skills / AI / Soul details" @click.stop="emit('open-detail', 'skills')">Details</button>
-      <button class="mini" title="Clear" @click.stop="emit('clear')">×</button>
+      <button class="mini icon" title="Skills / AI / Soul details" aria-label="Skills, AI and soul details" @click.stop="emit('open-detail', 'skills')">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9" /><path d="M12 11v5" /><path d="M12 7.5v.5" /></svg>
+      </button>
+      <button class="mini icon" title="Clear" aria-label="Clear this slot" @click.stop="emit('clear')">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+      </button>
     </div>
 
     <!-- 展开态（§32）：只有点了「编辑」才出现输入框 -->
@@ -137,35 +141,55 @@ const fmt = (k: StatKey) => (PERCENT_STAT_KEYS.includes(k) ? s.value[k] + "%" : 
 </template>
 
 <style scoped>
-.tile { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 6px 8px; display: flex; flex-direction: column; gap: 4px; min-width: 168px; }
-.tile.red { border-left: 3px solid var(--red); }
-.tile.blue { border-left: 3px solid var(--blue); }
-.tile.active { border-color: var(--gold-dim); box-shadow: 0 0 0 1px #c9a96133 inset; }
-.tile.empty { border-style: dashed; opacity: .75; }
-.head { display: flex; align-items: center; gap: 5px; width: 100%; text-align: left; background: none; border: none; border-radius: 0; padding: 0; }
+.tile {
+  position: relative; display: flex; flex-direction: column; gap: 8px; min-width: 196px; flex: 1 1 196px; max-width: 260px;
+  padding: 10px 12px 10px; border-radius: var(--radius-sm); border: 1px solid var(--line);
+  background: linear-gradient(180deg, #26211aee, #1c1915ee); box-shadow: var(--elev-1); overflow: hidden;
+  transition: border-color var(--dur-fast) var(--ease), box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+/* side accent: a lacquered top edge + faint side-coloured wash */
+.tile::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 2px; }
+.tile.red::before { background: linear-gradient(90deg, var(--red), #b8564b00); }
+.tile.blue::before { background: linear-gradient(270deg, var(--blue), #4d73a000); }
+.tile.red { background: linear-gradient(180deg, #3a1d1940, #1c1915ee 60px), linear-gradient(180deg, #26211aee, #1c1915ee); }
+.tile.blue { background: linear-gradient(180deg, #1d2c3f50, #1c1915ee 60px), linear-gradient(180deg, #26211aee, #1c1915ee); }
+.tile:hover { border-color: var(--line-strong); transform: translateY(-1px); box-shadow: var(--elev-2); }
+.tile.active { border-color: var(--gold-dim); box-shadow: 0 0 0 1px #d4b46a33, var(--elev-2); }
+.tile.empty { border-style: dashed; background: #16130f99; }
+.tile.empty:hover { border-color: var(--gold-dim); }
+.head { display: flex; align-items: center; gap: 8px; width: 100%; min-height: 26px; text-align: left; background: none; border: none; border-radius: var(--radius-xs); padding: 0; }
 .head:hover:not(:disabled) { background: none; }
-.idx { font-size: 10px; color: var(--fg-faint); }
-.ph { color: var(--fg-faint); font-size: 12px; }
-.nm { font-size: 12.5px; font-weight: 600; }
-.rar { font-size: 9px; color: var(--gold-dim); border: 1px solid var(--line); border-radius: 3px; padding: 0 3px; }
-.nums { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px 6px; font-size: 10.5px; color: var(--fg-dim); }
-.nums i { color: var(--fg-faint); font-style: normal; margin-right: 2px; }
-.foot { display: flex; align-items: center; gap: 5px; }
-.soulchip { font-size: 10px; padding: 1px 6px; border-radius: 999px; background: var(--panel2); color: var(--fg-dim); }
-.soulchip.none { color: var(--fg-faint); }
-.dots { display: inline-flex; gap: 3px; }
-.tally { font-size: 9.5px; letter-spacing: .5px; }
+.idx { display: grid; place-items: center; width: 20px; height: 20px; flex: none; border-radius: 50%; font-size: 10.5px; color: var(--fg-dim); border: 1px solid var(--line-strong); background: #0c0a0899; }
+.tile.red .idx { color: var(--red-text); border-color: #b8564b66; }
+.tile.blue .idx { color: var(--blue-text); border-color: #4d73a066; }
+.ph { color: var(--fg-faint); font-size: 13px; }
+.tile.empty .head:hover .ph { color: var(--gold); }
+.nm { font-family: var(--font-display); font-size: 14.5px; font-weight: 700; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.rar { margin-left: auto; flex: none; font-size: 9.5px; font-weight: 600; letter-spacing: .04em; color: var(--gold); border: 1px solid var(--gold-dim); border-radius: 4px; padding: 0 4px; background: #d4b46a14; }
+/* 8 stats: label over value, 4 columns, hairline grid */
+.nums { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; border-radius: 6px; overflow: hidden; background: var(--line); border: 1px solid var(--line); }
+.nums span { display: flex; flex-direction: column; gap: 0; padding: 3px 6px 4px; background: #14110ef0; font-size: 12px; color: var(--fg); line-height: 1.25; }
+.nums i { color: var(--fg-faint); font-style: normal; font-size: 9.5px; letter-spacing: .06em; }
+.foot { display: flex; align-items: center; gap: 5px; flex-wrap: nowrap; min-width: 0; }
+.soulchip { font-size: 11px; padding: 2px 9px; min-height: 24px; border-radius: 999px; background: #0c0a08aa; color: var(--fg-dim); border-color: var(--line); flex: 0 1 auto; min-width: 58px; max-width: 118px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.soulchip:hover:not(:disabled) { color: var(--gold); border-color: var(--gold-dim); }
+.soulchip.none { color: var(--fg-faint); border-style: dashed; }
+.dots { display: inline-flex; flex: none; gap: 3px; }
+.tally { flex: 0 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; font-size: 10.5px; letter-spacing: .3px; white-space: nowrap; }
 .tally.ok { color: var(--ok); } .tally.warn { color: var(--warn); } .tally.bad { color: var(--danger); }
-.dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; }
+.dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
 .dot.ok { background: var(--ok); } .dot.warn { background: var(--warn); }
-.dot.bad { background: var(--danger); } .dot.idle { background: var(--fg-faint); }
-.spacer { flex: 1; }
-.mini { font-size: 10px; padding: 1px 6px; }
-.editor { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 6px; margin-top: 4px; padding-top: 5px; border-top: 1px dashed var(--line); }
-.field { display: flex; align-items: center; gap: 4px; }
-.lab { font-size: 10px; color: var(--fg-faint); width: 62px; }
+.dot.bad { background: var(--danger); box-shadow: 0 0 5px #d0645b99; } .dot.idle { background: var(--fg-faint); }
+.spacer { flex: 1 1 0; min-width: 0; }
+.mini { flex: none; font-size: 11px; padding: 2px 7px; min-height: 24px; }
+.mini.icon { display: grid; place-items: center; width: 26px; height: 26px; padding: 0; color: var(--fg-dim); }
+.mini.icon:hover:not(:disabled) { color: var(--gold); }
+.editor { display: grid; grid-template-columns: 1fr 1fr; gap: 5px 8px; margin-top: 2px; padding-top: 8px; border-top: 1px dashed var(--line); }
+.field { display: flex; align-items: center; gap: 5px; }
+.lab { font-size: 10.5px; color: var(--fg-faint); width: 64px; }
 .lab i { color: var(--gold-dim); font-style: normal; }
-.field input { padding: 2px 5px; font-size: 11px; }
+.field input { padding: 3px 6px; font-size: 12px; font-family: var(--mono); }
 .editorfoot { grid-column: 1 / -1; }
-.tiny { font-size: 10px; } .dim { color: var(--fg-dim); }
+.tiny { font-size: 10.5px; } .dim { color: var(--fg-dim); }
+@media (max-width: 600px) { .tile { max-width: none; } }
 </style>
