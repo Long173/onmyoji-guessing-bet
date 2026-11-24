@@ -307,8 +307,9 @@ export const StealPolicyConfigs: Record<string, StealPolicyConfig> = {
  * non-NONE preset (both betting assemblies do so in MAX skill-level mode); the engine default is NONE,
  * so BASE runs are byte-identical.
  *
- * Referee round (裁决鬼王 model): a round completes once every living shikigami has taken a turn since
- * the previous round ended. After round r (stacking, additive):
+ * Referee round: what completes a round is per preset — a referee runner on the action-bar clock (refereeSpeed,
+ * the betting default), every N full turns (actionsPerRound), or every living shikigami having taken a turn
+ * since the previous round (the Arena wording, both null). After round r (stacking, additive):
  *   damage dealt ×(1 + damageStep·min(r, lateFromRound−1) + lateDamageStep·max(0, r−lateFromRound+1))
  *   healing ×max(0, 1 − healStep·r)
  * At the battle's turn cap (TIMEOUT_ADJUDICATE): more surviving shikigami wins, then higher team
@@ -324,6 +325,13 @@ export interface EndgamePolicy {
    * N = every N full turns (top-level actions, extra turns included; counters / pseudo turns excluded).
    */
   actionsPerRound: number | null;
+  /**
+   * Time-based referee (betting presets REFEREE_CLOCK_*): the referee is an action-bar runner of this speed
+   * (the koi-flag icon on the turn-order bar). Round k completes when the action-bar clock reaches
+   * k × GOAL / refereeSpeed; a unit arriving at exactly that time acts first. Overrides actionsPerRound.
+   * Absent / null = not time-based.
+   */
+  refereeSpeed?: number | null;
   evidence?: string;
   /** Evidence for the round trigger (actionsPerRound) */
   triggerEvidence?: string;
@@ -340,6 +348,31 @@ export const REFEREE_ACTIONS_PER_ROUND = 8;
 const REFEREE_TRIGGER_EVIDENCE = "Match-6 replay (2026-11-23f): referee banners after ~8 and ~16 top-level actions, before "
   + "Okuribito / Ungaikyo had ever acted ⇒ not 'every unit acted once'; a fixed 8-action round fits (time-based or "
   + "fastest-unit clocks not ruled out).";
+/**
+ * Betting referee clock — HYPOTHESIS (medium-high confidence), from the match-6 and match-8 replays (2026-11-24 re-read).
+ *   · The referee is a koi-flag icon that runs on the turn-order bar like a unit and takes the "current actor" slot
+ *     when it fires (banner "All ATK up", then a green "DMG Dealt Up" on every unit).
+ *   · Match 8 (f752 / f1159 / f1501): banner 1 right after all 10 units acted once (Kusa Regrown, SPD 114, acted
+ *     last at f720); Kaoru (213) and Mannendake (205) took their 2nd turns only after it ⇒ referee speed in
+ *     (106.5, 114]. Banner 2 right after Kusa's 2nd turn, banner 3 after Kusa's 3rd turn AND one more Mannendake
+ *     turn (f1487) — "every living unit acted" would have fired at f1455, a clock does not.
+ *   · Match 6 (f640–672, f944–975): banner 1 before Inaba (SPD 113) ever acted — Inaba's first turn came right after
+ *     it (f672) and her 2nd right after banner 2 ⇒ speed > 113. Okuribito / Ungaikyo / Peach (Red) were held back by
+ *     control / bar push in that replay (Red acted only 4 times all battle), which is why the old reading saw
+ *     "8 actions, slow units not acted yet".
+ *   ⇒ one rule fits both: a referee runner of speed ≈ 114 (113 < v ≤ 114). Ties go to the unit.
+ * Rejected: a fixed 8 actions (match 8 rounds lasted 10, 13, ~11, ~15 actions); "every living unit acted" (fires
+ * early in match-8 round 3 and cannot explain match 6).
+ */
+export const REFEREE_CLOCK_SPEED = 114;
+const REFEREE_CLOCK_EVIDENCE = "Replays m6 + m8 (re-read 2026-11-24): the referee is a koi-flag runner on the turn-order bar. "
+  + "m8: banners after Kusa (SPD 114) turns 1, 2, 3 while Kaoru 213 / Mannendake 205 had not yet taken turn 2 ⇒ v ≤ 114; "
+  + "m6: banners 1 and 2 each came just before an Inaba (SPD 113) turn ⇒ v > 113. Fixed-8 and every-unit-acted rejected.";
+const REFEREE_EFFECT_EVIDENCE = "Effect: banner \"All ATK up\" + a green \"DMG Dealt Up\" on all ten units (m8 f775) — a damage-dealt "
+  + "increase, not ATK: Kusa Regrown's 35%-ATK heals do not grow with rounds (1883 before round 1 → 2070 after round 7, "
+  + "Bamboo / L3 ATK buffs explain the rest) and her crit seed heal 4067 → 4117 across round 1. Healing is NOT cut "
+  + "(−10%/round would leave 30% at round 7). Size not measurable cleanly (Amaterasu 1201 → 1225 on the same unit "
+  + "across round 1 suggests it is small; crit / DEF noise elsewhere); +15% kept from the 斗技 referee.";
 export const EndgamePolicies: Record<string, EndgamePolicy> = {
   NONE: {
     id: "NONE", status: "UNKNOWN",
@@ -347,9 +380,16 @@ export const EndgamePolicies: Record<string, EndgamePolicy> = {
     mode: "NONE", damageStep: 0, lateDamageStep: 0, lateFromRound: null, healStep: 0, timeout: "TURN_LIMIT", actionsPerRound: null,
     evidence: "Historical behaviour: no ramp, the turn cap ends the battle as TURN_LIMIT (no winner).",
   },
+  REFEREE_CLOCK_114: {
+    id: "REFEREE_CLOCK_114", status: "HYPOTHESIS",
+    question: "Betting referee = a speed-114 runner on the action bar; each pass: +15% damage dealt (stacking, +30% from round 11), no healing cut?",
+    mode: "REFEREE_ROUNDS", damageStep: 0.15, lateDamageStep: 0.30, lateFromRound: 11, healStep: 0, timeout: "ALIVE_THEN_HP",
+    actionsPerRound: null, refereeSpeed: REFEREE_CLOCK_SPEED, triggerEvidence: REFEREE_CLOCK_EVIDENCE,
+    evidence: REFEREE_EFFECT_EVIDENCE + " Timeout adjudication as 17173 (2020).",
+  },
   REFEREE_15_10: {
     id: "REFEREE_15_10", status: "HYPOTHESIS",
-    question: "Betting endgame = 斗技 referee 裁决鬼王: +15% damage / −10% healing per referee round, +30% from round 11?",
+    question: "(Previous default, kept to revert) Betting endgame = 斗技 referee 裁决鬼王: +15% damage / −10% healing per referee round, +30% from round 11, a round every 8 actions?",
     mode: "REFEREE_ROUNDS", damageStep: 0.15, lateDamageStep: 0.30, lateFromRound: 11, healStep: 0.10, timeout: "ALIVE_THEN_HP",
     actionsPerRound: REFEREE_ACTIONS_PER_ROUND, triggerEvidence: REFEREE_TRIGGER_EVIDENCE,
     evidence: "17173 (2020): 对弈竞猜 stacks 造成伤害增加 and 治疗量降低 over time; undecided ⇒ more surviving shikigami, then more remaining HP. Numbers borrowed from the 斗技 referee 裁决鬼王 (+15% damage, −10% healing per round, stacking; +30% from round 11). Not verified for betting. Round trigger: every 8 top-level actions (see triggerEvidence; the Arena says after every unit acts once).",
@@ -381,7 +421,7 @@ export interface BattlePolicies {
   resist: ResistPolicy;
   /** ★ 第 99 轮：属性偷取口径（默认「量的转移」，有 KB 证据；备选不守恒口径只用于对照） */
   steal: StealPolicyConfig;
-  /** Betting anti-stall endgame (default NONE; the betting assemblies pick REFEREE_15_10 in MAX mode) */
+  /** Betting anti-stall endgame (default NONE; the betting assemblies pick REFEREE_CLOCK_114 in MAX mode) */
   endgame: EndgamePolicy;
 }
 export function defaultPolicies(): BattlePolicies {

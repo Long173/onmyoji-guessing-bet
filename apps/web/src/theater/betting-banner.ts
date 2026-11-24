@@ -42,19 +42,42 @@ export function bettingBanner(fr: ReplayFrame, nm: Nm): BannerView | null {
     case "CRIT_CANCELLED":
       lines.push({ label: "Crit cancelled", value: "by " + s(fr.by) + " (" + s(fr.stacks, "0") + " stack(s), " + s(fr.keep, "0") + " kept)", tone: "resist" });
       return out("STATUS", { actor: nm(fr.src), target: nm(fr.dst), skill: fr.skill });
+    case "DAMAGE_BOOST":
+      lines.push({ label: "Damage boosted", value: s(fr.name ?? fr.by) + " · ×" + Number(fr.mul ?? 1).toFixed(2) + (fr.reason ? " (" + s(fr.reason) + ")" : ""), tone: "crit" });
+      return out("STATUS", { actor: nm(fr.src), target: nm(fr.dst), skill: fr.skill });
     case "DAMAGE_REDUCED":
       lines.push({ label: "Damage reduced", value: s(fr.by) + " · " + pct(fr.ratio), tone: "resist" });
       return out("STATUS", { target: nm(fr.id) });
+    case "DAMAGE_SHARED":
+      lines.push({ label: "Damage shared", value: r(fr.amount) + " taken for " + s(nm(fr.ally), "—"), tone: "resist" });
+      return out("STATUS", { actor: nm(fr.src), target: nm(fr.ally), skill: fr.skill });
+    case "DANDELION_SPEND":
+      lines.push({ label: "Dandelion Force spent", value: r(fr.amount) + " (" + r(fr.before) + " → " + r(fr.after) + ")", tone: "crit" });
+      if (fr.reason) lines.push({ label: "For", value: s(fr.reason) });
+      return out("SKILL", { actor: nm(fr.id), skill: fr.skill });
+    case "DANDELION_STORE":
+      lines.push({ label: "Dandelion Force stored", value: "+" + r(fr.amount) + " (now " + r(fr.after) + ")", tone: "heal" });
+      if (fr.reason) lines.push({ label: "From", value: s(fr.reason) + (fr.dst != null ? " · " + s(nm(fr.dst), "—") : "") });
+      return out("STATUS", { actor: nm(fr.id), target: nm(fr.dst), skill: fr.skill });
     case "DOUJO_SACRIFICE":
       lines.push({ label: "Sacrifice", value: "-" + r(fr.sacrifice) + " HP (from " + r(fr.hpBefore) + ")", tone: "warn" });
       lines.push({ label: "Heal allies", value: "+" + r(fr.heal) + (fr.healsSelf ? " (self included)" : ""), tone: "heal" });
       return out("SKILL", { actor: nm(fr.actor), skill: fr.skill });
+    case "ECHO_HIT":
+      lines.push({ label: "Echo", value: s(fr.allySkill) + " of " + s(nm(fr.ally), "—") + " · " + pct(fr.ratio) + " ATK", tone: "crit" });
+      return out("SKILL", { actor: nm(fr.src), target: nm(fr.dst), skill: fr.skill });
+    case "EXTRA_ATTACK":
+      lines.push({ label: "Extra normal attack", value: s(nm(fr.actor), "—") + " → " + s(nm(fr.target), "—") + (fr.chance != null ? " · chance " + pct(fr.chance) : ""), tone: "crit" });
+      return out("SKILL", { actor: nm(fr.actor), target: nm(fr.target), skill: fr.skill });
     case "FEAST":
       lines.push({ label: "Feast", value: r(fr.mealDamage) + " meal damage · " + r(fr.perEnemy) + " to each of " + s(fr.enemies, "0") + " enemies", tone: "crit" });
       return out("SKILL", { actor: nm(fr.id), skill: fr.skill });
     case "FEAST_SKIPPED":
       lines.push({ label: "Feast skipped", value: fr.reason === "DEAD" ? "Eater is defeated" : fr.reason === "CANNOT_ACT" ? "Eater cannot act" : s(fr.reason), tone: "warn" });
       return out("OTHER", { actor: nm(fr.id) });
+    case "HEAL_SPLASH":
+      lines.push({ label: "Heal splash", value: r(fr.each) + " to each other ally (" + pct(fr.ratio) + " of " + r(fr.healed) + ")", tone: "heal" });
+      return out("SKILL", { actor: nm(fr.src), target: nm(fr.main), skill: fr.skill });
     case "MEAL_FINISHED":
       lines.push({ label: "Meal finished", value: r(fr.damage) + " damage stored · feast in " + turns(fr.feastIn ?? 1) });
       return out("STATUS", { actor: nm(fr.chef), target: nm(fr.id), skill: fr.skill });
@@ -105,6 +128,9 @@ export function bettingBanner(fr: ReplayFrame, nm: Nm): BannerView | null {
     case "POSSESS_CONSUMED":
       lines.push({ label: "Possession consumed", value: "Max HP -" + r(fr.maxHpLost), tone: "warn" });
       return out("STATUS", { actor: nm(fr.src), target: nm(fr.id), skill: fr.skill });
+    case "REFLECT":
+      lines.push({ label: "Reflect", value: r(fr.amount) + " damage (" + pct(fr.ratio) + " of " + r(fr.taken) + ")", tone: "crit" });
+      return out("STATUS", { actor: nm(fr.src), target: nm(fr.dst), skill: fr.skill });
     case "RIFT_TICK":
       lines.push({ label: "Rift damage", value: r(fr.amount) + " (" + s(fr.stacks, "0") + " stack(s))", tone: "crit" });
       return out("OTHER", { actor: nm(fr.src), target: nm(fr.dst), skill: fr.skill });

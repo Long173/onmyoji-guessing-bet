@@ -29,6 +29,8 @@ export class Timeline {
   tieBreak: TieBreak = TieBreaks.UNRESOLVED.fn;
   rng: RngLike | null = null;
   readonly log: string[] = [];
+  /** Clock time the last advance() moved (0 before the first; read by the betting referee clock, not saved). */
+  lastDt = 0;
   /**
    * ★ 「这个单位现在能不能被改变行动条」的**唯一真相**由外部提供（Battle 传进来，
    * 内部查单位的缚足/放逐/石化状态）。用谓词而不是靠调用方去 setLock 同步一个布尔量：
@@ -80,6 +82,7 @@ export class Timeline {
       minT = Math.min(minT, (GOAL - e.pos) / v);
     }
     if (!isFinite(minT)) return null;
+    this.lastDt = minT;
     const arrived: TimelineEntry[] = [];
     for (const e of this.entries.values()) {
       const v = e.velocity() || EPS;

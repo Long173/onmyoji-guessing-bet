@@ -1,0 +1,179 @@
+{
+ "schemaVersion": 1,
+ "id": "2026-11-23h-lineup",
+ "red": {
+  "units": [
+   {
+    "unitId": "r1",
+    "shikigamiId": 298,
+    "name": "Kaoru",
+    "stats": {
+     "attack": 2737,
+     "hp": 33326,
+     "defense": 779,
+     "speed": 213,
+     "critRate": 3,
+     "critDamage": 150,
+     "effectHit": 15,
+     "effectResist": 56
+    },
+    "soulId": 14
+   },
+   {
+    "unitId": "r2",
+    "shikigamiId": 230,
+    "name": "Hitotsume",
+    "stats": {
+     "attack": 5726,
+     "hp": 22002,
+     "defense": 876,
+     "speed": 184,
+     "critRate": 63,
+     "critDamage": 206,
+     "effectHit": 0,
+     "effectResist": 88
+    },
+    "soulId": 29
+   },
+   {
+    "unitId": "r3",
+    "shikigamiId": 200,
+    "name": "Momo",
+    "stats": {
+     "attack": 3014,
+     "hp": 25409,
+     "defense": 1005,
+     "speed": 172,
+     "critRate": 90,
+     "critDamage": 206,
+     "effectHit": 0,
+     "effectResist": 64
+    },
+    "soulId": 17
+   },
+   {
+    "unitId": "r4",
+    "shikigamiId": 253,
+    "name": "Vampira",
+    "stats": {
+     "attack": 5108,
+     "hp": 15725,
+     "defense": 737,
+     "speed": 169,
+     "critRate": 85,
+     "critDamage": 311,
+     "effectHit": 0,
+     "effectResist": 48
+    },
+    "soulId": 22
+   },
+   {
+    "unitId": "r5",
+    "shikigamiId": 556,
+    "name": "Amaterasu",
+    "stats": {
+     "attack": 4372,
+     "hp": 17006,
+     "defense": 783,
+     "speed": 143,
+     "critRate": 62,
+     "critDamage": 209,
+     "effectHit": 0,
+     "effectResist": 40
+    },
+    "soulId": 18
+   }
+  ]
+ },
+ "blue": {
+  "units": [
+   {
+    "unitId": "b1",
+    "shikigamiId": 275,
+    "name": "Mannendake",
+    "stats": {
+     "attack": 5456,
+     "hp": 14728,
+     "defense": 724,
+     "speed": 205,
+     "critRate": 70,
+     "critDamage": 227,
+     "effectHit": 0,
+     "effectResist": 0
+    },
+    "soulId": 7
+   },
+   {
+    "unitId": "b2",
+    "shikigamiId": 201,
+    "name": "Yuki Onna",
+    "stats": {
+     "attack": 3541,
+     "hp": 19872,
+     "defense": 664,
+     "speed": 163,
+     "critRate": 13,
+     "critDamage": 150,
+     "effectHit": 48,
+     "effectResist": 63
+    },
+    "soulId": 5
+   },
+   {
+    "unitId": "b3",
+    "shikigamiId": 330,
+    "name": "Shiranui",
+    "stats": {
+     "attack": 4773,
+     "hp": 12666,
+     "defense": 529,
+     "speed": 135,
+     "critRate": 40,
+     "critDamage": 185,
+     "effectHit": 0,
+     "effectResist": 48
+    },
+    "soulId": 27
+   },
+   {
+    "unitId": "b4",
+    "shikigamiId": 372,
+    "name": "Inaba Kaguya Hime",
+    "stats": {
+     "attack": 3435,
+     "hp": 15155,
+     "defense": 584,
+     "speed": 125,
+     "critRate": 8,
+     "critDamage": 200,
+     "effectHit": 0,
+     "effectResist": 40
+    },
+    "soulId": 6
+   },
+   {
+    "unitId": "b5",
+    "shikigamiId": 555,
+    "name": "Kusa Regrown",
+    "stats": {
+     "attack": 4562,
+     "hp": 15440,
+     "defense": 584,
+     "speed": 114,
+     "critRate": 65,
+     "critDamage": 216,
+     "effectHit": 0,
+     "effectResist": 0
+    },
+    "soulId": 52
+   }
+  ]
+ },
+ "ruleset": "GUESSING",
+ "source": {
+  "type": "JSON",
+  "note": "Duel betting 2026-11-23 #8 (Global screenshot) — result: unknown"
+ },
+ "createdAt": "2026-11-23T16:03:28.793Z",
+ "updatedAt": "2026-11-23T16:03:28.793Z"
+}

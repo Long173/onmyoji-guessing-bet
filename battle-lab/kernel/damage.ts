@@ -286,7 +286,11 @@ export async function applyLifesteal(battle: Battle, src: Entity, ratio: number,
   return healed;
 }
 
-export async function healTarget(battle: Battle, source: Entity, target: Entity, amount: number, opts: { recover?: boolean; crit?: boolean; healDown?: number } = {}): Promise<number> {
+export async function healTarget(battle: Battle, source: Entity, target: Entity, amount: number, opts: {
+  recover?: boolean; crit?: boolean; healDown?: number;
+  /** Betting kits only: receives the requested heal (after amplifiers, crit, heal-down, endgame; before the max-HP cap). */
+  onRequested?: (requested: number, crit: number) => void;
+} = {}): Promise<number> {
   /**
    * ★★★ 第 130 轮：**治疗的唯一入口加两道闸门**（改一处，所有治疗路径同时生效）。
    *
@@ -317,9 +321,10 @@ export async function healTarget(battle: Battle, source: Entity, target: Entity,
   const amps: Array<(src: Entity, dst: Entity, base: number) => number> | undefined = (battle as any)?.healAmplifiers;
   if (!recover && amps?.length) for (const f of amps) base = f(source, target, base);
   let amt = base;
+  let crit = 1;
   if (!recover) {
     if (opts.crit) battle.rng.expect("heal-crit");
-    const crit = opts.crit ? (battle.rng.testHit(source.prop("cri")) ? source.prop("crid") : 1) : 1;
+    crit = opts.crit ? (battle.rng.testHit(source.prop("cri")) ? source.prop("crid") : 1) : 1;
     const down = opts.healDown ?? target.prop("healDown");
     /**
      * ★★★ 第 109 轮：**残局治疗乘区**（§34 的 stalemate.healingMultiplier）。
@@ -329,6 +334,7 @@ export async function healTarget(battle: Battle, source: Entity, target: Entity,
     const envHeal = envHealMultiplier((battle as any).environment);
     amt = base * crit * (1 - down) * envHeal;
   }
+  opts.onRequested?.(amt, crit);
   const m = target.mutateHp(recover ? HpMutation.RECOVER : HpMutation.HEAL, amt, recover ? "recover" : "heal");
   battle.recordHeal(source.id, m.applied);
   battle.trace.push({
@@ -342,7 +348,9 @@ export async function healTarget(battle: Battle, source: Entity, target: Entity,
    * 两者**不是一个事件**：被动文案里「受到治疗时」与「恢复生命时」是两件事（登记册里分开登记）。
    */
   battle.queueEvent(recover ? EV.RECOVER : EV.HEAL,
-    { battle, source, target, amount: m.applied, base, hpBefore: m.hpBefore, hpAfter: m.hpAfter, recover: !!recover },
+    { battle, source, target, amount: m.applied, base, hpBefore: m.hpBefore, hpAfter: m.hpAfter, recover: !!recover,
+      // Crit-able heals (betting kits only) also carry the crit multiplier, so overflow readers see the real request.
+      ...(opts.crit ? { crit } : {}) },
     source.id, source.teamId);
   return m.applied;
 }

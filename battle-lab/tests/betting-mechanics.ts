@@ -87,14 +87,20 @@ sec("[1] 金鱼姬 282: 金鱼·助阵 when onibi suffice and no Goldfish exists
 
 sec("[2] 饭笥 370: 储备粮 gain, 胃口大开 at >= 6 stacks, 10-stack form");
 {
-  const { b, find } = await match([unit(370, 17000), unit(201, 20000)]);
-  const m = find(370);
-  await b.run();
-  const gains = (b.trace as any[]).filter(t => t.t === "STATUS_APPLY" && t.dst === m.id && t.status === "3702_1");
+  // 40000 HP: the red 雪女 dummies run their real kit in MAX since match 8 (betting-yukionna.ts: blizzard
+  // freezes); at 17000 HP 饭笥 no longer reliably reaches 6 stacks in this seed.
+  // Several seeds (2026-11-24: the referee clock changed battle lengths; one seed is too fragile for a full-battle check).
+  const gains: any[] = [], feasts: any[] = [];
+  for (let seed = 1; seed <= 6; seed++) {
+    const { b, find } = await match([unit(370, 40000), unit(201, 40000)], seed);
+    const m = find(370);
+    await b.run();
+    gains.push(...(b.trace as any[]).filter(t => t.t === "STATUS_APPLY" && t.dst === m.id && t.status === "3702_1"));
+    feasts.push(...(b.trace as any[]).filter(t => t.t === "SKILL_CAST" && t.actor === m.id && t.skill === "胃口大开"));
+  }
   ok("stacks are gained at ally turn ends", gains.some(t => t.reason === "ALLY_TURN_END"), String(gains.length));
   ok("蓄食待发 grants stacks on cast", gains.some(t => t.reason === "CAST"));
   ok("stacks never exceed 10", gains.every(t => t.stacks <= 10));
-  const feasts = (b.trace as any[]).filter(t => t.t === "SKILL_CAST" && t.actor === m.id && t.skill === "胃口大开");
   ok("胃口大开 is cast during a full battle", feasts.length > 0, String(feasts.length));
 }
 {

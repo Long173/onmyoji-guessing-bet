@@ -10,20 +10,23 @@
 //       and 95% of her SPD; immune to debuffs and control. Re-summoned while alive: max HP +39% of initial ATK
 //       (at most 3 times) and full heal. On its turn it deals 50% of its CURRENT max HP to the enemy with the lowest
 //       (absolute) HP (normal damage; crit from the inherited stats). It does not count for victory.
-//       Targetability: the kernel's enemiesOf() lists team members only (summons are never hit). The Glass is a
-//       field summon that enemies attack in game (it has HP and a "restore all HP" rule), and without it Yuki would
-//       be untouchable forever — so this module appends living Glasses to enemiesOf() of the opposing team
-//       (per-battle wrapper, installed only when a Yuki is present).
+//       Targetability (match-7 replay, 2026-11-23g): the Glass has no HP bar, Inugami's spread hit an "Immune"
+//       Yuki instead, and Yuki took 0 damage all battle ⇒ enemies never target the Glass. It is an action-bar
+//       summon like the whales: untargetable (setTargetable(false)); the kernel's enemiesOf() lists members only.
+//       How it ends: the KB text (591_02, tips_5911) gives it no duration, no expiry and no leave condition; it
+//       is immune to debuffs (no DoT / indirect status can reach it) and no AoE lists summons ⇒ it stays until the
+//       battle ends, and Yuki is immune to damage the whole time (matches the replay: Red lost no unit). Only an
+//       effect that hits summons directly could remove it (the GLASS_DEATH handler below still drops the guard).
 //   千雪·斩 (591_03, 3 onibi) · 9 slashes × 27% ATK on the designated enemy. If she holds ≥ 2 巫灵雪刃, 2 are consumed
 //       and the first slash becomes a 雪爆: 108% ATK to all enemies (L3), the designated enemy takes +50% (L4).
 //       L5: once the target dies, the remaining slashes go to the enemy with the lowest HP (chains).
 //   AI (KB) · "自身拥有剑的无敌buff时 → 3技能, 否则 → 2技能": Glass alive ⇒ 千雪·斩 when affordable, else 雪立·裁 (a
 //       stack; recasting 龙胆·绽 would only refresh the Glass); no Glass ⇒ 龙胆·绽.
-//   Betting HP scale (compile/betting-policies.ts, HYPOTHESIS "every unit's real max HP = Lineup HP × 2.42"): the
-//       Glass is a unit on the field, so its max HP (and the +39% re-summon gains) get the same multiplier
-//       (YUKI.glassHpScaled). Its strike is 50% of its max HP, so the scale also scales the strike — unverified.
-// Doubts: stack timing (gained after the attack, consumed at cast start); the Glass occupying no summon slot;
-// whether the betting HP scale reaches a mid-battle summon.
+//   Betting HP scale (compile/betting-policies.ts, "every unit's real max HP = Lineup HP × 2.42") does NOT reach the
+//       Glass (YUKI.glassHpScaled = false): its HP is computed from Yuki's ATK, not from a Lineup HP. Match-7 replay:
+//       the re-summoned Glass showed 19893 HP = 3.99 × Yuki's ATK 4986 (360% + 39%), and its strike on Hana was 3216
+//       vs 3243 predicted from 50% of that max HP through DEF.
+// Doubts: stack timing (gained after the attack, consumed at cast start); the Glass occupying no summon slot.
 import type { Entity } from "../kernel/entity.ts";
 import { DamageType, EV, StatusCategory } from "../kernel/types.ts";
 import { StatusBook } from "../kernel/status.ts";
@@ -38,7 +41,7 @@ import { bettingHpScale } from "./betting-policies.ts";
 export const YUKI = Object.freeze({
   glassHpAtk: 3.6, restackAtk: 0.39, restackCap: 3, glassSpd: 0.95, glassHit: 0.5,
   edgeCap: 3, edgeCost: 2, slashes: 9, slashRatio: 27, burstRatio: 108, burstTargetBonus: 0.5,
-  glassHpScaled: true,
+  glassHpScaled: false,   // match-7 replay: 19893 HP = (360% + 39%) × ATK 4986, unscaled
 });
 const hpScale = (): number => (YUKI.glassHpScaled ? bettingHpScale() : 1);
 export const EDGE_ID = "5913_1";
@@ -119,6 +122,7 @@ export function summonGlass(battle: any, y: Entity, pos: number, reason: string)
   if (!g) return null;
   g.caps.occupiesSummonSlot = false;
   g.caps.advancesOrbGauge = false;
+  g.setTargetable(false, "龙胆蓝璃: no HP bar, never targeted (match-7 replay)");
   g.base.cri = Number(y.base.cri ?? 0);
   g.base.crid = Number(y.base.crid ?? 1.5);
   g.notes.push(N_OWNER + y.id);
@@ -134,19 +138,6 @@ function dropGuard(battle: any, y: Entity, reason: string): void {
     if (st.def.id !== GUARD_ID || !y.expireStatus(st)) continue;
     battle.trace.push({ t: "STATUS_REMOVE", id: y.id, status: GUARD_ID, name: st.def.name, by: "EXPIRE", side: "ALLY", what: "BUFF", src: y.id, skill: "龙胆·绽", reason });
   }
-}
-
-/** Living Glasses become valid enemy targets (kernel enemiesOf lists members only). One wrapper per battle. */
-const exposed = new WeakSet<object>();
-function exposeGlasses(battle: any): void {
-  if (exposed.has(battle)) return;
-  exposed.add(battle);
-  const orig = battle.enemiesOf.bind(battle);
-  battle.enemiesOf = (teamId: number): Entity[] => {
-    const base: Entity[] = orig(teamId);
-    const glasses = (battle.teams[1 - teamId]?.summons ?? []).filter((s: Entity) => s.alive && isGlass(s) && s.caps.canBeTargeted);
-    return glasses.length ? [...base, ...glasses] : base;
-  };
 }
 
 // ───────────────────────── 千雪·斩 ─────────────────────────
@@ -209,7 +200,6 @@ function install(battle: any, entities: Entity[]): Installed {
   const out: Installed = [];
   if (!bettingActive()) return out;
   for (const y of entities.filter(isYuki)) {
-    exposeGlasses(battle);
     const reg = (code: string, fn: (ctx: any) => Promise<void> | void, range: "SELF" | "ALL" = "ALL") =>
       registerOwnerHandler(battle, "betting:591:" + code + ":" + y.id, y.id, code, fn, range);
     reg(EV.BATTLE_START, () => { if (!glassOf(battle, y)) summonGlass(battle, y, 0, "L5_BATTLE_START"); }, "SELF");

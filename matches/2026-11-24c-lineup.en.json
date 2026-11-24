@@ -1,0 +1,153 @@
+{
+  "_meta": {
+    "title": "2026-11-24c",
+    "result": "red",
+    "notes": [
+      "Parsed from Lineup screenshots by apps/web/tools/parse-lineup.ts."
+    ]
+  },
+  "red": [
+    {
+      "name": "Kagewani",
+      "soul": "Tree Nymph",
+      "stats": {
+        "atk": 4388,
+        "hp": 17263,
+        "def": 973,
+        "spd": 200,
+        "cri": 13,
+        "crid": 150,
+        "efh": 120,
+        "efr": 0
+      }
+    },
+    {
+      "name": "Ebisu",
+      "soul": "Samisen",
+      "stats": {
+        "atk": 3693,
+        "hp": 27801,
+        "def": 724,
+        "spd": 173,
+        "cri": 45,
+        "crid": 150,
+        "efh": 0,
+        "efr": 80
+      }
+    },
+    {
+      "name": "Oitsuki",
+      "soul": "Boroboroton",
+      "stats": {
+        "atk": 2791,
+        "hp": 26935,
+        "def": 648,
+        "spd": 169,
+        "cri": 5,
+        "crid": 150,
+        "efh": 0,
+        "efr": 104
+      }
+    },
+    {
+      "name": "Ootengu",
+      "soul": "Seductress",
+      "stats": {
+        "atk": 4500,
+        "hp": 12079,
+        "def": 611,
+        "spd": 156,
+        "cri": 100,
+        "crid": 283,
+        "efh": 0,
+        "efr": 64
+      }
+    },
+    {
+      "name": "Vengeful Hannya",
+      "soul": "Kyoukotsu",
+      "stats": {
+        "atk": 3999,
+        "hp": 14374,
+        "def": 541,
+        "spd": 127,
+        "cri": 10,
+        "crid": 255,
+        "efh": 0,
+        "efr": 120
+      }
+    }
+  ],
+  "blue": [
+    {
+      "name": "Shokurei",
+      "soul": "Nuribotoke",
+      "stats": {
+        "atk": 5331,
+        "hp": 16864,
+        "def": 612,
+        "spd": 179,
+        "cri": 33,
+        "crid": 150,
+        "efh": 0,
+        "efr": 16
+      }
+    },
+    {
+      "name": "Tenjo Kudari",
+      "soul": "Jizo Statue",
+      "stats": {
+        "atk": 2737,
+        "hp": 25380,
+        "def": 696,
+        "spd": 169,
+        "cri": 5,
+        "crid": 150,
+        "efh": 0,
+        "efr": 104
+      }
+    },
+    {
+      "name": "Tamamonomae",
+      "soul": "Shadow",
+      "stats": {
+        "atk": 5846,
+        "hp": 17718,
+        "def": 654,
+        "spd": 128,
+        "cri": 82,
+        "crid": 314,
+        "efh": 0,
+        "efr": 56
+      }
+    },
+    {
+      "name": "Hakuzosu Unbound",
+      "soul": "Tree Nymph",
+      "stats": {
+        "atk": 1826,
+        "hp": 21751,
+        "def": 1028,
+        "spd": 123,
+        "cri": 30,
+        "crid": 150,
+        "efh": 0,
+        "efr": 64
+      }
+    },
+    {
+      "name": "Heartseeker Momiji",
+      "soul": "Scarlet",
+      "stats": {
+        "atk": 4844,
+        "hp": 13896,
+        "def": 630,
+        "spd": 114,
+        "cri": 30,
+        "crid": 150,
+        "efh": 0,
+        "efr": 32
+      }
+    }
+  ]
+}

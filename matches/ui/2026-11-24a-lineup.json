@@ -1,0 +1,179 @@
+{
+ "schemaVersion": 1,
+ "id": "2026-11-24a-lineup",
+ "red": {
+  "units": [
+   {
+    "unitId": "r1",
+    "shikigamiId": 575,
+    "name": "Fengyang",
+    "stats": {
+     "attack": 4527,
+     "hp": 14500,
+     "defense": 551,
+     "speed": 188,
+     "critRate": 65,
+     "critDamage": 164,
+     "effectHit": 60,
+     "effectResist": 40
+    },
+    "soulId": 11
+   },
+   {
+    "unitId": "r2",
+    "shikigamiId": 323,
+    "name": "Tenjo Kudari",
+    "stats": {
+     "attack": 2737,
+     "hp": 23586,
+     "defense": 799,
+     "speed": 181,
+     "critRate": 5,
+     "critDamage": 150,
+     "effectHit": 15,
+     "effectResist": 64
+    },
+    "soulId": 14
+   },
+   {
+    "unitId": "r3",
+    "shikigamiId": 345,
+    "name": "Kidomaru",
+    "stats": {
+     "attack": 5308,
+     "hp": 14728,
+     "defense": 916,
+     "speed": 154,
+     "critRate": 61,
+     "critDamage": 192,
+     "effectHit": 36,
+     "effectResist": 48
+    },
+    "soulId": 0
+   },
+   {
+    "unitId": "r4",
+    "shikigamiId": 364,
+    "name": "Asura",
+    "stats": {
+     "attack": 5480,
+     "hp": 13896,
+     "defense": 681,
+     "speed": 149,
+     "critRate": 90,
+     "critDamage": 185,
+     "effectHit": 0,
+     "effectResist": 32
+    },
+    "soulId": 19
+   },
+   {
+    "unitId": "r5",
+    "shikigamiId": 287,
+    "name": "Hako Shoujo",
+    "stats": {
+     "attack": 2925,
+     "hp": 30763,
+     "defense": 716,
+     "speed": 125,
+     "critRate": 23,
+     "critDamage": 150,
+     "effectHit": 15,
+     "effectResist": 120
+    },
+    "soulId": 14
+   }
+  ]
+ },
+ "blue": {
+  "units": [
+   {
+    "unitId": "b1",
+    "shikigamiId": 220,
+    "name": "Inugami",
+    "stats": {
+     "attack": 4928,
+     "hp": 15383,
+     "defense": 687,
+     "speed": 145,
+     "critRate": 85,
+     "critDamage": 199,
+     "effectHit": 0,
+     "effectResist": 79
+    },
+    "soulId": 24
+   },
+   {
+    "unitId": "b2",
+    "shikigamiId": 266,
+    "name": "Aoandon",
+    "stats": {
+     "attack": 3510,
+     "hp": 15417,
+     "defense": 675,
+     "speed": 143,
+     "critRate": 98,
+     "critDamage": 290,
+     "effectHit": 0,
+     "effectResist": 48
+    },
+    "soulId": 21
+   },
+   {
+    "unitId": "b3",
+    "shikigamiId": 331,
+    "name": "Vengeful Hannya",
+    "stats": {
+     "attack": 3999,
+     "hp": 14374,
+     "defense": 541,
+     "speed": 127,
+     "critRate": 10,
+     "critDamage": 255,
+     "effectHit": 0,
+     "effectResist": 120
+    },
+    "soulId": 19
+   },
+   {
+    "unitId": "b4",
+    "shikigamiId": 356,
+    "name": "Senhime",
+    "stats": {
+     "attack": 3876,
+     "hp": 14585,
+     "defense": 514,
+     "speed": 121,
+     "critRate": 8,
+     "critDamage": 248,
+     "effectHit": 0,
+     "effectResist": 16
+    },
+    "soulId": 19
+   },
+   {
+    "unitId": "b5",
+    "shikigamiId": 594,
+    "name": "Dreambound Chocho",
+    "stats": {
+     "attack": 2475,
+     "hp": 26867,
+     "defense": 1133,
+     "speed": 113,
+     "critRate": 93,
+     "critDamage": 206,
+     "effectHit": 0,
+     "effectResist": 40
+    },
+    "soulId": 23
+   }
+  ]
+ },
+ "ruleset": "GUESSING",
+ "source": {
+  "type": "JSON",
+  "note": "Duel betting 2026-11-24 #1 (Global screenshot) — result: unknown"
+ },
+ "createdAt": "2026-11-23T22:56:26.365Z",
+ "updatedAt": "2026-11-23T22:56:26.365Z"
+}

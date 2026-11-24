@@ -16,7 +16,7 @@ import type { Entity } from "../kernel/entity.ts";
 import { DamageType, EV, StatusCategory, TurnType } from "../kernel/types.ts";
 import { StatusBook, isActionPrevented } from "../kernel/status.ts";
 import type { BettingKit, Hook, Installed } from "./betting-m7.ts";
-import { bettingActive, isSummonUnit, skillById, markDef, noteValue, setNote, registerOwnerHandler } from "./betting-shared.ts";
+import { bettingActive, isSummonUnit, skillById, markDef, noteValue, setNote, registerOwnerHandler, untargetableInBetting } from "./betting-shared.ts";
 
 export const MANNENDAKE = Object.freeze({ basicRatio: 125, challenge: 0.3, counter: 0.6, selfCounter: 1, atkShare: 0.15, turns: 2 });
 
@@ -79,9 +79,12 @@ async function afterCast(battle: any, self: Entity, x: any): Promise<boolean> {
 async function onAttacked(battle: any, m: Entity, ctx: any): Promise<void> {
   const src: Entity | undefined = ctx?.input?.source, dst: Entity | undefined = ctx?.input?.target;
   if (!src || !dst || !m.alive || !src.alive || src.teamId === m.teamId || dst.teamId !== m.teamId) return;
+  if (untargetableInBetting(src)) return;   // an untargetable attacker (龙胆蓝璃) cannot be countered
   if (!dst.statuses.some(s => s.def.id === GUARD_ID && s.sourceId === m.id)) return;
   const t = ctx?.result?.type;
-  if (t === DamageType.CONDUCTION || t === DamageType.INDIRECT || String(ctx.input.skillTag ?? "").startsWith("soul:")) return;
+  const tag = String(ctx.input.skillTag ?? "");
+  // Reflected damage (金刚经, betting-hitotsume.ts) and echo hits are not attacks.
+  if (t === DamageType.CONDUCTION || t === DamageType.INDIRECT || tag.startsWith("soul:") || tag.startsWith("reflect:")) return;
   if (isActionPrevented(m.statusDefs())) return;
   const action = battle.turn + ":" + src.id;
   if (noteValue(m, N_ACTION) !== action) { setNote(m, N_ACTION, action); setNote(m, N_ROLLED, ""); }

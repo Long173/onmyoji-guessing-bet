@@ -84,10 +84,12 @@ function endgameText(e: any): string {
   if (!e || e.mode !== "REFEREE_ROUNDS") return `${e?.id ?? "?"}: no anti-stall rule; battles can stall at the turn cap.`;
   const pct = (x: number) => Math.round(x * 100) + "%";
   const late = e.lateFromRound != null ? `, +${pct(e.lateDamageStep)} per round from round ${e.lateFromRound}` : "";
-  const trigger = e.actionsPerRound ? `a referee round every ${e.actionsPerRound} actions (from the match-6 replay)` : "referee rounds after every unit has acted";
-  return `${e.id} (${e.status}): ${trigger}: +${pct(e.damageStep)} damage / -${pct(e.healStep)} healing per round${late}; `
+  const trigger = e.refereeSpeed ? `a referee that runs on the action bar at speed ${e.refereeSpeed} (from the match-6 and match-8 replays)`
+    : e.actionsPerRound ? `a referee round every ${e.actionsPerRound} actions` : "referee rounds after every unit has acted";
+  const heal = e.healStep > 0 ? ` / -${pct(e.healStep)} healing` : " (healing unchanged)";
+  return `${e.id} (${e.status}): ${trigger}: +${pct(e.damageStep)} damage${heal} per round${late}; `
     + (e.timeout === "ALIVE_THEN_HP" ? "a battle still undecided at the turn cap goes to the side with more survivors, then the higher remaining HP share. " : "")
-    + "The numbers are the Arena (duel) referee's, not confirmed for duel betting.";
+    + "The damage step is the Arena (duel) referee's, not measured for duel betting.";
 }
 
 /** What the replaced guessing ruleset still does in betting mode (kernel/battle.ts, kernel/environment.ts). */

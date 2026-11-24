@@ -1,0 +1,154 @@
+{
+  "_meta": {
+    "title": "Duel betting 2026-11-24 #2 (Global screenshot) — result: unknown",
+    "result": "blue",
+    "notes": [
+      "Parsed from Lineup screenshots by apps/web/tools/parse-lineup.ts.",
+      "Manual fixes: Chin HP 19712 (OCR read 18712); Seawatch Kingyo soul = Soul Edge (icon matched to match 8 Hitotsume)."
+    ]
+  },
+  "red": [
+    {
+      "name": "Kawazaru",
+      "soul": "Azure Basan",
+      "stats": {
+        "atk": 4988,
+        "hp": 17291,
+        "def": 646,
+        "spd": 213,
+        "cri": 84,
+        "crid": 150,
+        "efh": 45,
+        "efr": 0
+      }
+    },
+    {
+      "name": "Kaguya",
+      "soul": "Mirror Lady",
+      "stats": {
+        "atk": 3937,
+        "hp": 23420,
+        "def": 794,
+        "spd": 144,
+        "cri": 30,
+        "crid": 220,
+        "efh": 0,
+        "efr": 48
+      }
+    },
+    {
+      "name": "Enmusubi",
+      "soul": "Mirror Lady",
+      "stats": {
+        "atk": 3607,
+        "hp": 19530,
+        "def": 761,
+        "spd": 128,
+        "cri": 25,
+        "crid": 227,
+        "efh": 0,
+        "efr": 48
+      }
+    },
+    {
+      "name": "Inugami",
+      "soul": "Seductress",
+      "stats": {
+        "atk": 5108,
+        "hp": 16921,
+        "def": 687,
+        "spd": 127,
+        "cri": 95,
+        "crid": 185,
+        "efh": 0,
+        "efr": 80
+      }
+    },
+    {
+      "name": "Hakuzosu Unbound",
+      "soul": "Tree Nymph",
+      "stats": {
+        "atk": 1826,
+        "hp": 24782,
+        "def": 883,
+        "spd": 123,
+        "cri": 30,
+        "crid": 150,
+        "efh": 0,
+        "efr": 64
+      }
+    }
+  ],
+  "blue": [
+    {
+      "name": "Chin",
+      "soul": "Scarlet",
+      "stats": {
+        "atk": 7180,
+        "hp": 19712,
+        "def": 764,
+        "spd": 185,
+        "cri": 60,
+        "crid": 206,
+        "efh": 0,
+        "efr": 88
+      }
+    },
+    {
+      "name": "Zashiki",
+      "soul": "Merrow",
+      "stats": {
+        "atk": 2957,
+        "hp": 26890,
+        "def": 1141,
+        "spd": 180,
+        "cri": 28,
+        "crid": 164,
+        "efh": 0,
+        "efr": 119
+      }
+    },
+    {
+      "name": "Hako Shoujo",
+      "soul": "Azure Basan",
+      "stats": {
+        "atk": 2925,
+        "hp": 30763,
+        "def": 716,
+        "spd": 131,
+        "cri": 33,
+        "crid": 150,
+        "efh": 15,
+        "efr": 96
+      }
+    },
+    {
+      "name": "Divine Prophet Susabi",
+      "soul": "Dawn Fairy",
+      "stats": {
+        "atk": 4158,
+        "hp": 15155,
+        "def": 666,
+        "spd": 116,
+        "cri": 10,
+        "crid": 220,
+        "efh": 0,
+        "efr": 64
+      }
+    },
+    {
+      "name": "Seawatch Kingyo",
+      "soul": "Soul Edge",
+      "stats": {
+        "atk": 3848,
+        "hp": 16420,
+        "def": 561,
+        "spd": 111,
+        "cri": 35,
+        "crid": 220,
+        "efh": 0,
+        "efr": 0
+      }
+    }
+  ]
+}

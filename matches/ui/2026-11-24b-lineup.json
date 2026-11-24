@@ -1,0 +1,179 @@
+{
+ "schemaVersion": 1,
+ "id": "2026-11-24b-lineup",
+ "red": {
+  "units": [
+   {
+    "unitId": "r1",
+    "shikigamiId": 371,
+    "name": "Kawazaru",
+    "stats": {
+     "attack": 4988,
+     "hp": 17291,
+     "defense": 646,
+     "speed": 213,
+     "critRate": 84,
+     "critDamage": 150,
+     "effectHit": 45,
+     "effectResist": 0
+    },
+    "soulId": 14
+   },
+   {
+    "unitId": "r2",
+    "shikigamiId": 280,
+    "name": "Kaguya",
+    "stats": {
+     "attack": 3937,
+     "hp": 23420,
+     "defense": 794,
+     "speed": 144,
+     "critRate": 30,
+     "critDamage": 220,
+     "effectHit": 0,
+     "effectResist": 48
+    },
+    "soulId": 11
+   },
+   {
+    "unitId": "r3",
+    "shikigamiId": 347,
+    "name": "Enmusubi",
+    "stats": {
+     "attack": 3607,
+     "hp": 19530,
+     "defense": 761,
+     "speed": 128,
+     "critRate": 25,
+     "critDamage": 227,
+     "effectHit": 0,
+     "effectResist": 48
+    },
+    "soulId": 11
+   },
+   {
+    "unitId": "r4",
+    "shikigamiId": 220,
+    "name": "Inugami",
+    "stats": {
+     "attack": 5108,
+     "hp": 16921,
+     "defense": 687,
+     "speed": 127,
+     "critRate": 95,
+     "critDamage": 185,
+     "effectHit": 0,
+     "effectResist": 80
+    },
+    "soulId": 27
+   },
+   {
+    "unitId": "r5",
+    "shikigamiId": 595,
+    "name": "Hakuzosu Unbound",
+    "stats": {
+     "attack": 1826,
+     "hp": 24782,
+     "defense": 883,
+     "speed": 123,
+     "critRate": 30,
+     "critDamage": 150,
+     "effectHit": 0,
+     "effectResist": 64
+    },
+    "soulId": 28
+   }
+  ]
+ },
+ "blue": {
+  "units": [
+   {
+    "unitId": "b1",
+    "shikigamiId": 285,
+    "name": "Chin",
+    "stats": {
+     "attack": 7180,
+     "hp": 19712,
+     "defense": 764,
+     "speed": 185,
+     "critRate": 60,
+     "critDamage": 206,
+     "effectHit": 0,
+     "effectResist": 88
+    },
+    "soulId": 13
+   },
+   {
+    "unitId": "b2",
+    "shikigamiId": 205,
+    "name": "Zashiki",
+    "stats": {
+     "attack": 2957,
+     "hp": 26890,
+     "defense": 1141,
+     "speed": 180,
+     "critRate": 28,
+     "critDamage": 164,
+     "effectHit": 0,
+     "effectResist": 119
+    },
+    "soulId": 44
+   },
+   {
+    "unitId": "b3",
+    "shikigamiId": 287,
+    "name": "Hako Shoujo",
+    "stats": {
+     "attack": 2925,
+     "hp": 30763,
+     "defense": 716,
+     "speed": 131,
+     "critRate": 33,
+     "critDamage": 150,
+     "effectHit": 15,
+     "effectResist": 96
+    },
+    "soulId": 14
+   },
+   {
+    "unitId": "b4",
+    "shikigamiId": 390,
+    "name": "Divine Prophet Susabi",
+    "stats": {
+     "attack": 4158,
+     "hp": 15155,
+     "defense": 666,
+     "speed": 116,
+     "critRate": 10,
+     "critDamage": 220,
+     "effectHit": 0,
+     "effectResist": 64
+    },
+    "soulId": 10
+   },
+   {
+    "unitId": "b5",
+    "shikigamiId": 346,
+    "name": "Seawatch Kingyo",
+    "stats": {
+     "attack": 3848,
+     "hp": 16420,
+     "defense": 561,
+     "speed": 111,
+     "critRate": 35,
+     "critDamage": 220,
+     "effectHit": 0,
+     "effectResist": 0
+    },
+    "soulId": 29
+   }
+  ]
+ },
+ "ruleset": "GUESSING",
+ "source": {
+  "type": "JSON",
+  "note": "Duel betting 2026-11-24 #2 (Global screenshot) — result: unknown"
+ },
+ "createdAt": "2026-11-24T00:31:34.270Z",
+ "updatedAt": "2026-11-24T00:31:34.270Z"
+}

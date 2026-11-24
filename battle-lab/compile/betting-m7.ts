@@ -15,6 +15,14 @@ import { KIT as YUKI } from "./betting-yuki.ts";
 import { KIT as MANNENDAKE } from "./betting-mannendake.ts";
 import { KIT as HANA279 } from "./betting-hana279.ts";
 import { KIT as SHUTEN } from "./betting-shuten.ts";
+// Match 8 (2026-11-23h): see betting-m8.ts — its kits share this hub.
+import { M8_KITS } from "./betting-m8.ts";
+// Match 9 (2026-11-24a): see betting-m9.ts — its kits share this hub.
+import { M9_KITS } from "./betting-m9.ts";
+// Match 10 (2026-11-24b): see betting-m10.ts — its kits share this hub.
+import { M10_KITS } from "./betting-m10.ts";
+// Match 11 (2026-11-24c): see betting-m11.ts — its kits share this hub.
+import { M11_KITS } from "./betting-m11.ts";
 
 export type Hook = { kind: string; run: (battle: any, self: Entity, hurt: Entity[], primary?: Entity) => Promise<void> };
 export type Installed = Array<{ entityId: number; mechanic: string }>;
@@ -38,7 +46,7 @@ export interface BettingKit {
   install?: (battle: any, entities: Entity[]) => Installed;
 }
 
-const KITS: readonly BettingKit[] = Object.freeze([KAORU, ENENRA, ENMUSUBI, YUKI, MANNENDAKE, HANA279, SHUTEN]);
+const KITS: readonly BettingKit[] = Object.freeze([KAORU, ENENRA, ENMUSUBI, YUKI, MANNENDAKE, HANA279, SHUTEN, ...M8_KITS, ...M9_KITS, ...M10_KITS, ...M11_KITS]);
 
 export const M7_PATCHES: Readonly<Record<string, { note: string; patch: Record<string, unknown> }>> =
   Object.freeze(Object.assign({}, ...KITS.map(k => k.patches ?? {})));

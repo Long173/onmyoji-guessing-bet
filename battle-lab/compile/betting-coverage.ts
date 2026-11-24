@@ -38,6 +38,16 @@ export const BETTING_AI_RULES: Readonly<Record<number, string>> = Object.freeze(
   554: "betting-enmusubi.ts", 279: "betting-hana279.ts",
   298: "betting-kaoru.ts", 572: "betting-enenra.ts",
   591: "betting-yuki.ts",
+  // Match 8 (wired through betting-m8.ts)
+  200: "betting-momo.ts", 330: "betting-shiranui.ts", 201: "betting-yukionna.ts",
+  // Match 9 (wired through betting-m9.ts)
+  323: "betting-tenjo.ts", 287: "betting-hako.ts",
+  356: "betting-senhime356.ts",
+  // Match 10 (wired through betting-m10.ts)
+  285: "betting-chin.ts", 595: "betting-hakuzosu.ts", 347: "betting-enmusubi347.ts",
+  390: "betting-susabi390.ts", 346: "betting-seawatch.ts", 371: "betting-kawazaru.ts",
+  // Match 11 (wired through betting-m11.ts)
+  300: "betting-tamamo.ts",
 });
 
 const F = (module: string, note: string): KitSkill => ({ level: "FULL", module, note });
@@ -116,7 +126,7 @@ export const BETTING_KIT_SKILLS: Readonly<Record<string, KitSkill>> = Object.fre
   "241_02": F("betting-chocho.ts", "SPD stacks from the lowest ally HP ratio, 4-stack cost reduction"),
   "241_03": F("betting-chocho.ts", "Butterfly Dance heal after damage (once per turn)"),
   "310_02": F("betting-chocho.ts", "30% chance to halve damage taken"),
-  "277_02": F("betting-kuro.ts", "free Chain Slash on hit (cooldown 2), Upper Hand Soul Return"),
+  "277_02": F("betting-kuro.ts", "free Chain Slash on hit (cooldown 2, not on the lethal hit), Upper Hand Soul Return counted on his own turns only"),
   "277_03": F("betting-kuro.ts", "extra hits per 30% HP lost, free follow-up after a kill"),
   "321_02": F("betting-okuribito.ts", "Soul Rift stacks and their indirect damage, removal by a normal attack"),
   "321_03": F("betting-okuribito.ts", "Orie stats, counters after enemy turns with the onibi bonus, cooldown"),
@@ -145,8 +155,72 @@ export const BETTING_KIT_SKILLS: Readonly<Record<string, KitSkill>> = Object.fre
   "572_02": F("betting-enenra.ts", "Smoke Formlessness: entries on hit (max 2 per own turn), blocks one enemy skill, +15% bar, L3 hit shields, cast shield 25% max HP, Upper Hand"),
   "572_03": F("betting-enenra.ts", "2x51% AoE + 131% final ignoring souls/passives, Smoke Phantom morph 58%/72%, 49% burst on expiry"),
   // Yuki Gozen 591 (match 7)
-  "591_02": F("betting-yuki.ts", "Gentian Glass: battle-start / cast / on-kill summon at the victim's bar, 360% initial ATK HP (betting HP scale), re-summon +39% x3 and full heal, 50% max-HP strike on the lowest-HP enemy, Yuki damage-immune while it lives, Snowy Edge stacks"),
+  "591_02": F("betting-yuki.ts", "Gentian Glass: battle-start / cast / on-kill summon at the victim's bar, 360% initial ATK HP (no betting HP scale), re-summon +39% x3 and full heal, 50% max-HP strike on the lowest-HP enemy, untargetable and never countered (no expiry in the text), Yuki damage-immune while it lives, Snowy Edge stacks"),
   "591_03": F("betting-yuki.ts", "9 x 27% slashes, 2 Snowy Edge -> first slash is a 108% Snow Burst on all enemies (+50% on the target), L5 retarget to the lowest-HP enemy"),
+  // Match 8 (wired through betting-m8.ts): Hitotsume 230, Momo 200, Amaterasu 556
+  "230_02": F("betting-hitotsume.ts", "Diamond Sutra on every ally when he takes damage: +20% effect RES, 20% FIXED reflection, 1 turn"),
+  "200_02": F("betting-momo.ts", "25% of her max HP to the lowest-HP-ratio ally (can crit), 30% of the requested heal splashed to the others, In Bloom +30% damage on everyone healed"),
+  "200_03": P("betting-momo.ts", "generic revive + 25% of her max HP, then the 30% splash and In Bloom; not modelled: the wiki's 2-turn cooldown"),
+  "556_02": F("betting-amaterasu.ts", "70% echo of the Heavenly Radiance bearer's skill hits during Amaterasu's turn, Light Cleansing on attackers (-40% damage to her, -150 DEF), L5 kill +50% bar"),
+  "556_03": F("betting-amaterasu.ts", "highest-HP target; Heavenly Radiance to the other ally with the highest initial panel ATK (-15% ATK, +20% bar, 1-HP save), sustained 2 turns"),
+  "330_01": F("betting-shiranui.ts", "2 × 60%; in Parting Sorrow Final Dance 2 × 72% with Parting Fire (double damage on a marked target)"),
+  "330_02": P("betting-shiranui.ts", "dance (5% current HP → ally +80% RES, 100% in the barrier), lethal → Parting Sorrow stance (wiki numbers); active cast never chosen by the AI"),
+  "330_03": F("betting-shiranui.ts", "Sparkfire Barrier 2 of her turns (+10% dmg, +25 SPD, 10% DR, +2%/onibi), extra basic attack (ignore 200 DEF, 30% lifesteal), Upper Hand (opens at the first turn start); stance: Blazing Flame 144% AOE, -1 cost per KO'd ally"),
+  "555_01": F("betting-kusa.ts", "120% on an enemy, then spends 200% initial ATK of Dandelion Force as TRUE damage to the same target"),
+  "555_02": F("betting-kusa.ts", "Dandelion Force from overflow heals (1800% cap per window), Seeds (L5 Upper Hand, turn end self + L4 allies, every removed seed heals 35% ATK (can crit), indirect-damage conversion), L2 DEF/SPD, L3 ATK, pursuits 30% per 345% ATK (max 3)"),
+  "555_03": F("betting-kusa.ts", "183% to all enemies, 340% (+120%/skill use, L5, max +360%) initial ATK of force split evenly, heal all allies 35% ATK (can crit)"),
+  "201_01": F("betting-yukionna.ts", "120%, 50% base chance slow -10 SPD for 2 turns (one slow per source, refreshed)"),
+  "201_02": F("betting-yukionna.ts", "turn-end Ice Armor Shield on self + the 2 highest-crit-damage allies, 12% of her max HP, replaced each of her turns; 50% base slow on attackers; +40% initial ATK vs Frozen / Deep Frozen"),
+  "201_03": F("betting-yukionna.ts", "3 waves x 36% on every enemy; per hit 8% base Freeze (+10 points on the final chance vs a slowed target), 30% Deep Freeze conversion on a Frozen target, 16% base slow"),
+  // Match 9 (wired through betting-m9.ts): Tenjo Kudari 323, Hako Shoujo 287
+  "323_02": F("betting-tenjo.ts", "Rain Shelter: +25% effect RES on non-summon allies (+50% self), L5 heal 5% of the ally's max HP at its turn start; sealed by passive suppression"),
+  "323_03": P("betting-tenjo.ts", "awake yokai house (own turn, or Joy Mark + actionable) +20% damage on non-summon allies; 3 Joy Marks: +1 onibi and +25% action bar per other ally turn end; not modelled: fandom +75% self RES while awake"),
+  "287_02": F("betting-hako.ts", "8% max-HP shield (2 turns, replaced) + 1 random buff before each ally acts; evolved: 1 random debuff (contested) on enemy attackers, once per action"),
+  "287_03": F("betting-hako.ts", "records allies' HP for 2 of her turns, recovers to 60% of the record on expiry; lethal hit on a recorded ally ⇒ immune + takes effect now; cooldown 2"),
+  // Match 9: Senhime 356 (base SSR; not Senhime Resurgent 562)
+  "356_01": P("betting-senhime356.ts", "L5: +1 Tidal Sound while the halberd is present (the 125% hit is the generic path)"),
+  "356_02": F("betting-senhime356.ts", "passive +10% action bar after each non-summon enemy turn; Tide Dream (halberd present, contested): -3 onibi after the bearer acts, L5 Deep Freeze at 0 onibi"),
+  "356_03": P("betting-senhime356.ts", "halberd (kernel summon, 30% presence heal) + L2 30% DR, L3 Tidal Sound per onibi paid, L5 3 stacks, 7 stacks = +3 onibi / +15% team damage (max 5); fandom Tide of Eternity (2 onibi, 120% + 100%/Dirge, pulls the halberd); L4 read as immunity while unplanted"),
+  // Match 9: Aoandon 266, Dreambound Chocho 594
+  "266_01": F("betting-aoandon.ts", "120%, 30% chance to drain 1 onibi from the enemy side to hers (no unconditional +1 onibi)"),
+  "266_02": P("betting-aoandon.ts", "Bright Lantern at another allied shikigami's turn start (40% − 3%/onibi): free skills that turn, +5% damage per onibi, removed when she dies; not modelled: fandom-only Candlelight overflow counter"),
+  "266_03": F("betting-aoandon.ts", "190% to all enemies, 30% drain per enemy hit, one TRUE hit per onibi of lead (5% max HP, cap 100% initial ATK), L5 Bright Lantern (free skills, 1 turn) on the top-ATK ally"),
+  "594_02": P("betting-chocho594.ts", "Dream Cocoon 20% max HP (2 turns, max 2, +20% damage, L3 excess-damage immunity); L4 free cast after 20% initial HP taken in a turn (once per own turn); not modelled: replaces Sleep"),
+  "594_03": F("betting-chocho594.ts", "heals 15% of each ally's own max HP, 30% on the selected target, +20% damage 1 turn, Dream Cocoon 50% of the target's heal, L5 Upper Hand cast on the top initial-ATK ally"),
+  // Match 9: Asura 364, Kidomaru 345
+  "364_01": F("betting-asura.ts", "spends 1 Reason, 120%; a kill puts Annihilation (ATK -50%) on the victim and switches to Endless Slaughter"),
+  "364_02": P("betting-asura.ts", "Reason 9 at battle / turn start, spend per target, -6% dealt per point, 8% heal per point restored, L5 -6% taken per point lost, control/banish immunity below 9, +10% vs slower initial SPD; Endless Slaughter (fandom 263% random unit + 113% to all others, allies included; +1 Reason per ally turn end) — its Reason spend is a reading"),
+  "364_03": F("betting-asura.ts", "spends 1 Reason per enemy, 315% to all enemies, then 63% follow-ups (1 Reason each) until Reason runs out; L5 retarget to the lowest-HP enemy on a kill"),
+  "345_01": P("betting-kidomaru.ts", "2 x 59% + Chains of Bone; counter-cast on an enemy bar increase (not chained, max 5 with assists per window); L5 +1 Frenzy at turn end on a chained target; not modelled: the 30% re-chain chance, single-target vs team bar boosts"),
+  "345_02": P("betting-kidomaru.ts", "3 Frenzy -> Shura: 160% ATK shield, control immunity, Soul Hunt Frenzy 40% ATK to all (no souls) after each enemy turn, 3 uses or shield break; clears Frenzy and enemy chains; L5 next Shura Bone Chains -1 onibi per chain; not modelled: fandom's lethal-damage evolution"),
+  "345_03": F("betting-kidomaru.ts", "3 x 90% + Chains of Bone, Concealment 3 turns (-20% taken, +33% ATK true damage per target, untargeted by enemy picks, lifted after an own-turn attack, L5 Upper Hand), +1 Frenzy at turn end; chain splash 60% ATK + reset; ally basic-attack assists"),
+  // Match 10 (wired through betting-m10.ts): Chin 285, Zashiki 205, Hakuzosu Unbound 595, Enmusubi 347,
+  // Divine Prophet Susabi 390, Seawatch Kingyo 346, Kawazaru 371
+  "285_01": F("betting-chin.ts", "100% + 2 Poison Feather stacks (contested)"),
+  "285_02": P("betting-chin.ts", "2 stacks on all enemies; stack tick 2/6/12/20/30% of the bearer's max HP (cap 280% ATK, -50 DEF per stack), -1 stack per turn; attacker retaliation; L5 overflow 30%; not modelled: a separate 2-turn timer"),
+  "285_03": F("betting-chin.ts", "L4 3 stacks, 210%, consumes every stack for 42% ATK indirect each, L5 free Poison Blossom (1 stack) if the target survives"),
+  "205_02": F("betting-zashiki.ts", "Initiative: +3 onibi at battle start"),
+  "205_04": F("betting-zashiki.ts", "+3 onibi, sacrifices 20% of current HP"),
+  "595_02": F("betting-hakuzosu.ts", "ally other than self (highest ATK): 20% lost HP recovered, Guardian Seal 2 turns (one per side): own-turn damage immunity, Talisman: Break on attackers (-30% damage, 8% of her max HP per turn); L5 Initiative seal; Onmyoji riders inert"),
+  "595_03": P("betting-hakuzosu.ts", "needs an allied Seimei; replaced by Oath of Dream Mountain, which has no text in the data: never cast, she normal-attacks instead"),
+  "347_02": F("betting-enmusubi347.ts", "random bond before each other ally's turn: match = +1 onibi and +1 Bond (max 7), miss = Bond Renewed (extra turn after hers, skills -3 onibi)"),
+  "347_03": F("betting-enmusubi347.ts", "Sanctuary on the highest crit-damage ally, all allies +40% damage (+5%/Bond) and 9% (+1%/Bond) max-HP heal (can crit); L2 overheal shield, L3 +30 SPD, L4 Bond Renewed + self Sanctuary, L5 Initiative Sanctuary"),
+  "390_01": F("betting-susabi390.ts", "L5: a normal attack in the realm adds 1 Starburst (max 6)"),
+  "390_02": P("betting-susabi390.ts", "Starry River realm, 6 Starbursts (72% AoE indirect, +25% ramp up to 75%, 8% heal, Star Power), allies -20% normal-attack damage, self -40%, end +30% bar, L4 Initiative; L5 bursts with enemy passives suppressed; the prophecy is settled at the end of the enemy action; not modelled: the Star Power control cleanse"),
+  "390_03": F("betting-susabi390.ts", "139% AoE + one 68% AoE hit per Star Power (all consumed); L4 adds 3 Starbursts in the realm"),
+  "346_02": P("betting-seawatch.ts", "Focus after each enemy turn (Initiative 4, at 8: cleanse + Fishtail Cluster or +25% team bar), 80% ATK undispellable shield when none; not modelled: Riverflow Bind (no text)"),
+  "346_03": F("betting-seawatch.ts", "3 Grudge on an enemy without Grudge, Fishtail Cluster until her next turn ends (+10% team bar, Surge stacks, heal 50% ATK x3 at <=50% HP after each ally turn, Surge 50%+3%/trigger (cap 80%) indirect, 150% on Grudge bearers, -30% / -60% non-crit damage taken)"),
+  "371_02": F("betting-kawazaru.ts", "after the 3 papers: normal attacks apply -40% effect RES and +40% damage taken for 2 turns (contested)"),
+  // Match 11 (wired through betting-m11.ts): Kagewani 375, Ebisu 268, Ootengu 217, Tamamonomae 300
+  "375_02": P("betting-kagewani.ts", "60% Shadow Devour per enemy per cast (contested), 2 stacks -> 30% ATK burst + 3% max-HP self heal; not modelled: the burst ignoring shields (dealt as indirect damage)"),
+  "375_03": F("betting-kagewani.ts", "L5 Shadow Bind base chance 50% (the 2x30% AoE + 80% hit is the generic path)"),
+  "268_01": F("betting-ebisu.ts", "L5: +30% Carp Streamer action bar while it is on the field"),
+  "268_02": F("betting-ebisu.ts", "30% onibi when attacked (once per enemy attack)"),
+  "268_03": P("betting-ebisu.ts", "Carp Streamer summon (60% HP, 140% SPD, debuff/control immune): 40% max-HP heal before each ally acts, L2 dispel 2, L4 +20/+30 SPD aura, L5 +1 onibi per Carp turn; not recast while present. Assumptions: DEF 0, enemy AoE hits spill onto it (the kernel never targets summons)"),
+  "217_02": F("betting-ootengu.ts", "Shelter at battle start / turn end, 50% Heroic Bearing (+1% damage, cap 80, whole battle) per damage instance, L5 free Feather Blade Storm after a block"),
+  "217_03": F("betting-ootengu.ts", "4 x 75% on all enemies, +1 Heroic Bearing and +5% bar per enemy hit, max 6 per cast"),
+  "300_03": F("betting-tamamo.ts", "L5 chain: a kill by Foxfire / Fallen from Heaven casts the other for free at -20% damage per step (additive reading)"),
+  "371_03": P("betting-kawazaru.ts", "3 forms in KB order with a 15% max-HP undispellable paper shield; You're a Bad Guy 180% on the top-ATK enemy, Quick, Hide heals 31% ATK; not modelled: the forms' base effects and Stop Chasing Me's buff (no text)"),
 });
 
 /** Module holding the hand-written skill choice of this shikigami, or null (MAX only). */

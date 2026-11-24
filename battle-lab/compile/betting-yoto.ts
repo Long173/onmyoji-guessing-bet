@@ -41,7 +41,7 @@ import { DamageType, EV, StatusCategory, TurnType } from "../kernel/types.ts";
 import { StatusBook, isActionPrevented } from "../kernel/status.ts";
 import {
   bettingActive, PERSIST, isSummonUnit, skillById, markDef, levelNumber, ensureGlobalHandler,
-  noteValue, setNote, shiftBar, isControlDef, registerOwnerHandler,
+  noteValue, setNote, shiftBar, isControlDef, registerOwnerHandler, untargetableInBetting,
 } from "./betting-shared.ts";
 
 /**
@@ -218,7 +218,7 @@ async function huntCounter(battle: any, self: Entity, attackerId: number, reason
   const key = String(battle.turn);
   if (noteValue(self, NOTE_COUNTER) === key) return;   // 每个回合限1次
   const attacker = aliveEnemies(battle, self).find(v => v.id === attackerId);
-  if (!attacker || !self.alive || isActionPrevented(self.statusDefs())) return;
+  if (!attacker || untargetableInBetting(attacker) || !self.alive || isActionPrevented(self.statusDefs())) return;
   const cur = battle.bus.currentEvent;
   if (cur !== null && battle.bus.ancestry(cur).some((n: any) => n.code === TurnType.PSEUDO_TURN)) return;   // counters do not chain
   setNote(self, NOTE_COUNTER, key);

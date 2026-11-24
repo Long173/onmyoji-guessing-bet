@@ -17,7 +17,7 @@ import { StatusBook, controlDefByTipName, findImmuneStatus, incomingKinds, isAct
 import type { StatusDef } from "../kernel/status.ts";
 import { grantExtraTurn } from "../kernel/extra-turn.ts";
 import { rollStatusContest, reportResist } from "../kernel/resist.ts";
-import { grantTimedShield, ensureShieldTicker, bettingActive, isSummonUnit } from "../compile/betting-shared.ts";
+import { grantTimedShield, ensureShieldTicker, bettingActive, isSummonUnit, untargetableInBetting } from "../compile/betting-shared.ts";
 import { makeBettingSouls, BETTING_SOUL_NOTES } from "./custom-effects-betting.ts";
 
 export interface CustomSoulContext {
@@ -292,6 +292,7 @@ const scarlet: Installer = c => {
     const { source, target } = ctx.input;
     const { battle, owner } = c;
     if (target.id !== owner.id || !isUp(owner) || !isUp(source)) return;
+    if (untargetableInBetting(source)) return;   // betting: no counter on an untargetable attacker (BASE: always false)
     // Battle.counterAttack refuses immobile defenders and chained counters: check first, no wasted roll.
     if (isActionPrevented(owner.statusDefs())) return;
     const cur = battle.bus.currentEvent;
@@ -653,7 +654,7 @@ const seaSprite: Installer = c => {
 };
 
 /** 日女巳时 / 三味 / 骰子鬼 (MAX only): soul/custom-effects-betting.ts, built with this module's helpers. */
-const BETTING_SOULS = makeBettingSouls({ register, roll, proc, countsAsSoulDamage, isUp, soulSkill });
+const BETTING_SOULS = makeBettingSouls({ register, roll, proc, countsAsSoulDamage, isUp, soulSkill, applyStatus: applySoulStatus });
 
 export const CUSTOM_SOULS: Readonly<Record<string, Installer>> = Object.freeze({
   破势: shadow,

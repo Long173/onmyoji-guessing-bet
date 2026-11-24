@@ -4,7 +4,7 @@
 //   ① no CJK text in the rendered Fidelity panel (all layers and the per-skill list expanded), the readiness
 //     panel, or the unit tiles, for every matches/ui/*.json sample;
 //   ② match 5 indicators say what the battle really runs: hand-written betting AI counts as high confidence,
-//     hand-written soul installers count as full, the endgame slot shows policies.endgame (REFEREE_15_10,
+//     hand-written soul installers count as full, the endgame slot shows policies.endgame (REFEREE_CLOCK_114,
 //     HYPOTHESIS) instead of the replaced guessing ruleset, skills the AI never casts are NEVER_CAST (not a gap);
 //   ③ honest gaps stay visible (match 1 / match 3 keep their skill without executable values).
 // Run: node apps/web/tests/ui25-betting-readiness.ts
@@ -61,12 +61,12 @@ sec("[2] Match 5: indicators match what the battle runs");
   ok("AI high confidence 10/10 (4 hand-written betting AI)", v.coverage.aiHigh === 10 && v.coverage.aiHandWritten === 4, JSON.stringify([v.coverage.aiHigh, v.coverage.aiHandWritten]));
   ok("Soul battle effects 10 full / 0 partial (9 hand-written)", v.coverage.soulEffectsFull === 10 && v.coverage.soulEffectsPartial === 0 && v.coverage.soulEffectsCustom === 9,
     JSON.stringify([v.coverage.soulEffectsFull, v.coverage.soulEffectsPartial, v.coverage.soulEffectsCustom]));
-  ok("endgame slot = REFEREE_15_10 (HYPOTHESIS), no UNKNOWN", v.strategySnapshot.endgame.id === "REFEREE_15_10" && v.strategySnapshot.endgame.status === "HYPOTHESIS" && v.strategySnapshot.unknownCount === 0,
+  ok("endgame slot = REFEREE_CLOCK_114 (HYPOTHESIS), no UNKNOWN", v.strategySnapshot.endgame.id === "REFEREE_CLOCK_114" && v.strategySnapshot.endgame.status === "HYPOTHESIS" && v.strategySnapshot.unknownCount === 0,
     JSON.stringify(v.strategySnapshot.endgame));
   ok("endgame note says what COMMUNITY_2020_UNVERIFIED still does", /COMMUNITY_2020_UNVERIFIED/.test(v.strategySnapshot.endgame.note ?? "") && /no-Onmyoji/.test(v.strategySnapshot.endgame.note ?? ""));
   const health: string = await H.renderHealth(match, v);
   ok("readiness panel: AI tooltip names the hand-written betting AI", /hand-written betting AI/.test(health));
-  ok("readiness panel: Endgame rule row shows REFEREE_15_10", /Endgame rule/.test(health) && /REFEREE_15_10 \(HYPOTHESIS\)/.test(health) && /No UNKNOWN/.test(health));
+  ok("readiness panel: Endgame rule row shows REFEREE_CLOCK_114", /Endgame rule/.test(health) && /REFEREE_CLOCK_114 \(HYPOTHESIS\)/.test(health) && /No UNKNOWN/.test(health));
   const sk = (unit: string, id: string) => (v.fidelity.skills as any[]).find(s => s.unit === unit && s.skillId === id);
   const ungaikyo = match.red.units.find((u: any) => u.shikigamiId === 344).name;
   ok("Ungaikyo skill 2 (344_05) is NEVER_CAST, not a gap", sk(ungaikyo, "344_05")?.klass === "NEVER_CAST", JSON.stringify(sk(ungaikyo, "344_05")));
@@ -82,9 +82,17 @@ sec("[2] Match 5: indicators match what the battle runs");
 }
 
 sec("[3] Honest gaps stay visible");
-for (const f of ["2026-11-23-lineup.json", "2026-11-23c-lineup.json"]) {
-  const { v } = reports.get(f);
-  ok(`${f}: still INSUFFICIENT with a real skill gap`, v.fidelity.klass === "INSUFFICIENT" && (v.fidelity.skills as any[]).some(s => s.klass === "NONE"), v.fidelity.klass);
+// 2026-11-23 (23a): its NONE gap was base Senhime 356 (海潮入梦 never cast), hand-written since match 9
+// (betting-senhime356.ts) ⇒ PARTIAL, and the PARTIAL skills are still listed (not hidden as FULL).
+{
+  const { v } = reports.get("2026-11-23-lineup.json");
+  ok("2026-11-23-lineup.json: PARTIAL, remaining partial skills still listed", v.fidelity.klass === "PARTIAL" && (v.fidelity.skills as any[]).some(s => s.klass !== "FULL"), v.fidelity.klass);
+}
+// 2026-11-23c: its NONE gap was Shiranui 330 (星火满天 / 离影), hand-written since match 8 (betting-shiranui.ts) ⇒ PARTIAL,
+// and the PARTIAL skills are still listed (not hidden as FULL).
+{
+  const { v } = reports.get("2026-11-23c-lineup.json");
+  ok("2026-11-23c-lineup.json: PARTIAL, remaining partial skills still listed", v.fidelity.klass === "PARTIAL" && (v.fidelity.skills as any[]).some(s => s.klass !== "FULL"), v.fidelity.klass);
 }
 setSkillLevelMode("BASE");
 

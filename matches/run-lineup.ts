@@ -1,6 +1,6 @@
 // matches/run-lineup.ts — Monte Carlo win rate for one lineup file.
 // Usage: node matches/run-lineup.ts file=matches/2026-11-23-lineup.en.json n=1000 [seedBase=100000] [maxTurns=300]
-//        [endgame=NONE|REFEREE_15_10|REFEREE_20_10]   (or env BETTING_ENDGAME; default REFEREE_15_10)
+//        [endgame=NONE|REFEREE_CLOCK_114|REFEREE_15_10|REFEREE_20_10]   (or env BETTING_ENDGAME; default REFEREE_CLOCK_114)
 // Lineup entries may use Global English names: { "name": "Shiro Mujou", "soul": "Temptress", "stats": {...} }
 import path from "node:path";
 import { setSkillLevelMode } from "../battle-lab/compile/max-level.ts";

@@ -16,7 +16,7 @@ import type { SummonSpec } from "./summon.ts";
 import { clearAllyGuardWindow, resetAllyGuardCounts } from "./ally-guard.ts";
 import { returnForm, formOwnerOf, sealedVictimOf, sealEntity, placeOnKill, skillPlacements, clearLinkAura, removeSummon, clearPresenceAuras, installSummonHooks, enterForm } from "./summon.ts";
 import { restoreStats, stolenBy } from "./steal.ts";
-import { createEnvironment, envTick, envAdvanceTurn, envRefereeAfterTurn, timeoutVerdict } from "./environment.ts";
+import { createEnvironment, envTick, envAdvanceTurn, envRefereeAfterTurn, envRefereeClock, timeoutVerdict } from "./environment.ts";
 import { expireFields, fieldTurnStart, fieldTurnEnd } from "./field.ts";
 import { takeExtraTurn, clearExtraTurns, pendingExtraTurns } from "./extra-turn.ts";
 import type { EnvironmentState } from "./environment.ts";
@@ -865,6 +865,8 @@ export class Battle {
     while (this.turn < stopAt) {
       const actorId = this.timeline.advance();
       if (actorId === null) { this.endReason = "NO_ACTOR"; break; }
+      // Betting referee clock (policies.endgame.refereeSpeed; no-op otherwise): rounds whose time passed fire first.
+      envRefereeClock(this, this.timeline.lastDt);
       const actor = this.entity(actorId);
       if (!actor || !actor.alive) continue;
       this.turn++;
@@ -929,6 +931,8 @@ export class Battle {
     while (this.turn < this.rules.maxTurns) {
       const actorId = this.timeline.advance();
       if (actorId === null) { this.endReason = "NO_ACTOR"; break; }
+      // Betting referee clock (policies.endgame.refereeSpeed; no-op otherwise): rounds whose time passed fire first.
+      envRefereeClock(this, this.timeline.lastDt);
       const actor = this.entity(actorId);
       if (!actor || !actor.alive) continue;
       this.turn++;

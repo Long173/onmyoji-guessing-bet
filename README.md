@@ -46,11 +46,12 @@ Betting rounds are simulated in **MAX mode** (`setSkillLevelMode("MAX")`, the de
 
 - **Max skill levels** for every skill, no onmyoji.
 - **Effect HIT / RES**: one roll at `base × (1 + HIT) / (1 + RES)`.
-- **Referee endgame**: damage up / healing down every round, with the round counted every 8 actions.
+- **Referee endgame**: the referee runs on the action bar like a unit (SPD ~114); each time it acts, all units
+  deal more damage. Healing is not cut. Measured from replays.
 - **Crit resistance** (e.g. Suzuhikohime's Undying Flame).
 - **Max-HP scale ×2.42**: in betting rounds each unit's real max HP is about 2.42× the Lineup HP, while per-hit damage
   matches the formula. This was measured from replays: Suzuhikohime's 13% HP cost, Garuda's 10% max-HP heal.
-- **Hand-written kits** for about 40 shikigami (`battle-lab/compile/betting-*.ts`) and betting-only souls.
+- **Hand-written kits** for about 60 shikigami (`battle-lab/compile/betting-*.ts`) and betting-only souls.
   Generic passives are off on this path, so every kit whose mechanics live in passives is written and tested by hand.
 - **User-confirmed AI behaviour** (`matches/observed-behaviour.json`) takes precedence over the old wiki AI table.
 
@@ -103,8 +104,8 @@ Five views share one engine and one contract. Pages and stores never import the 
 
 **The win rates are experimental. Do not treat them as betting advice.**
 
-Recorded betting rounds and their real results are in `matches/` (7 rounds so far). The model currently gets about
-2 out of 3 of them right. The remaining misses are mostly teams that win by sustain. Any shikigami without a
+Recorded betting rounds and their real results are in `matches/` (11 rounds so far, 10 with results). The model
+called 7 of the 9 clear-cut ones right. The remaining misses are mostly teams that win by sustain. Any shikigami without a
 hand-written kit runs with an incomplete kit, and the unit tiles mark it (○ / ◐).
 
 ---

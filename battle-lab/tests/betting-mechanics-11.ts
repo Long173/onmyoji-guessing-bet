@@ -449,12 +449,12 @@ sec("[1] L5: the Glass is summoned at battle start with the tips_5911 stats; Yuk
   const { b, yuki } = await match([YU()], FOES());
   const g = glassOf(b, yuki);
   ok("Glass on the field after startup", !!g && g.alive);
-  ok("HP = 360% of initial ATK × the betting HP scale", near(g.maxHp, Math.round(5000 * YUKI.glassHpAtk * bettingHpScale())), String(g?.maxHp));
+  ok("HP = 360% of initial ATK, not × the betting HP scale (match-7 replay)", near(g.maxHp, Math.round(5000 * YUKI.glassHpAtk)) && bettingHpScale() > 1, String(g?.maxHp));
   ok("inherits crit / crit damage / DEF and 95% SPD", near(g.base.cri, yuki.base.cri) && near(g.base.crid, yuki.base.crid) && g.base.def === yuki.base.def && near(g.speed, yuki.base.spd * 0.95), `spd ${g.speed}`);
   ok("immune to debuffs and control", ["DEBUFF", "CONTROL"].every(k => g.statuses.some((s: any) => (s.def.immuneTo ?? []).includes(k))));
   ok("Yuki carries the damage-immunity status", yuki.hasStatus(GUARD_ID));
   const foe = b.teams[1].members[0];
-  ok("the Glass is a valid enemy target (enemiesOf)", b.enemiesOf(1).includes(g) && !b.enemiesOf(0).includes(g));
+  ok("the Glass is untargetable (not in either enemiesOf; match-7 replay)", !b.enemiesOf(1).includes(g) && !b.enemiesOf(0).includes(g) && g.caps.canBeTargeted === false);
   const hp0 = yuki.hp;
   await b.damage(foe, yuki, 5000, DamageType.NORMAL, 1, null);
   ok("damage on Yuki is negated", yuki.hp === hp0);
@@ -474,7 +474,7 @@ sec("[2] re-summon while alive: max HP +39% initial ATK (3 times at most) and fu
   g.hp = 10;
   for (let i = 0; i < 5; i++) summonGlass(b, yuki, 0, "TEST");
   ok("still one Glass", b.teams[0].summons.filter((s: any) => s.alive).length === 1);
-  ok("+39% × 3 only", near(g.maxHp, hp0 + 3 * Math.round(5000 * 0.39 * bettingHpScale())), `${hp0} → ${g.maxHp}`);
+  ok("+39% × 3 only (unscaled)", near(g.maxHp, hp0 + 3 * Math.round(5000 * 0.39)), `${hp0} → ${g.maxHp}`);
   ok("full HP", g.hp === g.maxHp);
 }
 

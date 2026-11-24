@@ -2,7 +2,7 @@
 //   · betting max-HP multiplier BETTING_HP_SCALE = 2.42 (compile/betting-policies.ts, soul/guessing-factory.ts),
 //     both assembly paths, panel echo still on the unscaled input, BASE unchanged;
 //   · Garuda's 10% max-HP heal back to the KB text (the 24.2% calibration double-counted the HP scale);
-//   · referee round every 8 full turns (kernel/policies.ts REFEREE_ACTIONS_PER_ROUND, kernel/environment.ts);
+//   · referee rounds (kernel/policies.ts; since 2026-11-24 a speed-114 referee clock, the 8-action preset kept);
 //   · Fengyang L5 bar once per referee round, style switches only on own-turn casts (betting-fengyang.ts);
 //   · "highest ATK ally" targeting = panel ATK + permanent kit forms (Yin Ungaikyo), not debuffs (ai-compiler.ts).
 // Run: node battle-lab/tests/betting-mechanics-10.ts
@@ -17,7 +17,7 @@ import { GARUDA } from "../compile/betting-garuda.ts";
 import { styleOf, SKY_ID } from "../compile/betting-fengyang.ts";
 import { targetingAtk } from "../compile/ai-compiler.ts";
 import { formOf } from "../compile/betting-ungaikyo.ts";
-import { EndgamePolicies, REFEREE_ACTIONS_PER_ROUND } from "../kernel/policies.ts";
+import { EndgamePolicies, REFEREE_ACTIONS_PER_ROUND, REFEREE_CLOCK_SPEED } from "../kernel/policies.ts";
 import { TurnType } from "../kernel/types.ts";
 import { createKit, assembleMatch } from "../../apps/web/src/engine/assemble.ts";
 import { canonicalMatch } from "../../apps/web/src/mock/canonical-match.ts";
@@ -89,15 +89,17 @@ sec("[2] Garuda: heal back to the KB 10% of max HP (4855 = 10% × 20065 × 2.42)
   ok("Garuda's max HP 48557 ⇒ heal floors to 4855", Math.floor(find(378).maxHp * GARUDA.healRatio) === 4855, String(find(378).maxHp));
 }
 
-sec("[3] Referee round every 8 full turns (HYPOTHESIS, match-6 replay)");
+sec("[3] Referee rounds: the speed-114 clock (default) still gives ~8 actions per round in match 6; the 8-action preset is kept");
 {
-  ok("REFEREE_15_10 / 20_10: actionsPerRound = 8", REFEREE_ACTIONS_PER_ROUND === 8 && EndgamePolicies.REFEREE_15_10.actionsPerRound === 8);
+  ok("REFEREE_15_10 / 20_10: actionsPerRound = 8 (kept to revert)", REFEREE_ACTIONS_PER_ROUND === 8 && EndgamePolicies.REFEREE_15_10.actionsPerRound === 8);
+  ok("default clock speed 114", REFEREE_CLOCK_SPEED === 114 && EndgamePolicies.REFEREE_CLOCK_114.refereeSpeed === 114);
   const fx: any = normalizeLineup(await loadMatchFixture(M6));
   const A: any = await assembleGuessingMatch(fx, { seed: 100000, traceLevel: "FULL" });
   await A.battle.run();
   const rounds = (A.battle.trace as any[]).filter(t => t.t === "REFEREE_ROUND");
-  ok("match 6: rounds at turns 8, 16, … (not when every unit has acted)", rounds.length >= 2 && rounds.every((t, i) => t.turn === 8 * (i + 1) && t.round === i + 1),
-    rounds.map(t => t.turn).join(","));
+  // Replay: banners after ~8 and ~16 top-level actions (Okuribito / Ungaikyo held back).
+  ok("match 6: round 1 after 7-9 actions, round 2 after 15-19", rounds.length >= 2 && rounds[0].turn >= 7 && rounds[0].turn <= 9
+    && rounds[1].turn >= 15 && rounds[1].turn <= 19 && rounds.every((t, i) => t.round === i + 1), rounds.map(t => t.turn).join(","));
   ok("damage ×1.15 per round from round 1", near(rounds[0].damageMultiplier, 1.15) && near(rounds[1].damageMultiplier, 1.3));
 }
 

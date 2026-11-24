@@ -1,0 +1,153 @@
+{
+  "_meta": {
+    "title": "Duel betting 2026-11-24 #1 (Global screenshot) — result: BLUE won",
+    "result": "blue",
+    "notes": [
+      "Parsed from Lineup screenshots by apps/web/tools/parse-lineup.ts."
+    ]
+  },
+  "red": [
+    {
+      "name": "Fengyang",
+      "soul": "Mirror Lady",
+      "stats": {
+        "atk": 4527,
+        "hp": 14500,
+        "def": 551,
+        "spd": 188,
+        "cri": 65,
+        "crid": 164,
+        "efh": 60,
+        "efr": 40
+      }
+    },
+    {
+      "name": "Tenjo Kudari",
+      "soul": "Azure Basan",
+      "stats": {
+        "atk": 2737,
+        "hp": 23586,
+        "def": 799,
+        "spd": 181,
+        "cri": 5,
+        "crid": 150,
+        "efh": 15,
+        "efr": 64
+      }
+    },
+    {
+      "name": "Kidomaru",
+      "soul": "Snow Spirit",
+      "stats": {
+        "atk": 5308,
+        "hp": 14728,
+        "def": 916,
+        "spd": 154,
+        "cri": 61,
+        "crid": 192,
+        "efh": 36,
+        "efr": 48
+      }
+    },
+    {
+      "name": "Asura",
+      "soul": "Harpy",
+      "stats": {
+        "atk": 5480,
+        "hp": 13896,
+        "def": 681,
+        "spd": 149,
+        "cri": 90,
+        "crid": 185,
+        "efh": 0,
+        "efr": 32
+      }
+    },
+    {
+      "name": "Hako Shoujo",
+      "soul": "Azure Basan",
+      "stats": {
+        "atk": 2925,
+        "hp": 30763,
+        "def": 716,
+        "spd": 125,
+        "cri": 23,
+        "crid": 150,
+        "efh": 15,
+        "efr": 120
+      }
+    }
+  ],
+  "blue": [
+    {
+      "name": "Inugami",
+      "soul": "Dice Sprite",
+      "stats": {
+        "atk": 4928,
+        "hp": 15383,
+        "def": 687,
+        "spd": 145,
+        "cri": 85,
+        "crid": 199,
+        "efh": 0,
+        "efr": 79
+      }
+    },
+    {
+      "name": "Aoandon",
+      "soul": "Shadow",
+      "stats": {
+        "atk": 3510,
+        "hp": 15417,
+        "def": 675,
+        "spd": 143,
+        "cri": 98,
+        "crid": 290,
+        "efh": 0,
+        "efr": 48
+      }
+    },
+    {
+      "name": "Vengeful Hannya",
+      "soul": "Harpy",
+      "stats": {
+        "atk": 3999,
+        "hp": 14374,
+        "def": 541,
+        "spd": 127,
+        "cri": 10,
+        "crid": 255,
+        "efh": 0,
+        "efr": 120
+      }
+    },
+    {
+      "name": "Senhime",
+      "soul": "Harpy",
+      "stats": {
+        "atk": 3876,
+        "hp": 14585,
+        "def": 514,
+        "spd": 121,
+        "cri": 8,
+        "crid": 248,
+        "efh": 0,
+        "efr": 16
+      }
+    },
+    {
+      "name": "Dreambound Chocho",
+      "soul": "Pearl",
+      "stats": {
+        "atk": 2475,
+        "hp": 26867,
+        "def": 1133,
+        "spd": 113,
+        "cri": 93,
+        "crid": 206,
+        "efh": 0,
+        "efr": 40
+      }
+    }
+  ]
+}

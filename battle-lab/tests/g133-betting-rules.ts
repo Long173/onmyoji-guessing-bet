@@ -1,6 +1,6 @@
 // tests/g133-betting-rules.ts — betting (MAX skill level) battle-wide rules:
 //   ① effect resist SINGLE_ROLL_RATIO: hit = base × (1 + effect hit) / (1 + effect RES), one roll, RESIST event;
-//   ② anti-stall endgame (referee rounds +damage / −healing, turn-cap adjudication by survivors then HP%).
+//   ② anti-stall endgame (referee rounds +damage (−healing in the old presets), turn-cap adjudication by survivors then HP%).
 // BASE mode must not see either rule (pinned fingerprints).
 // Run: node battle-lab/tests/g133-betting-rules.ts
 import fs from "node:fs";
@@ -8,6 +8,7 @@ import fsp from "node:fs/promises";
 import path from "node:path";
 import { Battle, DEFAULT_RULES } from "../kernel/battle.ts";
 import { Team } from "../kernel/team.ts";
+import { GOAL } from "../kernel/timeline.ts";
 import { ResourcePolicies } from "../kernel/resource.ts";
 import {
   StartupPolicies, DeathPolicies, GuessingRulesets, ResistPolicies, EndgamePolicies, defaultPolicies, policySnapshot,
@@ -15,7 +16,7 @@ import {
 import { DamageType, EV, TurnType } from "../kernel/types.ts";
 import { dealDamage, healTarget } from "../kernel/damage.ts";
 import {
-  refereeDamageMultiplier, refereeHealMultiplier, envRefereeAfterTurn, timeoutVerdict, createEnvironment,
+  refereeDamageMultiplier, refereeHealMultiplier, envRefereeAfterTurn, envRefereeClock, refereeRoundTime, timeoutVerdict, createEnvironment,
   envDamageMultiplier, envHealMultiplier, envIsDefault, envSnapshot, envRestore,
 } from "../kernel/environment.ts";
 import { rollStatusContest } from "../kernel/resist.ts";
@@ -41,7 +42,7 @@ const LINEUP = path.join(ROOT, "matches", "2026-11-23-lineup.en.json");
 
 sec("[1] Policies: presets, defaults, snapshot");
 {
-  ok("presets NONE / REFEREE_15_10 / REFEREE_20_10 exist", ["NONE", "REFEREE_15_10", "REFEREE_20_10"].every(k => EndgamePolicies[k]?.id === k));
+  ok("presets NONE / REFEREE_CLOCK_114 / REFEREE_15_10 / REFEREE_20_10 exist", ["NONE", "REFEREE_CLOCK_114", "REFEREE_15_10", "REFEREE_20_10"].every(k => EndgamePolicies[k]?.id === k));
   ok("engine default endgame is NONE (BASE unchanged)", defaultPolicies().endgame.id === "NONE" && defaultPolicies().resist.formula === "NONE");
   ok("policySnapshot omits endgame at NONE", !("endgame" in policySnapshot(defaultPolicies())));
   ok("policySnapshot carries a non-NONE endgame", (policySnapshot({ ...defaultPolicies(), endgame: EndgamePolicies.REFEREE_15_10 }) as any).endgame?.id === "REFEREE_15_10");
@@ -57,6 +58,9 @@ sec("[2] Referee multipliers (additive stacking, late step from round 11)");
   ok("heal never goes negative", refereeHealMultiplier(p, 15) === 0);
   ok("20/10: round 5 → ×2.0, round 12 → ×3.4 (no late step)", near(refereeDamageMultiplier(q, 5), 2) && near(refereeDamageMultiplier(q, 12), 3.4));
   ok("round 0 → ×1 / ×1", refereeDamageMultiplier(p, 0) === 1 && refereeHealMultiplier(p, 0) === 1);
+  const c = EndgamePolicies.REFEREE_CLOCK_114;
+  ok("clock 114: round 1 → ×1.15 dmg, healing never cut (×1 at round 1 and 12)", near(refereeDamageMultiplier(c, 1), 1.15)
+    && refereeHealMultiplier(c, 1) === 1 && refereeHealMultiplier(c, 12) === 1 && near(refereeDamageMultiplier(c, 11), 2.8));
 }
 
 sec("[3] Referee round (actionsPerRound = null, the Arena wording) = every living shikigami has acted once");
@@ -83,9 +87,9 @@ sec("[3] Referee round (actionsPerRound = null, the Arena wording) = every livin
   ok("policy NONE: nothing is recorded (environment stays default)", envIsDefault(none.environment) && none.trace.length === 0);
 }
 
-sec("[3b] Betting presets: a referee round every REFEREE_ACTIONS_PER_ROUND (8) full turns (match-6 replay, HYPOTHESIS)");
+sec("[3b] Previous betting presets (kept to revert): a referee round every REFEREE_ACTIONS_PER_ROUND (8) full turns");
 {
-  ok("both betting presets use 8 actions per round", EndgamePolicies.REFEREE_15_10.actionsPerRound === 8 && EndgamePolicies.REFEREE_20_10.actionsPerRound === 8
+  ok("both 8-action presets use 8 actions per round", EndgamePolicies.REFEREE_15_10.actionsPerRound === 8 && EndgamePolicies.REFEREE_20_10.actionsPerRound === 8
     && EndgamePolicies.NONE.actionsPerRound === null && !!EndgamePolicies.REFEREE_15_10.triggerEvidence);
   const units = [{ id: 1, alive: true }, { id: 2, alive: true }, { id: 3, alive: true }];
   const fake: any = {
@@ -102,6 +106,36 @@ sec("[3b] Betting presets: a referee round every REFEREE_ACTIONS_PER_ROUND (8) f
   envRefereeAfterTurn(fake, { id: 3 });
   const snap = envSnapshot(fake.environment);
   ok("the pending count survives snapshot → restore", snap?.refereeActions === 1 && envRestore(snap).refereeActions === 1, JSON.stringify(snap));
+}
+
+sec("[3c] Betting default REFEREE_CLOCK_114: a speed-114 referee runner on the action-bar clock (m6 + m8 replays)");
+{
+  const c = EndgamePolicies.REFEREE_CLOCK_114;
+  ok("clock preset: refereeSpeed 114, no action count, evidence for both", c.refereeSpeed === 114 && c.actionsPerRound === null
+    && /m6/.test(c.triggerEvidence ?? "") && /m8/.test(c.triggerEvidence ?? "") && c.healStep === 0);
+  const period = GOAL / 114;
+  ok("round k fires at k × GOAL / 114", near(refereeRoundTime(c, 1), period) && near(refereeRoundTime(c, 3), 3 * period));
+  const fake: any = { policies: { endgame: c }, environment: createEnvironment(), turn: 0, trace: [], teams: [] };
+  // A SPD-114 unit arrives exactly at the referee time: it acts first, the round fires after its turn.
+  envRefereeClock(fake, period);
+  ok("tie: no round before the unit's turn", !fake.environment.round && near(fake.environment.refereeClock, period) && !envIsDefault(fake.environment));
+  envRefereeAfterTurn(fake, { id: 1 });
+  ok("tie: the round fires when that turn ends", fake.environment.round === 1 && near(envDamageMultiplier(fake.environment), 1.15)
+    && envHealMultiplier(fake.environment) === 1 && fake.trace.some((t: any) => t.t === "REFEREE_ROUND" && t.round === 1));
+  // A SPD-113 unit arrives after the referee time: the round fires before its turn.
+  envRefereeClock(fake, GOAL / 113 * 2 - period);
+  ok("passed: round 2 fires before the next unit's turn", fake.environment.round === 2);
+  envRefereeAfterTurn(fake, { id: 2 });
+  ok("no double count after that turn", fake.environment.round === 2);
+  envRefereeClock(fake, 3 * period);   // a long gap fires every passed round
+  ok("a long gap fires every passed round", fake.environment.round === 5, String(fake.environment.round));
+  envRefereeAfterTurn(fake, { id: 1 });
+  ok("actions alone never complete a clock round", fake.environment.round === 5);
+  const snap = envSnapshot(fake.environment);
+  ok("the clock survives snapshot → restore", near(snap?.refereeClock ?? 0, fake.environment.refereeClock) && near(envRestore(snap).refereeClock ?? 0, fake.environment.refereeClock));
+  const old: any = { policies: { endgame: EndgamePolicies.REFEREE_15_10 }, environment: createEnvironment(), turn: 0, trace: [], teams: [] };
+  envRefereeClock(old, 10 * period);
+  ok("non-clock presets ignore the clock (environment stays default)", envIsDefault(old.environment));
 }
 
 sec("[4] Turn-cap verdict: survivors, then team HP%, else draw");
@@ -161,8 +195,8 @@ sec("[6] betting policy selection (MAX only)");
   ok("BASE → no overrides", Object.keys(bettingPolicies()).length === 0);
   setSkillLevelMode("MAX");
   const p = bettingPolicies();
-  ok("MAX → resist SINGLE_ROLL_RATIO + endgame REFEREE_15_10 by default",
-    p.resist?.id === "SINGLE_ROLL_RATIO" && p.endgame?.id === DEFAULT_BETTING_ENDGAME && DEFAULT_BETTING_ENDGAME === "REFEREE_15_10");
+  ok("MAX → resist SINGLE_ROLL_RATIO + endgame REFEREE_CLOCK_114 by default",
+    p.resist?.id === "SINGLE_ROLL_RATIO" && p.endgame?.id === DEFAULT_BETTING_ENDGAME && DEFAULT_BETTING_ENDGAME === "REFEREE_CLOCK_114");
   setBettingEndgame("REFEREE_20_10");
   ok("setBettingEndgame selects the preset", bettingPolicies().endgame?.id === "REFEREE_20_10" && bettingEndgameId() === "REFEREE_20_10");
   let threw = "";
@@ -172,7 +206,7 @@ sec("[6] betting policy selection (MAX only)");
   process.env.BETTING_ENDGAME = "NONE";
   ok("env BETTING_ENDGAME is honoured", bettingPolicies().endgame?.id === "NONE");
   delete process.env.BETTING_ENDGAME;
-  ok("back to the default", bettingEndgameId() === "REFEREE_15_10");
+  ok("back to the default", bettingEndgameId() === "REFEREE_CLOCK_114");
 }
 
 sec("[7] Node assembly: MAX battle carries both rules; BASE does not");
@@ -183,11 +217,12 @@ sec("[7] Node assembly: MAX battle carries both rules; BASE does not");
   ok("BASE assembly: endgame NONE, resist NOT_CONSUMED", base.battle.policies.endgame.id === "NONE" && base.battle.policies.resist.id === "NOT_CONSUMED");
   setSkillLevelMode("MAX");
   const A: any = await assembleGuessingMatch(fx, { seed: 100003, traceLevel: "FULL" });
-  ok("MAX assembly: endgame REFEREE_15_10, resist SINGLE_ROLL_RATIO", A.battle.policies.endgame.id === "REFEREE_15_10" && A.battle.policies.resist.id === "SINGLE_ROLL_RATIO");
+  ok("MAX assembly: endgame REFEREE_CLOCK_114, resist SINGLE_ROLL_RATIO", A.battle.policies.endgame.id === "REFEREE_CLOCK_114" && A.battle.policies.resist.id === "SINGLE_ROLL_RATIO");
   await A.battle.run();
   const rounds = A.battle.trace.filter((t: any) => t.t === "REFEREE_ROUND");
   ok("referee rounds are recorded with the preset multipliers",
-    rounds.length > 0 && rounds.every((t: any) => near(t.damageMultiplier, refereeDamageMultiplier(EndgamePolicies.REFEREE_15_10, t.round))), JSON.stringify(rounds.slice(0, 3)));
+    rounds.length > 0 && rounds.every((t: any) => near(t.damageMultiplier, refereeDamageMultiplier(EndgamePolicies.REFEREE_CLOCK_114, t.round))
+      && t.healingMultiplier === 1), JSON.stringify(rounds.slice(0, 3)));
   // Damage really scales: same hit with and without a stalemate stage.
   const B: any = await assembleGuessingMatch(fx, { seed: 5, traceLevel: "NONE" });
   await B.battle.runStartup();
@@ -260,21 +295,22 @@ sec("[9] Web assembly parity + save/restore keeps the endgame state");
   setSkillLevelMode("MAX");
   const kit = createKit(bundle);
   const a: any = assembleMatch(kit, canonicalMatch(), { seed: 20261133 });
-  ok("web MAX assembly: same two policies", a.battle.policies.endgame.id === "REFEREE_15_10" && a.battle.policies.resist.id === "SINGLE_ROLL_RATIO");
+  ok("web MAX assembly: same two policies", a.battle.policies.endgame.id === "REFEREE_CLOCK_114" && a.battle.policies.resist.id === "SINGLE_ROLL_RATIO");
   await a.battle.runStartup();
-  for (let i = 0; i < 400 && !(a.battle.environment.round >= 1 && a.battle.environment.refereeActions); i++) {
+  for (let i = 0; i < 400 && !(a.battle.environment.round >= 1); i++) {
     const id = a.battle.timeline.advance(); if (id === null) break;
+    envRefereeClock(a.battle, a.battle.timeline.lastDt);   // what Battle.run does after every advance
     const actor = a.battle.entity(id); if (!actor || !actor.alive) continue;
     a.battle.turn++;
     await a.battle.runTurn(actor, TurnType.NORMAL);
     if (await a.battle.resolveBoundary()) break;
   }
   const snap: any = JSON.parse(JSON.stringify(captureState(a.battle)));
-  ok("state carries policyIds.endgame/resist and the referee round", snap.policyIds.endgame === "REFEREE_15_10" && snap.policyIds.resist === "SINGLE_ROLL_RATIO" && snap.environment?.round >= 1, JSON.stringify({ p: snap.policyIds, env: snap.environment }));
+  ok("state carries policyIds.endgame/resist and the referee round", snap.policyIds.endgame === "REFEREE_CLOCK_114" && snap.policyIds.resist === "SINGLE_ROLL_RATIO" && snap.environment?.round >= 1, JSON.stringify({ p: snap.policyIds, env: snap.environment }));
   const deps = { kit, makeRuntime: (id: number) => runtimeFor(kit, id), attachRuntime };
   const b: any = restoreBattle(snap, deps as any);
-  ok("restored battle keeps the policies and referee progress", b.policies.endgame.id === "REFEREE_15_10" && b.environment.round === snap.environment.round
-    && b.environment.refereeActions === snap.environment.refereeActions && snap.environment.refereeActions > 0);
+  ok("restored battle keeps the policies and referee progress", b.policies.endgame.id === "REFEREE_CLOCK_114" && b.environment.round === snap.environment.round
+    && b.environment.refereeClock === snap.environment.refereeClock && snap.environment.refereeClock > 0);
   await a.battle.run(); await b.run();
   const ha = stateHash(captureState(a.battle)), hb = stateHash(captureState(b));
   ok("continuous run == save → restore → resume (final fingerprint)", ha === hb, ha + " vs " + hb);

@@ -4,14 +4,15 @@
 // worker) spread `bettingPolicies()` into the Battle policies. In BASE mode it returns {} so the
 // regression suite's pinned fingerprints stay byte-identical.
 //   · resist  = SINGLE_ROLL_RATIO: hit chance = base × (1 + effect hit) / (1 + effect RES), one roll.
-//   · endgame = anti-stall referee rounds (default REFEREE_15_10); choose with env BETTING_ENDGAME
-//     (NONE | REFEREE_15_10 | REFEREE_20_10) or setBettingEndgame().
+//   · endgame = anti-stall referee rounds (default REFEREE_CLOCK_114: a speed-114 referee runner on the action bar,
+//     +15% damage per pass, no healing cut); choose with env BETTING_ENDGAME (NONE | REFEREE_CLOCK_114 |
+//     REFEREE_15_10 (previous default: every 8 actions, −10% healing) | REFEREE_20_10) or setBettingEndgame().
 //   · hp scale = BETTING_HP_SCALE (HYPOTHESIS): real max HP = Lineup-screen HP × 2.42 (see below).
 import { skillLevelMode } from "./max-level.ts";
 import { EndgamePolicies, ResistPolicies } from "../kernel/policies.ts";
 import type { BattlePolicies, EndgamePolicy } from "../kernel/policies.ts";
 
-export const DEFAULT_BETTING_ENDGAME = "REFEREE_15_10";
+export const DEFAULT_BETTING_ENDGAME = "REFEREE_CLOCK_114";
 
 let override: string | null = null;
 
@@ -28,7 +29,7 @@ export function setBettingEndgame(id: string | null): void {
   override = id;
 }
 
-/** Preset id in force: setBettingEndgame() > env BETTING_ENDGAME > REFEREE_15_10. */
+/** Preset id in force: setBettingEndgame() > env BETTING_ENDGAME > DEFAULT_BETTING_ENDGAME. */
 export function bettingEndgameId(): string {
   const env = (globalThis as any).process?.env?.BETTING_ENDGAME;
   return override ?? (env ? String(env).trim() : DEFAULT_BETTING_ENDGAME);

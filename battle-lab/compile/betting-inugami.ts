@@ -38,7 +38,7 @@ import { DamageType, EV, StatusCategory, TurnType } from "../kernel/types.ts";
 import { StatusBook, isActionPrevented, findImmuneStatus } from "../kernel/status.ts";
 import { GameMath } from "../kernel/gamemath.ts";
 import {
-  bettingActive, PERSIST, isSummonUnit, skillById, markDef, levelNumber, ensureGlobalHandler,
+  bettingActive, PERSIST, isSummonUnit, skillById, markDef, levelNumber, ensureGlobalHandler, untargetableInBetting, STATUS_TICK_TAG,
 } from "./betting-shared.ts";
 
 export const INUGAMI = Object.freeze({
@@ -191,10 +191,12 @@ async function onDamage(battle: any, ctx: any): Promise<void> {
   const src: Entity | undefined = ctx?.input?.source;
   const dst: Entity | undefined = ctx?.input?.target;
   if (!src || !dst || src.teamId === dst.teamId || ctx.input.type === DamageType.CONDUCTION) return;
-  if (!dst.hasStatus(MARK_ID)) return;
+  if (String(ctx.input.skillTag ?? "").startsWith(STATUS_TICK_TAG)) return;   // a status tick (毒羽 …) is not an attack
+  if (!dst.hasStatus(MARK_ID) || untargetableInBetting(src)) return;   // no counter on an untargetable source
   if (!(Number(ctx.result?.applied ?? 0) + Number(ctx.result?.absorbed ?? 0) > 0)) return;
   const inu = guardOf(battle, dst.teamId);
   if (!inu?.alive || !src.alive || isActionPrevented(inu.statusDefs())) return;
+  if (battle.bus.suppressProvider?.(inu.id)?.passive) return;   // "does not trigger enemy passives" (withEnemiesSuppressed)
   const cur = battle.bus.currentEvent;
   if (cur !== null && battle.bus.ancestry(cur).some((n: any) => n.code === TurnType.PSEUDO_TURN)) return;
   const key = battle.turn + ":" + src.id;

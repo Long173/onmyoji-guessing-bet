@@ -1,0 +1,179 @@
+{
+ "schemaVersion": 1,
+ "id": "2026-11-24c-lineup",
+ "red": {
+  "units": [
+   {
+    "unitId": "r1",
+    "shikigamiId": 375,
+    "name": "Kagewani",
+    "stats": {
+     "attack": 4388,
+     "hp": 17263,
+     "defense": 973,
+     "speed": 200,
+     "critRate": 13,
+     "critDamage": 150,
+     "effectHit": 120,
+     "effectResist": 0
+    },
+    "soulId": 28
+   },
+   {
+    "unitId": "r2",
+    "shikigamiId": 268,
+    "name": "Ebisu",
+    "stats": {
+     "attack": 3693,
+     "hp": 27801,
+     "defense": 724,
+     "speed": 173,
+     "critRate": 45,
+     "critDamage": 150,
+     "effectHit": 0,
+     "effectResist": 80
+    },
+    "soulId": 4
+   },
+   {
+    "unitId": "r3",
+    "shikigamiId": 295,
+    "name": "Oitsuki",
+    "stats": {
+     "attack": 2791,
+     "hp": 26935,
+     "defense": 648,
+     "speed": 169,
+     "critRate": 5,
+     "critDamage": 150,
+     "effectHit": 0,
+     "effectResist": 104
+    },
+    "soulId": 6
+   },
+   {
+    "unitId": "r4",
+    "shikigamiId": 217,
+    "name": "Ootengu",
+    "stats": {
+     "attack": 4500,
+     "hp": 12079,
+     "defense": 611,
+     "speed": 156,
+     "critRate": 100,
+     "critDamage": 283,
+     "effectHit": 0,
+     "effectResist": 64
+    },
+    "soulId": 27
+   },
+   {
+    "unitId": "r5",
+    "shikigamiId": 331,
+    "name": "Vengeful Hannya",
+    "stats": {
+     "attack": 3999,
+     "hp": 14374,
+     "defense": 541,
+     "speed": 127,
+     "critRate": 10,
+     "critDamage": 255,
+     "effectHit": 0,
+     "effectResist": 120
+    },
+    "soulId": 31
+   }
+  ]
+ },
+ "blue": {
+  "units": [
+   {
+    "unitId": "b1",
+    "shikigamiId": 369,
+    "name": "Shokurei",
+    "stats": {
+     "attack": 5331,
+     "hp": 16864,
+     "defense": 612,
+     "speed": 179,
+     "critRate": 33,
+     "critDamage": 150,
+     "effectHit": 0,
+     "effectResist": 16
+    },
+    "soulId": 41
+   },
+   {
+    "unitId": "b2",
+    "shikigamiId": 323,
+    "name": "Tenjo Kudari",
+    "stats": {
+     "attack": 2737,
+     "hp": 25380,
+     "defense": 696,
+     "speed": 169,
+     "critRate": 5,
+     "critDamage": 150,
+     "effectHit": 0,
+     "effectResist": 104
+    },
+    "soulId": 1
+   },
+   {
+    "unitId": "b3",
+    "shikigamiId": 300,
+    "name": "Tamamonomae",
+    "stats": {
+     "attack": 5846,
+     "hp": 17718,
+     "defense": 654,
+     "speed": 128,
+     "critRate": 82,
+     "critDamage": 314,
+     "effectHit": 0,
+     "effectResist": 56
+    },
+    "soulId": 21
+   },
+   {
+    "unitId": "b4",
+    "shikigamiId": 595,
+    "name": "Hakuzosu Unbound",
+    "stats": {
+     "attack": 1826,
+     "hp": 21751,
+     "defense": 1028,
+     "speed": 123,
+     "critRate": 30,
+     "critDamage": 150,
+     "effectHit": 0,
+     "effectResist": 64
+    },
+    "soulId": 28
+   },
+   {
+    "unitId": "b5",
+    "shikigamiId": 388,
+    "name": "Heartseeker Momiji",
+    "stats": {
+     "attack": 4844,
+     "hp": 13896,
+     "defense": 630,
+     "speed": 114,
+     "critRate": 30,
+     "critDamage": 150,
+     "effectHit": 0,
+     "effectResist": 32
+    },
+    "soulId": 13
+   }
+  ]
+ },
+ "ruleset": "GUESSING",
+ "source": {
+  "type": "JSON",
+  "note": "2026-11-24c"
+ },
+ "createdAt": "2026-11-24T02:20:43.753Z",
+ "updatedAt": "2026-11-24T02:20:43.753Z"
+}

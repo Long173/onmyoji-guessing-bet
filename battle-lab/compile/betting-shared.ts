@@ -14,8 +14,17 @@ import { targetingAtk } from "./ai-compiler.ts";
 
 export const bettingActive = (): boolean => skillLevelMode() === "MAX";
 
+/**
+ * Betting mode: an untargetable unit (action-bar summons such as 龙胆蓝璃 / 极昼鲸) cannot be the target of a
+ * counterattack either (match-7 replay: the Glass struck Blue and was never hit back; Yuki took 0 damage).
+ * Always false in BASE mode.
+ */
+export const untargetableInBetting = (e: any): boolean => bettingActive() && e?.caps?.canBeTargeted === false;
+
 /** Statuses that live until removed by their own rule (no turn count). */
 export const PERSIST = 99999;
+/** skillTag prefix of status damage ticks (毒羽, 符咒·破 …): not an attack, so attack reactions (Inugami's guard counter) skip it. */
+export const STATUS_TICK_TAG = "betting-tick:";
 
 export const isSummonUnit = (e: any): boolean => e?.type === EntityType.SUMMON || e?.type === EntityType.SPECIAL_SUMMON;
 export const skillById = (e: Entity, id: string): any => (e?.skills ?? []).find((s: any) => s?.ir?.id === id) ?? null;

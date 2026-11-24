@@ -12,6 +12,8 @@
 //   全局乘区**不进 Entity.effects**、不产生状态、不占鬼火 —— 它只活在 battle.environment 里，
 //   伤害/治疗在结算时读一眼。所以 `modifierSources()` 里永远不会出现 env 来源。
 
+import { GOAL } from "./timeline.ts";
+
 /**
  * 全局修改器。字段与 Entity.addModifier 的三元组**同名同义**（prop / value / mode / source），
  * 这样"式神身上的修改器"与"全局修改器"是同一套词汇，读代码的人不需要记两套。
@@ -50,6 +52,8 @@ export interface EnvironmentState {
   refereeActed?: number[];
   /** Betting endgame with actionsPerRound = N: full turns taken since the last referee round (absent otherwise). */
   refereeActions?: number;
+  /** Betting endgame with refereeSpeed: action-bar clock elapsed since the battle start (absent otherwise). */
+  refereeClock?: number;
 }
 
 /** 战斗时间的单位：回合（★ 不是秒 —— 见 EnvironmentState.elapsedBattleTime 的注） */
@@ -108,7 +112,8 @@ export function createEnvironment(): EnvironmentState {
 /** 这个环境是不是"什么都没发生"（★ 序列化与状态指纹都按它决定收不收 —— 默认档不许漂） */
 export function envIsDefault(env: EnvironmentState | null | undefined): boolean {
   if (!env) return true;
-  return !env.stalemate && (env.globalModifiers ?? []).length === 0 && !env.round && !(env.refereeActed ?? []).length && !env.refereeActions;
+  return !env.stalemate && (env.globalModifiers ?? []).length === 0 && !env.round && !(env.refereeActed ?? []).length && !env.refereeActions
+    && !env.refereeClock;
 }
 
 /** 非默认才返回（进档/进指纹时用；默认 ⇒ null ⇒ 老对局的指纹逐位不变） */
@@ -121,6 +126,7 @@ export function envSnapshot(env: EnvironmentState | null | undefined): Environme
     ...(env!.stalemate ? { stalemate: { ...env!.stalemate } } : {}),
     ...((env!.refereeActed ?? []).length ? { refereeActed: env!.refereeActed!.slice() } : {}),
     ...(env!.refereeActions ? { refereeActions: env!.refereeActions } : {}),
+    ...(env!.refereeClock ? { refereeClock: env!.refereeClock } : {}),
   };
 }
 
@@ -132,6 +138,7 @@ export function envRestore(raw: EnvironmentState | null | undefined): Environmen
   if (raw.stalemate) env.stalemate = { ...raw.stalemate };
   if ((raw.refereeActed ?? []).length) env.refereeActed = raw.refereeActed!.slice();
   if (raw.refereeActions) env.refereeActions = raw.refereeActions;
+  if (raw.refereeClock) env.refereeClock = raw.refereeClock;
   return env;
 }
 
@@ -247,6 +254,7 @@ export function envAdvanceTurn(battle: any): void {
 interface EndgameLike {
   id: string; mode: string; damageStep: number; lateDamageStep: number; lateFromRound: number | null; healStep: number; timeout: string;
   actionsPerRound?: number | null;
+  refereeSpeed?: number | null;
 }
 
 /** Damage multiplier after `rounds` completed referee rounds (additive stacking). */
@@ -262,14 +270,17 @@ export function refereeHealMultiplier(p: EndgameLike, rounds: number): number {
 
 /**
  * Called once after every full turn (runTurn). Completes a referee round when
- *   · actionsPerRound = N: N full turns have been taken since the last round (betting presets, HYPOTHESIS);
- *   · actionsPerRound = null: all living shikigami have acted (the Arena wording).
+ *   · refereeSpeed = v: the action-bar clock has reached the next k·GOAL/v (betting default, HYPOTHESIS; the clock
+ *     itself advances in envRefereeClock);
+ *   · actionsPerRound = N: N full turns have been taken since the last round (previous betting presets);
+ *   · both null: all living shikigami have acted (the Arena wording).
  */
 export function envRefereeAfterTurn(battle: any, actor: { id: number }): void {
   const p: EndgameLike | undefined = battle?.policies?.endgame;
   if (!p || p.mode !== "REFEREE_ROUNDS") return;
   const env: EnvironmentState | undefined = battle?.environment;
   if (!env || !actor) return;
+  if (p.refereeSpeed) { completeClockRounds(battle, env, p, true); return; }
   if (p.actionsPerRound) {
     const n = (env.refereeActions ?? 0) + 1;
     if (n < p.actionsPerRound) { env.refereeActions = n; return; }
@@ -286,6 +297,35 @@ export function envRefereeAfterTurn(battle: any, actor: { id: number }): void {
   }
   env.refereeActed = [];
   completeRefereeRound(battle, env, p);
+}
+
+const CLOCK_EPS = 1e-6;
+/** Clock time at which referee round `round` fires (refereeSpeed presets). */
+export function refereeRoundTime(p: EndgameLike, round: number): number {
+  return round * GOAL / Number(p.refereeSpeed);
+}
+
+/**
+ * refereeSpeed presets: called right after the action bar advanced (Battle.run / runPartial), with the clock time
+ * that advance moved. Rounds whose time has strictly passed fire BEFORE the arriving unit's turn; a round at exactly
+ * the arrival time waits until that turn ends (envRefereeAfterTurn) — ties go to the unit. No-op otherwise.
+ */
+export function envRefereeClock(battle: any, dt: number): void {
+  const p: EndgameLike | undefined = battle?.policies?.endgame;
+  if (!p || p.mode !== "REFEREE_ROUNDS" || !p.refereeSpeed) return;
+  const env: EnvironmentState | undefined = battle?.environment;
+  if (!env || !(dt > 0)) return;
+  env.refereeClock = (env.refereeClock ?? 0) + dt;
+  completeClockRounds(battle, env, p, false);
+}
+
+function completeClockRounds(battle: any, env: EnvironmentState, p: EndgameLike, inclusive: boolean): void {
+  const clock = env.refereeClock ?? 0;
+  for (let guard = 0; guard < 1000; guard++) {
+    const at = refereeRoundTime(p, (env.round ?? 0) + 1);
+    if (inclusive ? clock < at - CLOCK_EPS : clock <= at + CLOCK_EPS) return;
+    completeRefereeRound(battle, env, p);
+  }
 }
 
 function completeRefereeRound(battle: any, env: EnvironmentState, p: EndgameLike): void {

@@ -1,0 +1,153 @@
+{
+  "_meta": {
+    "title": "Duel betting 2026-11-23 #8 (Global screenshot) — result: BLUE won",
+    "result": "blue",
+    "notes": [
+      "Parsed from Lineup screenshots by apps/web/tools/parse-lineup.ts."
+    ]
+  },
+  "red": [
+    {
+      "name": "Kaoru",
+      "soul": "Azure Basan",
+      "stats": {
+        "atk": 2737,
+        "hp": 33326,
+        "def": 779,
+        "spd": 213,
+        "cri": 3,
+        "crid": 150,
+        "efh": 15,
+        "efr": 56
+      }
+    },
+    {
+      "name": "Hitotsume",
+      "soul": "Soul Edge",
+      "stats": {
+        "atk": 5726,
+        "hp": 22002,
+        "def": 876,
+        "spd": 184,
+        "cri": 63,
+        "crid": 206,
+        "efh": 0,
+        "efr": 88
+      }
+    },
+    {
+      "name": "Momo",
+      "soul": "Tree Spirit",
+      "stats": {
+        "atk": 3014,
+        "hp": 25409,
+        "def": 1005,
+        "spd": 172,
+        "cri": 90,
+        "crid": 206,
+        "efh": 0,
+        "efr": 64
+      }
+    },
+    {
+      "name": "Vampira",
+      "soul": "Tomb Guard",
+      "stats": {
+        "atk": 5108,
+        "hp": 15725,
+        "def": 737,
+        "spd": 169,
+        "cri": 85,
+        "crid": 311,
+        "efh": 0,
+        "efr": 48
+      }
+    },
+    {
+      "name": "Amaterasu",
+      "soul": "Claws",
+      "stats": {
+        "atk": 4372,
+        "hp": 17006,
+        "def": 783,
+        "spd": 143,
+        "cri": 62,
+        "crid": 209,
+        "efh": 0,
+        "efr": 40
+      }
+    }
+  ],
+  "blue": [
+    {
+      "name": "Mannendake",
+      "soul": "Fortune Cat",
+      "stats": {
+        "atk": 5456,
+        "hp": 14728,
+        "def": 724,
+        "spd": 205,
+        "cri": 70,
+        "crid": 227,
+        "efh": 0,
+        "efr": 0
+      }
+    },
+    {
+      "name": "Yuki Onna",
+      "soul": "Mimic",
+      "stats": {
+        "atk": 3541,
+        "hp": 19872,
+        "def": 664,
+        "spd": 163,
+        "cri": 13,
+        "crid": 150,
+        "efh": 48,
+        "efr": 63
+      }
+    },
+    {
+      "name": "Shiranui",
+      "soul": "Seductress",
+      "stats": {
+        "atk": 4773,
+        "hp": 12666,
+        "def": 529,
+        "spd": 135,
+        "cri": 40,
+        "crid": 185,
+        "efh": 0,
+        "efr": 48
+      }
+    },
+    {
+      "name": "Inaba Kaguya Hime",
+      "soul": "Boroboroton",
+      "stats": {
+        "atk": 3435,
+        "hp": 15155,
+        "def": 584,
+        "spd": 125,
+        "cri": 8,
+        "crid": 200,
+        "efh": 0,
+        "efr": 40
+      }
+    },
+    {
+      "name": "Kusa Regrown",
+      "soul": "Echoer",
+      "stats": {
+        "atk": 4562,
+        "hp": 15440,
+        "def": 584,
+        "spd": 114,
+        "cri": 65,
+        "crid": 216,
+        "efh": 0,
+        "efr": 0
+      }
+    }
+  ]
+}
